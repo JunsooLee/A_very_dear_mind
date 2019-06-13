@@ -20,4 +20,4 @@ Then, recognize symbols using YOLO v2 and show how to wash clothes in text.<br/>
 </div>
 
 ### System interaction
-<img src="./WIKI/proposal4.png" width="90%"></img>
+<img src="./WIKI/proposal4.png" width="50%"></img>
