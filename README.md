@@ -8,9 +8,9 @@
 3. So we have experienced unwanted results such as pulling out favorite clothing from washing machine shrunken, being discolored or being damaged.
 
 ### Description
-Our program detect picture of care tag which user take.<br/>
-And do image processing to detect symbols in care tag easily.<br/>
-Then, recognize symbols using YOLO v2 and show how to wash clothes in text.<br/>
+  Our program detect picture of care tag which user take.<br/>
+  And do image processing to detect symbols in care tag easily.<br/>
+  Then, recognize symbols using YOLO v2 and show how to wash clothes in text.<br/>
 
 ### System overview
 <div>
