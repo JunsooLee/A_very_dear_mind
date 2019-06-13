@@ -13,10 +13,11 @@ And do image processing to detect symbols in care tag easily.<br/>
 Then, recognize symbols using YOLO v2 and show how to wash clothes in text.<br/>
 
 ### System overview
-<img src="./WIKI/proposal1.png" width="90%"></img> 
-<img src="./WIKI/proposal1.png" width="90%"></img>
-<img src="./WIKI/proposal1.png" width="90%"></img>
+<div>
+<img src="./WIKI/proposal1.png" width="200"></img> 
+<img src="./WIKI/proposal2.png" width="200"></img>
+<img src="./WIKI/proposal3.png" width="200"></img>
+</div>
 
 ### System interaction
-![image](./WIKI/proposal4.png)
-
+<img src="./WIKI/proposal4.png" width="90%"></img>
