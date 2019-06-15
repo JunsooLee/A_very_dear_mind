@@ -34,4 +34,4 @@ The following information can be displayed.
 ### Using Technology
 1. Image processing<br/>
 <img src="./WIKI/proposal7.png" width="50%"></img><br/>
-* **System process image to recognize care tag which is bad quality or wrinkled**
+* System process image to recognize care tag which is bad quality or wrinkled
