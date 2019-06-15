@@ -12,9 +12,7 @@
 
 ### System overview
 <div>
-<img src="./WIKI/proposal1.png" width="250"></img> 
-<img src="./WIKI/proposal2.png" width="250"></img>
-<img src="./WIKI/proposal3.png" width="250"></img>
+<img src="./WIKI/proposal6.png" width="250"></img> 
 </div>
 
 ### System interaction
@@ -32,3 +30,8 @@ The following information can be displayed.
 * informaion about symbol
 
 <img src="./WIKI/proposal5.png" width="50%"></img>
+<div>
+<img src="./WIKI/proposal1.png" width="250"></img> 
+<img src="./WIKI/proposal2.png" width="250"></img>
+<img src="./WIKI/proposal3.png" width="250"></img>
+</div>
