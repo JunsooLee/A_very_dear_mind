@@ -3,10 +3,10 @@
 양한진, 이준수, 황병훈
 
 ### Motivation
-1. Most of us do not tend to pay attention to the care symbols on the label of clothes.
-2. Also, the laundry method varies according to type of clothes.
-3. So we have experienced unwanted results like shrunken, being discolored or being damaged clothes by wrong laundry method.
-4. This unwanted result can not be compensation by company
+1. People should recognize laundry method for favorite clothes.
+2. But the laundry method varies according to type of clothes and it is hard to interpret care tag.
+3. So People have experienced unwanted results like shrunken, being discolored or being damaged clothes by wrong laundry method.
+4. People who have favorite clothes want to know laundry method easily
 
 ### Purpose
 * **Provide service that people can know laundry method easily**
