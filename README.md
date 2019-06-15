@@ -32,7 +32,7 @@ The following information can be displayed.
 <br/><br/>
 
 ### Using Technology
-1. Image processing
-<img src="./WIKI/proposal7.png" width="250"></img>
+1. Image processing<br/>
+<img src="./WIKI/proposal7.png" width="50%"></img>
 <br/>
 * System process image to recognize care tag which is bad quality or wrinkled
