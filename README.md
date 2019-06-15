@@ -8,7 +8,8 @@
 3. So we have experienced unwanted results like shrunken, being discolored or being damaged clothes by wrong laundry method.
 4. This unwanted result can not be compensation by company
 
-
+### Purpose
+* **Provide service that people can know laundry method easily**
 
 ### System overview
 **In Sequence**<br/>
