@@ -29,6 +29,10 @@ The following information can be displayed.
 * informaion about symbol
 
 <img src="./WIKI/proposal5.png" width="50%"></img>
+<br/><br/>
+
+### Using Technology
+1. Image processing
 <div>
 <img src="./WIKI/proposal1.png" width="250"></img> 
 <img src="./WIKI/proposal2.png" width="250"></img>
