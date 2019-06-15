@@ -33,8 +33,6 @@ The following information can be displayed.
 
 ### Using Technology
 1. Image processing
-<div>
-<img src="./WIKI/proposal1.png" width="250"></img> 
-<img src="./WIKI/proposal2.png" width="250"></img>
-<img src="./WIKI/proposal3.png" width="250"></img>
-</div>
+<img src="./WIKI/proposal7.png" width="250"></img>
+<br/>
+* System process image to recognize care tag which is bad quality or wrinkled
