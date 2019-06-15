@@ -27,3 +27,8 @@ Users can know laundry method of user's clothes easily by just taking a picture 
 The following information can be displayed.
 <br/>
 
+* Recognized symbols
+* Standard of symbols
+* informaion about symbol
+
+<img src="./WIKI/proposal5.png" width="50%"></img>
