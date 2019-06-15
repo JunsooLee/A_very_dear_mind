@@ -26,7 +26,7 @@ The following information can be displayed.
 
 * Recognized symbols
 * Standard of symbols
-* informaion about symbol
+* Informaion about symbol
 
 <img src="./WIKI/proposal5.png" width="50%"></img>
 <br/><br/>
@@ -38,3 +38,6 @@ The following information can be displayed.
 2. Image Detecting<br/>
 <img src="./WIKI/proposal3.png" width="50%"></img><br/>
 * System recognizes symbols in processed image of care tag
+3. Show instructions<br/>
+* System show instructions of recognizes symbols with comparing data in database
+
