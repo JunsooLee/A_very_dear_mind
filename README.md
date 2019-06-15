@@ -11,9 +11,7 @@
 
 
 ### System overview
-<div>
-<img src="./WIKI/proposal6.png" width="250"></img> 
-</div>
+<img src="./WIKI/proposal6.png" width="50%"></img> 
 
 ### System interaction
 <img src="./WIKI/proposal4.png" width="50%"></img>
