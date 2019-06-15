@@ -34,10 +34,10 @@ The following information can be displayed.
 ### Using Technology
 **1. Image processing**<br/>
 <img src="./WIKI/proposal7.png" width="50%"></img><br/>
-* System processes image to recognize care tag which is bad quality or wrinkled
+* System processes image to recognize care tag which is bad quality or wrinkled<br/>
 **2. Image Detecting**<br/>
 <img src="./WIKI/proposal3.png" width="50%"></img><br/>
-* System recognizes symbols in processed image of care tag
+* System recognizes symbols in processed image of care tag<br/>
 **3. Show instructions**<br/>
-* System show instructions of recognizes symbols with comparing data in database
+* System show instructions of recognizes symbols with comparing data in database<br/>
 
