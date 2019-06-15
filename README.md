@@ -11,9 +11,9 @@
 
 
 ### System overview
-In Sequence
+**In Sequence**<br/>
 <img src="./WIKI/proposal4.png" width="400"></img>
-<br/>Structure
+<br/>**Structure**<br/>
 <img src="./WIKI/proposal6.png" width="400"></img> 
 
 ### Description
