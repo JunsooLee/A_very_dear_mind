@@ -36,5 +36,5 @@ The following information can be displayed.
 <img src="./WIKI/proposal7.png" width="50%"></img><br/>
 * System processes image to recognize care tag which is bad quality or wrinkled
 2. Image Detecting<br/>
-<img src="./WIKI/proposal4.png" width="50%"></img><br/>
+<img src="./WIKI/proposal3.png" width="50%"></img><br/>
 * System recognizes symbols in processed image of care tag
