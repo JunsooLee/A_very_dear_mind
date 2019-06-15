@@ -8,10 +8,7 @@
 3. So we have experienced unwanted results like shrunken, being discolored or being damaged clothes by wrong laundry method.
 4. This unwanted result can not be compensation by company
 
-### Description
-  Our program detect picture of care tag which user take.<br/>
-  And do image processing to detect symbols in care tag easily.<br/>
-  Then, recognize symbols using YOLO v2 and show how to wash clothes in text.<br/>
+
 
 ### System overview
 <div>
@@ -22,3 +19,11 @@
 
 ### System interaction
 <img src="./WIKI/proposal4.png" width="50%"></img>
+
+### Description
+This program recognize care symbols in tag by image processing and Yolo v2.<br/>
+Users can know laundry method of user's clothes easily by just taking a picture of care tag<br/>
+<br/>
+The following information can be displayed.
+<br/>
+
