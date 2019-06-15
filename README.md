@@ -11,10 +11,10 @@
 
 
 ### System overview
-<div>
-<img src="./WIKI/proposal6.png" width="400"></img> 
+In Sequence
 <img src="./WIKI/proposal4.png" width="400"></img>
-</div>
+<br/>Structure
+<img src="./WIKI/proposal6.png" width="400"></img> 
 
 ### Description
 This program recognize care symbols in tag by image processing and Yolo v2.<br/>
