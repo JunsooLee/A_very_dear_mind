@@ -12,8 +12,8 @@
 
 ### System overview
 <div>
-<img src="./WIKI/proposal6.png" width="250"></img> 
-<img src="./WIKI/proposal4.png" width="250"></img>
+<img src="./WIKI/proposal6.png" width="300"></img> 
+<img src="./WIKI/proposal4.png" width="300"></img>
 </div>
 
 ### Description
