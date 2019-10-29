@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling</folder>
+	<filename>data27.jpg</filename>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling\data27.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>283</xmin>
+			<ymin>407</ymin>
+			<xmax>330</xmax>
+			<ymax>457</ymax>
+		</bndbox>
+	</object>
+</annotation>
