@@ -21,4 +21,4 @@ def imageCrawling(keyword, dir):
 
     
 
-imageCrawling('wash label',"C:\\Users\\ysurk\\Documents\\data")
+imageCrawling('검색 키워드',"저장할 경로")
