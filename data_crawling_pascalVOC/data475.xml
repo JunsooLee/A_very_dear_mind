@@ -1,50 +1,50 @@
 <annotation>
 	<folder>data_crawling_img</folder>
-	<filename>data300.jpg</filename>
-	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data300.jpg</path>
+	<filename>data475.png</filename>
+	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data475.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>500</width>
-		<height>500</height>
+		<width>700</width>
+		<height>560</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>Do_not_dry_clean</name>
+		<name>do_not_wash</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>285</xmin>
-			<ymin>330</ymin>
-			<xmax>311</xmax>
-			<ymax>355</ymax>
+			<xmin>325</xmin>
+			<ymin>66</ymin>
+			<xmax>382</xmax>
+			<ymax>121</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>Do_not_bleach</name>
+		<name>do_not_iron</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>285</xmin>
-			<ymin>231</ymin>
-			<xmax>312</xmax>
-			<ymax>255</ymax>
+			<xmin>402</xmin>
+			<ymin>320</ymin>
+			<xmax>460</xmax>
+			<ymax>376</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>do_not_bleach</name>
+		<name>do_not_dry_clean</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>56</xmin>
-			<ymin>199</ymin>
-			<xmax>84</xmax>
-			<ymax>227</ymax>
+			<xmin>89</xmin>
+			<ymin>449</ymin>
+			<xmax>142</xmax>
+			<ymax>501</ymax>
 		</bndbox>
 	</object>
 </annotation>
