@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data896.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data896.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>1280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>845</xmin>
+			<ymin>1060</ymin>
+			<xmax>978</xmax>
+			<ymax>1160</ymax>
+		</bndbox>
+	</object>
+</annotation>
