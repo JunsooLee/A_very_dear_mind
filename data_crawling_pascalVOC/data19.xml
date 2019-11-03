@@ -1,7 +1,7 @@
 <annotation>
-	<folder>data_crawling</folder>
+	<folder>data_crawling_img</folder>
 	<filename>data19.jpg</filename>
-	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling\data19.jpg</path>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling_img\data19.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>444</xmin>
-			<ymin>221</ymin>
-			<xmax>471</xmax>
-			<ymax>248</ymax>
+			<xmin>122</xmin>
+			<ymin>490</ymin>
+			<xmax>156</xmax>
+			<ymax>526</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>125</xmin>
-			<ymin>488</ymin>
-			<xmax>163</xmax>
-			<ymax>526</ymax>
+			<xmin>444</xmin>
+			<ymin>218</ymin>
+			<xmax>473</xmax>
+			<ymax>242</ymax>
 		</bndbox>
 	</object>
 </annotation>

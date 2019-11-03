@@ -17,9 +17,9 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>840</xmin>
+			<xmin>844</xmin>
 			<ymin>919</ymin>
-			<xmax>905</xmax>
+			<xmax>902</xmax>
 			<ymax>985</ymax>
 		</bndbox>
 	</object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>213</xmin>
-			<ymin>1231</ymin>
-			<xmax>278</xmax>
-			<ymax>1297</ymax>
+			<xmin>214</xmin>
+			<ymin>1232</ymin>
+			<xmax>279</xmax>
+			<ymax>1293</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -42,9 +42,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>487</xmin>
-			<ymin>1231</ymin>
-			<xmax>551</xmax>
-			<ymax>1295</ymax>
+			<ymin>1230</ymin>
+			<xmax>554</xmax>
+			<ymax>1296</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>760</xmin>
-			<ymin>1230</ymin>
-			<xmax>831</xmax>
-			<ymax>1296</ymax>
+			<xmin>763</xmin>
+			<ymin>1231</ymin>
+			<xmax>827</xmax>
+			<ymax>1290</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>490</xmin>
+			<ymin>1501</ymin>
+			<xmax>554</xmax>
+			<ymax>1557</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -66,9 +78,21 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>832</xmin>
-			<ymin>2034</ymin>
-			<xmax>908</xmax>
+			<ymin>2033</ymin>
+			<xmax>907</xmax>
 			<ymax>2100</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>630</xmin>
+			<ymin>2301</ymin>
+			<xmax>692</xmax>
+			<ymax>2360</ymax>
 		</bndbox>
 	</object>
 </annotation>

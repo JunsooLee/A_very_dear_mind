@@ -1,7 +1,7 @@
 <annotation>
-	<folder>data_crawling</folder>
+	<folder>data_crawling_img</folder>
 	<filename>data2.png</filename>
-	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling\data2.png</path>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling_img\data2.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>101</xmin>
-			<ymin>416</ymin>
-			<xmax>132</xmax>
-			<ymax>446</ymax>
+			<xmin>102</xmin>
+			<ymin>415</ymin>
+			<xmax>133</xmax>
+			<ymax>445</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>255</xmin>
+			<xmin>256</xmin>
 			<ymin>416</ymin>
 			<xmax>286</xmax>
-			<ymax>448</ymax>
+			<ymax>445</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -41,21 +41,9 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>409</xmin>
-			<ymin>418</ymin>
-			<xmax>439</xmax>
-			<ymax>447</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>do_not_iron</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>135</xmin>
+			<xmin>411</xmin>
 			<ymin>416</ymin>
-			<xmax>163</xmax>
+			<xmax>438</xmax>
 			<ymax>446</ymax>
 		</bndbox>
 	</object>
@@ -65,10 +53,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>288</xmin>
+			<xmin>134</xmin>
 			<ymin>416</ymin>
-			<xmax>317</xmax>
-			<ymax>448</ymax>
+			<xmax>163</xmax>
+			<ymax>444</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -77,10 +65,22 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>440</xmin>
-			<ymin>414</ymin>
-			<xmax>469</xmax>
-			<ymax>445</ymax>
+			<xmin>287</xmin>
+			<ymin>415</ymin>
+			<xmax>316</xmax>
+			<ymax>443</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>441</xmin>
+			<ymin>416</ymin>
+			<xmax>468</xmax>
+			<ymax>443</ymax>
 		</bndbox>
 	</object>
 </annotation>

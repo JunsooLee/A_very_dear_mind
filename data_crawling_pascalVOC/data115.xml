@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data115.jpg</filename>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling_img\data115.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>737</width>
+		<height>272</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>605</xmin>
+			<ymin>63</ymin>
+			<xmax>684</xmax>
+			<ymax>138</ymax>
+		</bndbox>
+	</object>
+</annotation>

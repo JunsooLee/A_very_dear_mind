@@ -1,7 +1,7 @@
 <annotation>
-	<folder>data_crawling</folder>
+	<folder>data_crawling_img</folder>
 	<filename>data23.jpg</filename>
-	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling\data23.jpg</path>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling_img\data23.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>88</xmin>
-			<ymin>249</ymin>
-			<xmax>150</xmax>
-			<ymax>301</ymax>
+			<ymin>254</ymin>
+			<xmax>149</xmax>
+			<ymax>304</ymax>
 		</bndbox>
 	</object>
 </annotation>
