@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_test</folder>
+	<filename>test48.jpg</filename>
+	<path>C:\Users\user\Documents\GitHub\A_very_dear_mind\data_test\test48.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1439</xmin>
+			<ymin>1954</ymin>
+			<xmax>1711</xmax>
+			<ymax>2204</ymax>
+		</bndbox>
+	</object>
+</annotation>
