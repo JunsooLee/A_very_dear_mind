@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset1</folder>
+	<filename>000206.jpg</filename>
+	<path>C:\Users\user\Desktop\dataset1\000206.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>903</xmin>
+			<ymin>155</ymin>
+			<xmax>1200</xmax>
+			<ymax>397</ymax>
+		</bndbox>
+	</object>
+</annotation>

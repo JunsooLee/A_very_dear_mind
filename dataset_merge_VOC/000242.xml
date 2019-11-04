@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset1</folder>
+	<filename>000242.jpg</filename>
+	<path>C:\Users\user\Desktop\dataset1\000242.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>0</width>
+		<height>0</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_wash</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>184</xmin>
+			<ymin>738</ymin>
+			<xmax>306</xmax>
+			<ymax>818</ymax>
+		</bndbox>
+	</object>
+</annotation>

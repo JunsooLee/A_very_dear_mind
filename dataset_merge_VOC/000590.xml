@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data540.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data540.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>868</width>
+		<height>1023</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>605</xmin>
+			<ymin>331</ymin>
+			<xmax>776</xmax>
+			<ymax>466</ymax>
+		</bndbox>
+	</object>
+</annotation>
