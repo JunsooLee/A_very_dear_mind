@@ -1,0 +1,26 @@
+<annotation>
+	<folder>your_image_dir</folder>
+	<filename>000085.jpg</filename>
+	<path>C:\Projects\keras_talk\your_image_dir\000085.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>758</width>
+		<height>569</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>345</xmin>
+			<ymin>354</ymin>
+			<xmax>411</xmax>
+			<ymax>417</ymax>
+		</bndbox>
+	</object>
+</annotation>

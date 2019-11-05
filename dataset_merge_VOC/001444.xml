@@ -1,0 +1,26 @@
+<annotation>
+	<folder>your_image_dir</folder>
+	<filename>000025.jpg</filename>
+	<path>C:\Projects\keras_talk\your_image_dir\000025.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>548</width>
+		<height>741</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_wash</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>68</xmin>
+			<ymin>677</ymin>
+			<xmax>111</xmax>
+			<ymax>727</ymax>
+		</bndbox>
+	</object>
+</annotation>
