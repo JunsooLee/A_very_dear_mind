@@ -21,4 +21,4 @@ def imageCrawling(keyword, dir):
 
     
 
-imageCrawling('do not iron', "C:\\Users\\ysurk\\Desktop\\iron")
+imageCrawling('do not iron', "경로")
