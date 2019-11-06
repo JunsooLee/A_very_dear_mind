@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset_merge</folder>
+	<filename>001535.jpg</filename>
+	<path>C:\Users\Leejunsoo\Documents\GitHub\A_very_dear_mind\dataset_merge\001535.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>764</width>
+		<height>1074</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>351</xmin>
+			<ymin>296</ymin>
+			<xmax>387</xmax>
+			<ymax>328</ymax>
+		</bndbox>
+	</object>
+</annotation>
