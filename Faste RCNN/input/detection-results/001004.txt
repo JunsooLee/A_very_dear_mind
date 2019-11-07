@@ -1,0 +1,17 @@
+do_not_bleach 1.00 nan nan nan nan
+do_not_bleach 1.00 nan nan nan nan
+do_not_bleach 1.00 nan nan nan nan
+do_not_bleach 1.00 nan nan nan nan
+do_not_bleach 1.00 nan nan nan nan
+do_not_bleach 0.99 nan nan nan nan
+do_not_bleach 0.99 nan nan nan nan
+do_not_bleach 0.96 nan nan nan nan
+do_not_bleach 0.96 nan nan nan nan
+do_not_bleach 0.95 nan nan nan nan
+do_not_bleach 0.95 nan nan nan nan
+do_not_bleach 0.93 nan nan nan nan
+do_not_bleach 0.76 nan nan nan nan
+do_not_bleach 0.45 nan nan nan nan
+do_not_bleach 0.39 nan nan nan nan
+do_not_bleach 0.19 nan nan nan nan
+do_not_bleach 0.17 nan nan nan nan

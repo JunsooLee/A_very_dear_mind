@@ -1,0 +1,3 @@
+do_not_bleach 607 3224 683 3274
+do_not_iron 696 3213 777 3281
+do_not_dry_clean 791 3219 867 3283

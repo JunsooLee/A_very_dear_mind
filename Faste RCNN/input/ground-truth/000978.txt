@@ -1,0 +1,2 @@
+do_not_bleach 728 1737 1083 2076
+do_not_dry_clean 1467 1793 1811 2126

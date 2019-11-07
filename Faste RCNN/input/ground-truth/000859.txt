@@ -1,0 +1,2 @@
+do_not_bleach 873 433 1173 704
+do_not_dry_clean 1906 433 2211 733

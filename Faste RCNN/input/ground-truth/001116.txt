@@ -1,0 +1,4 @@
+do_not_iron 180 145 202 162
+do_not_iron 410 146 433 165
+do_not_iron 173 382 197 404
+do_not_iron 436 372 458 395

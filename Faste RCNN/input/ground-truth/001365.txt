@@ -1,0 +1,4 @@
+do_not_bleach 691 501 766 565
+do_not_wash 617 500 695 568
+do_not_iron 828 505 891 569
+do_not_dry_clean 892 506 971 572

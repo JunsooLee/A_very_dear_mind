@@ -1,0 +1,8 @@
+do_not_bleach 129 210 143 224
+do_not_dry_clean 183 226 197 241
+do_not_bleach 433 139 454 161
+do_not_bleach 161 418 172 431
+do_not_dry_clean 200 418 211 430
+do_not_bleach 279 450 289 463
+do_not_bleach 472 353 484 365
+do_not_dry_clean 318 451 330 463

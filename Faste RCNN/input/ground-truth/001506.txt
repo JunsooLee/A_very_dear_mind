@@ -1,0 +1,2 @@
+do_not_wash 396 409 503 478
+do_not_bleach 503 413 596 489

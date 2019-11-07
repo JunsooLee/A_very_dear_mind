@@ -1,0 +1,3 @@
+do_not_bleach 33 93 78 139
+do_not_iron 33 151 77 196
+do_not_dry_clean 33 213 76 253

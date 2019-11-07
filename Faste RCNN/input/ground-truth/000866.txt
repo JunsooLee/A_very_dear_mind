@@ -1,0 +1,4 @@
+do_not_bleach 650 899 866 1099
+do_not_dry_clean 1455 960 1661 1115
+do_not_dry_clean 1439 2315 1655 2521
+do_not_bleach 650 2349 861 2526

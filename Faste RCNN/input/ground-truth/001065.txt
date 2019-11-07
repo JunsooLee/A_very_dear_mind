@@ -1,0 +1,3 @@
+do_not_bleach 260 244 462 405
+do_not_iron 768 241 989 407
+do_not_dry_clean 1057 239 1274 402

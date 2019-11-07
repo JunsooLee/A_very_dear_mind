@@ -1,0 +1,26 @@
+<annotation>
+	<folder>까마귀</folder>
+	<filename>001799.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\까마귀\001799.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1449</xmin>
+			<ymin>1028</ymin>
+			<xmax>1804</xmax>
+			<ymax>1339</ymax>
+		</bndbox>
+	</object>
+</annotation>

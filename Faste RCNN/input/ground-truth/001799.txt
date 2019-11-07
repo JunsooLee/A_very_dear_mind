@@ -1,0 +1,2 @@
+do_not_iron 551 124 634 205
+do_not_bleach 448 106 546 195

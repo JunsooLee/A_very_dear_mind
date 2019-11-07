@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset_merge</folder>
+	<filename>001530.jpg</filename>
+	<path>C:\Users\Leejunsoo\Documents\GitHub\A_very_dear_mind\dataset_merge\001530.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>267</xmin>
+			<ymin>229</ymin>
+			<xmax>311</xmax>
+			<ymax>272</ymax>
+		</bndbox>
+	</object>
+</annotation>

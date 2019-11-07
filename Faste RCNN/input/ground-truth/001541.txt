@@ -1,0 +1,2 @@
+do_not_dry_clean 1309 3530 1552 3773
+do_not_bleach 734 3528 986 3772

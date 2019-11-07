@@ -1,0 +1,2 @@
+do_not_dry_clean 801 733 971 901
+do_not_bleach 450 746 618 899

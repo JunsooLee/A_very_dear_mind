@@ -1,0 +1,4 @@
+do_not_wash 58 145 145 230
+do_not_iron 533 437 608 520
+do_not_bleach 67 665 136 741
+do_not_dry_clean 65 746 137 819

@@ -1,0 +1,3 @@
+do_not_wash 247 369 583 614
+do_not_iron 615 372 947 612
+do_not_bleach 979 374 1249 603

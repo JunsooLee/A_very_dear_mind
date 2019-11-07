@@ -1,0 +1,3 @@
+do_not_wash 305 163 357 208
+do_not_wash 305 222 357 267
+do_not_wash 304 285 356 330

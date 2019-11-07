@@ -1,0 +1,4 @@
+do_not_wash 504 2047 537 2071
+do_not_bleach 504 2079 532 2110
+do_not_iron 501 2150 537 2177
+do_not_dry_clean 504 2182 534 2211

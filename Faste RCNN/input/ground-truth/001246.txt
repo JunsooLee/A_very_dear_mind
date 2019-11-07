@@ -1,0 +1,3 @@
+do_not_iron 260 356 288 383
+do_not_dry_clean 324 348 350 373
+do_not_dry_clean 391 201 420 225

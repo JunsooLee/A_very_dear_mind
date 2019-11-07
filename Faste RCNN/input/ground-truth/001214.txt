@@ -1,0 +1,2 @@
+do_not_bleach 522 131 656 247
+do_not_dry_clean 806 261 926 368

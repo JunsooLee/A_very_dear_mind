@@ -1,0 +1,4 @@
+do_not_iron 844 268 916 333
+do_not_wash 846 77 917 140
+do_not_bleach 848 170 914 233
+do_not_dry_clean 843 368 919 437

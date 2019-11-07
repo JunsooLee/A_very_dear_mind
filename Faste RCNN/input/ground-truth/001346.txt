@@ -1,0 +1,2 @@
+do_not_bleach 471 857 551 924
+do_not_dry_clean 687 870 769 934

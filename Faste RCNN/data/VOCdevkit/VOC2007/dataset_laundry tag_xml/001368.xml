@@ -1,0 +1,26 @@
+<annotation>
+	<folder>1</folder>
+	<filename>001543.jpg</filename>
+	<path>C:\Users\user\Desktop\1\001543.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>2268</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_wash</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1418</xmin>
+			<ymin>628</ymin>
+			<xmax>1771</xmax>
+			<ymax>952</ymax>
+		</bndbox>
+	</object>
+</annotation>

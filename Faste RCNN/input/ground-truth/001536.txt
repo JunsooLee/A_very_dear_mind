@@ -1,0 +1,2 @@
+do_not_bleach 326 616 399 685
+do_not_wash 466 613 523 668

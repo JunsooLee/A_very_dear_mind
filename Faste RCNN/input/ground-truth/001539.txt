@@ -1,0 +1,2 @@
+do_not_wash 328 376 651 641
+do_not_bleach 712 380 973 602

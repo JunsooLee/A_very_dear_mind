@@ -1,0 +1,4 @@
+do_not_bleach 1348 922 1613 1162
+do_not_bleach 1343 1202 1598 1427
+do_not_bleach 1258 1482 1478 1682
+do_not_bleach 1588 1737 1843 1957

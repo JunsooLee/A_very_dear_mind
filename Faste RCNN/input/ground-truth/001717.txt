@@ -1,0 +1,2 @@
+do_not_wash 199 586 259 644
+do_not_bleach 263 588 321 642

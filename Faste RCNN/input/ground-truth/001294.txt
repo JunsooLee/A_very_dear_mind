@@ -1,0 +1,3 @@
+do_not_wash 417 60 437 74
+do_not_dry_clean 425 234 441 249
+do_not_iron 519 204 535 219

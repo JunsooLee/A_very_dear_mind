@@ -1,0 +1,15 @@
+do_not_wash 0.99 nan nan nan nan
+do_not_wash 0.99 nan nan nan nan
+do_not_wash 0.99 nan nan nan nan
+do_not_wash 0.94 nan nan nan nan
+do_not_wash 0.93 nan nan nan nan
+do_not_wash 0.90 nan nan nan nan
+do_not_wash 0.60 nan nan nan nan
+do_not_wash 0.52 nan nan nan nan
+do_not_wash 0.52 nan nan nan nan
+do_not_wash 0.42 nan nan nan nan
+do_not_wash 0.40 nan nan nan nan
+do_not_wash 0.34 nan nan nan nan
+do_not_wash 0.27 nan nan nan nan
+do_not_wash 0.15 nan nan nan nan
+do_not_wash 0.05 nan nan nan nan

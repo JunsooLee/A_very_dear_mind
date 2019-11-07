@@ -1,0 +1,2 @@
+do_not_wash 123 333 167 370
+do_not_dry_clean 189 335 229 371

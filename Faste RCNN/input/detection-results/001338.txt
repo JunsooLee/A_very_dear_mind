@@ -1,0 +1,16 @@
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.96 nan nan nan nan
+do_not_dry_clean 0.95 nan nan nan nan
+do_not_dry_clean 0.87 nan nan nan nan
+do_not_dry_clean 0.44 nan nan nan nan
+do_not_dry_clean 0.40 nan nan nan nan
+do_not_dry_clean 0.16 nan nan nan nan
+do_not_dry_clean 0.14 nan nan nan nan
+do_not_dry_clean 0.13 nan nan nan nan
+do_not_dry_clean 0.06 nan nan nan nan

@@ -1,0 +1,3 @@
+do_not_bleach 661 993 978 1215
+do_not_iron 661 1249 972 1532
+do_not_dry_clean 1011 1254 1255 1510

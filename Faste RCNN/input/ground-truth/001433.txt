@@ -1,0 +1,8 @@
+do_not_wash 1499 1062 1680 1224
+do_not_wash 1494 1479 1673 1662
+do_not_bleach 1678 1481 1831 1660
+do_not_bleach 1665 1042 1853 1228
+do_not_iron 2012 1038 2218 1215
+do_not_iron 2020 1477 2184 1636
+do_not_dry_clean 2182 1462 2390 1624
+do_not_dry_clean 2208 1028 2410 1195

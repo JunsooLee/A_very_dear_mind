@@ -1,0 +1,6 @@
+do_not_iron 212 96 245 120
+do_not_bleach 250 96 275 121
+do_not_bleach 206 174 230 200
+do_not_iron 213 253 246 277
+do_not_bleach 251 256 275 275
+do_not_bleach 207 333 230 360

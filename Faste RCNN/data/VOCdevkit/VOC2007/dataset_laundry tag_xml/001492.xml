@@ -1,0 +1,26 @@
+<annotation>
+	<folder>까마귀</folder>
+	<filename>001711.jpg</filename>
+	<path>C:\Users\ysurk\Desktop\까마귀\001711.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1607</xmin>
+			<ymin>2221</ymin>
+			<xmax>1821</xmax>
+			<ymax>2459</ymax>
+		</bndbox>
+	</object>
+</annotation>
