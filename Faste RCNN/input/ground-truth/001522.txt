@@ -1,2 +1,0 @@
-do_not_bleach 329 623 394 686
-do_not_bleach 466 613 528 668

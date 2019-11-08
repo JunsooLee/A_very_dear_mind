@@ -1,3 +1,0 @@
-do_not_wash 419 78 491 146
-do_not_wash 420 166 492 234
-do_not_wash 420 254 492 322

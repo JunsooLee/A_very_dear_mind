@@ -1,2 +1,0 @@
-do_not_bleach 336 163 356 180
-do_not_bleach 85 371 111 400

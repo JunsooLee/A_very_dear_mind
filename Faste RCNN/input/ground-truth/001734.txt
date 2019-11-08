@@ -1,2 +1,0 @@
-do_not_dry_clean 419 554 468 598
-do_not_iron 352 531 414 584

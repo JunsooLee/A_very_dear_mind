@@ -1,3 +1,0 @@
-do_not_wash 561 1782 939 2149
-do_not_iron 933 1782 1244 2126
-do_not_dry_clean 1261 1799 1533 2115

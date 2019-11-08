@@ -1,4 +1,0 @@
-do_not_iron 643 295 753 388
-do_not_iron 586 573 698 681
-do_not_iron 571 808 661 870
-do_not_iron 558 985 633 1050

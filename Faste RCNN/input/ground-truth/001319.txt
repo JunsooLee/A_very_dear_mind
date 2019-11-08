@@ -1,1 +1,0 @@
-do_not_dry_clean 266 108 298 133

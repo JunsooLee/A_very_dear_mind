@@ -1,3 +1,0 @@
-do_not_bleach 472 398 517 431
-do_not_iron 562 392 615 435
-do_not_dry_clean 618 394 664 437

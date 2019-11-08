@@ -1,7 +1,0 @@
-do_not_bleach 238 506 267 530
-do_not_bleach 536 507 563 529
-do_not_bleach 836 506 865 529
-do_not_bleach 398 811 428 835
-do_not_bleach 707 1746 740 1770
-do_not_bleach 380 2058 408 2081
-do_not_iron 472 812 505 836

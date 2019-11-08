@@ -1,3 +1,0 @@
-do_not_bleach 240 128 255 144
-do_not_iron 290 128 308 145
-do_not_wash 309 130 327 145

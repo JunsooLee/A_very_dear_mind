@@ -1,2 +1,0 @@
-do_not_bleach 258 300 353 385
-do_not_dry_clean 469 302 577 400

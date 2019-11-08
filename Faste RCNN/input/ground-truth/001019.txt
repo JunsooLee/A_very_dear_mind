@@ -1,3 +1,0 @@
-do_not_bleach 889 2176 1150 2404
-do_not_bleach 1144 2415 1450 2632
-do_not_iron 883 2443 1128 2654

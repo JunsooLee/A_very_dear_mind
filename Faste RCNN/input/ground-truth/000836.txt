@@ -1,8 +1,0 @@
-do_not_bleach 1095 1378 1441 1616
-do_not_bleach 1103 1628 1457 1870
-do_not_dry_clean 1120 1886 1445 2124
-do_not_bleach 1478 1861 1799 2082
-do_not_dry_clean 2103 1328 2366 1536
-do_not_dry_clean 2120 1574 2391 1774
-do_not_bleach 1045 2166 1332 2416
-do_not_dry_clean 1624 2111 1886 2332

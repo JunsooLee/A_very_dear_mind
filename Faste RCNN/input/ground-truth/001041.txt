@@ -1,2 +1,0 @@
-do_not_bleach 1735 1138 1844 1262
-do_not_bleach 2220 1119 2382 1247

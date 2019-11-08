@@ -1,6 +1,0 @@
-do_not_bleach 131 147 150 166
-do_not_bleach 173 157 190 176
-do_not_iron 209 159 227 177
-do_not_dry_clean 226 158 243 176
-do_not_bleach 257 194 272 209
-do_not_dry_clean 297 227 312 244
