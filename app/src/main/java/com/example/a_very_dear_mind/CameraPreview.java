@@ -21,11 +21,13 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.hardware.Camera;
 
+import java.io.ByteArrayOutputStream;
+
 // 카메라에서 가져온 영상을 보여주는 카메라 프리뷰 클래스
 public class CameraPreview extends AppCompatActivity{
 
     CameraSurfaceView cameraView;
-
+    Bitmap bitmap;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,6 @@ public class CameraPreview extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 takePicture();
-                startActivity(new Intent(getApplication(), ConnectActivity.class));
             }
         });
     }
@@ -49,7 +50,8 @@ public class CameraPreview extends AppCompatActivity{
         cameraView.capture(new Camera.PictureCallback() {
             public void onPictureTaken(byte[] data, Camera camera) {
                 try {
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+
                     String outUriStr = MediaStore.Images.Media.insertImage(
                             getContentResolver(),
                             bitmap,
@@ -64,6 +66,14 @@ public class CameraPreview extends AppCompatActivity{
                         sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, outUri));
                     }
                     camera.startPreview();
+
+                    Intent intent = new Intent(getApplicationContext(), ConnectActivity.class);
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+                    intent.putExtra("image", byteArray);
+
+                    startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
