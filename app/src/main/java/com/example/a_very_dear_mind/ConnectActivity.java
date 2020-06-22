@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -46,7 +47,7 @@ public class ConnectActivity extends AppCompatActivity {
 
         byte[] byteArray = getIntent().getByteArrayExtra("image");
         image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-
+        Log.d("log1", Integer.toString(image.getHeight()));
         tv = (TextView)findViewById(R.id.textView);
 
         imageView = (ImageView) findViewById(R.id.image1) ;
@@ -58,8 +59,9 @@ public class ConnectActivity extends AppCompatActivity {
         handler = new Handler();
 
         baos = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         final byte[] byteArray = baos.toByteArray();
+        Log.d("log1", Integer.toString(byteArray.length));
 
         new Thread(new Runnable() {
             @Override
@@ -70,9 +72,9 @@ public class ConnectActivity extends AppCompatActivity {
 
                 try {
                     socket = new Socket(newIP, port);
-                    Log.d("log2", "Correct Connect");
+                    Log.d("log1", "Correct Connect");
                 } catch (IOException e) {
-                    Log.d("log2", "Not Connect");
+                    Log.d("log1", "Not Connect");
                     e.printStackTrace();
                 }
 
@@ -80,13 +82,12 @@ public class ConnectActivity extends AppCompatActivity {
                     dos = new DataOutputStream(socket.getOutputStream());
                     dis = new DataInputStream(socket.getInputStream());
                     dos.write(byteArray);
-
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.d("Buffer", "Incorrect Buffer");
                 }
 
-                while(true) {
+                /*while(true) {
                     try {
                         String line = "";
                         line = dis.readUTF();
@@ -99,7 +100,7 @@ public class ConnectActivity extends AppCompatActivity {
                         e.printStackTrace();
                         Log.d("InLine", "Reading from server is error.");
                     }
-                }
+                }*/
             }
         }).start();
     }

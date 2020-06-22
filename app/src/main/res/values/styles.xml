@@ -1,12 +1,30 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="Theme.Dark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item> <!--Status Bar의 배경색-->
+        <item name="android:windowLightStatusBar">true</item> <!--Status Bar 아이콘의 색상 true:검은 아이콘, false:흰 아이콘-->
+
+        <item name="toolbarStyle">@style/ToolbarStyle.Dark</item> <!--Toolbar 스타일-->
+        <item name="actionMenuTextColor">@color/textThemeDark</item> <!--액션 메뉴의 텍스트 색상-->
+        <item name="colorControlNormal">@color/textThemeDark</item> <!--홈/뒤로가기 버튼의 색상-->
     </style>
 
+    <style name="ToolbarStyle.Dark" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/white</item> <!-- Toolbar의 배경색-->
+        <item name="titleTextAppearance">@style/ToolbarTitleStyle.Dark</item> <!-- Toolbar의 타이틀 텍스트-->
+        <item name="subtitleTextAppearance">@style/ToolbarSubtitleStyle.Dark</item> <!-- Toolbar의 서브타이틀 텍스트-->
+    </style>
+
+    <!-- Toolbar의 타이틀 텍스트-->
+    <style name="ToolbarTitleStyle.Dark" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/textThemeDark</item> <!-- Toolbar의 타이틀 텍스트 색상-->
+        <item name="android:textSize">15dp</item> <!-- Toolbar의 타이틀 텍스트 사이즈-->
+    </style>
+
+    <!-- Toolbar의 서브타이틀 텍스트-->
+    <style name="ToolbarSubtitleStyle.Dark" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@color/textThemeDark</item> <!-- Toolbar의 서브타이틀 텍스트 색상-->
+        <item name="android:textSize">12dp</item> <!-- Toolbar의 서브타이틀 텍스트 사이즈-->
+    </style>
 </resources>
