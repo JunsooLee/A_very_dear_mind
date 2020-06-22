@@ -11,8 +11,11 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.pedro.library.AutoPermissions;
 import com.pedro.library.AutoPermissionsListener;
 
@@ -23,14 +26,19 @@ public class MainPage extends AppCompatActivity implements AutoPermissionsListen
 
     Button photoBtn;
     Intent intent;
+    ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        photoBtn = findViewById(R.id.photobtn);
+        photoBtn = (Button) findViewById(R.id.photobtn);
         intent = new Intent(this,CameraPreview.class);
+        iv = (ImageView) findViewById(R.id.image);
+
+        DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(iv);
+        Glide.with(this).load(R.raw.washing).into(imageViewTarget);
 
         photoBtn.setOnClickListener(new View.OnClickListener(){
             @Override
