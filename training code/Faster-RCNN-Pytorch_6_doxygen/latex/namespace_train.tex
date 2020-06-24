@@ -1,0 +1,335 @@
+\hypertarget{namespace_train}{}\doxysection{Train 네임스페이스 참조}
+\label{namespace_train}\index{Train@{Train}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}{eval}} (\mbox{\hyperlink{namespace_train_ad5dd2bbaf3d73ba5855c2fd8c8f8a932}{dataloader}}, \mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}}, test\+\_\+num=1000)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+M\+A\+P\char`\"{}를 구하기 위한 함수 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_train_a7a6eb595c3a045d47da0a7d07ab81f4f}{dataset}} = \mbox{\hyperlink{classdata_1_1dataset_1_1_dataset}{Dataset}}(opt)
+\begin{DoxyCompactList}\small\item\em Main \mbox{\hyperlink{namespace_train}{Train}} 함수 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_train_ad5dd2bbaf3d73ba5855c2fd8c8f8a932}{dataloader}}
+\item 
+\mbox{\hyperlink{namespace_train_af7f4906b37df5d331aa2d484bd3d9d64}{testset}} = \mbox{\hyperlink{classdata_1_1dataset_1_1_test_dataset}{Test\+Dataset}}(opt)
+\item 
+\mbox{\hyperlink{namespace_train_ac74afadc0876c3e36b91217667a26705}{test\+\_\+dataloader}}
+\item 
+\mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}} = \mbox{\hyperlink{classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n}{Faster\+R\+C\+NN}}()
+\item 
+\mbox{\hyperlink{namespace_train_a26489931632bdf07047257bfdecec8bb}{trainer}} = \mbox{\hyperlink{classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer}{Faster\+R\+C\+N\+N\+Trainer}}(\mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}}).cuda()
+\item 
+\mbox{\hyperlink{namespace_train_acfde390cc257e047061f213ac4f1ba38}{lr\+\_\+}} = opt.\+lr
+\item 
+int \mbox{\hyperlink{namespace_train_a75d6c70fc72ec8eb7ff195a34a9b3925}{best\+\_\+map}} = 0
+\item 
+list \mbox{\hyperlink{namespace_train_a1dbaf679257ac9a494ad34dfa55bf857}{loss\+\_\+list\+\_\+roi\+\_\+cls}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a8ed3b645bbfbfbca1d34d7b9a99e181c}{loss\+\_\+list\+\_\+roi\+\_\+loc}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a7742547b172c0b0d7d920b21cd076dd6}{loss\+\_\+list\+\_\+rpn\+\_\+cls}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a827cd592db34974bfaae07051f57a6e7}{loss\+\_\+list\+\_\+rpn\+\_\+loc}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}{scale}} = at.\+scalar(scale)
+\item 
+\mbox{\hyperlink{namespace_train_a70e5e800d47c89ec0745213cc0854e27}{img}}
+\item 
+\mbox{\hyperlink{namespace_train_a844fe8639a0502380df415acfeb456f6}{bbox}}
+\item 
+\mbox{\hyperlink{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}{label}}
+\item 
+\mbox{\hyperlink{namespace_train_a09f7b01cea52bdb49d4ed4117f8648f4}{loss\+\_\+list}} = trainer.\+train\+\_\+step(\mbox{\hyperlink{namespace_train_a70e5e800d47c89ec0745213cc0854e27}{img}}, \mbox{\hyperlink{namespace_train_a844fe8639a0502380df415acfeb456f6}{bbox}}, \mbox{\hyperlink{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}{label}}, \mbox{\hyperlink{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}{scale}})
+\item 
+\mbox{\hyperlink{namespace_train_a40ae9e810abf7a203f4f315c94ce1faf}{save\+\_\+optimizer}}
+\item 
+\mbox{\hyperlink{namespace_train_a45a17572c46cae0212432ab30c9d55c3}{True}}
+\item 
+def \mbox{\hyperlink{namespace_train_aa77fc258a8bb1ca01927e7ac13d0bd9f}{eval\+\_\+result}} = \mbox{\hyperlink{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}{eval}}(\mbox{\hyperlink{namespace_train_ac74afadc0876c3e36b91217667a26705}{test\+\_\+dataloader}}, \mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}}, test\+\_\+num=opt.\+test\+\_\+num)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}\label{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}} 
+\index{Train@{Train}!eval@{eval}}
+\index{eval@{eval}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily def Train.\+eval (\begin{DoxyParamCaption}\item[{}]{dataloader,  }\item[{}]{faster\+\_\+rcnn,  }\item[{}]{test\+\_\+num = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+\char`\"{}\+M\+A\+P\char`\"{}를 구하기 위한 함수 
+
+
+\begin{DoxyParams}{매개변수}
+{\em dataloader} & 평가할 이미지에 대한 option \\
+\hline
+{\em faster\+\_\+rcnn} & 학습된 model \\
+\hline
+{\em test\+\_\+num} & 평가할 image 개수 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+result \textquotesingle{}ap\textquotesingle{} 와 \textquotesingle{}map\textquotesingle{} 으로 구성 
+\end{DoxyReturn}
+
+
+Train.\+py 파일의 35 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}{eval}}(dataloader, faster\_rcnn, test\_num=1000):}
+\DoxyCodeLine{36     pred\_bboxes, pred\_labels, pred\_scores = list(), list(), list()}
+\DoxyCodeLine{37     gt\_bboxes, gt\_labels, gt\_difficults = list(), list(), list()}
+\DoxyCodeLine{38     \textcolor{keywordflow}{for} ii, (imgs, sizes, gt\_bboxes\_, gt\_labels\_, gt\_difficults\_) \textcolor{keywordflow}{in} tqdm(enumerate(dataloader)):}
+\DoxyCodeLine{39         sizes = [sizes[0][0], sizes[1][0]]}
+\DoxyCodeLine{40         pred\_bboxes\_, pred\_labels\_, pred\_scores\_ = faster\_rcnn.predict(imgs, [sizes])}
+\DoxyCodeLine{41         gt\_bboxes += list(gt\_bboxes\_.numpy())}
+\DoxyCodeLine{42         gt\_labels += list(gt\_labels\_.numpy())}
+\DoxyCodeLine{43         gt\_difficults += list(gt\_difficults\_.numpy())}
+\DoxyCodeLine{44         pred\_bboxes += pred\_bboxes\_}
+\DoxyCodeLine{45         pred\_labels += pred\_labels\_}
+\DoxyCodeLine{46         pred\_scores += pred\_scores\_}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} ii == test\_num: \textcolor{keywordflow}{break}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     result = \mbox{\hyperlink{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}{eval\_detection\_voc}}(}
+\DoxyCodeLine{50         pred\_bboxes, pred\_labels, pred\_scores,}
+\DoxyCodeLine{51         gt\_bboxes, gt\_labels, gt\_difficults,}
+\DoxyCodeLine{52         use\_07\_metric=\textcolor{keyword}{True})}
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} result}
+\DoxyCodeLine{54 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_train_a073c054b09d56829c4927f2c5fe5d47a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespace_train_a844fe8639a0502380df415acfeb456f6}\label{namespace_train_a844fe8639a0502380df415acfeb456f6}} 
+\index{Train@{Train}!bbox@{bbox}}
+\index{bbox@{bbox}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{bbox}{bbox}}
+{\footnotesize\ttfamily Train.\+bbox}
+
+
+
+Train.\+py 파일의 92 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a75d6c70fc72ec8eb7ff195a34a9b3925}\label{namespace_train_a75d6c70fc72ec8eb7ff195a34a9b3925}} 
+\index{Train@{Train}!best\_map@{best\_map}}
+\index{best\_map@{best\_map}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{best\_map}{best\_map}}
+{\footnotesize\ttfamily def Train.\+best\+\_\+map = 0}
+
+
+
+Train.\+py 파일의 83 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_ad5dd2bbaf3d73ba5855c2fd8c8f8a932}\label{namespace_train_ad5dd2bbaf3d73ba5855c2fd8c8f8a932}} 
+\index{Train@{Train}!dataloader@{dataloader}}
+\index{dataloader@{dataloader}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{dataloader}{dataloader}}
+{\footnotesize\ttfamily Train.\+dataloader}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  data\_.DataLoader(dataset,}
+\DoxyCodeLine{2                                   batch\_size=1,}
+\DoxyCodeLine{3                                   shuffle=\textcolor{keyword}{True},}
+\DoxyCodeLine{4                                   num\_workers=opt.num\_workers)}
+
+\end{DoxyCode}
+
+
+Train.\+py 파일의 60 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a7a6eb595c3a045d47da0a7d07ab81f4f}\label{namespace_train_a7a6eb595c3a045d47da0a7d07ab81f4f}} 
+\index{Train@{Train}!dataset@{dataset}}
+\index{dataset@{dataset}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily Train.\+dataset = \mbox{\hyperlink{classdata_1_1dataset_1_1_dataset}{Dataset}}(opt)}
+
+
+
+Main \mbox{\hyperlink{namespace_train}{Train}} 함수 
+
+
+
+Train.\+py 파일의 59 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_aa77fc258a8bb1ca01927e7ac13d0bd9f}\label{namespace_train_aa77fc258a8bb1ca01927e7ac13d0bd9f}} 
+\index{Train@{Train}!eval\_result@{eval\_result}}
+\index{eval\_result@{eval\_result}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{eval\_result}{eval\_result}}
+{\footnotesize\ttfamily def Train.\+eval\+\_\+result = \mbox{\hyperlink{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}{eval}}(\mbox{\hyperlink{namespace_train_ac74afadc0876c3e36b91217667a26705}{test\+\_\+dataloader}}, \mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}}, test\+\_\+num=opt.\+test\+\_\+num)}
+
+
+
+Train.\+py 파일의 117 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a7ffe10a5665102960b6d172e059dd72b}\label{namespace_train_a7ffe10a5665102960b6d172e059dd72b}} 
+\index{Train@{Train}!faster\_rcnn@{faster\_rcnn}}
+\index{faster\_rcnn@{faster\_rcnn}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{faster\_rcnn}{faster\_rcnn}}
+{\footnotesize\ttfamily Train.\+faster\+\_\+rcnn = \mbox{\hyperlink{classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n}{Faster\+R\+C\+NN}}()}
+
+
+
+Train.\+py 파일의 74 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a70e5e800d47c89ec0745213cc0854e27}\label{namespace_train_a70e5e800d47c89ec0745213cc0854e27}} 
+\index{Train@{Train}!img@{img}}
+\index{img@{img}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily Train.\+img}
+
+
+
+Train.\+py 파일의 92 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}\label{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}} 
+\index{Train@{Train}!label@{label}}
+\index{label@{label}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily Train.\+label}
+
+
+
+Train.\+py 파일의 92 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a09f7b01cea52bdb49d4ed4117f8648f4}\label{namespace_train_a09f7b01cea52bdb49d4ed4117f8648f4}} 
+\index{Train@{Train}!loss\_list@{loss\_list}}
+\index{loss\_list@{loss\_list}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{loss\_list}{loss\_list}}
+{\footnotesize\ttfamily Train.\+loss\+\_\+list = trainer.\+train\+\_\+step(\mbox{\hyperlink{namespace_train_a70e5e800d47c89ec0745213cc0854e27}{img}}, \mbox{\hyperlink{namespace_train_a844fe8639a0502380df415acfeb456f6}{bbox}}, \mbox{\hyperlink{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}{label}}, \mbox{\hyperlink{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}{scale}})}
+
+
+
+Train.\+py 파일의 95 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a1dbaf679257ac9a494ad34dfa55bf857}\label{namespace_train_a1dbaf679257ac9a494ad34dfa55bf857}} 
+\index{Train@{Train}!loss\_list\_roi\_cls@{loss\_list\_roi\_cls}}
+\index{loss\_list\_roi\_cls@{loss\_list\_roi\_cls}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{loss\_list\_roi\_cls}{loss\_list\_roi\_cls}}
+{\footnotesize\ttfamily list Train.\+loss\+\_\+list\+\_\+roi\+\_\+cls = \mbox{[}$\,$\mbox{]}}
+
+
+
+Train.\+py 파일의 85 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a8ed3b645bbfbfbca1d34d7b9a99e181c}\label{namespace_train_a8ed3b645bbfbfbca1d34d7b9a99e181c}} 
+\index{Train@{Train}!loss\_list\_roi\_loc@{loss\_list\_roi\_loc}}
+\index{loss\_list\_roi\_loc@{loss\_list\_roi\_loc}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{loss\_list\_roi\_loc}{loss\_list\_roi\_loc}}
+{\footnotesize\ttfamily list Train.\+loss\+\_\+list\+\_\+roi\+\_\+loc = \mbox{[}$\,$\mbox{]}}
+
+
+
+Train.\+py 파일의 86 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a7742547b172c0b0d7d920b21cd076dd6}\label{namespace_train_a7742547b172c0b0d7d920b21cd076dd6}} 
+\index{Train@{Train}!loss\_list\_rpn\_cls@{loss\_list\_rpn\_cls}}
+\index{loss\_list\_rpn\_cls@{loss\_list\_rpn\_cls}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{loss\_list\_rpn\_cls}{loss\_list\_rpn\_cls}}
+{\footnotesize\ttfamily list Train.\+loss\+\_\+list\+\_\+rpn\+\_\+cls = \mbox{[}$\,$\mbox{]}}
+
+
+
+Train.\+py 파일의 87 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a827cd592db34974bfaae07051f57a6e7}\label{namespace_train_a827cd592db34974bfaae07051f57a6e7}} 
+\index{Train@{Train}!loss\_list\_rpn\_loc@{loss\_list\_rpn\_loc}}
+\index{loss\_list\_rpn\_loc@{loss\_list\_rpn\_loc}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{loss\_list\_rpn\_loc}{loss\_list\_rpn\_loc}}
+{\footnotesize\ttfamily list Train.\+loss\+\_\+list\+\_\+rpn\+\_\+loc = \mbox{[}$\,$\mbox{]}}
+
+
+
+Train.\+py 파일의 88 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_acfde390cc257e047061f213ac4f1ba38}\label{namespace_train_acfde390cc257e047061f213ac4f1ba38}} 
+\index{Train@{Train}!lr\_@{lr\_}}
+\index{lr\_@{lr\_}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{lr\_}{lr\_}}
+{\footnotesize\ttfamily Train.\+lr\+\_\+ = opt.\+lr}
+
+
+
+Train.\+py 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a40ae9e810abf7a203f4f315c94ce1faf}\label{namespace_train_a40ae9e810abf7a203f4f315c94ce1faf}} 
+\index{Train@{Train}!save\_optimizer@{save\_optimizer}}
+\index{save\_optimizer@{save\_optimizer}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{save\_optimizer}{save\_optimizer}}
+{\footnotesize\ttfamily Train.\+save\+\_\+optimizer}
+
+
+
+Train.\+py 파일의 109 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}\label{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}} 
+\index{Train@{Train}!scale@{scale}}
+\index{scale@{scale}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily Train.\+scale = at.\+scalar(scale)}
+
+
+
+Train.\+py 파일의 91 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_ac74afadc0876c3e36b91217667a26705}\label{namespace_train_ac74afadc0876c3e36b91217667a26705}} 
+\index{Train@{Train}!test\_dataloader@{test\_dataloader}}
+\index{test\_dataloader@{test\_dataloader}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{test\_dataloader}{test\_dataloader}}
+{\footnotesize\ttfamily Train.\+test\+\_\+dataloader}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  data\_.DataLoader(testset,}
+\DoxyCodeLine{2                                        batch\_size=1,}
+\DoxyCodeLine{3                                        num\_workers=opt.test\_num\_workers,}
+\DoxyCodeLine{4                                        shuffle=\textcolor{keyword}{False}, \(\backslash\)}
+\DoxyCodeLine{5                                        pin\_memory=\textcolor{keyword}{True}}
+\DoxyCodeLine{6                                        )}
+
+\end{DoxyCode}
+
+
+Train.\+py 파일의 66 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_af7f4906b37df5d331aa2d484bd3d9d64}\label{namespace_train_af7f4906b37df5d331aa2d484bd3d9d64}} 
+\index{Train@{Train}!testset@{testset}}
+\index{testset@{testset}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{testset}{testset}}
+{\footnotesize\ttfamily Train.\+testset = \mbox{\hyperlink{classdata_1_1dataset_1_1_test_dataset}{Test\+Dataset}}(opt)}
+
+
+
+Train.\+py 파일의 65 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a26489931632bdf07047257bfdecec8bb}\label{namespace_train_a26489931632bdf07047257bfdecec8bb}} 
+\index{Train@{Train}!trainer@{trainer}}
+\index{trainer@{trainer}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{trainer}{trainer}}
+{\footnotesize\ttfamily Train.\+trainer = \mbox{\hyperlink{classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer}{Faster\+R\+C\+N\+N\+Trainer}}(\mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{faster\+\_\+rcnn}}).cuda()}
+
+
+
+Train.\+py 파일의 75 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_train_a45a17572c46cae0212432ab30c9d55c3}\label{namespace_train_a45a17572c46cae0212432ab30c9d55c3}} 
+\index{Train@{Train}!True@{True}}
+\index{True@{True}!Train@{Train}}
+\doxysubsubsection{\texorpdfstring{True}{True}}
+{\footnotesize\ttfamily Train.\+True}
+
+
+
+Train.\+py 파일의 109 번째 라인에서 정의되었습니다.
+

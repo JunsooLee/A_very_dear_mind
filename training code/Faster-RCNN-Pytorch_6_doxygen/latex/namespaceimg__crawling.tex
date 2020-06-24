@@ -1,0 +1,148 @@
+\hypertarget{namespaceimg__crawling}{}\doxysection{img\+\_\+crawling 네임스페이스 참조}
+\label{namespaceimg__crawling}\index{img\_crawling@{img\_crawling}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceimg__crawling_ac81e1627de47ed0e2b2b6d4f8ea804ba}{image\+Crawling}} (keyword, dir)
+\begin{DoxyCompactList}\small\item\em 구글 크롤링 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceimg__crawling_a82bbc961ae715ce955829c976c3a18d3}{img\+\_\+delete}} ()
+\begin{DoxyCompactList}\small\item\em 크롤링한 파일 open 여부 판단 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceimg__crawling_a42ba864aae32490c1f5aa10bb53b58e2}{img\+\_\+check}} ()
+\begin{DoxyCompactList}\small\item\em 파일 확장자 check jpg \& png 만 남겨놓음 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceimg__crawling_a8e38013a791aee854e2e885e1c595b8d}{\+\_\+create\+\_\+default\+\_\+https\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceimg__crawling_ac81e1627de47ed0e2b2b6d4f8ea804ba}\label{namespaceimg__crawling_ac81e1627de47ed0e2b2b6d4f8ea804ba}} 
+\index{img\_crawling@{img\_crawling}!imageCrawling@{imageCrawling}}
+\index{imageCrawling@{imageCrawling}!img\_crawling@{img\_crawling}}
+\doxysubsubsection{\texorpdfstring{imageCrawling()}{imageCrawling()}}
+{\footnotesize\ttfamily def img\+\_\+crawling.\+image\+Crawling (\begin{DoxyParamCaption}\item[{}]{keyword,  }\item[{}]{dir }\end{DoxyParamCaption})}
+
+
+
+구글 크롤링 
+
+
+\begin{DoxyParams}{매개변수}
+{\em keyword} & 크롤링 할 단어 \\
+\hline
+{\em dir} & 크롤링 데이터 저장 공간 경로 \\
+\hline
+\end{DoxyParams}
+
+
+img\+\_\+crawling.\+py 파일의 13 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceimg__crawling_ac81e1627de47ed0e2b2b6d4f8ea804ba}{imageCrawling}}(keyword, dir):}
+\DoxyCodeLine{14     response = google\_images\_download.googleimagesdownload()}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     arguments = \{\textcolor{stringliteral}{"keywords"}: keyword,}
+\DoxyCodeLine{17                  \textcolor{stringliteral}{"limit"}: 200,}
+\DoxyCodeLine{18                  \textcolor{stringliteral}{"print\_urls"}: \textcolor{keyword}{True},}
+\DoxyCodeLine{19                  \textcolor{stringliteral}{"no\_directory"}: \textcolor{keyword}{True},}
+\DoxyCodeLine{20                  \textcolor{stringliteral}{'output\_directory'}: dir,}
+\DoxyCodeLine{21                  \textcolor{stringliteral}{"chromedriver"}: \textcolor{stringliteral}{"C:/Users/user/Downloads/chromedriver\_win32/chromedriver.exe"}}
+\DoxyCodeLine{22                  \}}
+\DoxyCodeLine{23     paths = response.download(arguments)}
+\DoxyCodeLine{24     print(paths)}
+\DoxyCodeLine{25 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceimg__crawling_ac81e1627de47ed0e2b2b6d4f8ea804ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceimg__crawling_a42ba864aae32490c1f5aa10bb53b58e2}\label{namespaceimg__crawling_a42ba864aae32490c1f5aa10bb53b58e2}} 
+\index{img\_crawling@{img\_crawling}!img\_check@{img\_check}}
+\index{img\_check@{img\_check}!img\_crawling@{img\_crawling}}
+\doxysubsubsection{\texorpdfstring{img\_check()}{img\_check()}}
+{\footnotesize\ttfamily def img\+\_\+crawling.\+img\+\_\+check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+파일 확장자 check jpg \& png 만 남겨놓음 
+
+
+
+img\+\_\+crawling.\+py 파일의 42 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceimg__crawling_a42ba864aae32490c1f5aa10bb53b58e2}{img\_check}}():}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     img\_dir = \textcolor{stringliteral}{r"C:/Users/user/Desktop/dataset/"}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{for} filename \textcolor{keywordflow}{in} os.listdir(img\_dir):}
+\DoxyCodeLine{46         fileExtension = os.path.splitext(img\_dir+filename)[1]}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} fileExtension == \textcolor{stringliteral}{'.jpg'} \textcolor{keywordflow}{or} fileExtension == \textcolor{stringliteral}{'.png'}:}
+\DoxyCodeLine{48             print(\textcolor{stringliteral}{"check"})}
+\DoxyCodeLine{49         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{50             os.remove(img\_dir + filename)}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceimg__crawling_a42ba864aae32490c1f5aa10bb53b58e2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceimg__crawling_a82bbc961ae715ce955829c976c3a18d3}\label{namespaceimg__crawling_a82bbc961ae715ce955829c976c3a18d3}} 
+\index{img\_crawling@{img\_crawling}!img\_delete@{img\_delete}}
+\index{img\_delete@{img\_delete}!img\_crawling@{img\_crawling}}
+\doxysubsubsection{\texorpdfstring{img\_delete()}{img\_delete()}}
+{\footnotesize\ttfamily def img\+\_\+crawling.\+img\+\_\+delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+크롤링한 파일 open 여부 판단 
+
+
+
+img\+\_\+crawling.\+py 파일의 29 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceimg__crawling_a82bbc961ae715ce955829c976c3a18d3}{img\_delete}}():}
+\DoxyCodeLine{30     img\_dir = \textcolor{stringliteral}{r"C:/Users/user/Desktop/dataset"}}
+\DoxyCodeLine{31     \textcolor{keywordflow}{for} filename \textcolor{keywordflow}{in} os.listdir(img\_dir):}
+\DoxyCodeLine{32         \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{33             \textcolor{keyword}{with} Image.open(img\_dir + \textcolor{stringliteral}{'/'} + filename) \textcolor{keyword}{as} im:}
+\DoxyCodeLine{34                 print(\textcolor{stringliteral}{"ok"})}
+\DoxyCodeLine{35         \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{36             print(img\_dir + \textcolor{stringliteral}{"/"} + filename)}
+\DoxyCodeLine{37             os.remove(img\_dir + \textcolor{stringliteral}{"/"} + filename)}
+\DoxyCodeLine{38 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceimg__crawling_a82bbc961ae715ce955829c976c3a18d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespaceimg__crawling_a8e38013a791aee854e2e885e1c595b8d}\label{namespaceimg__crawling_a8e38013a791aee854e2e885e1c595b8d}} 
+\index{img\_crawling@{img\_crawling}!\_create\_default\_https\_context@{\_create\_default\_https\_context}}
+\index{\_create\_default\_https\_context@{\_create\_default\_https\_context}!img\_crawling@{img\_crawling}}
+\doxysubsubsection{\texorpdfstring{\_create\_default\_https\_context}{\_create\_default\_https\_context}}
+{\footnotesize\ttfamily img\+\_\+crawling.\+\_\+create\+\_\+default\+\_\+https\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+img\+\_\+crawling.\+py 파일의 6 번째 라인에서 정의되었습니다.
+

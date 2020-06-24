@@ -1,0 +1,310 @@
+\hypertarget{namespaceconvert__gt__yolo}{}\doxysection{convert\+\_\+gt\+\_\+yolo 네임스페이스 참조}
+\label{namespaceconvert__gt__yolo}\index{convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceconvert__gt__yolo_a950bc08a96ff9eb8fd8ee93c674f8bbb}{convert\+\_\+yolo\+\_\+coordinates\+\_\+to\+\_\+voc}} (\mbox{\hyperlink{namespaceconvert__gt__yolo_a96cc51432358fb4f5168c48f1799fd03}{x\+\_\+c\+\_\+n}}, \mbox{\hyperlink{namespaceconvert__gt__yolo_aa2d72e9a2d247fe99be277344c4cea9d}{y\+\_\+c\+\_\+n}}, \mbox{\hyperlink{namespaceconvert__gt__yolo_af72594e252f6ed23b2f3d0f36e0a260a}{width\+\_\+n}}, \mbox{\hyperlink{namespaceconvert__gt__yolo_a44c58b139be30e37a4af917ba5c4b127}{height\+\_\+n}}, \mbox{\hyperlink{namespaceconvert__gt__yolo_a245a06dda7a1ba1e43cbb80852f7859b}{img\+\_\+width}}, \mbox{\hyperlink{namespaceconvert__gt__yolo_ae397a4e239d7ee76b5d7a2ec25040a24}{img\+\_\+height}})
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}{obj\+\_\+list}} = f.\+readlines()
+\begin{DoxyCompactList}\small\item\em remove whitespace characters like {\ttfamily \textbackslash{}n} at the end of each line \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}{parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\begin{DoxyCompactList}\small\item\em e.\+g. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a75ac3a286bfe4ee4acc950f16f0d692c}{G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(\mbox{\hyperlink{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a8b66871fd129ce3d47114c9a6254289a}{txt\+\_\+list}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em create the backup dir if it doesn\textquotesingle{}t exist already \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ac04d041295388bd3011910d4da020280}{image\+\_\+name}} = tmp\+\_\+file.\+split(\char`\"{}.txt\char`\"{},1)\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em get name before \char`\"{}.\+txt\char`\"{} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ab53e918532ec2fb1ab315f8010c65ce8}{img}} = cv2.\+imread(\textquotesingle{}../images/\textquotesingle{} + fname)
+\begin{DoxyCompactList}\small\item\em check if image exists \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ae397a4e239d7ee76b5d7a2ec25040a24}{img\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em get image width and height \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a245a06dda7a1ba1e43cbb80852f7859b}{img\+\_\+width}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a159dd124a3d1c65d4abe78f62fb873f3}{content}} = f.\+readlines()
+\begin{DoxyCompactList}\small\item\em image not found \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}{obj\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em split a line by spaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a96cc51432358fb4f5168c48f1799fd03}{x\+\_\+c\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_aa2d72e9a2d247fe99be277344c4cea9d}{y\+\_\+c\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af72594e252f6ed23b2f3d0f36e0a260a}{width\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a44c58b139be30e37a4af917ba5c4b127}{height\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af8b3a3bae5f757bd96474c36574a54dd}{obj\+\_\+name}} = \mbox{\hyperlink{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}{obj\+\_\+list}}\mbox{[}int(\mbox{\hyperlink{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}{obj\+\_\+id}})\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a971ea29594953a15326ceadd1849bc11}{left}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af88cbc6260ca7d9f3369368610cb184e}{top}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a5bcae40f2c51c25fa392575e18835385}{right}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ac5f745bad17c4b35fe1ff620de0955da}{bottom}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a950bc08a96ff9eb8fd8ee93c674f8bbb}\label{namespaceconvert__gt__yolo_a950bc08a96ff9eb8fd8ee93c674f8bbb}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!convert\_yolo\_coordinates\_to\_voc@{convert\_yolo\_coordinates\_to\_voc}}
+\index{convert\_yolo\_coordinates\_to\_voc@{convert\_yolo\_coordinates\_to\_voc}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{convert\_yolo\_coordinates\_to\_voc()}{convert\_yolo\_coordinates\_to\_voc()}}
+{\footnotesize\ttfamily def convert\+\_\+gt\+\_\+yolo.\+convert\+\_\+yolo\+\_\+coordinates\+\_\+to\+\_\+voc (\begin{DoxyParamCaption}\item[{}]{x\+\_\+c\+\_\+n,  }\item[{}]{y\+\_\+c\+\_\+n,  }\item[{}]{width\+\_\+n,  }\item[{}]{height\+\_\+n,  }\item[{}]{img\+\_\+width,  }\item[{}]{img\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 6 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceconvert__gt__yolo_a950bc08a96ff9eb8fd8ee93c674f8bbb}{convert\_yolo\_coordinates\_to\_voc}}(x\_c\_n, y\_c\_n, width\_n, height\_n, img\_width, img\_height):}
+\DoxyCodeLine{7   }
+\DoxyCodeLine{8   x\_c = float(x\_c\_n) * img\_width}
+\DoxyCodeLine{9   y\_c = float(y\_c\_n) * img\_height}
+\DoxyCodeLine{10   width = float(width\_n) * img\_width}
+\DoxyCodeLine{11   height = float(height\_n) * img\_height}
+\DoxyCodeLine{12   }
+\DoxyCodeLine{13   half\_width = width / 2}
+\DoxyCodeLine{14   half\_height = height / 2}
+\DoxyCodeLine{15   }
+\DoxyCodeLine{17   left = int(x\_c -\/ half\_width) + 1}
+\DoxyCodeLine{18   top = int(y\_c -\/ half\_height) + 1}
+\DoxyCodeLine{19   right = int(x\_c + half\_width) + 1}
+\DoxyCodeLine{20   bottom = int(y\_c + half\_height) + 1}
+\DoxyCodeLine{21   \textcolor{keywordflow}{return} left, top, right, bottom}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{\# make sure that the cwd() in the beginning is the location of the python script (so that every path makes sense)}}
+\DoxyCodeLine{24 os.chdir(os.path.dirname(os.path.abspath(\_\_file\_\_)))}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{\# read the class\_list.txt to a list}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ac5f745bad17c4b35fe1ff620de0955da}\label{namespaceconvert__gt__yolo_ac5f745bad17c4b35fe1ff620de0955da}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!bottom@{bottom}}
+\index{bottom@{bottom}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+bottom}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a159dd124a3d1c65d4abe78f62fb873f3}\label{namespaceconvert__gt__yolo_a159dd124a3d1c65d4abe78f62fb873f3}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!content@{content}}
+\index{content@{content}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily list convert\+\_\+gt\+\_\+yolo.\+content = f.\+readlines()}
+
+
+
+image not found 
+
+remove whitespace characters like {\ttfamily \textbackslash{}n} at the end of each line 
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 72 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a75ac3a286bfe4ee4acc950f16f0d692c}\label{namespaceconvert__gt__yolo_a75ac3a286bfe4ee4acc950f16f0d692c}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!GT\_PATH@{GT\_PATH}}
+\index{GT\_PATH@{GT\_PATH}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{GT\_PATH}{GT\_PATH}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+G\+T\+\_\+\+P\+A\+TH = os.\+path.\+join(\mbox{\hyperlink{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a44c58b139be30e37a4af917ba5c4b127}\label{namespaceconvert__gt__yolo_a44c58b139be30e37a4af917ba5c4b127}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!height\_n@{height\_n}}
+\index{height\_n@{height\_n}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{height\_n}{height\_n}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+height\+\_\+n}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ac04d041295388bd3011910d4da020280}\label{namespaceconvert__gt__yolo_ac04d041295388bd3011910d4da020280}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!image\_name@{image\_name}}
+\index{image\_name@{image\_name}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{image\_name}{image\_name}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+image\+\_\+name = tmp\+\_\+file.\+split(\char`\"{}.txt\char`\"{},1)\mbox{[}0\mbox{]}}
+
+
+
+get name before \char`\"{}.\+txt\char`\"{} 
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 55 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ab53e918532ec2fb1ab315f8010c65ce8}\label{namespaceconvert__gt__yolo_ab53e918532ec2fb1ab315f8010c65ce8}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!img@{img}}
+\index{img@{img}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+img = cv2.\+imread(\textquotesingle{}../images/\textquotesingle{} + fname)}
+
+
+
+check if image exists 
+
+image found print(fname) 
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ae397a4e239d7ee76b5d7a2ec25040a24}\label{namespaceconvert__gt__yolo_ae397a4e239d7ee76b5d7a2ec25040a24}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!img\_height@{img\_height}}
+\index{img\_height@{img\_height}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{img\_height}{img\_height}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+img\+\_\+height}
+
+
+
+get image width and height 
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 64 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a245a06dda7a1ba1e43cbb80852f7859b}\label{namespaceconvert__gt__yolo_a245a06dda7a1ba1e43cbb80852f7859b}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!img\_width@{img\_width}}
+\index{img\_width@{img\_width}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{img\_width}{img\_width}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+img\+\_\+width}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 64 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a971ea29594953a15326ceadd1849bc11}\label{namespaceconvert__gt__yolo_a971ea29594953a15326ceadd1849bc11}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!left@{left}}
+\index{left@{left}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+left}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}\label{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!obj\_id@{obj\_id}}
+\index{obj\_id@{obj\_id}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{obj\_id}{obj\_id}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+id}
+
+
+
+split a line by spaces. 
+
+\char`\"{}c\char`\"{} stands for center and \char`\"{}n\char`\"{} stands for normalized 
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}\label{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!obj\_list@{obj\_list}}
+\index{obj\_list@{obj\_list}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{obj\_list}{obj\_list}}
+{\footnotesize\ttfamily list convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+list = f.\+readlines()}
+
+
+
+remove whitespace characters like {\ttfamily \textbackslash{}n} at the end of each line 
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 28 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_af8b3a3bae5f757bd96474c36574a54dd}\label{namespaceconvert__gt__yolo_af8b3a3bae5f757bd96474c36574a54dd}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!obj\_name@{obj\_name}}
+\index{obj\_name@{obj\_name}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{obj\_name}{obj\_name}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+name = \mbox{\hyperlink{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}{obj\+\_\+list}}\mbox{[}int(\mbox{\hyperlink{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}{obj\+\_\+id}})\mbox{]}}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 83 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}\label{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!parent\_path@{parent\_path}}
+\index{parent\_path@{parent\_path}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{parent\_path}{parent\_path}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+parent\+\_\+path = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))}
+
+
+
+e.\+g. 
+
+first object in the list print(obj\+\_\+list\mbox{[}0\mbox{]}) 
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 35 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a5bcae40f2c51c25fa392575e18835385}\label{namespaceconvert__gt__yolo_a5bcae40f2c51c25fa392575e18835385}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!right@{right}}
+\index{right@{right}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+right}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_af88cbc6260ca7d9f3369368610cb184e}\label{namespaceconvert__gt__yolo_af88cbc6260ca7d9f3369368610cb184e}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!top@{top}}
+\index{top@{top}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+top}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a8b66871fd129ce3d47114c9a6254289a}\label{namespaceconvert__gt__yolo_a8b66871fd129ce3d47114c9a6254289a}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!txt\_list@{txt\_list}}
+\index{txt\_list@{txt\_list}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{txt\_list}{txt\_list}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+txt\+\_\+list = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})}
+
+
+
+create the backup dir if it doesn\textquotesingle{}t exist already 
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 47 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_af72594e252f6ed23b2f3d0f36e0a260a}\label{namespaceconvert__gt__yolo_af72594e252f6ed23b2f3d0f36e0a260a}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!width\_n@{width\_n}}
+\index{width\_n@{width\_n}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{width\_n}{width\_n}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+width\+\_\+n}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_a96cc51432358fb4f5168c48f1799fd03}\label{namespaceconvert__gt__yolo_a96cc51432358fb4f5168c48f1799fd03}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!x\_c\_n@{x\_c\_n}}
+\index{x\_c\_n@{x\_c\_n}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{x\_c\_n}{x\_c\_n}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+x\+\_\+c\+\_\+n}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceconvert__gt__yolo_aa2d72e9a2d247fe99be277344c4cea9d}\label{namespaceconvert__gt__yolo_aa2d72e9a2d247fe99be277344c4cea9d}} 
+\index{convert\_gt\_yolo@{convert\_gt\_yolo}!y\_c\_n@{y\_c\_n}}
+\index{y\_c\_n@{y\_c\_n}!convert\_gt\_yolo@{convert\_gt\_yolo}}
+\doxysubsubsection{\texorpdfstring{y\_c\_n}{y\_c\_n}}
+{\footnotesize\ttfamily convert\+\_\+gt\+\_\+yolo.\+y\+\_\+c\+\_\+n}
+
+
+
+convert\+\_\+gt\+\_\+yolo.\+py 파일의 82 번째 라인에서 정의되었습니다.
+

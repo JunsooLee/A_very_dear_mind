@@ -1,0 +1,53 @@
+\hypertarget{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py}{}\doxysection{model.\+utils.\+nms.\+\_\+nms\+\_\+gpu\+\_\+post\+\_\+py 네임스페이스 참조}
+\label{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py}\index{model.utils.nms.\_nms\_gpu\_post\_py@{model.utils.nms.\_nms\_gpu\_post\_py}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6}{\+\_\+nms\+\_\+gpu\+\_\+post}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_ad099097efd33feb01bcf4e551bbc8b79}{mask}}, n\+\_\+bbox, threads\+\_\+per\+\_\+block, col\+\_\+blocks)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6}\label{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6}} 
+\index{model.utils.nms.\_nms\_gpu\_post\_py@{model.utils.nms.\_nms\_gpu\_post\_py}!\_nms\_gpu\_post@{\_nms\_gpu\_post}}
+\index{\_nms\_gpu\_post@{\_nms\_gpu\_post}!model.utils.nms.\_nms\_gpu\_post\_py@{model.utils.nms.\_nms\_gpu\_post\_py}}
+\doxysubsubsection{\texorpdfstring{\_nms\_gpu\_post()}{\_nms\_gpu\_post()}}
+{\footnotesize\ttfamily def model.\+utils.\+nms.\+\_\+nms\+\_\+gpu\+\_\+post\+\_\+py.\+\_\+nms\+\_\+gpu\+\_\+post (\begin{DoxyParamCaption}\item[{}]{mask,  }\item[{}]{n\+\_\+bbox,  }\item[{}]{threads\+\_\+per\+\_\+block,  }\item[{}]{col\+\_\+blocks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\+\_\+nms\+\_\+gpu\+\_\+post\+\_\+py.\+py 파일의 4 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6}{\_nms\_gpu\_post}}( mask,}
+\DoxyCodeLine{5                   n\_bbox,}
+\DoxyCodeLine{6                    threads\_per\_block,}
+\DoxyCodeLine{7                    col\_blocks}
+\DoxyCodeLine{8                   ):}
+\DoxyCodeLine{9     n\_selection = 0}
+\DoxyCodeLine{10     one\_ull = np.array([1],dtype=np.uint64)}
+\DoxyCodeLine{11     selection = np.zeros((n\_bbox,), dtype=np.int32)}
+\DoxyCodeLine{12     remv = np.zeros((col\_blocks,), dtype=np.uint64)}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(n\_bbox):}
+\DoxyCodeLine{15         nblock = i // threads\_per\_block}
+\DoxyCodeLine{16         inblock = i \% threads\_per\_block}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (remv[nblock] \& one\_ull << inblock):}
+\DoxyCodeLine{19             selection[n\_selection] = i}
+\DoxyCodeLine{20             n\_selection += 1}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22             index = i * col\_blocks}
+\DoxyCodeLine{23             \textcolor{keywordflow}{for} j \textcolor{keywordflow}{in} range(nblock, col\_blocks):}
+\DoxyCodeLine{24                 remv[j] |= mask[index + j]}
+\DoxyCodeLine{25     \textcolor{keywordflow}{return} selection, n\_selection}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>닭</folder>
+	<filename>001587.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\닭\001587.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>737</width>
+		<height>227</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>239</xmin>
+			<ymin>60</ymin>
+			<xmax>317</xmax>
+			<ymax>144</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,33 @@
+\hypertarget{intersect-gt-and-dr_8py}{}\doxysection{scripts/extra/intersect-\/gt-\/and-\/dr.py 파일 참조}
+\label{intersect-gt-and-dr_8py}\index{scripts/extra/intersect-\/gt-\/and-\/dr.py@{scripts/extra/intersect-\/gt-\/and-\/dr.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceintersect-gt-and-dr}{intersect-\/gt-\/and-\/dr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}{intersect-\/gt-\/and-\/dr.\+backup}} (src\+\_\+folder, backup\+\_\+files, backup\+\_\+folder)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{intersect-\/gt-\/and-\/dr.\+parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\begin{DoxyCompactList}\small\item\em This script ensures same number of files in ground-\/truth and detection-\/results folder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_ac8e20ee582cdfd29bfc69ce671df2b8a}{intersect-\/gt-\/and-\/dr.\+G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(parent\+\_\+path, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_aa86e8801258814526fde901fa46e1c43}{intersect-\/gt-\/and-\/dr.\+D\+R\+\_\+\+P\+A\+TH}} = os.\+path.\+join(parent\+\_\+path, \textquotesingle{}input\textquotesingle{},\textquotesingle{}detection-\/\mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}}\textquotesingle{})
+\item 
+string \mbox{\hyperlink{namespaceintersect-gt-and-dr_aba15153afa576f702f568a21d15eabda}{intersect-\/gt-\/and-\/dr.\+backup\+\_\+folder}} = \textquotesingle{}backup\+\_\+no\+\_\+matches\+\_\+found\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{intersect-\/gt-\/and-\/dr.\+gt\+\_\+files}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{intersect-\/gt-\/and-\/dr.\+dr\+\_\+files}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a8e6ddbd703218b7d0f8c30b86f1ae36f}{intersect-\/gt-\/and-\/dr.\+gt\+\_\+backup}} = gt\+\_\+files -\/ dr\+\_\+files
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a48bb2be821f7adda75b6fe738fbc16c2}{intersect-\/gt-\/and-\/dr.\+dr\+\_\+backup}} = dr\+\_\+files -\/ gt\+\_\+files
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a332a57be923377207ef86659ab59538a}{intersect-\/gt-\/and-\/dr.\+intersection}} = gt\+\_\+files \& dr\+\_\+files
+\end{DoxyCompactItemize}

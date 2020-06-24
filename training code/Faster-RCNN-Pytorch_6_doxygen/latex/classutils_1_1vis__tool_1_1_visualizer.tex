@@ -1,0 +1,386 @@
+\hypertarget{classutils_1_1vis__tool_1_1_visualizer}{}\doxysection{utils.\+vis\+\_\+tool.\+Visualizer 클래스 참조}
+\label{classutils_1_1vis__tool_1_1_visualizer}\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+
+
+utils.\+vis\+\_\+tool.\+Visualizer에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1vis__tool_1_1_visualizer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+utils.\+vis\+\_\+tool.\+Visualizer에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1vis__tool_1_1_visualizer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, env=\textquotesingle{}default\textquotesingle{}, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a382ae6902bee96681b7bea708d742e37}{reinit}} (self, env=\textquotesingle{}default\textquotesingle{}, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_af8bbddf6a865a259e8a3f89f5a4c0f3d}{plot\+\_\+many}} (self, \mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}})
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_af109001f603a179afaf8be41bffded2d}{img\+\_\+many}} (self, \mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}})
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a456c551e2c6e9bff82f7d667b783e1f1}{plot}} (self, name, y, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a7f94b508046854a933966fa1cef8008e}{img}} (self, name, img\+\_\+, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a9fa460c293b679f35326ff57a5221f9c}{log}} (self, info, win=\textquotesingle{}\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aeb0a1850ccf7d4967e730aa1aa186e49}{log\+\_\+text}}\textquotesingle{})
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aac79fcbdee1339492878568cdf26baf2}{\+\_\+\+\_\+getattr\+\_\+\+\_\+}} (self, name)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a0ca804c55b7a928d35f4ccdf05118bbe}{state\+\_\+dict}} (self)
+\item 
+def \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aacc350d2964108c5e43a5be4f53c61bf}{load\+\_\+state\+\_\+dict}} (self, \mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a735c3d031ded1089a8ea6614ff3cc969}{vis}}
+\item 
+\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_ae83b9e0c160bdacd6d73d5480df5c84a}{index}}
+\item 
+\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aeb0a1850ccf7d4967e730aa1aa186e49}{log\+\_\+text}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a9dd7e77c7e92835d1822c6076225cd15}{\+\_\+vis\+\_\+kw}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}wrapper for visdom
+you can still access naive visdom function by 
+self.line, self.scater,self._send,etc.
+due to the implementation of `__getattr__`
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 153 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}\label{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{env = {\ttfamily \textquotesingle{}default\textquotesingle{}},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 161 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{161     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, env='default', **kwargs):}
+\DoxyCodeLine{162         self.vis = visdom.Visdom(env=env, use\_incoming\_socket=\textcolor{keyword}{False}, **kwargs)}
+\DoxyCodeLine{163         self.\_vis\_kw = kwargs}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \textcolor{comment}{\# e.g.('loss',23) the 23th value of loss}}
+\DoxyCodeLine{166         self.index = \{\}}
+\DoxyCodeLine{167         self.log\_text = \textcolor{stringliteral}{''}}
+\DoxyCodeLine{168 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_aac79fcbdee1339492878568cdf26baf2}\label{classutils_1_1vis__tool_1_1_visualizer_aac79fcbdee1339492878568cdf26baf2}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!\_\_getattr\_\_@{\_\_getattr\_\_}}
+\index{\_\_getattr\_\_@{\_\_getattr\_\_}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_\_getattr\_\_()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 225 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{225     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aac79fcbdee1339492878568cdf26baf2}{\_\_getattr\_\_}}(self, name):}
+\DoxyCodeLine{226         \textcolor{keywordflow}{return} getattr(self.vis, name)}
+\DoxyCodeLine{227 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a7f94b508046854a933966fa1cef8008e}\label{classutils_1_1vis__tool_1_1_visualizer_a7f94b508046854a933966fa1cef8008e}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!img@{img}}
+\index{img@{img}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{img()}{img()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+img (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{img\+\_\+,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}self.img('input_img',t.Tensor(64,64))
+self.img('input_imgs',t.Tensor(3,64,64))
+self.img('input_imgs',t.Tensor(100,1,64,64))
+self.img('input_imgs',t.Tensor(100,3,64,64),nrows=10)
+!!don't ~~self.img('input_imgs',t.Tensor(100,64,64),nrows=10)~~!!
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 202 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{202     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a7f94b508046854a933966fa1cef8008e}{img}}(self, name, img\_, **kwargs):}
+\DoxyCodeLine{203         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{204 \textcolor{stringliteral}{        self.img('input\_img',t.Tensor(64,64))}}
+\DoxyCodeLine{205 \textcolor{stringliteral}{        self.img('input\_imgs',t.Tensor(3,64,64))}}
+\DoxyCodeLine{206 \textcolor{stringliteral}{        self.img('input\_imgs',t.Tensor(100,1,64,64))}}
+\DoxyCodeLine{207 \textcolor{stringliteral}{        self.img('input\_imgs',t.Tensor(100,3,64,64),nrows=10)}}
+\DoxyCodeLine{208 \textcolor{stringliteral}{        !!don't ~~self.img('input\_imgs',t.Tensor(100,64,64),nrows=10)~~!!}}
+\DoxyCodeLine{209 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{210         self.vis.images(t.Tensor(img\_).cpu().numpy(),}
+\DoxyCodeLine{211                         win=name,}
+\DoxyCodeLine{212                         opts=dict(title=name),}
+\DoxyCodeLine{213                         **kwargs}
+\DoxyCodeLine{214                         )}
+\DoxyCodeLine{215 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1vis__tool_1_1_visualizer_a7f94b508046854a933966fa1cef8008e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_af109001f603a179afaf8be41bffded2d}\label{classutils_1_1vis__tool_1_1_visualizer_af109001f603a179afaf8be41bffded2d}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!img\_many@{img\_many}}
+\index{img\_many@{img\_many}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{img\_many()}{img\_many()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+img\+\_\+many (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 185 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_af109001f603a179afaf8be41bffded2d}{img\_many}}(self, d):}
+\DoxyCodeLine{186         \textcolor{keywordflow}{for} k, v \textcolor{keywordflow}{in} d.items():}
+\DoxyCodeLine{187             self.img(k, v)}
+\DoxyCodeLine{188 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1vis__tool_1_1_visualizer_af109001f603a179afaf8be41bffded2d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_aacc350d2964108c5e43a5be4f53c61bf}\label{classutils_1_1vis__tool_1_1_visualizer_aacc350d2964108c5e43a5be4f53c61bf}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!load\_state\_dict@{load\_state\_dict}}
+\index{load\_state\_dict@{load\_state\_dict}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{load\_state\_dict()}{load\_state\_dict()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+load\+\_\+state\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 236 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{236     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aacc350d2964108c5e43a5be4f53c61bf}{load\_state\_dict}}(self, d):}
+\DoxyCodeLine{237         self.vis = visdom.Visdom(env=d.get(\textcolor{stringliteral}{'env'}, self.vis.env), **(self.d.get(\textcolor{stringliteral}{'vis\_kw'})))}
+\DoxyCodeLine{238         self.log\_text = d.get(\textcolor{stringliteral}{'log\_text'}, \textcolor{stringliteral}{''})}
+\DoxyCodeLine{239         self.index = d.get(\textcolor{stringliteral}{'index'}, dict())}
+\DoxyCodeLine{240         \textcolor{keywordflow}{return} self}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a9fa460c293b679f35326ff57a5221f9c}\label{classutils_1_1vis__tool_1_1_visualizer_a9fa460c293b679f35326ff57a5221f9c}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!log@{log}}
+\index{log@{log}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+log (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{info,  }\item[{}]{win = {\ttfamily \textquotesingle{}\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_aeb0a1850ccf7d4967e730aa1aa186e49}{log\+\_\+text}}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}self.log({'loss':1,'lr':0.0001})
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 216 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{216     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a9fa460c293b679f35326ff57a5221f9c}{log}}(self, info, win='log\_text'):}
+\DoxyCodeLine{217         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{218 \textcolor{stringliteral}{        self.log(\{'loss':1,'lr':0.0001\})}}
+\DoxyCodeLine{219 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{220         self.log\_text += (\textcolor{stringliteral}{'[\{time\}] \{info\} <br>'}.format(}
+\DoxyCodeLine{221             time=time.strftime(\textcolor{stringliteral}{'\%m\%d\_\%H\%M\%S'}), \(\backslash\)}
+\DoxyCodeLine{222             info=info))}
+\DoxyCodeLine{223         self.vis.\mbox{\hyperlink{namespacemain_a9252cd7df86be3b44996d8b59a2d7a49}{text}}(self.log\_text, win)}
+\DoxyCodeLine{224 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a456c551e2c6e9bff82f7d667b783e1f1}\label{classutils_1_1vis__tool_1_1_visualizer_a456c551e2c6e9bff82f7d667b783e1f1}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!plot@{plot}}
+\index{plot@{plot}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+plot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{y,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}self.plot('loss',1.00)
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 189 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a456c551e2c6e9bff82f7d667b783e1f1}{plot}}(self, name, y, **kwargs):}
+\DoxyCodeLine{190         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{191 \textcolor{stringliteral}{        self.plot('loss',1.00)}}
+\DoxyCodeLine{192 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{193         x = self.index.get(name, 0)}
+\DoxyCodeLine{194         self.vis.\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}}(Y=np.array([y]), X=np.array([x]),}
+\DoxyCodeLine{195                       win=name,}
+\DoxyCodeLine{196                       opts=dict(title=name),}
+\DoxyCodeLine{197                       update=\textcolor{keywordtype}{None} \textcolor{keywordflow}{if} x == 0 \textcolor{keywordflow}{else} \textcolor{stringliteral}{'append'},}
+\DoxyCodeLine{198                       **kwargs}
+\DoxyCodeLine{199                       )}
+\DoxyCodeLine{200         self.index[name] = x + 1}
+\DoxyCodeLine{201 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1vis__tool_1_1_visualizer_a456c551e2c6e9bff82f7d667b783e1f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_af8bbddf6a865a259e8a3f89f5a4c0f3d}\label{classutils_1_1vis__tool_1_1_visualizer_af8bbddf6a865a259e8a3f89f5a4c0f3d}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!plot\_many@{plot\_many}}
+\index{plot\_many@{plot\_many}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{plot\_many()}{plot\_many()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+plot\+\_\+many (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}plot multi values
+@params d: dict (name,value) i.e. ('loss',0.11)
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 176 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{176     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_af8bbddf6a865a259e8a3f89f5a4c0f3d}{plot\_many}}(self, d):}
+\DoxyCodeLine{177         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{178 \textcolor{stringliteral}{        plot multi values}}
+\DoxyCodeLine{179 \textcolor{stringliteral}{        @params d: dict (name,value) i.e. ('loss',0.11)}}
+\DoxyCodeLine{180 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{181         \textcolor{keywordflow}{for} k, v \textcolor{keywordflow}{in} d.items():}
+\DoxyCodeLine{182             \textcolor{keywordflow}{if} v \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{183                 self.plot(k, v)}
+\DoxyCodeLine{184 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1vis__tool_1_1_visualizer_af8bbddf6a865a259e8a3f89f5a4c0f3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a382ae6902bee96681b7bea708d742e37}\label{classutils_1_1vis__tool_1_1_visualizer_a382ae6902bee96681b7bea708d742e37}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!reinit@{reinit}}
+\index{reinit@{reinit}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{reinit()}{reinit()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+reinit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{env = {\ttfamily \textquotesingle{}default\textquotesingle{}},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}change the config of visdom
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 169 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a382ae6902bee96681b7bea708d742e37}{reinit}}(self, env='default', **kwargs):}
+\DoxyCodeLine{170         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{171 \textcolor{stringliteral}{        change the config of visdom}}
+\DoxyCodeLine{172 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{173         self.vis = visdom.Visdom(env=env, **kwargs)}
+\DoxyCodeLine{174         \textcolor{keywordflow}{return} self}
+\DoxyCodeLine{175 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a0ca804c55b7a928d35f4ccdf05118bbe}\label{classutils_1_1vis__tool_1_1_visualizer_a0ca804c55b7a928d35f4ccdf05118bbe}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!state\_dict@{state\_dict}}
+\index{state\_dict@{state\_dict}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{state\_dict()}{state\_dict()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+Visualizer.\+state\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 228 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{228     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a0ca804c55b7a928d35f4ccdf05118bbe}{state\_dict}}(self):}
+\DoxyCodeLine{229         \textcolor{keywordflow}{return} \{}
+\DoxyCodeLine{230             \textcolor{stringliteral}{'index'}: self.index,}
+\DoxyCodeLine{231             \textcolor{stringliteral}{'vis\_kw'}: self.\_vis\_kw,}
+\DoxyCodeLine{232             \textcolor{stringliteral}{'log\_text'}: self.log\_text,}
+\DoxyCodeLine{233             \textcolor{stringliteral}{'env'}: self.vis.env}
+\DoxyCodeLine{234         \}}
+\DoxyCodeLine{235 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a9dd7e77c7e92835d1822c6076225cd15}\label{classutils_1_1vis__tool_1_1_visualizer_a9dd7e77c7e92835d1822c6076225cd15}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!\_vis\_kw@{\_vis\_kw}}
+\index{\_vis\_kw@{\_vis\_kw}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_vis\_kw}{\_vis\_kw}}
+{\footnotesize\ttfamily utils.\+vis\+\_\+tool.\+Visualizer.\+\_\+vis\+\_\+kw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vis\+\_\+tool.\+py 파일의 163 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_ae83b9e0c160bdacd6d73d5480df5c84a}\label{classutils_1_1vis__tool_1_1_visualizer_ae83b9e0c160bdacd6d73d5480df5c84a}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!index@{index}}
+\index{index@{index}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily utils.\+vis\+\_\+tool.\+Visualizer.\+index}
+
+
+
+vis\+\_\+tool.\+py 파일의 166 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_aeb0a1850ccf7d4967e730aa1aa186e49}\label{classutils_1_1vis__tool_1_1_visualizer_aeb0a1850ccf7d4967e730aa1aa186e49}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!log\_text@{log\_text}}
+\index{log\_text@{log\_text}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{log\_text}{log\_text}}
+{\footnotesize\ttfamily utils.\+vis\+\_\+tool.\+Visualizer.\+log\+\_\+text}
+
+
+
+vis\+\_\+tool.\+py 파일의 167 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1vis__tool_1_1_visualizer_a735c3d031ded1089a8ea6614ff3cc969}\label{classutils_1_1vis__tool_1_1_visualizer_a735c3d031ded1089a8ea6614ff3cc969}} 
+\index{utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}!vis@{vis}}
+\index{vis@{vis}!utils.vis\_tool.Visualizer@{utils.vis\_tool.Visualizer}}
+\doxysubsubsection{\texorpdfstring{vis}{vis}}
+{\footnotesize\ttfamily utils.\+vis\+\_\+tool.\+Visualizer.\+vis}
+
+
+
+vis\+\_\+tool.\+py 파일의 162 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{vis__tool_8py}{vis\+\_\+tool.\+py}}\end{DoxyCompactItemize}

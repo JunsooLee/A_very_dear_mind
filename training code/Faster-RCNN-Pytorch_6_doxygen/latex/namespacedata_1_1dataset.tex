@@ -1,0 +1,305 @@
+\hypertarget{namespacedata_1_1dataset}{}\doxysection{data.\+dataset 네임스페이스 참조}
+\label{namespacedata_1_1dataset}\index{data.dataset@{data.dataset}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdata_1_1dataset_1_1_dataset}{Dataset}}
+\item 
+class \mbox{\hyperlink{classdata_1_1dataset_1_1_test_dataset}{Test\+Dataset}}
+\item 
+class \mbox{\hyperlink{classdata_1_1dataset_1_1_transform}{Transform}}
+\begin{DoxyCompactList}\small\item\em 이미지 크기 변경 및 B.\+B 크기 변경 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_a9d17b7ce161386c60483c82a877314d0}{Add\+Gaussian\+Noise}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}{im}}, noise\+\_\+val)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_a4f8359606b87375eb169724c39b8d727}{Change\+Luminance}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}{im}}, contrast\+\_\+range, brightness\+\_\+range)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_ac63c520adb78fbfc773c59c9e228065c}{blur}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}{im}})
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_ab6a9587944fcf2b537c14675640e9a2b}{inverse\+\_\+normalize}} (img)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_abb139074cf96a690e2c27771aeab7a38}{pytorch\+\_\+normalze}} (img)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_a9b4358cad3e2d16ef8c2c02e4cc0035f}{caffe\+\_\+normalize}} (img)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897}{preprocess}} (img, min\+\_\+size=600, max\+\_\+size=1000)
+\begin{DoxyCompactList}\small\item\em size가 다른 이미지에 대해서 resize 및 normalization \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacedata_1_1dataset_a9d17b7ce161386c60483c82a877314d0}\label{namespacedata_1_1dataset_a9d17b7ce161386c60483c82a877314d0}} 
+\index{data.dataset@{data.dataset}!AddGaussianNoise@{AddGaussianNoise}}
+\index{AddGaussianNoise@{AddGaussianNoise}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{AddGaussianNoise()}{AddGaussianNoise()}}
+{\footnotesize\ttfamily def data.\+dataset.\+Add\+Gaussian\+Noise (\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{noise\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 14 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_a9d17b7ce161386c60483c82a877314d0}{AddGaussianNoise}}(im, noise\_val):}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     img = im.astype(np.float64) / 255.0}
+\DoxyCodeLine{17     \_, row, col = im.shape}
+\DoxyCodeLine{18     mean = 0}
+\DoxyCodeLine{19     var = random.uniform(0, noise\_val)}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     sigma = var ** 0.5}
+\DoxyCodeLine{22     gaussian = np.random.normal(mean, sigma, (row, col, 1))}
+\DoxyCodeLine{23     gaussian = np.concatenate((gaussian, gaussian, gaussian), axis=2)}
+\DoxyCodeLine{24     gaussian = np.reshape(gaussian,(3,row,col))}
+\DoxyCodeLine{25     gaussian\_img = cv2.addWeighted(img, 0.9, gaussian, 0.1, 0) * 255.0}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     gaussian\_img = np.clip(gaussian\_img, 0, 255)}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} gaussian\_img.astype(np.uint8)}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedata_1_1dataset_a9d17b7ce161386c60483c82a877314d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1dataset_ac63c520adb78fbfc773c59c9e228065c}\label{namespacedata_1_1dataset_ac63c520adb78fbfc773c59c9e228065c}} 
+\index{data.dataset@{data.dataset}!blur@{blur}}
+\index{blur@{blur}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{blur()}{blur()}}
+{\footnotesize\ttfamily def data.\+dataset.\+blur (\begin{DoxyParamCaption}\item[{}]{im }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 41 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_ac63c520adb78fbfc773c59c9e228065c}{blur}}(im):}
+\DoxyCodeLine{42     seq = iaa.Sequential([}
+\DoxyCodeLine{43         iaa.GaussianBlur((0.0, 2.5)),}
+\DoxyCodeLine{44         iaa.AverageBlur(k=(2, 7)),}
+\DoxyCodeLine{45     ])}
+\DoxyCodeLine{46     seq\_det = seq.to\_deterministic()}
+\DoxyCodeLine{47     image\_aug = seq\_det.augment\_images([im])[0]}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordflow}{return} image\_aug}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1dataset_a9b4358cad3e2d16ef8c2c02e4cc0035f}\label{namespacedata_1_1dataset_a9b4358cad3e2d16ef8c2c02e4cc0035f}} 
+\index{data.dataset@{data.dataset}!caffe\_normalize@{caffe\_normalize}}
+\index{caffe\_normalize@{caffe\_normalize}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{caffe\_normalize()}{caffe\_normalize()}}
+{\footnotesize\ttfamily def data.\+dataset.\+caffe\+\_\+normalize (\begin{DoxyParamCaption}\item[{}]{img }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}return appr -125-125 BGR
+\end{DoxyVerb}
+ 
+
+dataset.\+py 파일의 71 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_a9b4358cad3e2d16ef8c2c02e4cc0035f}{caffe\_normalize}}(img):}
+\DoxyCodeLine{72     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{    return appr -\/125-\/125 BGR}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{75     img = img[[2, 1, 0], :, :]  \textcolor{comment}{\# RGB-\/BGR}}
+\DoxyCodeLine{76     img = img * 255}
+\DoxyCodeLine{77     mean = np.array([122.7717, 115.9465, 102.9801]).reshape(3, 1, 1)}
+\DoxyCodeLine{78     img = (img -\/ mean).astype(np.float32, copy=\textcolor{keyword}{True})}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} img}
+\DoxyCodeLine{80 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1dataset_a4f8359606b87375eb169724c39b8d727}\label{namespacedata_1_1dataset_a4f8359606b87375eb169724c39b8d727}} 
+\index{data.dataset@{data.dataset}!ChangeLuminance@{ChangeLuminance}}
+\index{ChangeLuminance@{ChangeLuminance}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{ChangeLuminance()}{ChangeLuminance()}}
+{\footnotesize\ttfamily def data.\+dataset.\+Change\+Luminance (\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{contrast\+\_\+range,  }\item[{}]{brightness\+\_\+range }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 31 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_a4f8359606b87375eb169724c39b8d727}{ChangeLuminance}}(im, contrast\_range, brightness\_range):}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         contrast\_val = randint(0, contrast\_range*2) -\/ contrast\_range}
+\DoxyCodeLine{34         brightness\_val = randint(0, brightness\_range*2) -\/ brightness\_range}
+\DoxyCodeLine{35         img = np.int16(im)}
+\DoxyCodeLine{36         img = img * (100+contrast\_val)/100  + brightness\_val}
+\DoxyCodeLine{37         img = np.clip(img, 0, 255)}
+\DoxyCodeLine{38         img = np.uint8(img)}
+\DoxyCodeLine{39         \textcolor{keywordflow}{return} img}
+\DoxyCodeLine{40 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedata_1_1dataset_a4f8359606b87375eb169724c39b8d727_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1dataset_ab6a9587944fcf2b537c14675640e9a2b}\label{namespacedata_1_1dataset_ab6a9587944fcf2b537c14675640e9a2b}} 
+\index{data.dataset@{data.dataset}!inverse\_normalize@{inverse\_normalize}}
+\index{inverse\_normalize@{inverse\_normalize}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{inverse\_normalize()}{inverse\_normalize()}}
+{\footnotesize\ttfamily def data.\+dataset.\+inverse\+\_\+normalize (\begin{DoxyParamCaption}\item[{}]{img }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 52 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_ab6a9587944fcf2b537c14675640e9a2b}{inverse\_normalize}}(img):}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} opt.caffe\_pretrain:}
+\DoxyCodeLine{54         img = img + (np.array([122.7717, 115.9465, 102.9801]).reshape(3, 1, 1))}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} img[::-\/1, :, :]}
+\DoxyCodeLine{56     \textcolor{comment}{\# approximate un-\/normalize for visualize}}
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} (img * 0.225 + 0.45).clip(min=0, max=1) * 255}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897}\label{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897}} 
+\index{data.dataset@{data.dataset}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily def data.\+dataset.\+preprocess (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{min\+\_\+size = {\ttfamily 600},  }\item[{}]{max\+\_\+size = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+size가 다른 이미지에 대해서 resize 및 normalization 
+
+
+\begin{DoxyParams}{매개변수}
+{\em img} & img ($\sim$numpy.ndarray)\+: An image. This is in C\+HW and R\+GB format. \\
+\hline
+{\em min\+\_\+size} & 이미지 최소 사이즈 \\
+\hline
+{\em max\+\_\+size} & 이미지 최대 사이즈 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+normalize(img) \+: return A preprocessed image. \begin{DoxyVerb}Preprocess an image for feature extraction.
+
+The length of the shorter edge is scaled to :obj:`self.min_size`.
+After the scaling, if the length of the longer edge is longer than
+:param min_size:
+:obj:`self.max_size`, the image is scaled to fit the longer edge
+to :obj:`self.max_size`.
+
+After resizing the image, the image is subtracted by a mean image value
+:obj:`self.mean`.
+
+Args:
+    img (~numpy.ndarray): An image. This is in CHW and RGB format.
+        The range of its value is :math:`[0, 255]`.
+     (~numpy.ndarray): An image. This is in CHW and RGB format.
+        The range of its value is :math:`[0, 255]`.
+
+Returns:
+    ~numpy.ndarray:
+    A preprocessed image.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+dataset.\+py 파일의 88 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897}{preprocess}}(img, min\_size=600, max\_size=1000):}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{stringliteral}{"""Preprocess an image for feature extraction.}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{    The length of the shorter edge is scaled to :obj:`self.min\_size`.}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{    After the scaling, if the length of the longer edge is longer than}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{    :param min\_size:}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{    :obj:`self.max\_size`, the image is scaled to fit the longer edge}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{    to :obj:`self.max\_size`.}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{}}
+\DoxyCodeLine{98 \textcolor{stringliteral}{    After resizing the image, the image is subtracted by a mean image value}}
+\DoxyCodeLine{99 \textcolor{stringliteral}{    :obj:`self.mean`.}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{}}
+\DoxyCodeLine{101 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{102 \textcolor{stringliteral}{        img (~numpy.ndarray): An image. This is in CHW and RGB format.}}
+\DoxyCodeLine{103 \textcolor{stringliteral}{            The range of its value is :math:`[0, 255]`.}}
+\DoxyCodeLine{104 \textcolor{stringliteral}{         (~numpy.ndarray): An image. This is in CHW and RGB format.}}
+\DoxyCodeLine{105 \textcolor{stringliteral}{            The range of its value is :math:`[0, 255]`.}}
+\DoxyCodeLine{106 \textcolor{stringliteral}{}}
+\DoxyCodeLine{107 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{108 \textcolor{stringliteral}{        ~numpy.ndarray:}}
+\DoxyCodeLine{109 \textcolor{stringliteral}{        A preprocessed image.}}
+\DoxyCodeLine{110 \textcolor{stringliteral}{}}
+\DoxyCodeLine{111 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{112     C, H, W = img.shape}
+\DoxyCodeLine{113     scale1 = min\_size / \mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(H, W)}
+\DoxyCodeLine{114     scale2 = max\_size / \mbox{\hyperlink{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(H, W)}
+\DoxyCodeLine{115     scale = \mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(scale1, scale2)}
+\DoxyCodeLine{116     img = img / 255.}
+\DoxyCodeLine{117     img = sktsf.resize(img, (C, H * scale, W * scale), mode=\textcolor{stringliteral}{'reflect'})}
+\DoxyCodeLine{118     \textcolor{comment}{\# both the longer and shorter should be less than}}
+\DoxyCodeLine{119     \textcolor{comment}{\# max\_size and min\_size}}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} opt.caffe\_pretrain:}
+\DoxyCodeLine{121         normalize = caffe\_normalize}
+\DoxyCodeLine{122     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{123         normalize = pytorch\_normalze}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} normalize(img)}
+\DoxyCodeLine{125 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1dataset_abb139074cf96a690e2c27771aeab7a38}\label{namespacedata_1_1dataset_abb139074cf96a690e2c27771aeab7a38}} 
+\index{data.dataset@{data.dataset}!pytorch\_normalze@{pytorch\_normalze}}
+\index{pytorch\_normalze@{pytorch\_normalze}!data.dataset@{data.dataset}}
+\doxysubsubsection{\texorpdfstring{pytorch\_normalze()}{pytorch\_normalze()}}
+{\footnotesize\ttfamily def data.\+dataset.\+pytorch\+\_\+normalze (\begin{DoxyParamCaption}\item[{}]{img }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}https://github.com/pytorch/vision/issues/223
+return appr -1~1 RGB
+\end{DoxyVerb}
+ 
+
+dataset.\+py 파일의 60 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1dataset_abb139074cf96a690e2c27771aeab7a38}{pytorch\_normalze}}(img):}
+\DoxyCodeLine{61     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{    https://github.com/pytorch/vision/issues/223}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{    return appr -\/1~1 RGB}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{65     normalize = tvtsf.Normalize(mean=[0.485, 0.456, 0.406],}
+\DoxyCodeLine{66                                 std=[0.229, 0.224, 0.225])}
+\DoxyCodeLine{67     img = normalize(t.from\_numpy(img))}
+\DoxyCodeLine{68     \textcolor{keywordflow}{return} img.numpy()}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+
+\end{DoxyCode}

@@ -1,0 +1,4 @@
+<map id="model.utils.rpn_gt_loc_label._get_inside_index" name="model.utils.rpn_gt_loc_label._get_inside_index">
+<area shape="rect" id="node1" title="이미지 안에있는 anchor 박스의 index 반환" alt="" coords="260,13,448,54"/>
+<area shape="rect" id="node2" href="$classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html#ab58a5bf203b10b40374f04bc18aa8b6e" title="RPN을 통해서 예측한" alt="" coords="5,5,212,61"/>
+</map>

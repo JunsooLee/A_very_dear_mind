@@ -1,0 +1,252 @@
+\hypertarget{example__classifier_8m}{}\doxysection{data/\+V\+O\+Cdevkit/example\+\_\+classifier.m 파일 참조}
+\label{example__classifier_8m}\index{data/VOCdevkit/example\_classifier.m@{data/VOCdevkit/example\_classifier.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} example\+\_\+classifier change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere \mbox{\hyperlink{example__classifier_8m_a73e3a02151bb599a1b645186faaa17c4}{addpath}} (\mbox{[}cd \textquotesingle{}/V\+O\+Ccode\textquotesingle{}\mbox{]})
+\item 
+train \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} \mbox{\hyperlink{example__classifier_8m_aa3ed006093572abc45357dc43f869d81}{test}} (V\+O\+Copts, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}})
+\item 
+compute and display PR \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}$<$ V\+O\+Copts.\+nclasses fprintf( \textquotesingle{}press any key to continue with next class...\textbackslash{}n\textquotesingle{});\mbox{\hyperlink{_v_o_cevallayout_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}};\mbox{\hyperlink{viewanno_8m_afd7d49e17b69bd6bf3d7a649856c1067}{pause}};endend\% train classifierfunction \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}}=train(V\+O\+Copts, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \textquotesingle{}train\textquotesingle{} \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \mbox{\hyperlink{viewanno_8m_a6b112fb9f67000cb49d3b8a54d1fb3f6}{set}} for \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}}\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}\mbox{]}=textread(sprintf(V\+O\+Copts.\+clsimgsetpath, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \textquotesingle{}train\textquotesingle{}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{});\% extract features for each \mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{imageclassifier.\+FD}}=zeros(0, \mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}));\mbox{\hyperlink{_v_o_cevallayout_8m_a8fb092330ecda60587643305d0d9738a}{tic}};for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc $>$ \mbox{\hyperlink{example__classifier_8m_a590d7618b070763052e6233d7c8ba6f9}{fprintf}} (\textquotesingle{}\%s\+:train\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}))
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} try try to load features \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} (sprintf(V\+O\+Copts.\+exfdpath, \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}), \textquotesingle{}\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{example__classifier_8m_a97f1718d165833c17855aabcafb3cdf0}{save}} (sprintf(V\+O\+Copts.\+exfdpath, \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}), \textquotesingle{}\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} \mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{FD}} (1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}), \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}})
+\item 
+write to \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file \mbox{\hyperlink{example__classifier_8m_a97c7e397895969cf4d5ae4e71415fe3c}{fprintf}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%f\textbackslash{}n\textquotesingle{}, \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}, \mbox{\hyperlink{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}{c}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} close \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file \mbox{\hyperlink{example__classifier_8m_ae84714f507fd144ddfa3ed0d96b1fb74}{fclose}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}})
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+initialize V\+OC options \mbox{\hyperlink{example__classifier_8m_a326eb43af45972a4fdc78c1221c88164}{V\+O\+Cinit}}
+\item 
+train and \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} for each \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} for \mbox{\hyperlink{example__classifier_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}
+\item 
+\mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} =train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})
+\item 
+\mbox{\hyperlink{example__classifier_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}
+\item 
+\mbox{\hyperlink{example__classifier_8m_a8fb092330ecda60587643305d0d9738a}{tic}}
+\item 
+catch compute and \mbox{\hyperlink{example__classifier_8m_a97f1718d165833c17855aabcafb3cdf0}{save}} features \mbox{\hyperlink{example__classifier_8m_aad838c45b27efd76ba8d2ce84aa29918}{I}} =imread(sprintf(V\+O\+Copts.\+imgpath,\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))
+\item 
+\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}} =extractfd(V\+O\+Copts,\mbox{\hyperlink{viewanno_8m_a3531373f5f2661781b7461b59d54fceb}{I}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} run \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} \mbox{\hyperlink{viewanno_8m_a58ab1fd68e97078232808206b850161b}{on}} \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} images \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} \mbox{\hyperlink{example__classifier_8m_a3e734217421bb94320926961b9d3fb1a}{gt}} =textread(sprintf(V\+O\+Copts.\+imgsetpath,V\+O\+Copts.\+testset),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{})
+\item 
+create \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file \mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}} =fopen(sprintf(V\+O\+Copts.\+clsrespath,\textquotesingle{}comp1\textquotesingle{},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}w\textquotesingle{})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} compute \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} of \mbox{\hyperlink{_v_o_cevaldet_8m_a1631e0b2eedfa7046df7334f67832273}{positive}} classification \mbox{\hyperlink{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}{c}} =classify(V\+O\+Copts,\mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}},\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})
+\item 
+trivial feature \mbox{\hyperlink{example__classifier_8m_ae2af5012782a0b8a6f0389240434eb0c}{extractor}}
+\item 
+trivial \mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}} \mbox{\hyperlink{example__classifier_8m_a63d76009f280b11d9f2bcc48eb2bd7b7}{d}} =sum(fd.$\ast$\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})+sum(classifier.\+F\+D.$\ast$\mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{classifier.\+FD}})-\/2$\ast$\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{}$\ast$\mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{classifier.\+FD}}
+\item 
+\mbox{\hyperlink{example__classifier_8m_a72303c49017eab1a5a5b720793a9c002}{dp}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a69ab5a290db7ecb803d915a13b913643}{min}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}$>$0))
+\item 
+\mbox{\hyperlink{example__classifier_8m_ab1932c2b89031f68b41ead3ba4a5b9a5}{dn}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a69ab5a290db7ecb803d915a13b913643}{min}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}$<$0))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{example__classifier_8m_a73e3a02151bb599a1b645186faaa17c4}\label{example__classifier_8m_a73e3a02151bb599a1b645186faaa17c4}} 
+\index{example\_classifier.m@{example\_classifier.m}!addpath@{addpath}}
+\index{addpath@{addpath}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{addpath()}{addpath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} example\+\_\+classifier change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere addpath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_ae84714f507fd144ddfa3ed0d96b1fb74}\label{example__classifier_8m_ae84714f507fd144ddfa3ed0d96b1fb74}} 
+\index{example\_classifier.m@{example\_classifier.m}!fclose@{fclose}}
+\index{fclose@{fclose}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{fclose()}{fclose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} close \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file fclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}\label{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}} 
+\index{example\_classifier.m@{example\_classifier.m}!FD@{FD}}
+\index{FD@{FD}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{FD()}{FD()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} FD (\begin{DoxyParamCaption}\item[{1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})}]{,  }\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_a590d7618b070763052e6233d7c8ba6f9}\label{example__classifier_8m_a590d7618b070763052e6233d7c8ba6f9}} 
+\index{example\_classifier.m@{example\_classifier.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily compute and display PR \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}$<$V\+O\+Copts.\+nclasses fprintf(\textquotesingle{}press any key to continue with next class...\textbackslash{}n\textquotesingle{}); \mbox{\hyperlink{_v_o_cevallayout_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}; \mbox{\hyperlink{viewanno_8m_afd7d49e17b69bd6bf3d7a649856c1067}{pause}}; endend\% train classifierfunction \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} = train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \textquotesingle{}train\textquotesingle{} \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \mbox{\hyperlink{viewanno_8m_a6b112fb9f67000cb49d3b8a54d1fb3f6}{set}} for \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}}\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}},\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}\mbox{]}=textread(sprintf(V\+O\+Copts.\+clsimgsetpath,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},\textquotesingle{}train\textquotesingle{}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{});\% extract features for each \mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{imageclassifier.\+FD}}=zeros(0,\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}));\mbox{\hyperlink{_v_o_cevallayout_8m_a8fb092330ecda60587643305d0d9738a}{tic}};for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc$>$ fprintf (\begin{DoxyParamCaption}\item[{\textquotesingle{}\%s\+:train\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_a97c7e397895969cf4d5ae4e71415fe3c}\label{example__classifier_8m_a97c7e397895969cf4d5ae4e71415fe3c}} 
+\index{example\_classifier.m@{example\_classifier.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily write to \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file fprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%f\textbackslash{}n\textquotesingle{}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}}]{,  }\item[{\mbox{\hyperlink{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}{c}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_a998f67887464aef7f044115722929ded}\label{example__classifier_8m_a998f67887464aef7f044115722929ded}} 
+\index{example\_classifier.m@{example\_classifier.m}!load@{load}}
+\index{load@{load}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} try try to load features load (\begin{DoxyParamCaption}\item[{sprintf(V\+O\+Copts.\+exfdpath, \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_a97f1718d165833c17855aabcafb3cdf0}\label{example__classifier_8m_a97f1718d165833c17855aabcafb3cdf0}} 
+\index{example\_classifier.m@{example\_classifier.m}!save@{save}}
+\index{save@{save}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily save (\begin{DoxyParamCaption}\item[{sprintf(V\+O\+Copts.\+exfdpath, \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__classifier_8m_aa3ed006093572abc45357dc43f869d81}\label{example__classifier_8m_aa3ed006093572abc45357dc43f869d81}} 
+\index{example\_classifier.m@{example\_classifier.m}!test@{test}}
+\index{test@{test}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} run \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} \mbox{\hyperlink{viewanno_8m_a58ab1fd68e97078232808206b850161b}{on}} test images \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} test (\begin{DoxyParamCaption}\item[{V\+O\+Copts}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}}]{,  }\item[{\mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}\label{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}} 
+\index{example\_classifier.m@{example\_classifier.m}!c@{c}}
+\index{c@{c}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily c =classify(V\+O\+Copts,\mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}},\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})}
+
+
+
+example\+\_\+classifier.\+m 파일의 83 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}\label{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}} 
+\index{example\_classifier.m@{example\_classifier.m}!classifier@{classifier}}
+\index{classifier@{classifier}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{classifier}{classifier}}
+{\footnotesize\ttfamily trivial classifier =train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})}
+
+
+
+example\+\_\+classifier.\+m 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a63d76009f280b11d9f2bcc48eb2bd7b7}\label{example__classifier_8m_a63d76009f280b11d9f2bcc48eb2bd7b7}} 
+\index{example\_classifier.m@{example\_classifier.m}!d@{d}}
+\index{d@{d}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily trivial \mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}} d =sum(fd.$\ast$\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})+sum(classifier.\+F\+D.$\ast$\mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{classifier.\+FD}})-\/2$\ast$\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}\textquotesingle{}$\ast$\mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{classifier.\+FD}}}
+
+
+
+example\+\_\+classifier.\+m 파일의 102 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_ab1932c2b89031f68b41ead3ba4a5b9a5}\label{example__classifier_8m_ab1932c2b89031f68b41ead3ba4a5b9a5}} 
+\index{example\_classifier.m@{example\_classifier.m}!dn@{dn}}
+\index{dn@{dn}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{dn}{dn}}
+{\footnotesize\ttfamily dn =\mbox{\hyperlink{_v_o_cevallayout_8m_a69ab5a290db7ecb803d915a13b913643}{min}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}$<$0))}
+
+
+
+example\+\_\+classifier.\+m 파일의 104 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a72303c49017eab1a5a5b720793a9c002}\label{example__classifier_8m_a72303c49017eab1a5a5b720793a9c002}} 
+\index{example\_classifier.m@{example\_classifier.m}!dp@{dp}}
+\index{dp@{dp}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{dp}{dp}}
+{\footnotesize\ttfamily dp =\mbox{\hyperlink{_v_o_cevallayout_8m_a69ab5a290db7ecb803d915a13b913643}{min}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{classifier.\+gt}}$>$0))}
+
+
+
+example\+\_\+classifier.\+m 파일의 103 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}\label{example__classifier_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}} 
+\index{example\_classifier.m@{example\_classifier.m}!drawnow@{drawnow}}
+\index{drawnow@{drawnow}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{drawnow}{drawnow}}
+{\footnotesize\ttfamily drawnow}
+
+
+
+example\+\_\+classifier.\+m 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_ae2af5012782a0b8a6f0389240434eb0c}\label{example__classifier_8m_ae2af5012782a0b8a6f0389240434eb0c}} 
+\index{example\_classifier.m@{example\_classifier.m}!extractor@{extractor}}
+\index{extractor@{extractor}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{extractor}{extractor}}
+{\footnotesize\ttfamily trivial feature extractor}
+
+
+
+example\+\_\+classifier.\+m 파일의 93 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}\label{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}} 
+\index{example\_classifier.m@{example\_classifier.m}!fd@{fd}}
+\index{fd@{fd}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily trivial feature \mbox{\hyperlink{viewanno_8m_a3531373f5f2661781b7461b59d54fceb}{I}} fd =extractfd(V\+O\+Copts,\mbox{\hyperlink{viewanno_8m_a3531373f5f2661781b7461b59d54fceb}{I}})}
+
+
+
+example\+\_\+classifier.\+m 파일의 46 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}\label{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}} 
+\index{example\_classifier.m@{example\_classifier.m}!fid@{fid}}
+\index{fid@{fid}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{fid}{fid}}
+{\footnotesize\ttfamily create \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file fid =fopen(sprintf(V\+O\+Copts.\+clsrespath,\textquotesingle{}comp1\textquotesingle{},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}w\textquotesingle{})}
+
+
+
+example\+\_\+classifier.\+m 파일의 60 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a3e734217421bb94320926961b9d3fb1a}\label{example__classifier_8m_a3e734217421bb94320926961b9d3fb1a}} 
+\index{example\_classifier.m@{example\_classifier.m}!gt@{gt}}
+\index{gt@{gt}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{gt}{gt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} run \mbox{\hyperlink{example__classifier_8m_a83de22fba763563a99b8a9e3767b63b1}{classifier}} \mbox{\hyperlink{viewanno_8m_a58ab1fd68e97078232808206b850161b}{on}} \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} images \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} gt =textread(sprintf(V\+O\+Copts.\+imgsetpath,V\+O\+Copts.\+testset),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{})}
+
+
+
+example\+\_\+classifier.\+m 파일의 57 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a6f6ccfcf58b31cb6412107d9d5281426}\label{example__classifier_8m_a6f6ccfcf58b31cb6412107d9d5281426}} 
+\index{example\_classifier.m@{example\_classifier.m}!i@{i}}
+\index{i@{i}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily for i}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:VOCopts.nclasses}
+\DoxyCodeLine{    \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}=VOCopts.classes\{\mbox{\hyperlink{example__classifier_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}}
+
+\end{DoxyCode}
+
+
+example\+\_\+classifier.\+m 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_aad838c45b27efd76ba8d2ce84aa29918}\label{example__classifier_8m_aad838c45b27efd76ba8d2ce84aa29918}} 
+\index{example\_classifier.m@{example\_classifier.m}!I@{I}}
+\index{I@{I}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{I}{I}}
+{\footnotesize\ttfamily catch compute and \mbox{\hyperlink{example__classifier_8m_a97f1718d165833c17855aabcafb3cdf0}{save}} features I =imread(sprintf(V\+O\+Copts.\+imgpath,\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))}
+
+
+
+example\+\_\+classifier.\+m 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a8fb092330ecda60587643305d0d9738a}\label{example__classifier_8m_a8fb092330ecda60587643305d0d9738a}} 
+\index{example\_classifier.m@{example\_classifier.m}!tic@{tic}}
+\index{tic@{tic}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{tic}{tic}}
+{\footnotesize\ttfamily tic}
+
+
+
+example\+\_\+classifier.\+m 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__classifier_8m_a326eb43af45972a4fdc78c1221c88164}\label{example__classifier_8m_a326eb43af45972a4fdc78c1221c88164}} 
+\index{example\_classifier.m@{example\_classifier.m}!VOCinit@{VOCinit}}
+\index{VOCinit@{VOCinit}!example\_classifier.m@{example\_classifier.m}}
+\doxysubsubsection{\texorpdfstring{VOCinit}{VOCinit}}
+{\footnotesize\ttfamily initialize V\+OC options V\+O\+Cinit}
+
+
+
+example\+\_\+classifier.\+m 파일의 7 번째 라인에서 정의되었습니다.
+

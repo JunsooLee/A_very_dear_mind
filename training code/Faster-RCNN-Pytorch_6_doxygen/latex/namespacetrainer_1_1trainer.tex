@@ -1,0 +1,117 @@
+\hypertarget{namespacetrainer_1_1trainer}{}\doxysection{trainer.\+trainer 네임스페이스 참조}
+\label{namespacetrainer_1_1trainer}\index{trainer.trainer@{trainer.trainer}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer}{Faster\+R\+C\+N\+N\+Trainer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405}{\+\_\+smooth\+\_\+l1\+\_\+loss}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}}, \mbox{\hyperlink{_v_o_cevallayout_8m_aeeb7263bc62091985bdabfb0015cbc29}{t}}, in\+\_\+weight, sigma)
+\item 
+def \mbox{\hyperlink{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664}{\+\_\+fast\+\_\+rcnn\+\_\+loc\+\_\+loss}} (pred\+\_\+loc, gt\+\_\+loc, gt\+\_\+label, sigma)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetrainer_1_1trainer_af7f4095ccf1d1e68a9de60102936ab09}{Loss\+Tuple}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664}\label{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664}} 
+\index{trainer.trainer@{trainer.trainer}!\_fast\_rcnn\_loc\_loss@{\_fast\_rcnn\_loc\_loss}}
+\index{\_fast\_rcnn\_loc\_loss@{\_fast\_rcnn\_loc\_loss}!trainer.trainer@{trainer.trainer}}
+\doxysubsubsection{\texorpdfstring{\_fast\_rcnn\_loc\_loss()}{\_fast\_rcnn\_loc\_loss()}}
+{\footnotesize\ttfamily def trainer.\+trainer.\+\_\+fast\+\_\+rcnn\+\_\+loc\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{pred\+\_\+loc,  }\item[{}]{gt\+\_\+loc,  }\item[{}]{gt\+\_\+label,  }\item[{}]{sigma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+trainer.\+py 파일의 271 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{271 \textcolor{keyword}{def }\mbox{\hyperlink{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664}{\_fast\_rcnn\_loc\_loss}}(pred\_loc, gt\_loc, gt\_label, sigma):}
+\DoxyCodeLine{272     in\_weight = t.zeros(gt\_loc.shape).cuda()}
+\DoxyCodeLine{273     \textcolor{comment}{\# Localization loss is calculated only for positive rois.}}
+\DoxyCodeLine{274     \textcolor{comment}{\# NOTE:  unlike origin implementation, }}
+\DoxyCodeLine{275     \textcolor{comment}{\# we don't need inside\_weight and outside\_weight, they can calculate by gt\_label}}
+\DoxyCodeLine{276     in\_weight[(gt\_label > 0).\mbox{\hyperlink{_p_a_semptyobject_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}}(-\/1, 1).expand\_as(in\_weight).cuda()] = 1}
+\DoxyCodeLine{277     loc\_loss = \mbox{\hyperlink{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405}{\_smooth\_l1\_loss}}(pred\_loc, gt\_loc, Variable(in\_weight), sigma)}
+\DoxyCodeLine{278     \textcolor{comment}{\# Normalize by total number of negtive and positive rois.}}
+\DoxyCodeLine{279     loc\_loss /= (gt\_label >= 0).sum()  \textcolor{comment}{\# ignore gt\_label==-\/1 for rpn\_loss}}
+\DoxyCodeLine{280     \textcolor{keywordflow}{return} loc\_loss}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetrainer_1_1trainer_a9e9a6a7e132183a3066e077779de4664_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405}\label{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405}} 
+\index{trainer.trainer@{trainer.trainer}!\_smooth\_l1\_loss@{\_smooth\_l1\_loss}}
+\index{\_smooth\_l1\_loss@{\_smooth\_l1\_loss}!trainer.trainer@{trainer.trainer}}
+\doxysubsubsection{\texorpdfstring{\_smooth\_l1\_loss()}{\_smooth\_l1\_loss()}}
+{\footnotesize\ttfamily def trainer.\+trainer.\+\_\+smooth\+\_\+l1\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{t,  }\item[{}]{in\+\_\+weight,  }\item[{}]{sigma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+trainer.\+py 파일의 259 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{259 \textcolor{keyword}{def }\mbox{\hyperlink{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405}{\_smooth\_l1\_loss}}(x, t, in\_weight, sigma):}
+\DoxyCodeLine{260     sigma2 = sigma ** 2}
+\DoxyCodeLine{261     t = t.float()}
+\DoxyCodeLine{262     diff = in\_weight * (x -\/ t)}
+\DoxyCodeLine{263     abs\_diff = diff.abs()}
+\DoxyCodeLine{264     flag = (abs\_diff.data < (1. / sigma2)).float()}
+\DoxyCodeLine{265     flag = Variable(flag)}
+\DoxyCodeLine{266     y = (flag * (sigma2 / 2.) * (diff ** 2) +}
+\DoxyCodeLine{267          (1 -\/ flag) * (abs\_diff -\/ 0.5 / sigma2))}
+\DoxyCodeLine{268     \textcolor{keywordflow}{return} y.sum()}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetrainer_1_1trainer_aeace27043682fd4e4743b550a2527405_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespacetrainer_1_1trainer_af7f4095ccf1d1e68a9de60102936ab09}\label{namespacetrainer_1_1trainer_af7f4095ccf1d1e68a9de60102936ab09}} 
+\index{trainer.trainer@{trainer.trainer}!LossTuple@{LossTuple}}
+\index{LossTuple@{LossTuple}!trainer.trainer@{trainer.trainer}}
+\doxysubsubsection{\texorpdfstring{LossTuple}{LossTuple}}
+{\footnotesize\ttfamily trainer.\+trainer.\+Loss\+Tuple}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  namedtuple(\textcolor{stringliteral}{'LossTuple'},}
+\DoxyCodeLine{2                        [\textcolor{stringliteral}{'rpn\_loc\_loss'},}
+\DoxyCodeLine{3                         \textcolor{stringliteral}{'rpn\_cls\_loss'},}
+\DoxyCodeLine{4                         \textcolor{stringliteral}{'roi\_loc\_loss'},}
+\DoxyCodeLine{5                         \textcolor{stringliteral}{'roi\_cls\_loss'},}
+\DoxyCodeLine{6                         \textcolor{stringliteral}{'total\_loss'}}
+\DoxyCodeLine{7                         ])}
+
+\end{DoxyCode}
+
+
+trainer.\+py 파일의 15 번째 라인에서 정의되었습니다.
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/VOCdevkit/viewanno.m 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('viewanno_8m_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">viewanno.m</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="viewanno_8m.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">function</span> viewanno(imgset)</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordflow">if</span> nargin&lt;1</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <a class="code" href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a>([<span class="stringliteral">&#39;usage: viewanno(imgset) e.g. viewanno(&#39;</span> 39 <span class="stringliteral">&#39;Main/train&#39;</span> 39 <span class="stringliteral">&#39;) &#39;</span> ...</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;            <span class="stringliteral">&#39;or viewanno(&#39;</span> 39 <span class="stringliteral">&#39;Main/car_train&#39;</span> 39 <span class="charliteral">&#39;)&#39;</span>]);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;% change <span class="keyword">this</span> path <span class="keywordflow">if</span> you install the VOC code elsewhere</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="viewanno_8m.html#a621f06e96d5ac1d81d25de489099b504">addpath</a>([cd <span class="stringliteral">&#39;/VOCcode&#39;</span>]);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;% initialize VOC options</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">   12</a></span>&#160;<a class="code" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;% <a class="code" href="example__classifier_8m.html#a998f67887464aef7f044115722929ded">load</a> <a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a> <span class="keyword">set</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a6b112fb9f67000cb49d3b8a54d1fb3f6">   15</a></span>&#160;[ids,gt]=textread(sprintf(VOCopts.imgsetpath,[<span class="stringliteral">&#39;../&#39;</span> imgset]),<span class="stringliteral">&#39;%s %d&#39;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">   17</a></span>&#160;<span class="keywordflow">for</span> <a class="code" href="viewanno_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=1:<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    % read annotation</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>=PASreadrecord(sprintf(VOCopts.annopath,<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{i}));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    % read <a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a3531373f5f2661781b7461b59d54fceb">   23</a></span>&#160;    <a class="code" href="viewanno_8m.html#a3531373f5f2661781b7461b59d54fceb">I</a>=imread(sprintf(VOCopts.imgpath,<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{i}));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.segmented</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        % read <a class="code" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">   29</a></span>&#160;        [Sclass,CMclass]=imread(sprintf(VOCopts.seg.clsimgpath,<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{i}));</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        [Sobj,CMobj]=imread(sprintf(VOCopts.seg.instimgpath,<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{i}));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    % display annotation</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.segmented</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="viewanno_8m.html#ad9dec1df62a8f2e7b7762c8257448262">subplot</a>(131);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a35274e01882c18cda38054cdda5755bc">   38</a></span>&#160;        <a class="code" href="viewanno_8m.html#a35274e01882c18cda38054cdda5755bc">clf</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="viewanno_8m.html#ac1512a907fb9540989a63b60dc08acc5">imshow</a>(<a class="code" href="viewanno_8m.html#a3531373f5f2661781b7461b59d54fceb">I</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">   42</a></span>&#160;    hold <a class="code" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">   43</a></span>&#160;    <span class="keywordflow">for</span> <a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>=1:<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.objects)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>=<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="create__segmentations__from__detections_8m.html#a0246615b51b182c933b7cffb655a7bdc">bbox</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">difficult</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>=&#39;y&#39;; % &quot;<a class="code" href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">difficult</a>&quot;: yellow</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        else</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="viewanno_8m.html#ac22bf8d47561ed6b532df6b1b9ec9106">   48</a></span>&#160;            <a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>=&#39;<a class="code" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a>&#39;; % not &quot;<a class="code" href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">difficult</a>&quot;: <a class="code" href="namespacemain.html#ae4e0ca242ca1fcc20eaf78df696e5440">green</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">truncated</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">   51</a></span>&#160;            <a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>=[<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a> &#39;:&#39;];    % <a class="code" href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">truncated</a>: dotted</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        else</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="viewanno_8m.html#af6327a3ec9aec265374484231c89c90c">   53</a></span>&#160;            <a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>=[<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a> &#39;-&#39;];    % not <a class="code" href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">truncated</a>: solid</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">   55</a></span>&#160;        <a class="code" href="viewanno_8m.html#adc15afa2c6f4a2c14bca9ad7dd3c8555">plot</a>(<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>([1 3 3 1 1]),<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>([2 2 4 4 2]),<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>,&#39;<a class="code" href="viewanno_8m.html#aa6875f7349c0f7137328b3cb1264c8d8">linewidth</a>&#39;,2);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="viewanno_8m.html#a2564f24c5de40c4961cc3c1211eab852">text</a>(<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>(1),<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>(2),<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="_p_a_semptyobject_8m.html#a23228aaa27047917c376277897125fc5">class</a>,&#39;<a class="code" href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">color</a>&#39;,&#39;<a class="code" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a>&#39;,&#39;backgroundcolor&#39;,<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>(1),...</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            &#39;verticalalignment&#39;,&#39;<a class="code" href="namespacemain.html#a0e678a2b1395fcce3888b457f47df5db">top</a>&#39;,&#39;horizontalalignment&#39;,&#39;<a class="code" href="namespacemain.html#a812eb721e6f73608332a9f1222310fcb">left</a>&#39;,&#39;fontsize&#39;,8);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">   59</a></span>&#160;        for <a class="code" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a>=1:<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="_v_o_creadrecxml_8m.html#a471a67bfd3606be22b3d3f6d23a2048d">part</a>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>=<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="_v_o_creadrecxml_8m.html#a471a67bfd3606be22b3d3f6d23a2048d">part</a>(<a class="code" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a>).<a class="code" href="create__segmentations__from__detections_8m.html#a0246615b51b182c933b7cffb655a7bdc">bbox</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="viewanno_8m.html#adc15afa2c6f4a2c14bca9ad7dd3c8555">plot</a>(<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>([1 3 3 1 1]),<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>([2 2 4 4 2]),<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>,&#39;<a class="code" href="viewanno_8m.html#aa6875f7349c0f7137328b3cb1264c8d8">linewidth</a>&#39;,2);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="viewanno_8m.html#a2564f24c5de40c4961cc3c1211eab852">text</a>(<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>(1),<a class="code" href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a>(2),<a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.<a class="code" href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a>(<a class="code" href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>).<a class="code" href="_v_o_creadrecxml_8m.html#a471a67bfd3606be22b3d3f6d23a2048d">part</a>(<a class="code" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a>).<a class="code" href="_p_a_semptyobject_8m.html#a23228aaa27047917c376277897125fc5">class</a>,&#39;<a class="code" href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">color</a>&#39;,&#39;<a class="code" href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a>&#39;,&#39;backgroundcolor&#39;,<a class="code" href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a>(1),...</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                &#39;verticalalignment&#39;,&#39;<a class="code" href="namespacemain.html#a0e678a2b1395fcce3888b457f47df5db">top</a>&#39;,&#39;horizontalalignment&#39;,&#39;<a class="code" href="namespacemain.html#a812eb721e6f73608332a9f1222310fcb">left</a>&#39;,&#39;fontsize&#39;,8);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">   66</a></span>&#160;    hold <a class="code" href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">off</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">   67</a></span>&#160;    axis <a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    axis <a class="code" href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">off</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="viewanno_8m.html#ad2d2a51bec06b46ce9ca16595717b814">title</a>(sprintf(&#39;<a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a>: %<a class="code" href="example__classifier_8m.html#a63d76009f280b11d9f2bcc48eb2bd7b7">d</a>/%<a class="code" href="example__classifier_8m.html#a63d76009f280b11d9f2bcc48eb2bd7b7">d</a>: &quot;%<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>&quot; (dotted=<a class="code" href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">truncated</a>, yellow=<a class="code" href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">difficult</a>)&#39;,...</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="viewanno_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>,<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>),<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{<a class="code" href="viewanno_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>}));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a>.segmented</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="viewanno_8m.html#ad9dec1df62a8f2e7b7762c8257448262">subplot</a>(132);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="viewanno_8m.html#ac1512a907fb9540989a63b60dc08acc5">imshow</a>(Sclass,CMclass);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        axis <a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        axis <a class="code" href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">off</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="viewanno_8m.html#ad2d2a51bec06b46ce9ca16595717b814">title</a>(<span class="stringliteral">&#39;segmentation by class&#39;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="viewanno_8m.html#ad9dec1df62a8f2e7b7762c8257448262">subplot</a>(133);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="viewanno_8m.html#ac1512a907fb9540989a63b60dc08acc5">imshow</a>(Sobj,CMobj);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        axis <a class="code" href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        axis <a class="code" href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">off</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="viewanno_8m.html#ad2d2a51bec06b46ce9ca16595717b814">title</a>(<span class="stringliteral">&#39;segmentation by object&#39;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="viewanno_8m.html#a8d2d9c325f476bb687f6fe8508b45bfe">fprintf</a>(<span class="stringliteral">&#39;press any key to continue with next image\n&#39;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="viewanno_8m.html#afd7d49e17b69bd6bf3d7a649856c1067">   87</a></span>&#160;    <a class="code" href="viewanno_8m.html#afd7d49e17b69bd6bf3d7a649856c1067">pause</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aviewanno_8m_html_ac1512a907fb9540989a63b60dc08acc5"><div class="ttname"><a href="viewanno_8m.html#ac1512a907fb9540989a63b60dc08acc5">imshow</a></div><div class="ttdeci">end imshow(I)</div></div>
+<div class="ttc" id="aviewanno_8m_html_a6f6ccfcf58b31cb6412107d9d5281426"><div class="ttname"><a href="viewanno_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a></div><div class="ttdeci">for i</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00017">viewanno.m:17</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_afd7d49e17b69bd6bf3d7a649856c1067"><div class="ttname"><a href="viewanno_8m.html#afd7d49e17b69bd6bf3d7a649856c1067">pause</a></div><div class="ttdeci">pause</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00087">viewanno.m:87</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a326eb43af45972a4fdc78c1221c88164"><div class="ttname"><a href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a></div><div class="ttdeci">initialize VOC options VOCinit</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00012">viewanno.m:12</a></div></div>
+<div class="ttc" id="aexample__classifier_8m_html_a998f67887464aef7f044115722929ded"><div class="ttname"><a href="example__classifier_8m.html#a998f67887464aef7f044115722929ded">load</a></div><div class="ttdeci">end try try to load features load(sprintf(VOCopts.exfdpath, ids{i}), 'fd')</div></div>
+<div class="ttc" id="a_p_a_semptyobject_8m_html_a23228aaa27047917c376277897125fc5"><div class="ttname"><a href="_p_a_semptyobject_8m.html#a23228aaa27047917c376277897125fc5">class</a></div><div class="ttdeci">object class</div><div class="ttdef"><b>Definition:</b> <a href="_p_a_semptyobject_8m_source.html#l00007">PASemptyobject.m:7</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a6024d771b8453f84b2ff2ba29f312d1b"><div class="ttname"><a href="viewanno_8m.html#a6024d771b8453f84b2ff2ba29f312d1b">truncated</a></div><div class="ttdeci">not truncated</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00055">viewanno.m:55</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_ab1bc5b4e7513a404f0a74890c4f59a0b"><div class="ttname"><a href="viewanno_8m.html#ab1bc5b4e7513a404f0a74890c4f59a0b">difficult</a></div><div class="ttdeci">not difficult</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00051">viewanno.m:51</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_acce81d594533f43132135cc9657df25b"><div class="ttname"><a href="viewanno_8m.html#acce81d594533f43132135cc9657df25b">objects</a></div><div class="ttdeci">if rec objects(j).difficult ls</div></div>
+<div class="ttc" id="a_v_o_creadrecxml_8m_html_a471a67bfd3606be22b3d3f6d23a2048d"><div class="ttname"><a href="_v_o_creadrecxml_8m.html#a471a67bfd3606be22b3d3f6d23a2048d">part</a></div><div class="ttdeci">p part</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_creadrecxml_8m_source.html#l00086">VOCreadrecxml.m:86</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_ac86694252f8dfdb19aaeadc4b7c342c6"><div class="ttname"><a href="viewanno_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a></div><div class="ttdeci">for j</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00043">viewanno.m:43</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_aac82a4a57e9e5838951a9f5b5132f21d"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div><div class="ttdeci">end[ids, confs, b1, b2, b3, b4]</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00029">create_segmentations_from_detections.m:29</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a58ab1fd68e97078232808206b850161b"><div class="ttname"><a href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a></div><div class="ttdeci">hold on</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00042">viewanno.m:42</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_a0246615b51b182c933b7cffb655a7bdc"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#a0246615b51b182c933b7cffb655a7bdc">bbox</a></div><div class="ttdeci">detinfo bbox</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00049">create_segmentations_from_detections.m:49</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a2564f24c5de40c4961cc3c1211eab852"><div class="ttname"><a href="viewanno_8m.html#a2564f24c5de40c4961cc3c1211eab852">text</a></div><div class="ttdeci">not text(bb(1), bb(2), rec.objects(j).class, 'color', 'k', 'backgroundcolor', ls(1),... 'verticalalignment', 'top', 'horizontalalignment', 'left', 'fontsize', 8)</div></div>
+<div class="ttc" id="aexample__classifier_8m_html_a63d76009f280b11d9f2bcc48eb2bd7b7"><div class="ttname"><a href="example__classifier_8m.html#a63d76009f280b11d9f2bcc48eb2bd7b7">d</a></div><div class="ttdeci">trivial fd d</div><div class="ttdef"><b>Definition:</b> <a href="example__classifier_8m_source.html#l00102">example_classifier.m:102</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_aa6875f7349c0f7137328b3cb1264c8d8"><div class="ttname"><a href="viewanno_8m.html#aa6875f7349c0f7137328b3cb1264c8d8">linewidth</a></div><div class="ttdeci">not linewidth</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00055">viewanno.m:55</a></div></div>
+<div class="ttc" id="aviewdet_8m_html_ac098c7b706e0f36aef1053e4eb6e0ae2"><div class="ttname"><a href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a></div><div class="ttdeci">ids</div><div class="ttdef"><b>Definition:</b> <a href="viewdet_8m_source.html#l00049">viewdet.m:49</a></div></div>
+<div class="ttc" id="aviewdet_8m_html_a78386645c299ac47ae8356c9eb8af518"><div class="ttname"><a href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a></div><div class="ttdeci">elseif length(i)&gt;1 error('multiple image &quot;%s&quot;'</div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_aaa7c61c7163e7fc36352afb33ce6c3dd"><div class="ttname"><a href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a></div><div class="ttdeci">if s</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cwritexml_8m_source.html#l00029">VOCwritexml.m:29</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a3531373f5f2661781b7461b59d54fceb"><div class="ttname"><a href="viewanno_8m.html#a3531373f5f2661781b7461b59d54fceb">I</a></div><div class="ttdeci">read image I</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00023">viewanno.m:23</a></div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_a6ded8204cc9ab5b812a3022fae39d491"><div class="ttname"><a href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a></div><div class="ttdeci">else error('unsupported type')</div></div>
+<div class="ttc" id="anamespacemain_html_a812eb721e6f73608332a9f1222310fcb"><div class="ttname"><a href="namespacemain.html#a812eb721e6f73608332a9f1222310fcb">main.left</a></div><div class="ttdeci">left</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00450">main.py:450</a></div></div>
+<div class="ttc" id="anamespacemain_html_a0e678a2b1395fcce3888b457f47df5db"><div class="ttname"><a href="namespacemain.html#a0e678a2b1395fcce3888b457f47df5db">main.top</a></div><div class="ttdeci">top</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00450">main.py:450</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a40822d6abf63a875299209914bccb8f2"><div class="ttname"><a href="viewanno_8m.html#a40822d6abf63a875299209914bccb8f2">bb</a></div><div class="ttdeci">not bb([2 2 4 4 2])</div></div>
+<div class="ttc" id="a_p_a_serrmsg_8m_html_afb9e76fe034c2da0131952be7d078815"><div class="ttname"><a href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a></div><div class="ttdeci">if(~isempty(k))</div></div>
+<div class="ttc" id="aviewanno_8m_html_a1072dfc65a33e2709fed167bc0624fec"><div class="ttname"><a href="viewanno_8m.html#a1072dfc65a33e2709fed167bc0624fec">ls</a></div><div class="ttdeci">not ls</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00055">viewanno.m:55</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a621f06e96d5ac1d81d25de489099b504"><div class="ttname"><a href="viewanno_8m.html#a621f06e96d5ac1d81d25de489099b504">addpath</a></div><div class="ttdeci">function viewanno(imgset) if nargin&lt; 1 error([ 'usage end change this path if you install the VOC code elsewhere addpath([cd '/VOCcode'])</div></div>
+<div class="ttc" id="aviewanno_8m_html_a35274e01882c18cda38054cdda5755bc"><div class="ttname"><a href="viewanno_8m.html#a35274e01882c18cda38054cdda5755bc">clf</a></div><div class="ttdeci">else clf</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00038">viewanno.m:38</a></div></div>
+<div class="ttc" id="aexample__detector_8m_html_a3cee98edb8881e3381ce5ac42812fe41"><div class="ttname"><a href="example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41">rec</a></div><div class="ttdeci">end read annotation rec</div><div class="ttdef"><b>Definition:</b> <a href="example__detector_8m_source.html#l00043">example_detector.m:43</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_adc15afa2c6f4a2c14bca9ad7dd3c8555"><div class="ttname"><a href="viewanno_8m.html#adc15afa2c6f4a2c14bca9ad7dd3c8555">plot</a></div><div class="ttdeci">plot(bb([1 3 3 1 1]), bb([2 2 4 4 2]), ls, 'linewidth', 2)</div></div>
+<div class="ttc" id="aviewanno_8m_html_aa0b08e5898b5b1828d5ce29a4f8e303b"><div class="ttname"><a href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a></div><div class="ttdeci">if rec segmented read segmentations[Sclass, CMclass]</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00029">viewanno.m:29</a></div></div>
+<div class="ttc" id="anamespacemain_html_ae4e0ca242ca1fcc20eaf78df696e5440"><div class="ttname"><a href="namespacemain.html#ae4e0ca242ca1fcc20eaf78df696e5440">main.green</a></div><div class="ttdeci">tuple green</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00675">main.py:675</a></div></div>
+<div class="ttc" id="anamespacemain_html_aeabbf69db1809807f065c2d1e9a62567"><div class="ttname"><a href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">main.color</a></div><div class="ttdeci">tuple color</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00685">main.py:685</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_aed3e051aea1aa75805be67a5c29d1d55"><div class="ttname"><a href="viewanno_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a></div><div class="ttdeci">axis image</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00067">viewanno.m:67</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_ad9dec1df62a8f2e7b7762c8257448262"><div class="ttname"><a href="viewanno_8m.html#ad9dec1df62a8f2e7b7762c8257448262">subplot</a></div><div class="ttdeci">end display annotation if rec segmented subplot(131)</div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a73c18c59a39b18382081ec00bb456d43"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a></div><div class="ttdeci">g</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00013">VOClabelcolormap.m:13</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_ad1ef7ba37f963bb7388eb76554f52c28"><div class="ttname"><a href="viewanno_8m.html#ad1ef7ba37f963bb7388eb76554f52c28">off</a></div><div class="ttdeci">end end hold off</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00066">viewanno.m:66</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a1c73327b2882639bc9f5e416bb3cc7ac"><div class="ttname"><a href="viewanno_8m.html#a1c73327b2882639bc9f5e416bb3cc7ac">k</a></div><div class="ttdeci">for k</div><div class="ttdef"><b>Definition:</b> <a href="viewanno_8m_source.html#l00059">viewanno.m:59</a></div></div>
+<div class="ttc" id="aviewanno_8m_html_a8d2d9c325f476bb687f6fe8508b45bfe"><div class="ttname"><a href="viewanno_8m.html#a8d2d9c325f476bb687f6fe8508b45bfe">fprintf</a></div><div class="ttdeci">end fprintf('press any key to continue with next image\n')</div></div>
+<div class="ttc" id="aviewanno_8m_html_ad2d2a51bec06b46ce9ca16595717b814"><div class="ttname"><a href="viewanno_8m.html#ad2d2a51bec06b46ce9ca16595717b814">title</a></div><div class="ttdeci">title(sprintf('image:%d/%d:&quot;%s&quot;(dotted=truncated, yellow=difficult)',... i, length(ids), ids{i}))</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="dir_d9f7cb0ee7ba4bfbc588b8b68234bda5.html">VOCdevkit</a></li><li class="navelem"><a class="el" href="viewanno_8m.html">viewanno.m</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

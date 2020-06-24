@@ -1,0 +1,64 @@
+\hypertarget{convert__keras-yolo3_8py}{}\doxysection{scripts/extra/convert\+\_\+keras-\/yolo3.py 파일 참조}
+\label{convert__keras-yolo3_8py}\index{scripts/extra/convert\_keras-\/yolo3.py@{scripts/extra/convert\_keras-\/yolo3.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceconvert__keras-yolo3}{convert\+\_\+keras-\/yolo3}}
+\item 
+ \mbox{\hyperlink{namespaceconvert__keras}{convert\+\_\+keras}}
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_aaa8829659b7992da74df2b9af698fef1}{convert\+\_\+keras-\/yolo3.\+annotation\+\_\+version}} = datetime.\+datetime.\+now().strftime(\textquotesingle{}\%Y\%m\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\%H\%\mbox{\hyperlink{_v_o_cevallayout_8m_a25ba713b4ca99e364ddc016f89b7cf70}{M}}\%S\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a3f2aa135356f98789f10c748f475b01d}{convert\+\_\+keras-\/yolo3.\+ap}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ae89c5783c1f43818b187b227122067f7}{convert\+\_\+keras-\/yolo3.\+required}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a5d1c4af4fd2afa97836b885eb7dedd76}{convert\+\_\+keras-\/yolo3.\+default}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a3ebb7b0c6234480e6d745e0ce15217c3}{convert\+\_\+keras-\/yolo3.\+type}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_acc0c66c1df1aac3ec9716d83fbb5180f}{convert\+\_\+keras-\/yolo3.\+help}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a5311fbb60c3d285cee0299b862f216cf}{convert\+\_\+keras-\/yolo3.\+action}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a9069007f6d31a9ca8e68860c905698c0}{convert\+\_\+keras-\/yolo3.\+group}} = ap.\+add\+\_\+mutually\+\_\+exclusive\+\_\+group(required=True)
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a56d26c74547c2f9af84f89eef404a153}{convert\+\_\+keras-\/yolo3.\+A\+R\+GS}} = ap.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a4ca12c91e1584784332839b24a1a21d1}{convert\+\_\+keras-\/yolo3.\+class\+\_\+map}} = class\+\_\+file.\+readlines()
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a789ec9d2ef7507745f3e05f1b25cd6fd}{convert\+\_\+keras-\/yolo3.\+annotation\+\_\+file}} = \mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{A\+R\+G\+S.\+gt}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{A\+R\+G\+S.\+gt}} else A\+R\+G\+S.\+dr
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a78e2193d8a978ff6b6e4a69341fff108}{convert\+\_\+keras-\/yolo3.\+output\+\_\+path}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ab3c8b46aca0e8ad26eab0159ab25b391}{convert\+\_\+keras-\/yolo3.\+exist\+\_\+ok}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a8ed4d5c6f89231791e51226f7e80dd3b}{convert\+\_\+keras-\/yolo3.\+annot}} = annot.\+split(\textquotesingle{} \textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_af13ac0510fa47975515c6f66251e0df9}{convert\+\_\+keras-\/yolo3.\+img\+\_\+path}} = annot\mbox{[}0\mbox{]}.strip()
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_acdd6395c6a368bc19b9b331c1ee893fa}{convert\+\_\+keras-\/yolo3.\+annotation\+\_\+dir\+\_\+name}} = os.\+path.\+dirname(img\+\_\+path)
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a85a70ef8f4a64d4c75a32d24b04a2307}{convert\+\_\+keras-\/yolo3.\+destination\+\_\+dir}} = os.\+path.\+join(A\+R\+G\+S.\+output\+\_\+path, annotation\+\_\+dir\+\_\+name)
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a33879d7cff28930552068a2d664b18d7}{convert\+\_\+keras-\/yolo3.\+file\+\_\+name}} = os.\+path.\+basename(img\+\_\+path).replace(\textquotesingle{}.jpg\textquotesingle{}, \textquotesingle{}.txt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ac63ff1036fcf034dea1d8b03c9a6a465}{convert\+\_\+keras-\/yolo3.\+output\+\_\+file\+\_\+path}} = os.\+path.\+join(destination\+\_\+dir, file\+\_\+name)
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a8b46e0e19116f1ef24ff7935be524f22}{convert\+\_\+keras-\/yolo3.\+x\+\_\+min}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_a1a56d152b67764ab91948891832fb456}{convert\+\_\+keras-\/yolo3.\+y\+\_\+min}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ade4e0b10ffd0b43f8ab05bbe6caa7df5}{convert\+\_\+keras-\/yolo3.\+x\+\_\+max}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ac21f1f826dc7247d0a84ca05fad3743b}{convert\+\_\+keras-\/yolo3.\+y\+\_\+max}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_ac44098f00ac88f2f6a1b4170b256a82e}{convert\+\_\+keras-\/yolo3.\+class\+\_\+id}}
+\item 
+string \mbox{\hyperlink{namespaceconvert__keras-yolo3_a6ae72697ac86638ae14167874f7f1439}{convert\+\_\+keras-\/yolo3.\+out\+\_\+box}}
+\item 
+\mbox{\hyperlink{namespaceconvert__keras-yolo3_af66409390bf5c44a7d00e93605078b92}{convert\+\_\+keras-\/yolo3.\+score}}
+\end{DoxyCompactItemize}

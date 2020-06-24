@@ -1,0 +1,36 @@
+\hypertarget{namespacemodel_1_1rpn}{}\doxysection{model.\+rpn 네임스페이스 참조}
+\label{namespacemodel_1_1rpn}\index{model.rpn@{model.rpn}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network}{Region\+Proposal\+Network}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}{normal\+\_\+init}} (m, mean, stddev, \mbox{\hyperlink{_v_o_creadrecxml_8m_a3807f4dd35ddd959bc96e9682277d72d}{truncated}}=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}\label{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}} 
+\index{model.rpn@{model.rpn}!normal\_init@{normal\_init}}
+\index{normal\_init@{normal\_init}!model.rpn@{model.rpn}}
+\doxysubsubsection{\texorpdfstring{normal\_init()}{normal\_init()}}
+{\footnotesize\ttfamily def model.\+rpn.\+normal\+\_\+init (\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{mean,  }\item[{}]{stddev,  }\item[{}]{truncated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+rpn.\+py 파일의 171 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{171 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}{normal\_init}}(m, mean, stddev, truncated=False):}
+\DoxyCodeLine{172     \textcolor{comment}{\# x is a parameter}}
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} truncated:}
+\DoxyCodeLine{174         m.weight.data.normal\_().fmod\_(2).mul\_(stddev).add\_(mean)  \textcolor{comment}{\# not a perfect approximation}}
+\DoxyCodeLine{175     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{176         m.weight.data.normal\_(mean, stddev)}
+\DoxyCodeLine{177         m.bias.data.zero\_()}
+
+\end{DoxyCode}

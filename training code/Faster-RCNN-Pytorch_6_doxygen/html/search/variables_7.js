@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['g_1001',['g',['../_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43',1,'VOClabelcolormap.m']]],
+  ['gamma_1002',['gamma',['../classfocalloss_1_1_focal_loss.html#a52154ded28d0d1a380426bf424826333',1,'focalloss::FocalLoss']]],
+  ['green_1003',['green',['../namespacemain.html#ae4e0ca242ca1fcc20eaf78df696e5440',1,'main']]],
+  ['grid_1004',['grid',['../_v_o_cevalcls_8m.html#a52bdd18b63ba2ec1780aecd91679ee4a',1,'grid():&#160;VOCevalcls.m'],['../_v_o_cevaldet_8m.html#a52bdd18b63ba2ec1780aecd91679ee4a',1,'grid():&#160;VOCevaldet.m'],['../_v_o_cevallayout_8m.html#a52bdd18b63ba2ec1780aecd91679ee4a',1,'grid():&#160;VOCevallayout.m']]],
+  ['ground_5ftruth_5fdata_1005',['ground_truth_data',['../namespacemain.html#a05b071ccc4b3043c83f33a7264534588',1,'main']]],
+  ['ground_5ftruth_5ffiles_5flist_1006',['ground_truth_files_list',['../namespacemain.html#a61f0a5455471bdb14ef9f8972a61ef3f',1,'main']]],
+  ['ground_5ftruth_5fimg_1007',['ground_truth_img',['../namespacemain.html#a4c6b22b960fb5752e30d2c43c41bb876',1,'main']]],
+  ['group_1008',['group',['../namespaceconvert__keras-yolo3.html#a9069007f6d31a9ca8e68860c905698c0',1,'convert_keras-yolo3']]],
+  ['gt_1009',['gt',['../example__classifier_8m.html#a3e734217421bb94320926961b9d3fb1a',1,'example_classifier.m']]],
+  ['gt_5fbackup_1010',['gt_backup',['../namespaceintersect-gt-and-dr.html#a8e6ddbd703218b7d0f8c30b86f1ae36f',1,'intersect-gt-and-dr']]],
+  ['gt_5fbboxes_1011',['gt_bboxes',['../namespacemain.html#a9806a9eaeed46d5fa810c9e923cbe26a',1,'main']]],
+  ['gt_5fclasses_1012',['gt_classes',['../namespacemain.html#a82d0312361e87a4183635fe2acb4fa83',1,'main']]],
+  ['gt_5fcounter_5fper_5fclass_1013',['gt_counter_per_class',['../namespacemain.html#ae39497863bad88a1c4785c9b864691d2',1,'main']]],
+  ['gt_5fdifficults_1014',['gt_difficults',['../namespacemain.html#a9a7fea72e9c9daee15bc6c4c107c5a8a',1,'main']]],
+  ['gt_5ffile_1015',['gt_file',['../namespacemain.html#afbc3bd8174b8e3b4f3a5d190db1e8cae',1,'main']]],
+  ['gt_5ffiles_1016',['gt_files',['../namespaceintersect-gt-and-dr.html#ab572906c66940a68fa7269f64fcf6f02',1,'intersect-gt-and-dr']]],
+  ['gt_5flabels_1017',['gt_labels',['../namespacemain.html#acd3075963618c92d0a6ea39a56a513c8',1,'main']]],
+  ['gt_5fmatch_1018',['gt_match',['../namespacemain.html#ad4966f7fb73280a64fda32ef7b7fe0cc',1,'main']]],
+  ['gt_5fpath_1019',['GT_PATH',['../namespacemain.html#aeff2cd976f6a1d146ce74b9a6e7916e2',1,'main.GT_PATH()'],['../namespaceconvert__gt__xml.html#a00457f4e4031e0e3d0b874a49404643f',1,'convert_gt_xml.GT_PATH()'],['../namespaceconvert__gt__yolo.html#a75ac3a286bfe4ee4acc950f16f0d692c',1,'convert_gt_yolo.GT_PATH()'],['../namespacefind__class.html#aa19831fcdd36c325ef54ad3dd4a4a2b0',1,'find_class.GT_PATH()'],['../namespaceintersect-gt-and-dr.html#ac8e20ee582cdfd29bfc69ce671df2b8a',1,'intersect-gt-and-dr.GT_PATH()']]],
+  ['gtclasslabelfile_1020',['gtclasslabelfile',['../create__segmentations__from__detections_8m.html#a069fca71d9b681cb063bc48fdcc062e1',1,'create_segmentations_from_detections.m']]]
+];

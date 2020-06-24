@@ -1,0 +1,571 @@
+\hypertarget{namespacedata_1_1util}{}\doxysection{data.\+util 네임스페이스 참조}
+\label{namespacedata_1_1util}\index{data.util@{data.util}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a813ef4cac5d2113c55086cde41a4a102}{read\+\_\+image}} (path, dtype=np.\+float32, color=True)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a825b3f8b5d65ff3f078cc5a1ef234168}{resize\+\_\+bbox}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, in\+\_\+size, out\+\_\+size)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_ad9f4e24ca4a038bcbc611727e5b11008}{flip\+\_\+bbox}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, size, y\+\_\+flip=False, x\+\_\+flip=False)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a19153a63d60e5697a60821b2c574c5a8}{crop\+\_\+bbox}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, y\+\_\+slice=None, x\+\_\+slice=None, allow\+\_\+outside\+\_\+center=True, return\+\_\+param=False)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}{\+\_\+slice\+\_\+to\+\_\+bounds}} (slice\+\_\+)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a98422c268db7d4184cfa03d6aabe8d2d}{translate\+\_\+bbox}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, y\+\_\+offset=0, x\+\_\+offset=0)
+\item 
+def \mbox{\hyperlink{namespacedata_1_1util_a4a3d0f58cc1845a992d2945799b56dc0}{random\+\_\+flip}} (img, y\+\_\+random=False, x\+\_\+random=False, return\+\_\+param=False, copy=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}\label{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}} 
+\index{data.util@{data.util}!\_slice\_to\_bounds@{\_slice\_to\_bounds}}
+\index{\_slice\_to\_bounds@{\_slice\_to\_bounds}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{\_slice\_to\_bounds()}{\_slice\_to\_bounds()}}
+{\footnotesize\ttfamily def data.\+util.\+\_\+slice\+\_\+to\+\_\+bounds (\begin{DoxyParamCaption}\item[{}]{slice\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+util.\+py 파일의 189 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}{\_slice\_to\_bounds}}(slice\_):}
+\DoxyCodeLine{190     \textcolor{keywordflow}{if} slice\_ \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{191         \textcolor{keywordflow}{return} 0, np.inf}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193     \textcolor{keywordflow}{if} slice\_.start \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{194         l = 0}
+\DoxyCodeLine{195     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{196         l = slice\_.start}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{keywordflow}{if} slice\_.stop \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{199         u = np.inf}
+\DoxyCodeLine{200     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{201         u = slice\_.stop}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{keywordflow}{return} l, u}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1util_a19153a63d60e5697a60821b2c574c5a8}\label{namespacedata_1_1util_a19153a63d60e5697a60821b2c574c5a8}} 
+\index{data.util@{data.util}!crop\_bbox@{crop\_bbox}}
+\index{crop\_bbox@{crop\_bbox}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{crop\_bbox()}{crop\_bbox()}}
+{\footnotesize\ttfamily def data.\+util.\+crop\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{y\+\_\+slice = {\ttfamily None},  }\item[{}]{x\+\_\+slice = {\ttfamily None},  }\item[{}]{allow\+\_\+outside\+\_\+center = {\ttfamily True},  }\item[{}]{return\+\_\+param = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Translate bounding boxes to fit within the cropped area of an image.
+
+This method is mainly used together with image cropping.
+This method translates the coordinates of bounding boxes like
+:func:`data.util.translate_bbox`. In addition,
+this function truncates the bounding boxes to fit within the cropped area.
+If a bounding box does not overlap with the cropped area,
+this bounding box will be removed.
+
+The bounding boxes are expected to be packed into a two dimensional
+tensor of shape :math:`(R, 4)`, where :math:`R` is the number of
+bounding boxes in the image. The second axis represents attributes of
+the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,
+where the four attributes are coordinates of the top left and the
+bottom right vertices.
+
+Args:
+    bbox (~numpy.ndarray): Bounding boxes to be transformed. The shape is
+        :math:`(R, 4)`. :math:`R` is the number of bounding boxes.
+    y_slice (slice): The slice of y axis.
+    x_slice (slice): The slice of x axis.
+    allow_outside_center (bool): If this argument is :obj:`False`,
+        bounding boxes whose centers are outside of the cropped area
+        are removed. The default value is :obj:`True`.
+    return_param (bool): If :obj:`True`, this function returns
+        indices of kept bounding boxes.
+
+Returns:
+    ~numpy.ndarray or (~numpy.ndarray, dict):
+
+    If :obj:`return_param = False`, returns an array :obj:`bbox`.
+
+    If :obj:`return_param = True`,
+    returns a tuple whose elements are :obj:`bbox, param`.
+    :obj:`param` is a dictionary of intermediate parameters whose
+    contents are listed below with key, value-type and the description
+    of the value.
+
+    * **index** (*numpy.ndarray*): An array holding indices of used \
+        bounding boxes.\end{DoxyVerb}
+ 
+
+util.\+py 파일의 117 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a19153a63d60e5697a60821b2c574c5a8}{crop\_bbox}}(}
+\DoxyCodeLine{118         bbox, y\_slice=None, x\_slice=None,}
+\DoxyCodeLine{119         allow\_outside\_center=True, return\_param=False):}
+\DoxyCodeLine{120     \textcolor{stringliteral}{"""Translate bounding boxes to fit within the cropped area of an image.}}
+\DoxyCodeLine{121 \textcolor{stringliteral}{}}
+\DoxyCodeLine{122 \textcolor{stringliteral}{    This method is mainly used together with image cropping.}}
+\DoxyCodeLine{123 \textcolor{stringliteral}{    This method translates the coordinates of bounding boxes like}}
+\DoxyCodeLine{124 \textcolor{stringliteral}{    :func:`data.util.translate\_bbox`. In addition,}}
+\DoxyCodeLine{125 \textcolor{stringliteral}{    this function truncates the bounding boxes to fit within the cropped area.}}
+\DoxyCodeLine{126 \textcolor{stringliteral}{    If a bounding box does not overlap with the cropped area,}}
+\DoxyCodeLine{127 \textcolor{stringliteral}{    this bounding box will be removed.}}
+\DoxyCodeLine{128 \textcolor{stringliteral}{}}
+\DoxyCodeLine{129 \textcolor{stringliteral}{    The bounding boxes are expected to be packed into a two dimensional}}
+\DoxyCodeLine{130 \textcolor{stringliteral}{    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of}}
+\DoxyCodeLine{131 \textcolor{stringliteral}{    bounding boxes in the image. The second axis represents attributes of}}
+\DoxyCodeLine{132 \textcolor{stringliteral}{    the bounding box. They are :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})`,}}
+\DoxyCodeLine{133 \textcolor{stringliteral}{    where the four attributes are coordinates of the top left and the}}
+\DoxyCodeLine{134 \textcolor{stringliteral}{    bottom right vertices.}}
+\DoxyCodeLine{135 \textcolor{stringliteral}{}}
+\DoxyCodeLine{136 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{137 \textcolor{stringliteral}{        bbox (~numpy.ndarray): Bounding boxes to be transformed. The shape is}}
+\DoxyCodeLine{138 \textcolor{stringliteral}{            :math:`(R, 4)`. :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{139 \textcolor{stringliteral}{        y\_slice (slice): The slice of y axis.}}
+\DoxyCodeLine{140 \textcolor{stringliteral}{        x\_slice (slice): The slice of x axis.}}
+\DoxyCodeLine{141 \textcolor{stringliteral}{        allow\_outside\_center (bool): If this argument is :obj:`False`,}}
+\DoxyCodeLine{142 \textcolor{stringliteral}{            bounding boxes whose centers are outside of the cropped area}}
+\DoxyCodeLine{143 \textcolor{stringliteral}{            are removed. The default value is :obj:`True`.}}
+\DoxyCodeLine{144 \textcolor{stringliteral}{        return\_param (bool): If :obj:`True`, this function returns}}
+\DoxyCodeLine{145 \textcolor{stringliteral}{            indices of kept bounding boxes.}}
+\DoxyCodeLine{146 \textcolor{stringliteral}{}}
+\DoxyCodeLine{147 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{148 \textcolor{stringliteral}{        ~numpy.ndarray or (~numpy.ndarray, dict):}}
+\DoxyCodeLine{149 \textcolor{stringliteral}{}}
+\DoxyCodeLine{150 \textcolor{stringliteral}{        If :obj:`return\_param = False`, returns an array :obj:`bbox`.}}
+\DoxyCodeLine{151 \textcolor{stringliteral}{}}
+\DoxyCodeLine{152 \textcolor{stringliteral}{        If :obj:`return\_param = True`,}}
+\DoxyCodeLine{153 \textcolor{stringliteral}{        returns a tuple whose elements are :obj:`bbox, param`.}}
+\DoxyCodeLine{154 \textcolor{stringliteral}{        :obj:`param` is a dictionary of intermediate parameters whose}}
+\DoxyCodeLine{155 \textcolor{stringliteral}{        contents are listed below with key, value-\/type and the description}}
+\DoxyCodeLine{156 \textcolor{stringliteral}{        of the value.}}
+\DoxyCodeLine{157 \textcolor{stringliteral}{}}
+\DoxyCodeLine{158 \textcolor{stringliteral}{        * **index** (*numpy.ndarray*): An array holding indices of used \(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{stringliteral}{            bounding boxes.}}
+\DoxyCodeLine{160 \textcolor{stringliteral}{}}
+\DoxyCodeLine{161 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     t, b = \mbox{\hyperlink{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}{\_slice\_to\_bounds}}(y\_slice)}
+\DoxyCodeLine{164     l, r = \mbox{\hyperlink{namespacedata_1_1util_a6536202a6fb4d32b57b54e034a38b0bf}{\_slice\_to\_bounds}}(x\_slice)}
+\DoxyCodeLine{165     crop\_bb = np.array((t, l, b, r))}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keywordflow}{if} allow\_outside\_center:}
+\DoxyCodeLine{168         mask = np.ones(bbox.shape[0], dtype=bool)}
+\DoxyCodeLine{169     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{170         center = (bbox[:, :2] + bbox[:, 2:]) / 2}
+\DoxyCodeLine{171         mask = np.logical\_and(crop\_bb[:2] <= center, center < crop\_bb[2:]) \(\backslash\)}
+\DoxyCodeLine{172             .all(axis=1)}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     bbox = bbox.copy()}
+\DoxyCodeLine{175     bbox[:, :2] = np.maximum(bbox[:, :2], crop\_bb[:2])}
+\DoxyCodeLine{176     bbox[:, 2:] = np.minimum(bbox[:, 2:], crop\_bb[2:])}
+\DoxyCodeLine{177     bbox[:, :2] -\/= crop\_bb[:2]}
+\DoxyCodeLine{178     bbox[:, 2:] -\/= crop\_bb[:2]}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     mask = np.logical\_and(mask, (bbox[:, :2] < bbox[:, 2:]).all(axis=1))}
+\DoxyCodeLine{181     bbox = bbox[mask]}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     \textcolor{keywordflow}{if} return\_param:}
+\DoxyCodeLine{184         \textcolor{keywordflow}{return} bbox, \{\textcolor{stringliteral}{'index'}: np.flatnonzero(mask)\}}
+\DoxyCodeLine{185     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{186         \textcolor{keywordflow}{return} bbox}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{namespacedata_1_1util_a19153a63d60e5697a60821b2c574c5a8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1util_ad9f4e24ca4a038bcbc611727e5b11008}\label{namespacedata_1_1util_ad9f4e24ca4a038bcbc611727e5b11008}} 
+\index{data.util@{data.util}!flip\_bbox@{flip\_bbox}}
+\index{flip\_bbox@{flip\_bbox}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{flip\_bbox()}{flip\_bbox()}}
+{\footnotesize\ttfamily def data.\+util.\+flip\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{size,  }\item[{}]{y\+\_\+flip = {\ttfamily False},  }\item[{}]{x\+\_\+flip = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flip bounding boxes accordingly.
+
+The bounding boxes are expected to be packed into a two dimensional
+tensor of shape :math:`(R, 4)`, where :math:`R` is the number of
+bounding boxes in the image. The second axis represents attributes of
+the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,
+where the four attributes are coordinates of the top left and the
+bottom right vertices.
+
+Args:
+    bbox (~numpy.ndarray): An array whose shape is :math:`(R, 4)`.
+        :math:`R` is the number of bounding boxes.
+    size (tuple): A tuple of length 2. The height and the width
+        of the image before resized.
+    y_flip (bool): Flip bounding box according to a vertical flip of
+        an image.
+    x_flip (bool): Flip bounding box according to a horizontal flip of
+        an image.
+
+Returns:
+    ~numpy.ndarray:
+    Bounding boxes flipped according to the given flips.\end{DoxyVerb}
+ 
+
+util.\+py 파일의 77 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{77 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_ad9f4e24ca4a038bcbc611727e5b11008}{flip\_bbox}}(bbox, size, y\_flip=False, x\_flip=False):}
+\DoxyCodeLine{78     \textcolor{stringliteral}{"""Flip bounding boxes accordingly.}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{}}
+\DoxyCodeLine{80 \textcolor{stringliteral}{    The bounding boxes are expected to be packed into a two dimensional}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{    bounding boxes in the image. The second axis represents attributes of}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{    the bounding box. They are :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})`,}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{    where the four attributes are coordinates of the top left and the}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{    bottom right vertices.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{        bbox (~numpy.ndarray): An array whose shape is :math:`(R, 4)`.}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{            :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{        size (tuple): A tuple of length 2. The height and the width}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{            of the image before resized.}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{        y\_flip (bool): Flip bounding box according to a vertical flip of}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{            an image.}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{        x\_flip (bool): Flip bounding box according to a horizontal flip of}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{            an image.}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{98 \textcolor{stringliteral}{        ~numpy.ndarray:}}
+\DoxyCodeLine{99 \textcolor{stringliteral}{        Bounding boxes flipped according to the given flips.}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{}}
+\DoxyCodeLine{101 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{102     H, W = size}
+\DoxyCodeLine{103     bbox = bbox.copy()}
+\DoxyCodeLine{104     \textcolor{keywordflow}{if} y\_flip:}
+\DoxyCodeLine{105         y\_max = H -\/ bbox[:, 0]}
+\DoxyCodeLine{106         y\_min = H -\/ bbox[:, 2]}
+\DoxyCodeLine{107         bbox[:, 0] = y\_min}
+\DoxyCodeLine{108         bbox[:, 2] = y\_max}
+\DoxyCodeLine{109     \textcolor{keywordflow}{if} x\_flip:}
+\DoxyCodeLine{110         x\_max = W -\/ bbox[:, 1]}
+\DoxyCodeLine{111         x\_min = W -\/ bbox[:, 3]}
+\DoxyCodeLine{112         bbox[:, 1] = x\_min}
+\DoxyCodeLine{113         bbox[:, 3] = x\_max}
+\DoxyCodeLine{114     \textcolor{keywordflow}{return} bbox}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1util_a4a3d0f58cc1845a992d2945799b56dc0}\label{namespacedata_1_1util_a4a3d0f58cc1845a992d2945799b56dc0}} 
+\index{data.util@{data.util}!random\_flip@{random\_flip}}
+\index{random\_flip@{random\_flip}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{random\_flip()}{random\_flip()}}
+{\footnotesize\ttfamily def data.\+util.\+random\+\_\+flip (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{y\+\_\+random = {\ttfamily False},  }\item[{}]{x\+\_\+random = {\ttfamily False},  }\item[{}]{return\+\_\+param = {\ttfamily False},  }\item[{}]{copy = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Randomly flip an image in vertical or horizontal direction.
+
+Args:
+    img (~numpy.ndarray): An array that gets flipped. This is in
+        CHW format.
+    y_random (bool): Randomly flip in vertical direction.
+    x_random (bool): Randomly flip in horizontal direction.
+    return_param (bool): Returns information of flip.
+    copy (bool): If False, a view of :obj:`img` will be returned.
+
+Returns:
+    ~numpy.ndarray or (~numpy.ndarray, dict):
+
+    If :obj:`return_param = False`,
+    returns an array :obj:`out_img` that is the result of flipping.
+
+    If :obj:`return_param = True`,
+    returns a tuple whose elements are :obj:`out_img, param`.
+    :obj:`param` is a dictionary of intermediate parameters whose
+    contents are listed below with key, value-type and the description
+    of the value.
+
+    * **y_flip** (*bool*): Whether the image was flipped in the\
+        vertical direction or not.
+    * **x_flip** (*bool*): Whether the image was flipped in the\
+        horizontal direction or not.\end{DoxyVerb}
+ 
+
+util.\+py 파일의 240 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{240 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a4a3d0f58cc1845a992d2945799b56dc0}{random\_flip}}(img, y\_random=False, x\_random=False,}
+\DoxyCodeLine{241                 return\_param=False, copy=False):}
+\DoxyCodeLine{242     \textcolor{stringliteral}{"""Randomly flip an image in vertical or horizontal direction.}}
+\DoxyCodeLine{243 \textcolor{stringliteral}{}}
+\DoxyCodeLine{244 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{245 \textcolor{stringliteral}{        img (~numpy.ndarray): An array that gets flipped. This is in}}
+\DoxyCodeLine{246 \textcolor{stringliteral}{            CHW format.}}
+\DoxyCodeLine{247 \textcolor{stringliteral}{        y\_random (bool): Randomly flip in vertical direction.}}
+\DoxyCodeLine{248 \textcolor{stringliteral}{        x\_random (bool): Randomly flip in horizontal direction.}}
+\DoxyCodeLine{249 \textcolor{stringliteral}{        return\_param (bool): Returns information of flip.}}
+\DoxyCodeLine{250 \textcolor{stringliteral}{        copy (bool): If False, a view of :obj:`img` will be returned.}}
+\DoxyCodeLine{251 \textcolor{stringliteral}{}}
+\DoxyCodeLine{252 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{253 \textcolor{stringliteral}{        ~numpy.ndarray or (~numpy.ndarray, dict):}}
+\DoxyCodeLine{254 \textcolor{stringliteral}{}}
+\DoxyCodeLine{255 \textcolor{stringliteral}{        If :obj:`return\_param = False`,}}
+\DoxyCodeLine{256 \textcolor{stringliteral}{        returns an array :obj:`out\_img` that is the result of flipping.}}
+\DoxyCodeLine{257 \textcolor{stringliteral}{}}
+\DoxyCodeLine{258 \textcolor{stringliteral}{        If :obj:`return\_param = True`,}}
+\DoxyCodeLine{259 \textcolor{stringliteral}{        returns a tuple whose elements are :obj:`out\_img, param`.}}
+\DoxyCodeLine{260 \textcolor{stringliteral}{        :obj:`param` is a dictionary of intermediate parameters whose}}
+\DoxyCodeLine{261 \textcolor{stringliteral}{        contents are listed below with key, value-\/type and the description}}
+\DoxyCodeLine{262 \textcolor{stringliteral}{        of the value.}}
+\DoxyCodeLine{263 \textcolor{stringliteral}{}}
+\DoxyCodeLine{264 \textcolor{stringliteral}{        * **y\_flip** (*bool*): Whether the image was flipped in the\(\backslash\)}}
+\DoxyCodeLine{265 \textcolor{stringliteral}{            vertical direction or not.}}
+\DoxyCodeLine{266 \textcolor{stringliteral}{        * **x\_flip** (*bool*): Whether the image was flipped in the\(\backslash\)}}
+\DoxyCodeLine{267 \textcolor{stringliteral}{            horizontal direction or not.}}
+\DoxyCodeLine{268 \textcolor{stringliteral}{}}
+\DoxyCodeLine{269 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{270     y\_flip, x\_flip = \textcolor{keyword}{False}, \textcolor{keyword}{False}}
+\DoxyCodeLine{271     \textcolor{keywordflow}{if} y\_random:}
+\DoxyCodeLine{272         y\_flip = random.choice([\textcolor{keyword}{True}, \textcolor{keyword}{False}])}
+\DoxyCodeLine{273     \textcolor{keywordflow}{if} x\_random:}
+\DoxyCodeLine{274         x\_flip = random.choice([\textcolor{keyword}{True}, \textcolor{keyword}{False}])}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \textcolor{keywordflow}{if} y\_flip:}
+\DoxyCodeLine{277         img = img[:, ::-\/1, :]}
+\DoxyCodeLine{278     \textcolor{keywordflow}{if} x\_flip:}
+\DoxyCodeLine{279         img = img[:, :, ::-\/1]}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281     \textcolor{keywordflow}{if} copy:}
+\DoxyCodeLine{282         img = img.copy()}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     \textcolor{keywordflow}{if} return\_param:}
+\DoxyCodeLine{285         \textcolor{keywordflow}{return} img, \{\textcolor{stringliteral}{'y\_flip'}: y\_flip, \textcolor{stringliteral}{'x\_flip'}: x\_flip\}}
+\DoxyCodeLine{286     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{287         \textcolor{keywordflow}{return} img}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1util_a813ef4cac5d2113c55086cde41a4a102}\label{namespacedata_1_1util_a813ef4cac5d2113c55086cde41a4a102}} 
+\index{data.util@{data.util}!read\_image@{read\_image}}
+\index{read\_image@{read\_image}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{read\_image()}{read\_image()}}
+{\footnotesize\ttfamily def data.\+util.\+read\+\_\+image (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{dtype = {\ttfamily np.float32},  }\item[{}]{color = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read an image from a file.
+
+This function reads an image from given file. The image is CHW format and
+the range of its value is :math:`[0, 255]`. If :obj:`color = True`, the
+order of the channels is RGB.
+
+Args:
+    path (str): A path of image file.
+    dtype: The type of array. The default value is :obj:`~numpy.float32`.
+    color (bool): This option determines the number of channels.
+        If :obj:`True`, the number of channels is three. In this case,
+        the order of the channels is RGB. This is the default behaviour.
+        If :obj:`False`, this function returns a grayscale image.
+
+Returns:
+    ~numpy.ndarray: An image.
+\end{DoxyVerb}
+ 
+
+util.\+py 파일의 6 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a813ef4cac5d2113c55086cde41a4a102}{read\_image}}(path, dtype=np.float32, color=True):}
+\DoxyCodeLine{7     \textcolor{stringliteral}{"""Read an image from a file.}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{    This function reads an image from given file. The image is CHW format and}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{    the range of its value is :math:`[0, 255]`. If :obj:`color = True`, the}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{    order of the channels is RGB.}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{        path (str): A path of image file.}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{        dtype: The type of array. The default value is :obj:`~numpy.float32`.}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{        color (bool): This option determines the number of channels.}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{            If :obj:`True`, the number of channels is three. In this case,}}
+\DoxyCodeLine{18 \textcolor{stringliteral}{            the order of the channels is RGB. This is the default behaviour.}}
+\DoxyCodeLine{19 \textcolor{stringliteral}{            If :obj:`False`, this function returns a grayscale image.}}
+\DoxyCodeLine{20 \textcolor{stringliteral}{}}
+\DoxyCodeLine{21 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{22 \textcolor{stringliteral}{        ~numpy.ndarray: An image.}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     f = Image.open(path)}
+\DoxyCodeLine{26     \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if} color:}
+\DoxyCodeLine{28             img = f.convert(\textcolor{stringliteral}{'RGB'})}
+\DoxyCodeLine{29         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{30             img = f.convert(\textcolor{stringliteral}{'P'})}
+\DoxyCodeLine{31         img = np.asarray(img, dtype=dtype)}
+\DoxyCodeLine{32     \textcolor{keywordflow}{finally}:}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if} hasattr(f, \textcolor{stringliteral}{'close'}):}
+\DoxyCodeLine{34             f.close()}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{if} img.ndim == 2:}
+\DoxyCodeLine{37         \textcolor{comment}{\# reshape (H, W) -\/> (1, H, W)}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} img[np.newaxis]}
+\DoxyCodeLine{39     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{40         \textcolor{comment}{\# transpose (H, W, C) -\/> (C, H, W)}}
+\DoxyCodeLine{41         \textcolor{keywordflow}{return} img.transpose((2, 0, 1))}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedata_1_1util_a813ef4cac5d2113c55086cde41a4a102_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedata_1_1util_a825b3f8b5d65ff3f078cc5a1ef234168}\label{namespacedata_1_1util_a825b3f8b5d65ff3f078cc5a1ef234168}} 
+\index{data.util@{data.util}!resize\_bbox@{resize\_bbox}}
+\index{resize\_bbox@{resize\_bbox}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{resize\_bbox()}{resize\_bbox()}}
+{\footnotesize\ttfamily def data.\+util.\+resize\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{in\+\_\+size,  }\item[{}]{out\+\_\+size }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resize bounding boxes according to image resize.
+
+The bounding boxes are expected to be packed into a two dimensional
+tensor of shape :math:`(R, 4)`, where :math:`R` is the number of
+bounding boxes in the image. The second axis represents attributes of
+the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,
+where the four attributes are coordinates of the top left and the
+bottom right vertices.
+
+Args:
+    bbox (~numpy.ndarray): An array whose shape is :math:`(R, 4)`.
+        :math:`R` is the number of bounding boxes.
+    in_size (tuple): A tuple of length 2. The height and the width
+        of the image before resized.
+    out_size (tuple): A tuple of length 2. The height and the width
+        of the image after resized.
+
+Returns:
+    ~numpy.ndarray:
+    Bounding boxes rescaled according to the given image shapes.\end{DoxyVerb}
+ 
+
+util.\+py 파일의 44 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a825b3f8b5d65ff3f078cc5a1ef234168}{resize\_bbox}}(bbox, in\_size, out\_size):}
+\DoxyCodeLine{45     \textcolor{stringliteral}{"""Resize bounding boxes according to image resize.}}
+\DoxyCodeLine{46 \textcolor{stringliteral}{}}
+\DoxyCodeLine{47 \textcolor{stringliteral}{    The bounding boxes are expected to be packed into a two dimensional}}
+\DoxyCodeLine{48 \textcolor{stringliteral}{    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of}}
+\DoxyCodeLine{49 \textcolor{stringliteral}{    bounding boxes in the image. The second axis represents attributes of}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{    the bounding box. They are :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})`,}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{    where the four attributes are coordinates of the top left and the}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{    bottom right vertices.}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{        bbox (~numpy.ndarray): An array whose shape is :math:`(R, 4)`.}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{            :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        in\_size (tuple): A tuple of length 2. The height and the width}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{            of the image before resized.}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{        out\_size (tuple): A tuple of length 2. The height and the width}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{            of the image after resized.}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{        ~numpy.ndarray:}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{        Bounding boxes rescaled according to the given image shapes.}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{67     bbox = bbox.copy()}
+\DoxyCodeLine{68     y\_scale = float(out\_size[0]) / in\_size[0]}
+\DoxyCodeLine{69     x\_scale = float(out\_size[1]) / in\_size[1]}
+\DoxyCodeLine{70     bbox[:, 0] = y\_scale * bbox[:, 0]}
+\DoxyCodeLine{71     bbox[:, 2] = y\_scale * bbox[:, 2]}
+\DoxyCodeLine{72     bbox[:, 1] = x\_scale * bbox[:, 1]}
+\DoxyCodeLine{73     bbox[:, 3] = x\_scale * bbox[:, 3]}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} bbox}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedata_1_1util_a98422c268db7d4184cfa03d6aabe8d2d}\label{namespacedata_1_1util_a98422c268db7d4184cfa03d6aabe8d2d}} 
+\index{data.util@{data.util}!translate\_bbox@{translate\_bbox}}
+\index{translate\_bbox@{translate\_bbox}!data.util@{data.util}}
+\doxysubsubsection{\texorpdfstring{translate\_bbox()}{translate\_bbox()}}
+{\footnotesize\ttfamily def data.\+util.\+translate\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{y\+\_\+offset = {\ttfamily 0},  }\item[{}]{x\+\_\+offset = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Translate bounding boxes.
+
+This method is mainly used together with image transforms, such as padding
+and cropping, which translates the left top point of the image from
+coordinate :math:`(0, 0)` to coordinate
+:math:`(y, x) = (y_{offset}, x_{offset})`.
+
+The bounding boxes are expected to be packed into a two dimensional
+tensor of shape :math:`(R, 4)`, where :math:`R` is the number of
+bounding boxes in the image. The second axis represents attributes of
+the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,
+where the four attributes are coordinates of the top left and the
+bottom right vertices.
+
+Args:
+    bbox (~numpy.ndarray): Bounding boxes to be transformed. The shape is
+        :math:`(R, 4)`. :math:`R` is the number of bounding boxes.
+    y_offset (int or float): The offset along y axis.
+    x_offset (int or float): The offset along x axis.
+
+Returns:
+    ~numpy.ndarray:
+    Bounding boxes translated according to the given offsets.\end{DoxyVerb}
+ 
+
+util.\+py 파일의 206 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{206 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedata_1_1util_a98422c268db7d4184cfa03d6aabe8d2d}{translate\_bbox}}(bbox, y\_offset=0, x\_offset=0):}
+\DoxyCodeLine{207     \textcolor{stringliteral}{"""Translate bounding boxes.}}
+\DoxyCodeLine{208 \textcolor{stringliteral}{}}
+\DoxyCodeLine{209 \textcolor{stringliteral}{    This method is mainly used together with image transforms, such as padding}}
+\DoxyCodeLine{210 \textcolor{stringliteral}{    and cropping, which translates the left top point of the image from}}
+\DoxyCodeLine{211 \textcolor{stringliteral}{    coordinate :math:`(0, 0)` to coordinate}}
+\DoxyCodeLine{212 \textcolor{stringliteral}{    :math:`(y, x) = (y\_\{offset\}, x\_\{offset\})`.}}
+\DoxyCodeLine{213 \textcolor{stringliteral}{}}
+\DoxyCodeLine{214 \textcolor{stringliteral}{    The bounding boxes are expected to be packed into a two dimensional}}
+\DoxyCodeLine{215 \textcolor{stringliteral}{    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of}}
+\DoxyCodeLine{216 \textcolor{stringliteral}{    bounding boxes in the image. The second axis represents attributes of}}
+\DoxyCodeLine{217 \textcolor{stringliteral}{    the bounding box. They are :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})`,}}
+\DoxyCodeLine{218 \textcolor{stringliteral}{    where the four attributes are coordinates of the top left and the}}
+\DoxyCodeLine{219 \textcolor{stringliteral}{    bottom right vertices.}}
+\DoxyCodeLine{220 \textcolor{stringliteral}{}}
+\DoxyCodeLine{221 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{222 \textcolor{stringliteral}{        bbox (~numpy.ndarray): Bounding boxes to be transformed. The shape is}}
+\DoxyCodeLine{223 \textcolor{stringliteral}{            :math:`(R, 4)`. :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{224 \textcolor{stringliteral}{        y\_offset (int or float): The offset along y axis.}}
+\DoxyCodeLine{225 \textcolor{stringliteral}{        x\_offset (int or float): The offset along x axis.}}
+\DoxyCodeLine{226 \textcolor{stringliteral}{}}
+\DoxyCodeLine{227 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{228 \textcolor{stringliteral}{        ~numpy.ndarray:}}
+\DoxyCodeLine{229 \textcolor{stringliteral}{        Bounding boxes translated according to the given offsets.}}
+\DoxyCodeLine{230 \textcolor{stringliteral}{}}
+\DoxyCodeLine{231 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     out\_bbox = bbox.copy()}
+\DoxyCodeLine{234     out\_bbox[:, :2] += (y\_offset, x\_offset)}
+\DoxyCodeLine{235     out\_bbox[:, 2:] += (y\_offset, x\_offset)}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{return} out\_bbox}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+
+\end{DoxyCode}

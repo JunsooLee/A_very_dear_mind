@@ -1,0 +1,137 @@
+\hypertarget{classdata_1_1dataset_1_1_transform}{}\doxysection{data.\+dataset.\+Transform 클래스 참조}
+\label{classdata_1_1dataset_1_1_transform}\index{data.dataset.Transform@{data.dataset.Transform}}
+
+
+이미지 크기 변경 및 B.\+B 크기 변경  
+
+
+
+
+data.\+dataset.\+Transform에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classdata_1_1dataset_1_1_transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+data.\+dataset.\+Transform에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classdata_1_1dataset_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classdata_1_1dataset_1_1_transform_a9d13a265c3e08ddc27fd17b2af8db12f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdata_1_1dataset_1_1_transform_a34fff5396ba882265100ac413adb9f7d}{min\+\_\+size}}=600, \mbox{\hyperlink{classdata_1_1dataset_1_1_transform_ac3eab515b59ee3d9d4e90cadd1810e09}{max\+\_\+size}}=1000)
+\item 
+def \mbox{\hyperlink{classdata_1_1dataset_1_1_transform_a57523e68e3c34160291a050ac45eb81f}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, in\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdata_1_1dataset_1_1_transform_a34fff5396ba882265100ac413adb9f7d}{min\+\_\+size}}
+\item 
+\mbox{\hyperlink{classdata_1_1dataset_1_1_transform_ac3eab515b59ee3d9d4e90cadd1810e09}{max\+\_\+size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+이미지 크기 변경 및 B.\+B 크기 변경 
+
+dataset.\+py 파일의 129 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classdata_1_1dataset_1_1_transform_a9d13a265c3e08ddc27fd17b2af8db12f}\label{classdata_1_1dataset_1_1_transform_a9d13a265c3e08ddc27fd17b2af8db12f}} 
+\index{data.dataset.Transform@{data.dataset.Transform}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!data.dataset.Transform@{data.dataset.Transform}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def data.\+dataset.\+Transform.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{min\+\_\+size = {\ttfamily 600},  }\item[{}]{max\+\_\+size = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 131 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, min\_size=600, max\_size=1000):}
+\DoxyCodeLine{132         self.min\_size = min\_size}
+\DoxyCodeLine{133         self.max\_size = max\_size}
+\DoxyCodeLine{134 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classdata_1_1dataset_1_1_transform_a57523e68e3c34160291a050ac45eb81f}\label{classdata_1_1dataset_1_1_transform_a57523e68e3c34160291a050ac45eb81f}} 
+\index{data.dataset.Transform@{data.dataset.Transform}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!data.dataset.Transform@{data.dataset.Transform}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def data.\+dataset.\+Transform.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{in\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+dataset.\+py 파일의 135 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135     \textcolor{keyword}{def }\_\_call\_\_(self, in\_data):}
+\DoxyCodeLine{136         img, bbox, label = in\_data}
+\DoxyCodeLine{137         \_, H, W = img.shape}
+\DoxyCodeLine{138         \textcolor{comment}{\# 이미지 resize}}
+\DoxyCodeLine{139         img = \mbox{\hyperlink{namespacedata_1_1dataset_a623589c207bb5958144c8e7e74d41897}{preprocess}}(img, self.min\_size, self.max\_size)}
+\DoxyCodeLine{140         \_, o\_H, o\_W = img.shape}
+\DoxyCodeLine{141         scale = o\_H / H}
+\DoxyCodeLine{142         bbox = util.resize\_bbox(bbox, (H, W), (o\_H, o\_W))}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         \textcolor{comment}{\# horizontally flip}}
+\DoxyCodeLine{145         img, params = util.random\_flip(}
+\DoxyCodeLine{146             img, x\_random=\textcolor{keyword}{True}, return\_param=\textcolor{keyword}{True})}
+\DoxyCodeLine{147         bbox = util.flip\_bbox(}
+\DoxyCodeLine{148             bbox, (o\_H, o\_W), x\_flip=params[\textcolor{stringliteral}{'x\_flip'}])}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} img, bbox, label, scale}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdata_1_1dataset_1_1_transform_a57523e68e3c34160291a050ac45eb81f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classdata_1_1dataset_1_1_transform_ac3eab515b59ee3d9d4e90cadd1810e09}\label{classdata_1_1dataset_1_1_transform_ac3eab515b59ee3d9d4e90cadd1810e09}} 
+\index{data.dataset.Transform@{data.dataset.Transform}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!data.dataset.Transform@{data.dataset.Transform}}
+\doxysubsubsection{\texorpdfstring{max\_size}{max\_size}}
+{\footnotesize\ttfamily data.\+dataset.\+Transform.\+max\+\_\+size}
+
+
+
+dataset.\+py 파일의 133 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classdata_1_1dataset_1_1_transform_a34fff5396ba882265100ac413adb9f7d}\label{classdata_1_1dataset_1_1_transform_a34fff5396ba882265100ac413adb9f7d}} 
+\index{data.dataset.Transform@{data.dataset.Transform}!min\_size@{min\_size}}
+\index{min\_size@{min\_size}!data.dataset.Transform@{data.dataset.Transform}}
+\doxysubsubsection{\texorpdfstring{min\_size}{min\_size}}
+{\footnotesize\ttfamily data.\+dataset.\+Transform.\+min\+\_\+size}
+
+
+
+dataset.\+py 파일의 132 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+data/\mbox{\hyperlink{dataset_8py}{dataset.\+py}}\end{DoxyCompactItemize}

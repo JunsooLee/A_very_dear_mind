@@ -1,0 +1,223 @@
+\hypertarget{classfocalloss_1_1_focal_loss}{}\doxysection{focalloss.\+Focal\+Loss 클래스 참조}
+\label{classfocalloss_1_1_focal_loss}\index{focalloss.FocalLoss@{focalloss.FocalLoss}}
+
+
+focalloss.\+Focal\+Loss에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classfocalloss_1_1_focal_loss__inherit__graph}
+\end{center}
+\end{figure}
+
+
+focalloss.\+Focal\+Loss에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classfocalloss_1_1_focal_loss__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classfocalloss_1_1_focal_loss_a40c2ae062c14be9d1aad73ecd13dc26d}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classfocalloss_1_1_focal_loss_a81f649b6cb397906201b8f6e831bdc10}{num\+\_\+class}}, \mbox{\hyperlink{classfocalloss_1_1_focal_loss_a306e325b1551a4e3a0d77b40760238d4}{alpha}}=None, \mbox{\hyperlink{classfocalloss_1_1_focal_loss_a52154ded28d0d1a380426bf424826333}{gamma}}=2, balance\+\_\+index=-\/1, \mbox{\hyperlink{classfocalloss_1_1_focal_loss_a8764505235a0e47af1a26a358c89f1d8}{smooth}}=None, \mbox{\hyperlink{classfocalloss_1_1_focal_loss_acee76026e00b15e72a6407fba475dedb}{size\+\_\+average}}=True)
+\item 
+def \mbox{\hyperlink{classfocalloss_1_1_focal_loss_ae78d55934dcd11768e764948b2abe665}{forward}} (self, logit, target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfocalloss_1_1_focal_loss_a81f649b6cb397906201b8f6e831bdc10}{num\+\_\+class}}
+\item 
+\mbox{\hyperlink{classfocalloss_1_1_focal_loss_a306e325b1551a4e3a0d77b40760238d4}{alpha}}
+\item 
+\mbox{\hyperlink{classfocalloss_1_1_focal_loss_a52154ded28d0d1a380426bf424826333}{gamma}}
+\item 
+\mbox{\hyperlink{classfocalloss_1_1_focal_loss_a8764505235a0e47af1a26a358c89f1d8}{smooth}}
+\item 
+\mbox{\hyperlink{classfocalloss_1_1_focal_loss_acee76026e00b15e72a6407fba475dedb}{size\+\_\+average}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}This is a implementation of Focal Loss with smooth label cross entropy supported which is proposed in
+'Focal Loss for Dense Object Detection. (https://arxiv.org/abs/1708.02002)'
+    Focal_Loss= -1*alpha*(1-pt)*log(pt)
+:param num_class:
+:param alpha: (tensor) 3D or 4D the scalar factor for this criterion
+:param gamma: (float,double) gamma > 0 reduces the relative loss for well-classified examples (p>0.5) putting more
+                focus on hard misclassified example
+:param smooth: (float,double) smooth value when cross entropy
+:param balance_index: (int) balance class index, should be specific when alpha is float
+:param size_average: (bool, optional) By default, the losses are averaged over each loss element in the batch.
+\end{DoxyVerb}
+ 
+
+focalloss.\+py 파일의 7 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_a40c2ae062c14be9d1aad73ecd13dc26d}\label{classfocalloss_1_1_focal_loss_a40c2ae062c14be9d1aad73ecd13dc26d}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def focalloss.\+Focal\+Loss.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{num\+\_\+class,  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{gamma = {\ttfamily 2},  }\item[{}]{balance\+\_\+index = {\ttfamily -\/1},  }\item[{}]{smooth = {\ttfamily None},  }\item[{}]{size\+\_\+average = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+focalloss.\+py 파일의 21 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, num\_class, alpha=None, gamma=2, balance\_index=-\/1, smooth=None, size\_average=True):}
+\DoxyCodeLine{22         super(FocalLoss, self).\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}()}
+\DoxyCodeLine{23         self.num\_class = num\_class}
+\DoxyCodeLine{24         self.alpha = alpha}
+\DoxyCodeLine{25         self.gamma = gamma}
+\DoxyCodeLine{26         self.smooth = smooth}
+\DoxyCodeLine{27         self.size\_average = size\_average}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordflow}{if} self.alpha \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{30             self.alpha = torch.ones(self.num\_class, 1)}
+\DoxyCodeLine{31         \textcolor{keywordflow}{elif} isinstance(self.alpha, (list, np.ndarray)):}
+\DoxyCodeLine{32             \textcolor{keyword}{assert} len(self.alpha) == self.num\_class}
+\DoxyCodeLine{33             self.alpha = torch.FloatTensor(alpha).\mbox{\hyperlink{_p_a_semptyobject_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}}(self.num\_class, 1)}
+\DoxyCodeLine{34             self.alpha = self.alpha / self.alpha.sum()}
+\DoxyCodeLine{35         \textcolor{keywordflow}{elif} isinstance(self.alpha, float):}
+\DoxyCodeLine{36             alpha = torch.ones(self.num\_class, 1)}
+\DoxyCodeLine{37             alpha = alpha * (1 -\/ self.alpha)}
+\DoxyCodeLine{38             alpha[balance\_index] = self.alpha}
+\DoxyCodeLine{39             self.alpha = alpha}
+\DoxyCodeLine{40         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{41             \textcolor{keywordflow}{raise} TypeError(\textcolor{stringliteral}{'Not support alpha type'})}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} self.smooth \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{44             \textcolor{keywordflow}{if} self.smooth < 0 \textcolor{keywordflow}{or} self.smooth > 1.0:}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'smooth value should be in [0,1]'})}
+\DoxyCodeLine{46 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_ae78d55934dcd11768e764948b2abe665}\label{classfocalloss_1_1_focal_loss_ae78d55934dcd11768e764948b2abe665}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!forward@{forward}}
+\index{forward@{forward}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily def focalloss.\+Focal\+Loss.\+forward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{logit,  }\item[{}]{target }\end{DoxyParamCaption})}
+
+
+
+focalloss.\+py 파일의 47 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47     \textcolor{keyword}{def }forward(self, logit, target):}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordflow}{if} logit.dim() > 2:}
+\DoxyCodeLine{50             \textcolor{comment}{\# N,C,d1,d2 -\/> N,C,m (m=d1*d2*...)}}
+\DoxyCodeLine{51             logit = logit.view(logit.size(0), logit.size(1), -\/1)}
+\DoxyCodeLine{52             logit = logit.permute(0, 2, 1).contiguous()}
+\DoxyCodeLine{53             logit = logit.view(-\/1, logit.size(-\/1))}
+\DoxyCodeLine{54         target = target.view(-\/1, 1)}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         epsilon = 1e-\/10}
+\DoxyCodeLine{57         alpha = self.alpha}
+\DoxyCodeLine{58         \textcolor{keywordflow}{if} alpha.device != logit.device:}
+\DoxyCodeLine{59             alpha = alpha.to(logit.device)}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         idx = target.cpu().long()}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         one\_hot\_key = torch.FloatTensor(target.size(0), self.num\_class).zero\_()}
+\DoxyCodeLine{64         one\_hot\_key = one\_hot\_key.scatter\_(1, idx, 1)}
+\DoxyCodeLine{65         \textcolor{keywordflow}{if} one\_hot\_key.device != logit.device:}
+\DoxyCodeLine{66             one\_hot\_key = one\_hot\_key.to(logit.device)}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} self.smooth:}
+\DoxyCodeLine{69             one\_hot\_key = torch.clamp(}
+\DoxyCodeLine{70                 one\_hot\_key, self.smooth/(self.num\_class-\/1), 1.0 -\/ self.smooth)}
+\DoxyCodeLine{71         pt = (one\_hot\_key * logit).sum(1) + epsilon}
+\DoxyCodeLine{72         logpt = pt.log()}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         gamma = self.gamma}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         alpha\_class = alpha[idx]}
+\DoxyCodeLine{77         loss = -\/1 * alpha\_class * torch.pow((1 -\/ pt), gamma) * logpt}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordflow}{if} self.size\_average:}
+\DoxyCodeLine{80             loss = loss.mean()}
+\DoxyCodeLine{81         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{82             loss = loss.sum()}
+\DoxyCodeLine{83         \textcolor{keywordflow}{return} loss}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfocalloss_1_1_focal_loss_ae78d55934dcd11768e764948b2abe665_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_a306e325b1551a4e3a0d77b40760238d4}\label{classfocalloss_1_1_focal_loss_a306e325b1551a4e3a0d77b40760238d4}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!alpha@{alpha}}
+\index{alpha@{alpha}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily focalloss.\+Focal\+Loss.\+alpha}
+
+
+
+focalloss.\+py 파일의 24 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_a52154ded28d0d1a380426bf424826333}\label{classfocalloss_1_1_focal_loss_a52154ded28d0d1a380426bf424826333}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!gamma@{gamma}}
+\index{gamma@{gamma}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily focalloss.\+Focal\+Loss.\+gamma}
+
+
+
+focalloss.\+py 파일의 25 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_a81f649b6cb397906201b8f6e831bdc10}\label{classfocalloss_1_1_focal_loss_a81f649b6cb397906201b8f6e831bdc10}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!num\_class@{num\_class}}
+\index{num\_class@{num\_class}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{num\_class}{num\_class}}
+{\footnotesize\ttfamily focalloss.\+Focal\+Loss.\+num\+\_\+class}
+
+
+
+focalloss.\+py 파일의 23 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_acee76026e00b15e72a6407fba475dedb}\label{classfocalloss_1_1_focal_loss_acee76026e00b15e72a6407fba475dedb}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!size\_average@{size\_average}}
+\index{size\_average@{size\_average}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{size\_average}{size\_average}}
+{\footnotesize\ttfamily focalloss.\+Focal\+Loss.\+size\+\_\+average}
+
+
+
+focalloss.\+py 파일의 27 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classfocalloss_1_1_focal_loss_a8764505235a0e47af1a26a358c89f1d8}\label{classfocalloss_1_1_focal_loss_a8764505235a0e47af1a26a358c89f1d8}} 
+\index{focalloss.FocalLoss@{focalloss.FocalLoss}!smooth@{smooth}}
+\index{smooth@{smooth}!focalloss.FocalLoss@{focalloss.FocalLoss}}
+\doxysubsubsection{\texorpdfstring{smooth}{smooth}}
+{\footnotesize\ttfamily focalloss.\+Focal\+Loss.\+smooth}
+
+
+
+focalloss.\+py 파일의 26 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{focalloss_8py}{focalloss.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data856.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data856.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>2268</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_wash</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1446</xmin>
+			<ymin>646</ymin>
+			<xmax>1746</xmax>
+			<ymax>934</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: scripts/extra/convert_keras-yolo3.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('convert__keras-yolo3_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">convert_keras-yolo3.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="convert__keras-yolo3_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html">    1</a></span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral">ABOUT THIS SCRIPT:</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">Converts ground-truth from the annotation files</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">according to the https://github.com/qqwweee/keras-yolo3</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">or https://github.com/gustavovaliati/keras-yolo3 format.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">And converts the detection-results from the annotation files</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">according to the https://github.com/gustavovaliati/keras-yolo3 format.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> argparse</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> datetime</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">Each time this script runs, it saves the output in a different path</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">controlled by the following folder suffix: annotation_version.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#aaa8829659b7992da74df2b9af698fef1">   19</a></span>&#160;annotation_version = datetime.datetime.now().strftime(<span class="stringliteral">&#39;%Y%m%d%H%M%S&#39;</span>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a3f2aa135356f98789f10c748f475b01d">   21</a></span>&#160;ap = argparse.ArgumentParser()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;ap.add_argument(<span class="stringliteral">&quot;-o&quot;</span>, <span class="stringliteral">&quot;--output_path&quot;</span>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#ae89c5783c1f43818b187b227122067f7">   24</a></span>&#160;                required=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a5d1c4af4fd2afa97836b885eb7dedd76">   25</a></span>&#160;                default=<span class="stringliteral">&#39;from_kerasyolo3/version_{}&#39;</span>.format(annotation_version),</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a3ebb7b0c6234480e6d745e0ce15217c3">   26</a></span>&#160;                type=str,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#acc0c66c1df1aac3ec9716d83fbb5180f">   27</a></span>&#160;                help=<span class="stringliteral">&quot;The dataset root path location.&quot;</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;ap.add_argument(<span class="stringliteral">&quot;-r&quot;</span>, <span class="stringliteral">&quot;--gen_recursive&quot;</span>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                required=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                default=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a5311fbb60c3d285cee0299b862f216cf">   31</a></span>&#160;                action=<span class="stringliteral">&quot;store_true&quot;</span>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                help=<span class="stringliteral">&quot;Define if the output txt files will be placed in a \</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">                recursive folder tree or to direct txt files.&quot;</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a9069007f6d31a9ca8e68860c905698c0">   34</a></span>&#160;group = ap.add_mutually_exclusive_group(required=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;group.add_argument(<span class="stringliteral">&#39;--gt&#39;</span>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    type=str,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    help=<span class="stringliteral">&quot;The annotation file that refers to ground-truth in (keras-yolo3 format)&quot;</span>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;group.add_argument(<span class="stringliteral">&#39;--dr&#39;</span>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    type=str,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    help=<span class="stringliteral">&quot;The annotation file that refers to detection-results in (keras-yolo3 format)&quot;</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a56d26c74547c2f9af84f89eef404a153">   44</a></span>&#160;ARGS = ap.parse_args()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">with</span> open(<span class="stringliteral">&#39;class_list.txt&#39;</span>, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> class_file:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a4ca12c91e1584784332839b24a1a21d1">   47</a></span>&#160;    class_map = class_file.readlines()</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;print(class_map)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a789ec9d2ef7507745f3e05f1b25cd6fd">   49</a></span>&#160;annotation_file = ARGS.gt <span class="keywordflow">if</span> ARGS.gt <span class="keywordflow">else</span> ARGS.dr</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a78e2193d8a978ff6b6e4a69341fff108">   51</a></span>&#160;os.makedirs(ARGS.output_path, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">with</span> open(annotation_file, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> annot_f:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> annot <span class="keywordflow">in</span> annot_f:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a8ed4d5c6f89231791e51226f7e80dd3b">   55</a></span>&#160;        annot = annot.split(<span class="stringliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#af13ac0510fa47975515c6f66251e0df9">   56</a></span>&#160;        img_path = annot[0].strip()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> ARGS.gen_recursive:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#acdd6395c6a368bc19b9b331c1ee893fa">   58</a></span>&#160;            annotation_dir_name = os.path.dirname(img_path)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment"># remove the root path to enable to path.join.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> annotation_dir_name.startswith(<span class="stringliteral">&#39;/&#39;</span>):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                annotation_dir_name = annotation_dir_name.replace(<span class="stringliteral">&#39;/&#39;</span>, <span class="stringliteral">&#39;&#39;</span>, 1)</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a85a70ef8f4a64d4c75a32d24b04a2307">   62</a></span>&#160;            destination_dir = os.path.join(ARGS.output_path, annotation_dir_name)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            os.makedirs(destination_dir, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment"># replace .jpg with your image format.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a33879d7cff28930552068a2d664b18d7">   65</a></span>&#160;            file_name = os.path.basename(img_path).replace(<span class="stringliteral">&#39;.jpg&#39;</span>, <span class="stringliteral">&#39;.txt&#39;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#ac63ff1036fcf034dea1d8b03c9a6a465">   66</a></span>&#160;            output_file_path = os.path.join(destination_dir, file_name)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            file_name = img_path.replace(<span class="stringliteral">&#39;.jpg&#39;</span>, <span class="stringliteral">&#39;.txt&#39;</span>).replace(<span class="stringliteral">&#39;/&#39;</span>, <span class="stringliteral">&#39;__&#39;</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            output_file_path = os.path.join(ARGS.output_path, file_name)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            os.path.dirname(output_file_path)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">with</span> open(output_file_path, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> out_f:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">for</span> bbox <span class="keywordflow">in</span> annot[1:]:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">if</span> ARGS.gt:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="comment"># Here we are dealing with ground-truth annotations</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="comment"># &lt;class_name&gt; &lt;left&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; [&lt;difficult&gt;]</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="comment"># todo: handle difficulty</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a1a56d152b67764ab91948891832fb456">   78</a></span>&#160;                    x_min, y_min, x_max, y_max, class_id = list(map(float, bbox.split(<span class="stringliteral">&#39;,&#39;</span>)))</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#a6ae72697ac86638ae14167874f7f1439">   79</a></span>&#160;                    out_box = <span class="stringliteral">&#39;{} {} {} {} {}&#39;</span>.format(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        class_map[int(class_id)].strip(), x_min, y_min, x_max, y_max)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="comment"># Here we are dealing with detection-results annotations</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <span class="comment"># &lt;class_name&gt; &lt;confidence&gt; &lt;left&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceconvert__keras-yolo3.html#af66409390bf5c44a7d00e93605078b92">   84</a></span>&#160;                    x_min, y_min, x_max, y_max, class_id, score = list(map(float, bbox.split(<span class="stringliteral">&#39;,&#39;</span>)))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    out_box = <span class="stringliteral">&#39;{} {} {} {} {} {}&#39;</span>.format(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        class_map[int(class_id)].strip(), score,  x_min, y_min, x_max, y_max)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                out_f.write(out_box + <span class="stringliteral">&quot;\n&quot;</span>)</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html">scripts</a></li><li class="navelem"><a class="el" href="dir_c4262912f6d7105e2ea50393663651f1.html">extra</a></li><li class="navelem"><a class="el" href="convert__keras-yolo3_8py.html">convert_keras-yolo3.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>do_not_iron_image</folder>
+	<filename>iron0244.png</filename>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\do_not_iron_image\iron0244.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>200</width>
+		<height>200</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_iron</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6</xmin>
+			<ymin>36</ymin>
+			<xmax>194</xmax>
+			<ymax>165</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,9 @@
+<map id="model.faster_rcnn.FasterRCNN._suppress" name="model.faster_rcnn.FasterRCNN._suppress">
+<area shape="rect" id="node1" title=" " alt="" coords="5,43,172,84"/>
+<area shape="rect" id="node2" href="$classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#aae8e117f58e16b19b95a29ac915ee541" title=" " alt="" coords="231,5,397,47"/>
+<area shape="rect" id="node3" href="$namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#afdf319cf0550a8ae6b02cac11c9c86e9" title=" " alt="" coords="220,71,408,127"/>
+<area shape="rect" id="node4" href="$namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a312b77e485123449844e07cc2d7af26c" title=" " alt="" coords="456,71,675,127"/>
+<area shape="rect" id="node5" href="$namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a898523c0d6b38f63089a706b6c2e332c" title=" " alt="" coords="723,71,889,127"/>
+<area shape="rect" id="node6" href="$namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a4f9e7eff60ab89558d55caf54e284588" title=" " alt="" coords="953,34,1120,90"/>
+<area shape="rect" id="node7" href="$namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py.html#ab02016e7734eb4c138d94946307d79d6" title=" " alt="" coords="937,115,1136,156"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="model.utils.bbox_tools.bbox2loc" name="model.utils.bbox_tools.bbox2loc">
+<area shape="rect" id="node1" title=" " alt="" coords="260,57,468,84"/>
+<area shape="rect" id="node2" href="$classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html#ab58a5bf203b10b40374f04bc18aa8b6e" title="RPN을 통해서 예측한" alt="" coords="5,5,212,61"/>
+<area shape="rect" id="node3" href="$classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html#adfc2e83970eaaf5c717106872988d4ec" title="RPN 네트워크에서 뽑은 sample anchor 중에서 IoU를 기준으로 pos와 negative의 비율을 1:3으로 맞춰" alt="" coords="5,86,212,127"/>
+</map>

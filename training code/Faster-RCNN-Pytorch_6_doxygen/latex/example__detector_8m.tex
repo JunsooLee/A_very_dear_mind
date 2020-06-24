@@ -1,0 +1,116 @@
+\hypertarget{example__detector_8m}{}\doxysection{data/\+V\+O\+Cdevkit/example\+\_\+detector.m 파일 참조}
+\label{example__detector_8m}\index{data/VOCdevkit/example\_detector.m@{data/VOCdevkit/example\_detector.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} example\+\_\+detector change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere \mbox{\hyperlink{example__detector_8m_a6c87e7447fadadf72db7f5a46c5cf898}{addpath}} (\mbox{[}cd \textquotesingle{}/V\+O\+Ccode\textquotesingle{}\mbox{]})
+\item 
+train \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}} \mbox{\hyperlink{example__detector_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} (V\+O\+Copts, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}})
+\item 
+compute and display PR \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}$<$ V\+O\+Copts.\+nclasses fprintf( \textquotesingle{}press any key to continue with next class...\textbackslash{}n\textquotesingle{});\mbox{\hyperlink{_v_o_cevallayout_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}};\mbox{\hyperlink{viewanno_8m_afd7d49e17b69bd6bf3d7a649856c1067}{pause}};endend\% train detectorfunction \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}}=train(V\+O\+Copts, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \textquotesingle{}train\textquotesingle{} \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} setids=textread(sprintf(V\+O\+Copts.\+imgsetpath, \textquotesingle{}train\textquotesingle{}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}\textquotesingle{});\% extract features and bounding \mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{boxesdetector.\+FD}}=\mbox{[}$\,$\mbox{]};\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{detector.\+bbox}}=\{\};\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{detector.\+gt}}=\mbox{[}$\,$\mbox{]};\mbox{\hyperlink{_v_o_cevallayout_8m_a8fb092330ecda60587643305d0d9738a}{tic}};for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc $>$ \mbox{\hyperlink{example__detector_8m_a1b1b5716f7add15d87dc28bf5055f3ed}{fprintf}} (\textquotesingle{}\%s\+:train\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+initialize V\+OC options \mbox{\hyperlink{example__detector_8m_a326eb43af45972a4fdc78c1221c88164}{V\+O\+Cinit}}
+\item 
+train and \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}} for each \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} for \mbox{\hyperlink{example__detector_8m_ac2601428bc19e72489f6b3e29b2c5f33}{i}}
+\item 
+\mbox{\hyperlink{example__detector_8m_acf8042e713de8068471277f1210dd6f5}{detector}} =train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})
+\item 
+\mbox{\hyperlink{example__detector_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}
+\item 
+\mbox{\hyperlink{example__detector_8m_a8fb092330ecda60587643305d0d9738a}{tic}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} read annotation \mbox{\hyperlink{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}{rec}} =P\+A\+Sreadrecord(sprintf(V\+O\+Copts.\+annopath,\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{example__detector_8m_a6c87e7447fadadf72db7f5a46c5cf898}\label{example__detector_8m_a6c87e7447fadadf72db7f5a46c5cf898}} 
+\index{example\_detector.m@{example\_detector.m}!addpath@{addpath}}
+\index{addpath@{addpath}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{addpath()}{addpath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} example\+\_\+detector change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere addpath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__detector_8m_a1b1b5716f7add15d87dc28bf5055f3ed}\label{example__detector_8m_a1b1b5716f7add15d87dc28bf5055f3ed}} 
+\index{example\_detector.m@{example\_detector.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}}
+{\footnotesize\ttfamily compute and display PR \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}$<$V\+O\+Copts.\+nclasses fprintf(\textquotesingle{}press any key to continue with next class...\textbackslash{}n\textquotesingle{}); \mbox{\hyperlink{_v_o_cevallayout_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}; \mbox{\hyperlink{viewanno_8m_afd7d49e17b69bd6bf3d7a649856c1067}{pause}}; endend\% train detectorfunction \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}} = train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \textquotesingle{}train\textquotesingle{} \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} setids=textread(sprintf(V\+O\+Copts.\+imgsetpath,\textquotesingle{}train\textquotesingle{}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}\textquotesingle{});\% extract features and bounding \mbox{\hyperlink{example__classifier_8m_a6e06248ac79102e2868ae3ccf7335476}{boxesdetector.\+FD}}=\mbox{[}$\,$\mbox{]};\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{detector.\+bbox}}=\{\};\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{detector.\+gt}}=\mbox{[}$\,$\mbox{]};\mbox{\hyperlink{_v_o_cevallayout_8m_a8fb092330ecda60587643305d0d9738a}{tic}};for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc$>$ fprintf (\begin{DoxyParamCaption}\item[{\textquotesingle{}\%s\+:train\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example__detector_8m_ab97743966606b56e7ec17c8bce8c2e3b}\label{example__detector_8m_ab97743966606b56e7ec17c8bce8c2e3b}} 
+\index{example\_detector.m@{example\_detector.m}!test@{test}}
+\index{test@{test}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily train \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}} test (\begin{DoxyParamCaption}\item[{V\+O\+Copts}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{example__detector_8m_acf8042e713de8068471277f1210dd6f5}\label{example__detector_8m_acf8042e713de8068471277f1210dd6f5}} 
+\index{example\_detector.m@{example\_detector.m}!detector@{detector}}
+\index{detector@{detector}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{detector}{detector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} detector =train(V\+O\+Copts,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}})}
+
+
+
+example\+\_\+detector.\+m 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__detector_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}\label{example__detector_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}} 
+\index{example\_detector.m@{example\_detector.m}!drawnow@{drawnow}}
+\index{drawnow@{drawnow}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{drawnow}{drawnow}}
+{\footnotesize\ttfamily drawnow}
+
+
+
+example\+\_\+detector.\+m 파일의 38 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__detector_8m_ac2601428bc19e72489f6b3e29b2c5f33}\label{example__detector_8m_ac2601428bc19e72489f6b3e29b2c5f33}} 
+\index{example\_detector.m@{example\_detector.m}!i@{i}}
+\index{i@{i}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily train and \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} \mbox{\hyperlink{example__layout_8m_aa7beb2806be4f73bc41a6f6232ff9a45}{detector}} for each \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} for i}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:VOCopts.nclasses}
+\DoxyCodeLine{    \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}=VOCopts.classes\{\mbox{\hyperlink{example__detector_8m_ac2601428bc19e72489f6b3e29b2c5f33}{i}}\}}
+
+\end{DoxyCode}
+
+
+example\+\_\+detector.\+m 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}\label{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}} 
+\index{example\_detector.m@{example\_detector.m}!rec@{rec}}
+\index{rec@{rec}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{rec}{rec}}
+{\footnotesize\ttfamily else rec =P\+A\+Sreadrecord(sprintf(V\+O\+Copts.\+annopath,\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))}
+
+
+
+example\+\_\+detector.\+m 파일의 43 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__detector_8m_a8fb092330ecda60587643305d0d9738a}\label{example__detector_8m_a8fb092330ecda60587643305d0d9738a}} 
+\index{example\_detector.m@{example\_detector.m}!tic@{tic}}
+\index{tic@{tic}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{tic}{tic}}
+{\footnotesize\ttfamily tic}
+
+
+
+example\+\_\+detector.\+m 파일의 39 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{example__detector_8m_a326eb43af45972a4fdc78c1221c88164}\label{example__detector_8m_a326eb43af45972a4fdc78c1221c88164}} 
+\index{example\_detector.m@{example\_detector.m}!VOCinit@{VOCinit}}
+\index{VOCinit@{VOCinit}!example\_detector.m@{example\_detector.m}}
+\doxysubsubsection{\texorpdfstring{VOCinit}{VOCinit}}
+{\footnotesize\ttfamily initialize V\+OC options V\+O\+Cinit}
+
+
+
+example\+\_\+detector.\+m 파일의 7 번째 라인에서 정의되었습니다.
+

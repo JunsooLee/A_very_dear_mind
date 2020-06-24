@@ -1,0 +1,30 @@
+\hypertarget{convert__gt__xml_8py}{}\doxysection{scripts/extra/convert\+\_\+gt\+\_\+xml.py 파일 참조}
+\label{convert__gt__xml_8py}\index{scripts/extra/convert\_gt\_xml.py@{scripts/extra/convert\_gt\_xml.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceconvert__gt__xml}{convert\+\_\+gt\+\_\+xml}}
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_ab30f87e238d0998bd1589c2e450e8637}{convert\+\_\+gt\+\_\+xml.\+parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a00457f4e4031e0e3d0b874a49404643f}{convert\+\_\+gt\+\_\+xml.\+G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(parent\+\_\+path, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_aa47ed711aaedc25023677bad14a96133}{convert\+\_\+gt\+\_\+xml.\+xml\+\_\+list}} = glob.\+glob(\textquotesingle{}$\ast$.\mbox{\hyperlink{_v_o_cwritexml_8m_aff37e7b29e3cb3dfff02f365283093f4}{xml}}\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em create the backup dir if it doesn\textquotesingle{}t exist already \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a934ece4ebf79a2dda6347ee9d1b2c169}{convert\+\_\+gt\+\_\+xml.\+root}} = E\+T.\+parse(tmp\+\_\+file).getroot()
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a474382686969ec37315bea4639ba439d}{convert\+\_\+gt\+\_\+xml.\+obj\+\_\+name}} = obj.\+find(\textquotesingle{}name\textquotesingle{}).\mbox{\hyperlink{viewanno_8m_a4bf76c7284f25a7445409f0f93c36b9d}{text}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a6e73eac7877cb2d59d7017f62073b706}{convert\+\_\+gt\+\_\+xml.\+bndbox}} = obj.\+find(\textquotesingle{}bndbox\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a6dc7d66ccc765961c277cb3942ca6b9a}{convert\+\_\+gt\+\_\+xml.\+left}} = bndbox.\+find(\textquotesingle{}\mbox{\hyperlink{_v_o_creadrecxml_8m_a0a90ddc7c0ea2846ccac7b855ad27703}{xmin}}\textquotesingle{}).\mbox{\hyperlink{viewanno_8m_a4bf76c7284f25a7445409f0f93c36b9d}{text}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a1ff5d8c9a922ff3f8251db6cb1a95d92}{convert\+\_\+gt\+\_\+xml.\+top}} = bndbox.\+find(\textquotesingle{}\mbox{\hyperlink{_v_o_creadrecxml_8m_a98566174ab3de889e3d62e1be40b4759}{ymin}}\textquotesingle{}).\mbox{\hyperlink{viewanno_8m_a4bf76c7284f25a7445409f0f93c36b9d}{text}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_a6a4f4e4a6a3ed43ca7a5eaf9cdbec84e}{convert\+\_\+gt\+\_\+xml.\+right}} = bndbox.\+find(\textquotesingle{}\mbox{\hyperlink{_v_o_creadrecxml_8m_a86d44fe4cfbbc5d917c93af090e35ec9}{xmax}}\textquotesingle{}).\mbox{\hyperlink{viewanno_8m_a4bf76c7284f25a7445409f0f93c36b9d}{text}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__xml_afd2c0aded0675c9d9aa541ee79db5696}{convert\+\_\+gt\+\_\+xml.\+bottom}} = bndbox.\+find(\textquotesingle{}\mbox{\hyperlink{_v_o_creadrecxml_8m_abe56b0d4d87e6c8fae6f804520c5cda8}{ymax}}\textquotesingle{}).\mbox{\hyperlink{viewanno_8m_a4bf76c7284f25a7445409f0f93c36b9d}{text}}
+\end{DoxyCompactItemize}

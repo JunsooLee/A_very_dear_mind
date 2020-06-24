@@ -1,0 +1,266 @@
+\hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head}{}\doxysection{model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head 클래스 참조}
+\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head}\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+
+
+model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head에 대한 상속 다이어그램 \+: 
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head__inherit__graph}
+\end{center}
+\end{figure}
+
+
+model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aecdca169327fa4de6566f5181e72b91c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a52b96276c1280c406e9f1532104e537d}{n\+\_\+class}}, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ac6933969a5ad7c90e83ed15d3deae77d}{roi\+\_\+size}}, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ad588bde0f1e3f6d72db08c0fb234d541}{spatial\+\_\+scale}}, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a6a7335decd423076b2bcdee85a164192}{classifier}})
+\item 
+def \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aad62e98a7dfdb139780bd87ef8193582}{forward}} (self, \mbox{\hyperlink{_v_o_creadrecxml_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}}, rois, roi\+\_\+indices)
+\begin{DoxyCompactList}\small\item\em Ro\+I\+Pooling network \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a6a7335decd423076b2bcdee85a164192}{classifier}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_acd7527c368c80f672786f5afcbb226f5}{cls\+\_\+loc}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_abc41504d89a11461e1d31f560413c2cf}{score}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a52b96276c1280c406e9f1532104e537d}{n\+\_\+class}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ac6933969a5ad7c90e83ed15d3deae77d}{roi\+\_\+size}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ad588bde0f1e3f6d72db08c0fb234d541}{spatial\+\_\+scale}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a56ce24d1bb87446db8d5f075ed83908c}{roi}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}Faster R-CNN Head for VGG-16 based implementation.
+@brief his class is used as a head for Faster R-CNN.
+@brief This outputs class-wise localizations and classification based on feature
+@brief maps in the given RoIs.
+@brief "RPN"에서 나온 ProposalCreator --> ProposalTargetCreator(return sample_rois)를 ROI pooling을 통해 7 * 7 만듬.
+
+Args:
+@param n_class (int): The number of classes possibly including the background.
+@param roi_size (int): Height and width of the feature maps after RoI-pooling.
+@param spatial_scale (float): Scale of the roi is resized.
+@param classifier (nn.Module): Two layer Linear ported from vgg16
+\end{DoxyVerb}
+ 
+
+roi\+\_\+module.\+py 파일의 23 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aecdca169327fa4de6566f5181e72b91c}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aecdca169327fa4de6566f5181e72b91c}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n\+\_\+class,  }\item[{}]{roi\+\_\+size,  }\item[{}]{spatial\+\_\+scale,  }\item[{}]{classifier }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 36 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, n\_class, roi\_size, spatial\_scale,}
+\DoxyCodeLine{37                  classifier):}
+\DoxyCodeLine{38         \textcolor{comment}{\# n\_class includes the background}}
+\DoxyCodeLine{39         super(VGG16RoIHead, self).\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}()}
+\DoxyCodeLine{40         \textcolor{comment}{\# Todo 네트워크 변경시 해당 부분도 함께 변경.}}
+\DoxyCodeLine{41         self.classifier = classifier.cuda()}
+\DoxyCodeLine{42         self.cls\_loc = nn.Linear(4096, n\_class * 4).cuda()}
+\DoxyCodeLine{43         self.score = nn.Linear(4096, n\_class).cuda()}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}{normal\_init}}(self.cls\_loc, 0, 0.001)}
+\DoxyCodeLine{46         \mbox{\hyperlink{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}{normal\_init}}(self.score, 0, 0.01)}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         self.n\_class = n\_class}
+\DoxyCodeLine{49         self.roi\_size = roi\_size}
+\DoxyCodeLine{50         self.spatial\_scale = spatial\_scale}
+\DoxyCodeLine{51         self.roi = RoIPooling2D(self.roi\_size, self.roi\_size, self.spatial\_scale)}
+\DoxyCodeLine{52 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aad62e98a7dfdb139780bd87ef8193582}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aad62e98a7dfdb139780bd87ef8193582}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!forward@{forward}}
+\index{forward@{forward}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+forward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{rois,  }\item[{}]{roi\+\_\+indices }\end{DoxyParamCaption})}
+
+
+
+Ro\+I\+Pooling network 
+
+
+\begin{DoxyParams}{매개변수}
+{\em x} & model의 Feature map \\
+\hline
+{\em roi} & sample rois batch 적용 시 배치 크기만큼의 anchor 선택 (현재는 batch를 사용하지 않으므로 0) \\
+\hline
+{\em roi\+\_\+indices} & roi (현재는 batch를 사용하지 않으므로 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+roi\+\_\+cls\+\_\+locs \+: result of pooling classification 
+
+roi\+\_\+scores \+: result of pooling score \begin{DoxyVerb}Forward the chain.
+
+We assume that there are :math:`N` batches.
+
+Args:
+    x (Variable): 4D image variable.
+    rois (Tensor): A bounding box array containing coordinates of
+proposal boxes.  This is a concatenation of bounding box
+arrays from multiple images in the batch.
+Its shape is :math:`(R', 4)`. Given :math:`R_i` proposed
+RoIs from the :math:`i` th image,
+:math:`R' = \\sum _{i=1} ^ N R_i`.
+    roi_indices (Tensor): An array containing indices of images to
+which bounding boxes correspond to. Its shape is :math:`(R',)`.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+roi\+\_\+module.\+py 파일의 61 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61     \textcolor{keyword}{def }forward(self, x, rois, roi\_indices):}
+\DoxyCodeLine{62         \textcolor{stringliteral}{"""Forward the chain.}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{        We assume that there are :math:`N` batches.}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{67 \textcolor{stringliteral}{            x (Variable): 4D image variable.}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{            rois (Tensor): A bounding box array containing coordinates of}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{                proposal boxes.  This is a concatenation of bounding box}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{                arrays from multiple images in the batch.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{                Its shape is :math:`(R', 4)`. Given :math:`R\_i` proposed}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{                RoIs from the :math:`i` th image,}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{                :math:`R' = \(\backslash\)\(\backslash\)sum \_\{i=1\} \string^ N R\_i`.}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{            roi\_indices (Tensor): An array containing indices of images to}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{                which bounding boxes correspond to. Its shape is :math:`(R',)`.}}
+\DoxyCodeLine{76 \textcolor{stringliteral}{}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{78         \textcolor{comment}{\# in case roi\_indices is  ndarray}}
+\DoxyCodeLine{79         roi\_indices = at.totensor(roi\_indices).float()}
+\DoxyCodeLine{80         rois = at.totensor(rois).float()}
+\DoxyCodeLine{81         indices\_and\_rois = t.cat([roi\_indices[:, \textcolor{keywordtype}{None}], rois], dim=1) \textcolor{comment}{\# 128 * (1(배경) + 4)}}
+\DoxyCodeLine{82         \textcolor{comment}{\# @NOTE: important: yx-\/>xy}}
+\DoxyCodeLine{83         xy\_indices\_and\_rois = indices\_and\_rois[:, [0, 2, 1, 4, 3]]}
+\DoxyCodeLine{84         indices\_and\_rois = t.autograd.Variable(xy\_indices\_and\_rois.contiguous())}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{comment}{\# RoIPooling}}
+\DoxyCodeLine{87         pool = self.roi(x, indices\_and\_rois)}
+\DoxyCodeLine{88         pool = pool.view(pool.size(0), -\/1)}
+\DoxyCodeLine{89         fc7 = self.classifier(pool)}
+\DoxyCodeLine{90         roi\_cls\_locs = self.cls\_loc(fc7)}
+\DoxyCodeLine{91         roi\_scores = self.score(fc7)}
+\DoxyCodeLine{92         \textcolor{keywordflow}{return} roi\_cls\_locs, roi\_scores}
+\DoxyCodeLine{93 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_aad62e98a7dfdb139780bd87ef8193582_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a6a7335decd423076b2bcdee85a164192}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a6a7335decd423076b2bcdee85a164192}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!classifier@{classifier}}
+\index{classifier@{classifier}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{classifier}{classifier}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+classifier}
+
+
+
+roi\+\_\+module.\+py 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_acd7527c368c80f672786f5afcbb226f5}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_acd7527c368c80f672786f5afcbb226f5}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!cls\_loc@{cls\_loc}}
+\index{cls\_loc@{cls\_loc}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{cls\_loc}{cls\_loc}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+cls\+\_\+loc}
+
+
+
+roi\+\_\+module.\+py 파일의 41 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a52b96276c1280c406e9f1532104e537d}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a52b96276c1280c406e9f1532104e537d}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!n\_class@{n\_class}}
+\index{n\_class@{n\_class}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{n\_class}{n\_class}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+n\+\_\+class}
+
+
+
+roi\+\_\+module.\+py 파일의 47 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a56ce24d1bb87446db8d5f075ed83908c}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_a56ce24d1bb87446db8d5f075ed83908c}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!roi@{roi}}
+\index{roi@{roi}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{roi}{roi}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+roi}
+
+
+
+roi\+\_\+module.\+py 파일의 50 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ac6933969a5ad7c90e83ed15d3deae77d}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ac6933969a5ad7c90e83ed15d3deae77d}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!roi\_size@{roi\_size}}
+\index{roi\_size@{roi\_size}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{roi\_size}{roi\_size}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+roi\+\_\+size}
+
+
+
+roi\+\_\+module.\+py 파일의 48 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_abc41504d89a11461e1d31f560413c2cf}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_abc41504d89a11461e1d31f560413c2cf}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!score@{score}}
+\index{score@{score}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+score}
+
+
+
+roi\+\_\+module.\+py 파일의 42 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ad588bde0f1e3f6d72db08c0fb234d541}\label{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head_ad588bde0f1e3f6d72db08c0fb234d541}} 
+\index{model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}!spatial\_scale@{spatial\_scale}}
+\index{spatial\_scale@{spatial\_scale}!model.roi\_module.VGG16RoIHead@{model.roi\_module.VGG16RoIHead}}
+\doxysubsubsection{\texorpdfstring{spatial\_scale}{spatial\_scale}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+V\+G\+G16\+Ro\+I\+Head.\+spatial\+\_\+scale}
+
+
+
+roi\+\_\+module.\+py 파일의 49 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{roi__module_8py}{roi\+\_\+module.\+py}}\end{DoxyCompactItemize}

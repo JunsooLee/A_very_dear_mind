@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: scripts/extra/convert_gt_yolo.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('convert__gt__yolo_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">convert_gt_yolo.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="convert__gt__yolo_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html">    1</a></span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> glob</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> cv2</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a950bc08a96ff9eb8fd8ee93c674f8bbb">    6</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceconvert__gt__yolo.html#a950bc08a96ff9eb8fd8ee93c674f8bbb">convert_yolo_coordinates_to_voc</a>(x_c_n, y_c_n, width_n, height_n, img_width, img_height):</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  x_c = float(x_c_n) * img_width</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  y_c = float(y_c_n) * img_height</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  width = float(width_n) * img_width</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  height = float(height_n) * img_height</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  half_width = width / 2</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  half_height = height / 2</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  left = int(x_c - half_width) + 1</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  top = int(y_c - half_height) + 1</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  right = int(x_c + half_width) + 1</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  bottom = int(y_c + half_height) + 1</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> left, top, right, bottom</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"># make sure that the cwd() in the beginning is the location of the python script (so that every path makes sense)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;os.chdir(os.path.dirname(os.path.abspath(__file__)))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"># read the class_list.txt to a list</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">with</span> open(<span class="stringliteral">&quot;class_list.txt&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#ae43be266cfb585cb0ee15ef694d69b3e">   28</a></span>&#160;  obj_list = f.readlines()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  obj_list = [x.strip() <span class="keywordflow">for</span> x <span class="keywordflow">in</span> obj_list]</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"># change directory to the one with the files to be changed</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a792eccb6bfaa73462b60c5e9151bcc3b">   35</a></span>&#160;parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;parent_path = os.path.abspath(os.path.join(parent_path, os.pardir))</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a75ac3a286bfe4ee4acc950f16f0d692c">   37</a></span>&#160;GT_PATH = os.path.join(parent_path, <span class="stringliteral">&#39;input&#39;</span>,<span class="stringliteral">&#39;ground-truth&#39;</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">#print(GT_PATH)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;os.chdir(GT_PATH)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"># old files (YOLO format) will be moved to a new folder (backup/)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(<span class="stringliteral">&quot;backup&quot;</span>):</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  os.makedirs(<span class="stringliteral">&quot;backup&quot;</span>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"># create VOC format files</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a8b66871fd129ce3d47114c9a6254289a">   47</a></span>&#160;txt_list = glob.glob(<span class="stringliteral">&#39;*.txt&#39;</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordflow">if</span> len(txt_list) == 0:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  print(<span class="stringliteral">&quot;Error: no .txt files found in ground-truth&quot;</span>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  sys.exit()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordflow">for</span> tmp_file <span class="keywordflow">in</span> txt_list:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">#print(tmp_file)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment"># 1. check that there is an image with that name</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#ac04d041295388bd3011910d4da020280">   55</a></span>&#160;  image_name = tmp_file.split(<span class="stringliteral">&quot;.txt&quot;</span>,1)[0]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">#print(image_name)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">for</span> fname <span class="keywordflow">in</span> os.listdir(<span class="stringliteral">&#39;../images&#39;</span>):</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> fname.startswith(image_name):</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#ab53e918532ec2fb1ab315f8010c65ce8">   62</a></span>&#160;      img = cv2.imread(<span class="stringliteral">&#39;../images/&#39;</span> + fname)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a245a06dda7a1ba1e43cbb80852f7859b">   64</a></span>&#160;      img_height, img_width = img.shape[:2]</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    print(<span class="stringliteral">&quot;Error: image not found, corresponding to &quot;</span> + tmp_file)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    sys.exit()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment"># 2. open txt file lines to a list</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">with</span> open(tmp_file) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#a159dd124a3d1c65d4abe78f62fb873f3">   72</a></span>&#160;    content = f.readlines()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  content = [x.strip() <span class="keywordflow">for</span> x <span class="keywordflow">in</span> content]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment"># 3. move old file (YOLO format) to backup</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  os.rename(tmp_file, <span class="stringliteral">&quot;backup/&quot;</span> + tmp_file)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment"># 4. create new file (VOC format)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">with</span> open(tmp_file, <span class="stringliteral">&quot;a&quot;</span>) <span class="keyword">as</span> new_f:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> line <span class="keywordflow">in</span> content:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#aa2d72e9a2d247fe99be277344c4cea9d">   82</a></span>&#160;      obj_id, x_c_n, y_c_n, width_n, height_n = line.split()</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#af8b3a3bae5f757bd96474c36574a54dd">   83</a></span>&#160;      obj_name = obj_list[int(obj_id)]</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceconvert__gt__yolo.html#af88cbc6260ca7d9f3369368610cb184e">   84</a></span>&#160;      left, top, right, bottom = <a class="code" href="namespaceconvert__gt__yolo.html#a950bc08a96ff9eb8fd8ee93c674f8bbb">convert_yolo_coordinates_to_voc</a>(x_c_n, y_c_n, width_n, height_n, img_width, img_height)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      new_f.write(obj_name + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>(left) + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>(top) + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>(right) + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>(bottom) + <span class="stringliteral">&#39;\n&#39;</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;print(<span class="stringliteral">&quot;Conversion completed!&quot;</span>)</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacemain_html_a26f656d825a0ffd09a95f3e7953445e5"><div class="ttname"><a href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">main.str</a></div><div class="ttdeci">str</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00344">main.py:344</a></div></div>
+<div class="ttc" id="anamespaceconvert__gt__yolo_html_a950bc08a96ff9eb8fd8ee93c674f8bbb"><div class="ttname"><a href="namespaceconvert__gt__yolo.html#a950bc08a96ff9eb8fd8ee93c674f8bbb">convert_gt_yolo.convert_yolo_coordinates_to_voc</a></div><div class="ttdeci">def convert_yolo_coordinates_to_voc(x_c_n, y_c_n, width_n, height_n, img_width, img_height)</div><div class="ttdef"><b>Definition:</b> <a href="convert__gt__yolo_8py_source.html#l00006">convert_gt_yolo.py:6</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html">scripts</a></li><li class="navelem"><a class="el" href="dir_c4262912f6d7105e2ea50393663651f1.html">extra</a></li><li class="navelem"><a class="el" href="convert__gt__yolo_8py.html">convert_gt_yolo.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

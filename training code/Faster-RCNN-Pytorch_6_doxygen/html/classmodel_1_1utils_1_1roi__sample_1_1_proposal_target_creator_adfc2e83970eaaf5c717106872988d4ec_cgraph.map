@@ -1,0 +1,6 @@
+<map id="model.utils.roi_sample.ProposalTargetCreator.__call__" name="model.utils.roi_sample.ProposalTargetCreator.__call__">
+<area shape="rect" id="node1" title="RPN 네트워크에서 뽑은 sample anchor 중에서 IoU를 기준으로 pos와 negative의 비율을 1:3으로 맞춰" alt="" coords="5,49,212,90"/>
+<area shape="rect" id="node2" href="$namespacemodel_1_1utils_1_1bbox__tools.html#a3924d351ba94dd9bd75de88ecbf9d738" title=" " alt="" coords="260,5,468,32"/>
+<area shape="rect" id="node3" href="$namespacemodel_1_1utils_1_1bbox__tools.html#a1a8e6b10ec7536583f4d8cb0f8386ee6" title=" " alt="" coords="260,56,468,83"/>
+<area shape="rect" id="node4" href="$viewdet_8m.html#a830cd235a9bd6ad5766625b1cca857f4" title=" " alt="" coords="343,107,385,133"/>
+</map>

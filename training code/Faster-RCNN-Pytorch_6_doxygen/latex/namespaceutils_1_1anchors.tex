@@ -1,0 +1,244 @@
+\hypertarget{namespaceutils_1_1anchors}{}\doxysection{utils.\+anchors 네임스페이스 참조}
+\label{namespaceutils_1_1anchors}\index{utils.anchors@{utils.anchors}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}{generate\+\_\+anchor\+\_\+base}} (side\+\_\+length=16, ratios=\mbox{[}0.\+5, 1, 2\mbox{]}, scales=\mbox{[}0.\+5, 1, 2\mbox{]}, strides=16)
+\begin{DoxyCompactList}\small\item\em (input image size / 16) $\ast$ (input image size / 16) $\ast$ 9 개의 기본 anchor 생성 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}{get\+\_\+anchors}} (anchor\+\_\+base, feat\+\_\+stride, \mbox{\hyperlink{_v_o_creadrecxml_8m_a13fcb4cf818f74019742a34499acf82a}{height}}, \mbox{\hyperlink{_v_o_creadrecxml_8m_a7d7dbd80d4eae19a3f5d5c48b3c1074b}{width}})
+\begin{DoxyCompactList}\small\item\em F.\+M 한 픽셀에 대응하는 3개의 크기 $\ast$ 3개의 비율을 가지는 9개의 기본 anchor 생성 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}{get\+\_\+rois\+\_\+from\+\_\+loc\+\_\+anchors}} (anchors, rpn\+\_\+locs)
+\begin{DoxyCompactList}\small\item\em R\+PN 네트워크를 통해 나온 anchor 좌표(상대좌표)값을 input image에 매칭 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}\label{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}} 
+\index{utils.anchors@{utils.anchors}!generate\_anchor\_base@{generate\_anchor\_base}}
+\index{generate\_anchor\_base@{generate\_anchor\_base}!utils.anchors@{utils.anchors}}
+\doxysubsubsection{\texorpdfstring{generate\_anchor\_base()}{generate\_anchor\_base()}}
+{\footnotesize\ttfamily def utils.\+anchors.\+generate\+\_\+anchor\+\_\+base (\begin{DoxyParamCaption}\item[{}]{side\+\_\+length = {\ttfamily 16},  }\item[{}]{ratios = {\ttfamily \mbox{[}0.5,~1,~2\mbox{]}},  }\item[{}]{scales = {\ttfamily \mbox{[}0.5,~1,~2\mbox{]}},  }\item[{}]{strides = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+(input image size / 16) $\ast$ (input image size / 16) $\ast$ 9 개의 기본 anchor 생성 
+
+base anchor of the original image \begin{DoxyVerb}Generate anchors for a single 16*16 block. Then transform the anchors to the original image space.
+\end{DoxyVerb}
+ 
+
+anchors.\+py 파일의 7 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}{generate\_anchor\_base}}(side\_length=16, ratios=[0.5, 1, 2],}
+\DoxyCodeLine{8                          scales=[0.5, 1, 2], strides=16):}
+\DoxyCodeLine{9     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{    Generate anchors for a single 16*16 block. Then transform the anchors to the original image space.}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{12     py = side\_length / 2.}
+\DoxyCodeLine{13     px = side\_length / 2.}
+\DoxyCodeLine{14     \textcolor{comment}{\# anchor\_base shape: <class 'tuple'> (9,4)}}
+\DoxyCodeLine{15     anchor\_base = np.zeros((len(ratios) * len(scales), 4),}
+\DoxyCodeLine{16                            dtype=np.float32)}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(ratios)):}
+\DoxyCodeLine{19         \textcolor{keywordflow}{for} j \textcolor{keywordflow}{in} range(len(scales)):}
+\DoxyCodeLine{20             h = side\_length * strides * scales[j] * np.sqrt(ratios[i])}
+\DoxyCodeLine{21             w = side\_length * strides * scales[j] * np.sqrt(1. / ratios[i])}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23             index = i * len(scales) + j}
+\DoxyCodeLine{24             anchor\_base[index, 0] = py -\/ h / 2.}
+\DoxyCodeLine{25             anchor\_base[index, 1] = px -\/ w / 2.}
+\DoxyCodeLine{26             anchor\_base[index, 2] = py + h / 2.}
+\DoxyCodeLine{27             anchor\_base[index, 3] = px + w / 2.}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} anchor\_base}
+\DoxyCodeLine{29 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}\label{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}} 
+\index{utils.anchors@{utils.anchors}!get\_anchors@{get\_anchors}}
+\index{get\_anchors@{get\_anchors}!utils.anchors@{utils.anchors}}
+\doxysubsubsection{\texorpdfstring{get\_anchors()}{get\_anchors()}}
+{\footnotesize\ttfamily def utils.\+anchors.\+get\+\_\+anchors (\begin{DoxyParamCaption}\item[{}]{anchor\+\_\+base,  }\item[{}]{feat\+\_\+stride,  }\item[{}]{height,  }\item[{}]{width }\end{DoxyParamCaption})}
+
+
+
+F.\+M 한 픽셀에 대응하는 3개의 크기 $\ast$ 3개의 비율을 가지는 9개의 기본 anchor 생성 
+
+
+\begin{DoxyParams}{매개변수}
+{\em anchor\+\_\+base} & \\
+\hline
+{\em feat\+\_\+stride} & 16(input image 에서 16개 픽셀에 대응) \\
+\hline
+{\em height} & F.\+M height \\
+\hline
+{\em width} & F.\+M width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+anchors \+: F.\+M 모든 픽셀에 대한 초기 anchor 위치, shape = (F.\+M height $\ast$ width $\ast$ 9 $\ast$ 4) 
+\end{DoxyReturn}
+
+
+anchors.\+py 파일의 38 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}{get\_anchors}}(anchor\_base, feat\_stride, height, width):}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{\# if height = 512 * width = 512 일 경우}}
+\DoxyCodeLine{41     \textcolor{comment}{\# anchors\_y = 0, 16 ,32 ...}}
+\DoxyCodeLine{42     anchors\_y = np.arange(height) * feat\_stride}
+\DoxyCodeLine{43     anchors\_x = np.arange(width) * feat\_stride}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{\# meshgrid는 사각형의 조합을 의미}}
+\DoxyCodeLine{46     \textcolor{comment}{\# anchor\_x = shape 512 * 512 / value 0, 16, 32 ...}}
+\DoxyCodeLine{47     \textcolor{comment}{\# anchor\_y = shape 512 * 512 / value 0, 0, 0 / 1, 1, 1 / 2, 2, 2}}
+\DoxyCodeLine{48     anchors\_x, anchors\_y = np.meshgrid(anchors\_x, anchors\_y)}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{\# shift shape: (feature map height * feature map width) * 4(좌표)}}
+\DoxyCodeLine{51     shift = np.stack((anchors\_y.ravel(), anchors\_x.ravel(),}
+\DoxyCodeLine{52                       anchors\_y.ravel(), anchors\_x.ravel()), axis=1)}
+\DoxyCodeLine{53     anchors = np.repeat(shift, repeats=len(anchor\_base), axis=0) + \(\backslash\)}
+\DoxyCodeLine{54         np.tile(anchor\_base, [len(shift),1])}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} anchors}
+\DoxyCodeLine{56 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}\label{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}} 
+\index{utils.anchors@{utils.anchors}!get\_rois\_from\_loc\_anchors@{get\_rois\_from\_loc\_anchors}}
+\index{get\_rois\_from\_loc\_anchors@{get\_rois\_from\_loc\_anchors}!utils.anchors@{utils.anchors}}
+\doxysubsubsection{\texorpdfstring{get\_rois\_from\_loc\_anchors()}{get\_rois\_from\_loc\_anchors()}}
+{\footnotesize\ttfamily def utils.\+anchors.\+get\+\_\+rois\+\_\+from\+\_\+loc\+\_\+anchors (\begin{DoxyParamCaption}\item[{}]{anchors,  }\item[{}]{rpn\+\_\+locs }\end{DoxyParamCaption})}
+
+
+
+R\+PN 네트워크를 통해 나온 anchor 좌표(상대좌표)값을 input image에 매칭 
+
+
+\begin{DoxyParams}{매개변수}
+{\em anchors} & F.\+M 한 픽셀의 9개의 anchor 좌표 ({\ttfamily p\+\_\+\{ymin\}, p\+\_\+\{xmin\}, p\+\_\+\{ymax\}, p\+\_\+\{xmax\}}) \\
+\hline
+{\em rpn\+\_\+locs} & R\+P\+N을 통해서 예측한 anchor 좌표, (feature height $\ast$ feature width $\ast$ 9 $\ast$ 4\mbox{[}t\+\_\+y, t\+\_\+x, t\+\_\+h, t\+\_\+w\mbox{]}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+dst\+\_\+bbox \+: 예측된 anchor를 input image 좌표로 변경한 것 
+\end{DoxyReturn}
+\begin{DoxyNote}{주의}
+R\+P\+N을 통해 예측되어 나오는 anchor 박스의 (t\+\_\+y, t\+\_\+x, t\+\_\+h, t\+\_\+w) 값들은 상대좌표 이다. \begin{DoxyVerb}Decode bounding boxes from bounding box offsets and scales.
+
+Given bounding box offsets and scales computed by
+:meth:`bbox2loc`, this function decodes the representation to
+coordinates in 2D image coordinates.
+
+Given scales and offsets :math:`t_y, t_x, t_h, t_w` and a bounding
+box whose center is :math:`(y, x) = p_y, p_x` and size :math:`p_h, p_w`,
+the decoded bounding box's center :math:`\\hat{g}_y`, :math:`\\hat{g}_x`
+and size :math:`\\hat{g}_h`, :math:`\\hat{g}_w` are calculated
+by the following formulas.
+
+* :math:`\\hat{g}_y = p_h t_y + p_y`
+* :math:`\\hat{g}_x = p_w t_x + p_x`
+* :math:`\\hat{g}_h = p_h \\exp(t_h)`
+* :math:`\\hat{g}_w = p_w \\exp(t_w)`
+
+Args:
+    anchors (array): A coordinates of bounding boxes.
+        Its shape is :math:`(R, 4)`. These coordinates are
+        :math:`p_{ymin}, p_{xmin}, p_{ymax}, p_{xmax}`.
+    rpn_locs (array): An array with offsets and scales.
+        The shapes of :obj:`anchors` and :obj:`rpn_locs` should be same.
+        This contains values :math:`t_y, t_x, t_h, t_w`.
+
+Returns:
+    array:
+    Decoded bounding box coordinates. Its shape is :math:`(R, 4)`. \
+    The second axis contains four values \
+    :math:`\\hat{g}_{ymin}, \\hat{g}_{xmin},
+    \\hat{g}_{ymax}, \\hat{g}_{xmax}`.\end{DoxyVerb}
+ 
+\end{DoxyNote}
+
+
+anchors.\+py 파일의 64 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}{get\_rois\_from\_loc\_anchors}}(anchors, rpn\_locs):}
+\DoxyCodeLine{65     \textcolor{stringliteral}{"""Decode bounding boxes from bounding box offsets and scales.}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{}}
+\DoxyCodeLine{67 \textcolor{stringliteral}{    Given bounding box offsets and scales computed by}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{    :meth:`bbox2loc`, this function decodes the representation to}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{    coordinates in 2D image coordinates.}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{    Given scales and offsets :math:`t\_y, t\_x, t\_h, t\_w` and a bounding}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{    box whose center is :math:`(y, x) = p\_y, p\_x` and size :math:`p\_h, p\_w`,}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{    the decoded bounding box's center :math:`\(\backslash\)\(\backslash\)hat\{g\}\_y`, :math:`\(\backslash\)\(\backslash\)hat\{g\}\_x`}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{    and size :math:`\(\backslash\)\(\backslash\)hat\{g\}\_h`, :math:`\(\backslash\)\(\backslash\)hat\{g\}\_w` are calculated}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{    by the following formulas.}}
+\DoxyCodeLine{76 \textcolor{stringliteral}{}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_y = p\_h t\_y + p\_y`}}
+\DoxyCodeLine{78 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_x = p\_w t\_x + p\_x`}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_h = p\_h \(\backslash\)\(\backslash\)exp(t\_h)`}}
+\DoxyCodeLine{80 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_w = p\_w \(\backslash\)\(\backslash\)exp(t\_w)`}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{        anchors (array): A coordinates of bounding boxes.}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{            Its shape is :math:`(R, 4)`. These coordinates are}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{            :math:`p\_\{ymin\}, p\_\{xmin\}, p\_\{ymax\}, p\_\{xmax\}`.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{        rpn\_locs (array): An array with offsets and scales.}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{            The shapes of :obj:`anchors` and :obj:`rpn\_locs` should be same.}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{            This contains values :math:`t\_y, t\_x, t\_h, t\_w`.}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{        array:}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{        Decoded bounding box coordinates. Its shape is :math:`(R, 4)`. \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{        The second axis contains four values \(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{        :math:`\(\backslash\)\(\backslash\)hat\{g\}\_\{ymin\}, \(\backslash\)\(\backslash\)hat\{g\}\_\{xmin\},}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{        \(\backslash\)\(\backslash\)hat\{g\}\_\{ymax\}, \(\backslash\)\(\backslash\)hat\{g\}\_\{xmax\}`.}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{98     src\_bbox = anchors}
+\DoxyCodeLine{99     src\_bbox = src\_bbox.astype(src\_bbox.dtype, copy=\textcolor{keyword}{False})}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     src\_height = src\_bbox[:, 2] -\/ src\_bbox[:, 0]}
+\DoxyCodeLine{102     src\_width = src\_bbox[:, 3] -\/ src\_bbox[:, 1]}
+\DoxyCodeLine{103     src\_ctr\_y = src\_bbox[:, 0] + 0.5 * src\_height}
+\DoxyCodeLine{104     src\_ctr\_x = src\_bbox[:, 1] + 0.5 * src\_width}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{\# 상대적인 좌표 예측}}
+\DoxyCodeLine{107     dy = rpn\_locs[:, 0]}
+\DoxyCodeLine{108     dx = rpn\_locs[:, 1]}
+\DoxyCodeLine{109     dh = rpn\_locs[:, 2]}
+\DoxyCodeLine{110     dw = rpn\_locs[:, 3]}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     dst\_y = dy * src\_height + src\_ctr\_y}
+\DoxyCodeLine{113     dst\_x = dx * src\_width + src\_ctr\_x}
+\DoxyCodeLine{114     dst\_h = np.exp(dh) * src\_height}
+\DoxyCodeLine{115     dst\_w = np.exp(dw) * src\_width}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     dst\_bbox = np.zeros(rpn\_locs.shape, dtype=rpn\_locs.dtype)}
+\DoxyCodeLine{118     dst\_bbox[:, 0] = dst\_y -\/ 0.5 * dst\_h}
+\DoxyCodeLine{119     dst\_bbox[:, 1] = dst\_x -\/ 0.5 * dst\_w}
+\DoxyCodeLine{120     dst\_bbox[:, 2] = dst\_y + 0.5 * dst\_h}
+\DoxyCodeLine{121     dst\_bbox[:, 3] = dst\_x + 0.5 * dst\_w}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} dst\_bbox}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,289 @@
+\hypertarget{classutils_1_1config_1_1_config}{}\doxysection{utils.\+config.\+Config 클래스 참조}
+\label{classutils_1_1config_1_1_config}\index{utils.config.Config@{utils.config.Config}}
+
+
+utils.\+config.\+Config에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutils_1_1config_1_1_config__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{정적 Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classutils_1_1config_1_1_config_add03cf79a932feabb61c23045ac6c463}{voc\+\_\+data\+\_\+dir}} = \textquotesingle{}./data/V\+O\+Cdevkit/V\+O\+C2007\textquotesingle{}
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_ab0df27774e2613fb5ec469cd0942a43d}{min\+\_\+size}} = 600
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_adc9c3d5533fe441dd80e776902346c13}{max\+\_\+size}} = 1000
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_a9d89ee8d02d3a1af6cead895200f20bf}{num\+\_\+workers}} = 4
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_a53f79aea7bdb7b015f0254565fa9c307}{test\+\_\+num\+\_\+workers}} = 4
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_adaae554152b5796fde6ab90bccb55b97}{rpn\+\_\+sigma}} = 3.
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_aab011b9e1229a39c3d36d0dd2a0a93ac}{roi\+\_\+sigma}} = 1.
+\item 
+float \mbox{\hyperlink{classutils_1_1config_1_1_config_a68ea67c2932d07552fe8e76846c8cd1d}{weight\+\_\+decay}} = 0.\+0005
+\item 
+float \mbox{\hyperlink{classutils_1_1config_1_1_config_a5825e7df582fedf4164a681ab2e592ff}{lr\+\_\+decay}} = 0.\+1
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_ad7c9f1fe729814b5d319e762f6a5e8e8}{lr}} = 1e-\/3
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_a68a7fbb7fea979f21e4bdd50028be8ab}{epoch}} = 20
+\item 
+bool \mbox{\hyperlink{classutils_1_1config_1_1_config_a83a443d13ac4a9ca707603e7ed878019}{use\+\_\+adam}} = False
+\item 
+int \mbox{\hyperlink{classutils_1_1config_1_1_config_ad9766fe6d5a83657d503d2372daac45d}{test\+\_\+num}} = 1000
+\item 
+string \mbox{\hyperlink{classutils_1_1config_1_1_config_a7fda050c6dc925f4998e15a92c024303}{load\+\_\+path}} = \textquotesingle{}C\+:/Users/user/Pycharm\+Projects/Faster-\/R\+C\+NN-\/Pytorch\+\_\+6/checkpoints/fasterrcnn\+\_\+11060608.\+pth\+\_\+0.\+17768789965474008.\+pth\textquotesingle{}
+\item 
+bool \mbox{\hyperlink{classutils_1_1config_1_1_config_a8fb5512676256d312787fa27d6b92817}{caffe\+\_\+pretrain}} = False
+\item 
+string \mbox{\hyperlink{classutils_1_1config_1_1_config_a35855d56d42cb937546d3e6a339a5703}{caffe\+\_\+pretrain\+\_\+path}} = \textquotesingle{}checkpoints/vgg16-\/caffe.\+pth\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classutils_1_1config_1_1_config_ad965322beb1589fc5499429d4dfda6e4}{\+\_\+parse}} (self, kwargs)
+\item 
+def \mbox{\hyperlink{classutils_1_1config_1_1_config_a201183fe810021b8a2cd4a6d1d81925a}{\+\_\+state\+\_\+dict}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+config.\+py 파일의 4 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_ad965322beb1589fc5499429d4dfda6e4}\label{classutils_1_1config_1_1_config_ad965322beb1589fc5499429d4dfda6e4}} 
+\index{utils.config.Config@{utils.config.Config}!\_parse@{\_parse}}
+\index{\_parse@{\_parse}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{\_parse()}{\_parse()}}
+{\footnotesize\ttfamily def utils.\+config.\+Config.\+\_\+parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kwargs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+config.\+py 파일의 51 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51     \textcolor{keyword}{def }\_parse(self, kwargs):}
+\DoxyCodeLine{52         state\_dict = self.\_state\_dict()}
+\DoxyCodeLine{53         \textcolor{keywordflow}{for} k, v \textcolor{keywordflow}{in} kwargs.items():}
+\DoxyCodeLine{54             \textcolor{keywordflow}{if} k \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} state\_dict:}
+\DoxyCodeLine{55                 \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'UnKnown Option: "-\/-\/\%s"'} \% k)}
+\DoxyCodeLine{56             setattr(self, k, v)}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         print(\textcolor{stringliteral}{'======user config========'})}
+\DoxyCodeLine{59         pprint(self.\_state\_dict())}
+\DoxyCodeLine{60         print(\textcolor{stringliteral}{'==========end============'})}
+\DoxyCodeLine{61 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classutils_1_1config_1_1_config_ad965322beb1589fc5499429d4dfda6e4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a201183fe810021b8a2cd4a6d1d81925a}\label{classutils_1_1config_1_1_config_a201183fe810021b8a2cd4a6d1d81925a}} 
+\index{utils.config.Config@{utils.config.Config}!\_state\_dict@{\_state\_dict}}
+\index{\_state\_dict@{\_state\_dict}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{\_state\_dict()}{\_state\_dict()}}
+{\footnotesize\ttfamily def utils.\+config.\+Config.\+\_\+state\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+config.\+py 파일의 62 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62     \textcolor{keyword}{def }\_state\_dict(self):}
+\DoxyCodeLine{63         \textcolor{keywordflow}{return} \{k: getattr(self, k) \textcolor{keywordflow}{for} k, \_ \textcolor{keywordflow}{in} Config.\_\_dict\_\_.items() \(\backslash\)}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} k.startswith(\textcolor{stringliteral}{'\_'})\}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classutils_1_1config_1_1_config_a201183fe810021b8a2cd4a6d1d81925a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a8fb5512676256d312787fa27d6b92817}\label{classutils_1_1config_1_1_config_a8fb5512676256d312787fa27d6b92817}} 
+\index{utils.config.Config@{utils.config.Config}!caffe\_pretrain@{caffe\_pretrain}}
+\index{caffe\_pretrain@{caffe\_pretrain}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{caffe\_pretrain}{caffe\_pretrain}}
+{\footnotesize\ttfamily bool utils.\+config.\+Config.\+caffe\+\_\+pretrain = False\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 48 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a35855d56d42cb937546d3e6a339a5703}\label{classutils_1_1config_1_1_config_a35855d56d42cb937546d3e6a339a5703}} 
+\index{utils.config.Config@{utils.config.Config}!caffe\_pretrain\_path@{caffe\_pretrain\_path}}
+\index{caffe\_pretrain\_path@{caffe\_pretrain\_path}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{caffe\_pretrain\_path}{caffe\_pretrain\_path}}
+{\footnotesize\ttfamily string utils.\+config.\+Config.\+caffe\+\_\+pretrain\+\_\+path = \textquotesingle{}checkpoints/vgg16-\/caffe.\+pth\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a68a7fbb7fea979f21e4bdd50028be8ab}\label{classutils_1_1config_1_1_config_a68a7fbb7fea979f21e4bdd50028be8ab}} 
+\index{utils.config.Config@{utils.config.Config}!epoch@{epoch}}
+\index{epoch@{epoch}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{epoch}{epoch}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+epoch = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 33 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a7fda050c6dc925f4998e15a92c024303}\label{classutils_1_1config_1_1_config_a7fda050c6dc925f4998e15a92c024303}} 
+\index{utils.config.Config@{utils.config.Config}!load\_path@{load\_path}}
+\index{load\_path@{load\_path}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{load\_path}{load\_path}}
+{\footnotesize\ttfamily string utils.\+config.\+Config.\+load\+\_\+path = \textquotesingle{}C\+:/Users/user/Pycharm\+Projects/Faster-\/R\+C\+NN-\/Pytorch\+\_\+6/checkpoints/fasterrcnn\+\_\+11060608.\+pth\+\_\+0.\+17768789965474008.\+pth\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_ad7c9f1fe729814b5d319e762f6a5e8e8}\label{classutils_1_1config_1_1_config_ad7c9f1fe729814b5d319e762f6a5e8e8}} 
+\index{utils.config.Config@{utils.config.Config}!lr@{lr}}
+\index{lr@{lr}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{lr}{lr}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+lr = 1e-\/3\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 20 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a5825e7df582fedf4164a681ab2e592ff}\label{classutils_1_1config_1_1_config_a5825e7df582fedf4164a681ab2e592ff}} 
+\index{utils.config.Config@{utils.config.Config}!lr\_decay@{lr\_decay}}
+\index{lr\_decay@{lr\_decay}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{lr\_decay}{lr\_decay}}
+{\footnotesize\ttfamily float utils.\+config.\+Config.\+lr\+\_\+decay = 0.\+1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 19 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_adc9c3d5533fe441dd80e776902346c13}\label{classutils_1_1config_1_1_config_adc9c3d5533fe441dd80e776902346c13}} 
+\index{utils.config.Config@{utils.config.Config}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{max\_size}{max\_size}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+max\+\_\+size = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 8 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_ab0df27774e2613fb5ec469cd0942a43d}\label{classutils_1_1config_1_1_config_ab0df27774e2613fb5ec469cd0942a43d}} 
+\index{utils.config.Config@{utils.config.Config}!min\_size@{min\_size}}
+\index{min\_size@{min\_size}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{min\_size}{min\_size}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+min\+\_\+size = 600\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 7 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a9d89ee8d02d3a1af6cead895200f20bf}\label{classutils_1_1config_1_1_config_a9d89ee8d02d3a1af6cead895200f20bf}} 
+\index{utils.config.Config@{utils.config.Config}!num\_workers@{num\_workers}}
+\index{num\_workers@{num\_workers}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{num\_workers}{num\_workers}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+num\+\_\+workers = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 9 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_aab011b9e1229a39c3d36d0dd2a0a93ac}\label{classutils_1_1config_1_1_config_aab011b9e1229a39c3d36d0dd2a0a93ac}} 
+\index{utils.config.Config@{utils.config.Config}!roi\_sigma@{roi\_sigma}}
+\index{roi\_sigma@{roi\_sigma}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{roi\_sigma}{roi\_sigma}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+roi\+\_\+sigma = 1.\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 14 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_adaae554152b5796fde6ab90bccb55b97}\label{classutils_1_1config_1_1_config_adaae554152b5796fde6ab90bccb55b97}} 
+\index{utils.config.Config@{utils.config.Config}!rpn\_sigma@{rpn\_sigma}}
+\index{rpn\_sigma@{rpn\_sigma}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{rpn\_sigma}{rpn\_sigma}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+rpn\+\_\+sigma = 3.\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 13 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_ad9766fe6d5a83657d503d2372daac45d}\label{classutils_1_1config_1_1_config_ad9766fe6d5a83657d503d2372daac45d}} 
+\index{utils.config.Config@{utils.config.Config}!test\_num@{test\_num}}
+\index{test\_num@{test\_num}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{test\_num}{test\_num}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+test\+\_\+num = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 42 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a53f79aea7bdb7b015f0254565fa9c307}\label{classutils_1_1config_1_1_config_a53f79aea7bdb7b015f0254565fa9c307}} 
+\index{utils.config.Config@{utils.config.Config}!test\_num\_workers@{test\_num\_workers}}
+\index{test\_num\_workers@{test\_num\_workers}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{test\_num\_workers}{test\_num\_workers}}
+{\footnotesize\ttfamily int utils.\+config.\+Config.\+test\+\_\+num\+\_\+workers = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a83a443d13ac4a9ca707603e7ed878019}\label{classutils_1_1config_1_1_config_a83a443d13ac4a9ca707603e7ed878019}} 
+\index{utils.config.Config@{utils.config.Config}!use\_adam@{use\_adam}}
+\index{use\_adam@{use\_adam}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{use\_adam}{use\_adam}}
+{\footnotesize\ttfamily bool utils.\+config.\+Config.\+use\+\_\+adam = False\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_add03cf79a932feabb61c23045ac6c463}\label{classutils_1_1config_1_1_config_add03cf79a932feabb61c23045ac6c463}} 
+\index{utils.config.Config@{utils.config.Config}!voc\_data\_dir@{voc\_data\_dir}}
+\index{voc\_data\_dir@{voc\_data\_dir}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{voc\_data\_dir}{voc\_data\_dir}}
+{\footnotesize\ttfamily string utils.\+config.\+Config.\+voc\+\_\+data\+\_\+dir = \textquotesingle{}./data/V\+O\+Cdevkit/V\+O\+C2007\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 6 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1config_1_1_config_a68ea67c2932d07552fe8e76846c8cd1d}\label{classutils_1_1config_1_1_config_a68ea67c2932d07552fe8e76846c8cd1d}} 
+\index{utils.config.Config@{utils.config.Config}!weight\_decay@{weight\_decay}}
+\index{weight\_decay@{weight\_decay}!utils.config.Config@{utils.config.Config}}
+\doxysubsubsection{\texorpdfstring{weight\_decay}{weight\_decay}}
+{\footnotesize\ttfamily float utils.\+config.\+Config.\+weight\+\_\+decay = 0.\+0005\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+config.\+py 파일의 18 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{config_8py}{config.\+py}}\end{DoxyCompactItemize}

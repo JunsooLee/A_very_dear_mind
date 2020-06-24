@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/VOCdevkit/VOCcode/VOCxml2struct.m 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_v_o_cxml2struct_8m_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">VOCxml2struct.m</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_v_o_cxml2struct_8m.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">    1</a></span>&#160;<span class="keyword">function</span> <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a> = VOCxml2struct(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>)</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>==9|<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>==10|<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>==13)=[];</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[res,xml]=parse(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,1,[]);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">    7</a></span>&#160;<span class="keyword">function</span> [res,ind]=parse(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>,<a class="code" href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a>)</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>=[];</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordflow">if</span> <a class="code" href="_v_o_cxml2struct_8m.html#abafd4017b823d2ce7a91d564a57ebcf4">~isempty</a>(<a class="code" href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a>)&amp;&amp;<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>)~=<span class="charliteral">&#39;&lt;&#39;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=findchar(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>,<span class="charliteral">&#39;&lt;&#39;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>=trim(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>:<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>-1));</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">   13</a></span>&#160;    <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>=<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    [tag,ind]=gettag(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="_v_o_cxml2struct_8m.html#ad85210f9007ccfc97c5348a3e92136c2">~strcmp</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>,[<span class="charliteral">&#39;/&#39;</span> <a class="code" href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a>])</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">   16</a></span>&#160;        <a class="code" href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a>(&#39;&lt;%<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>&gt; closed with &lt;%<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>&gt;&#39;,<a class="code" href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;else</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="_p_a_sreadrectxt_8m.html#af44bfed821f87e4d9da785c0dc1983a2">while</a> <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>&lt;=<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        [<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>]=gettag(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> <a class="code" href="_p_a_sreadrecord_8m.html#ac8c32e9c713240d74818c89b8003e629">strcmp</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>,[&#39;/&#39; <a class="code" href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a>])</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            return</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        else</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            [sub,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>]=parse(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>);            </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> isstruct(sub)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> <a class="code" href="_v_o_creadrecxml_8m.html#a8f17bb1c76f5191fbc84238dad04226b">isfield</a>(<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    n=<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    fn=fieldnames(sub);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    for <a class="code" href="_v_o_creadxml_8m.html#a3cf72f14d9f1421554d09e926a62944c">f</a>=1:<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(fn)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>)(n+1).(fn{<a class="code" href="_v_o_creadxml_8m.html#a3cf72f14d9f1421554d09e926a62944c">f</a>})=sub.(fn{<a class="code" href="_v_o_creadxml_8m.html#a3cf72f14d9f1421554d09e926a62944c">f</a>});</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag)=sub;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span> <a class="code" href="_v_o_creadrecxml_8m.html#a8f17bb1c76f5191fbc84238dad04226b">isfield</a>(<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keywordflow">if</span> <a class="code" href="_v_o_cwritexml_8m.html#a763ecc04e35d10f55ec21fa0fda451a6">~iscell</a>(<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag))</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag)={<a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag)};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag){<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a>+1}=sub;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <a class="code" href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a>.(tag)=sub;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">function</span> <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a> = findchar(<a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>,chr)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=[];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordflow">while</span> <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>&lt;=<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">str</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>)==chr</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>=<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>+1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">function</span> [tag,ind]=gettag(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordflow">if</span> <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>&gt;<a class="code" href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a>(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>=[];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;elseif <a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>)==<span class="charliteral">&#39;&lt;&#39;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=findchar(<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>,<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>,<span class="charliteral">&#39;&gt;&#39;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="create__segmentations__from__detections_8m.html#aad7d2d6eb40a497bd6c1be23847d1aa4">isempty</a>(<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a>(<span class="stringliteral">&#39;incomplete tag&#39;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a>=<a class="code" href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a>(<a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>+1:<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>-1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>=<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>+1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a>(<span class="stringliteral">&#39;expected tag&#39;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a> </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">function</span> <a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a> = trim(<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordflow">for</span> <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=1:numel(<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> ~isspace(<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>(<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>=<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>(<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>:<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordflow">for</span> <a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=numel(<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>):-1:1</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a> ~isspace(<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>(<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>))</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>=<a class="code" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>(1:<a class="code" href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_v_o_creadxml_8m_html_a3cf72f14d9f1421554d09e926a62944c"><div class="ttname"><a href="_v_o_creadxml_8m.html#a3cf72f14d9f1421554d09e926a62944c">f</a></div><div class="ttdeci">else f</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_creadxml_8m_source.html#l00006">VOCreadxml.m:6</a></div></div>
+<div class="ttc" id="a_p_a_sreadrectxt_8m_html_af44bfed821f87e4d9da785c0dc1983a2"><div class="ttname"><a href="_p_a_sreadrectxt_8m.html#af44bfed821f87e4d9da785c0dc1983a2">while</a></div><div class="ttdeci">while(notEOF)</div></div>
+<div class="ttc" id="aexample__classifier_8m_html_a6f6ccfcf58b31cb6412107d9d5281426"><div class="ttname"><a href="example__classifier_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a></div><div class="ttdeci">train and test classifier for each class for i</div><div class="ttdef"><b>Definition:</b> <a href="example__classifier_8m_source.html#l00010">example_classifier.m:10</a></div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_af225015a9220b8c7f71a47b9c4418b2a"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#af225015a9220b8c7f71a47b9c4418b2a">parent</a></div><div class="ttdeci">if parent</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cxml2struct_8m_source.html#l00016">VOCxml2struct.m:16</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_aac82a4a57e9e5838951a9f5b5132f21d"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div><div class="ttdeci">end[ids, confs, b1, b2, b3, b4]</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00029">create_segmentations_from_detections.m:29</a></div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_aa192d86c062cfbb9107e49c11810f1ae"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#aa192d86c062cfbb9107e49c11810f1ae">tag</a></div><div class="ttdeci">if tag</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cxml2struct_8m_source.html#l00016">VOCxml2struct.m:16</a></div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_aff37e7b29e3cb3dfff02f365283093f4"><div class="ttname"><a href="_v_o_cwritexml_8m.html#aff37e7b29e3cb3dfff02f365283093f4">xml</a></div><div class="ttdeci">function xml</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cwritexml_8m_source.html#l00007">VOCwritexml.m:7</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_aad7d2d6eb40a497bd6c1be23847d1aa4"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#aad7d2d6eb40a497bd6c1be23847d1aa4">isempty</a></div><div class="ttdeci">if isempty(ind) imgids</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00050">create_segmentations_from_detections.m:50</a></div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_a763ecc04e35d10f55ec21fa0fda451a6"><div class="ttname"><a href="_v_o_cwritexml_8m.html#a763ecc04e35d10f55ec21fa0fda451a6">~iscell</a></div><div class="ttdeci">end else if ~iscell(f) f</div></div>
+<div class="ttc" id="aviewdet_8m_html_a78386645c299ac47ae8356c9eb8af518"><div class="ttname"><a href="viewdet_8m.html#a78386645c299ac47ae8356c9eb8af518">length</a></div><div class="ttdeci">elseif length(i)&gt;1 error('multiple image &quot;%s&quot;'</div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_aa1a517e3e42b3d109bc480c74e3a655c"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a></div><div class="ttdeci">ind</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cxml2struct_8m_source.html#l00013">VOCxml2struct.m:13</a></div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_aaa7c61c7163e7fc36352afb33ce6c3dd"><div class="ttname"><a href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a></div><div class="ttdeci">if s</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cwritexml_8m_source.html#l00029">VOCwritexml.m:29</a></div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_ad85210f9007ccfc97c5348a3e92136c2"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#ad85210f9007ccfc97c5348a3e92136c2">~strcmp</a></div><div class="ttdeci">if ~strcmp(tag,['/' parent]) error('&lt;%s &gt; closed with&lt;%s &gt;'</div></div>
+<div class="ttc" id="a_v_o_cwritexml_8m_html_a6ded8204cc9ab5b812a3022fae39d491"><div class="ttname"><a href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a></div><div class="ttdeci">else error('unsupported type')</div></div>
+<div class="ttc" id="a_p_a_sreadrecord_8m_html_ac8c32e9c713240d74818c89b8003e629"><div class="ttname"><a href="_p_a_sreadrecord_8m.html#ac8c32e9c713240d74818c89b8003e629">strcmp</a></div><div class="ttdeci">end if strcmp(path(end-3:end),'.txt') rec</div></div>
+<div class="ttc" id="anamespacemain_html_a26f656d825a0ffd09a95f3e7953445e5"><div class="ttname"><a href="namespacemain.html#a26f656d825a0ffd09a95f3e7953445e5">main.str</a></div><div class="ttdeci">str</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00344">main.py:344</a></div></div>
+<div class="ttc" id="a_p_a_serrmsg_8m_html_afb9e76fe034c2da0131952be7d078815"><div class="ttname"><a href="_p_a_serrmsg_8m.html#afb9e76fe034c2da0131952be7d078815">if</a></div><div class="ttdeci">if(~isempty(k))</div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_abafd4017b823d2ce7a91d564a57ebcf4"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#abafd4017b823d2ce7a91d564a57ebcf4">~isempty</a></div><div class="ttdeci">if ~isempty(parent) &amp;&amp;xml(ind)~</div></div>
+<div class="ttc" id="a_v_o_creadrecxml_8m_html_a8f17bb1c76f5191fbc84238dad04226b"><div class="ttname"><a href="_v_o_creadrecxml_8m.html#a8f17bb1c76f5191fbc84238dad04226b">isfield</a></div><div class="ttdeci">if isfield(o, 'pose') if strcmp(o.pose</div></div>
+<div class="ttc" id="a_v_o_cxml2struct_8m_html_ab0bd7560790c13b656fd58e17e35143e"><div class="ttname"><a href="_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e">res</a></div><div class="ttdeci">function res</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_cxml2struct_8m_source.html#l00001">VOCxml2struct.m:1</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="dir_d9f7cb0ee7ba4bfbc588b8b68234bda5.html">VOCdevkit</a></li><li class="navelem"><a class="el" href="dir_9c92c13274e8c50362e9dac44526ce4e.html">VOCcode</a></li><li class="navelem"><a class="el" href="_v_o_cxml2struct_8m.html">VOCxml2struct.m</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

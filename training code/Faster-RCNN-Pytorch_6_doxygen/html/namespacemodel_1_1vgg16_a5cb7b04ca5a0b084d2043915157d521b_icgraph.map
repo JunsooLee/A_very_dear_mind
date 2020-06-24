@@ -1,0 +1,4 @@
+<map id="model.vgg16.decom_vgg16" name="model.vgg16.decom_vgg16">
+<area shape="rect" id="node1" title="imagenet pretrain vgg16모델 정의 및 상위 4개의 layer 파라미터 고정." alt="" coords="220,13,397,39"/>
+<area shape="rect" id="node2" href="$classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#aee60e839b0eb5c0eaa9738f42dd91bb5" title="model 정의 및 RPN &amp; ROI network 초기화 설정" alt="" coords="5,5,172,47"/>
+</map>

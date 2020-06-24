@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/voc_dataset.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('voc__dataset_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">voc_dataset.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="voc__dataset_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedata_1_1voc__dataset.html">    1</a></span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> xml.etree.ElementTree <span class="keyword">as</span> ET</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> .util <span class="keyword">import</span> read_image</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html">VOCBboxDataset</a>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Bounding box dataset for PASCAL `VOC`_.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">    .. _`VOC`: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    The index corresponds to each image.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">    When queried by an index, if :obj:`return_difficult == False`,</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    this dataset returns a corresponding</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">    :obj:`img, bbox, label`, a tuple of an image, bounding boxes and labels.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    This is the default behaviour.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">    If :obj:`return_difficult == True`, this dataset returns corresponding</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">    :obj:`img, bbox, label, difficult`. :obj:`difficult` is a boolean array</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">    that indicates whether bounding boxes are labeled as difficult or not.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">    The bounding boxes are packed into a two dimensional tensor of shape</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">    :math:`(R, 4)`, where :math:`R` is the number of bounding boxes in</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">    the image. The second axis represents attributes of the bounding box.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">    They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`, where the</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    four attributes are coordinates of the top left and the bottom right</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">    vertices.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">    The labels are packed into a one dimensional tensor of shape :math:`(R,)`.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral">    :math:`R` is the number of bounding boxes in the image.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral">    The class name of the label :math:`l` is :math:`l` th element of</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">    :obj:`VOC_BBOX_LABEL_NAMES`.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    The array :obj:`difficult` is a one dimensional boolean array of shape</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">    :math:`(R,)`. :math:`R` is the number of bounding boxes in the image.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">    If :obj:`use_difficult` is :obj:`False`, this array is</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral">    a boolean array with all :obj:`False`.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">    The type of the image, the bounding boxes and the labels are as follows.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">    * :obj:`img.dtype == numpy.float32`</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">    * :obj:`bbox.dtype == numpy.float32`</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">    * :obj:`label.dtype == numpy.int32`</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">    * :obj:`difficult.dtype == numpy.bool`</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">    Args:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">        data_dir (string): Path to the root of the training data. </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">            i.e. &quot;/data/image/voc/VOCdevkit/VOC2007/&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">        split ({&#39;train&#39;, &#39;val&#39;, &#39;trainval&#39;, &#39;test&#39;}): Select a split of the</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">            dataset. :obj:`test` split is only available for</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">            2007 dataset.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">        year ({&#39;2007&#39;, &#39;2012&#39;}): Use a dataset prepared for a challenge</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral">            held in :obj:`year`.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral">        use_difficult (bool): If :obj:`True`, use images that are labeled as</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral">            difficult in the original annotation.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral">        return_difficult (bool): If :obj:`True`, this dataset returns</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="stringliteral">            a boolean array</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">            that indicates whether bounding boxes are labeled as difficult</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">            or not. The default value is :obj:`False`.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a83e5da9f4a64783533365d88e9884923">   64</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a83e5da9f4a64783533365d88e9884923">__init__</a>(self, data_dir, split=&#39;train_laundry&#39;,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                 use_difficult=False, return_difficult=False,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                 ):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="stringliteral">        @param data_dir: 데이터 파일 위치</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">        @param split: 해당 이름으로 학습하고자 하는 파일 이름 선택.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral">        @param use_difficult: False</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">        @param return_difficult: False</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        id_list_file = os.path.join(</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a0e9db0ffff381e9eaa99d2120cd83512">   76</a></span>&#160;            data_dir, <span class="stringliteral">&#39;ImageSets/Main/{0}.txt&#39;</span>.format(split))</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aa89f6c35005a575e2e6fc662a1541a85">   77</a></span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#ab60914d184b9ff2ec8d6c86d934e1f6d">   78</a></span>&#160;        self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a0e9db0ffff381e9eaa99d2120cd83512">ids</a> = [id_.strip() <span class="keywordflow">for</span> id_ <span class="keywordflow">in</span> open(id_list_file)]</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a02e09fc6c0b76a0fc535180f39836c03">   79</a></span>&#160;        self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aa89f6c35005a575e2e6fc662a1541a85">data_dir</a> = data_dir</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a3413d5deed704c87e74f7dded2a90f8d">   80</a></span>&#160;        self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#ab60914d184b9ff2ec8d6c86d934e1f6d">use_difficult</a> = use_difficult</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a02e09fc6c0b76a0fc535180f39836c03">return_difficult</a> = return_difficult</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a3413d5deed704c87e74f7dded2a90f8d">label_names</a> = VOC_BBOX_LABEL_NAMES</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a30980398b348f66074ba5df4877d4868">   84</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a30980398b348f66074ba5df4877d4868">__len__</a>(self):</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> len(self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a0e9db0ffff381e9eaa99d2120cd83512">ids</a>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aba91794ab3cbe768911a30be5d0df90b">   94</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aba91794ab3cbe768911a30be5d0df90b">get_example</a>(self, i):</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Returns the i-th example.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral">        Returns a color image and bounding boxes. The image is in CHW format.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral">        The returned image is RGB.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral">        Args:</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral">            i (int): The index of the example.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral">        Returns:</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">            tuple of an image and bounding boxes</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        id_ = self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a0e9db0ffff381e9eaa99d2120cd83512">ids</a>[i]</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        anno = ET.parse(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            os.path.join(self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aa89f6c35005a575e2e6fc662a1541a85">data_dir</a>, <span class="stringliteral">&#39;dataset_laundry tag_xml&#39;</span>, id_ + <span class="stringliteral">&#39;.xml&#39;</span>))</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        bbox = list()</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        label = list()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        difficult = list()</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> anno.findall(<span class="stringliteral">&#39;object&#39;</span>):</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment"># when in not using difficult split, and the object is</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment"># difficult, skipt it.</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#ab60914d184b9ff2ec8d6c86d934e1f6d">use_difficult</a> <span class="keywordflow">and</span> int(obj.find(<span class="stringliteral">&#39;difficult&#39;</span>).text) == 1:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            difficult.append(int(obj.find(<span class="stringliteral">&#39;difficult&#39;</span>).text))</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            bndbox_anno = obj.find(<span class="stringliteral">&#39;bndbox&#39;</span>)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="comment"># subtract 1 to make pixel indexes 0-based</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            bbox.append([</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                int(bndbox_anno.find(tag).text) - 1</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">for</span> tag <span class="keywordflow">in</span> (<span class="stringliteral">&#39;ymin&#39;</span>, <span class="stringliteral">&#39;xmin&#39;</span>, <span class="stringliteral">&#39;ymax&#39;</span>, <span class="stringliteral">&#39;xmax&#39;</span>)])</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            name = obj.find(<span class="stringliteral">&#39;name&#39;</span>).text.lower().strip()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            label.append(VOC_BBOX_LABEL_NAMES.index(name))</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        bbox = np.stack(bbox).astype(np.float32)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        label = np.stack(label).astype(np.int32)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment"># When `use_difficult==False`, all elements in `difficult` are False.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        difficult = np.array(difficult, dtype=np.bool).astype(np.uint8)  <span class="comment"># PyTorch don&#39;t support np.bool</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment"># Load a image</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        img_file = os.path.join(self.<a class="code" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aa89f6c35005a575e2e6fc662a1541a85">data_dir</a>, <span class="stringliteral">&#39;dataset_laundry tag&#39;</span>, id_ + <span class="stringliteral">&#39;.jpg&#39;</span>)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        img = <a class="code" href="namespacedata_1_1util.html#a813ef4cac5d2113c55086cde41a4a102">read_image</a>(img_file, color=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> img, bbox, label, difficult</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#af28a82b9bc58bd5fc3b3bc5b0b3ecd91">  140</a></span>&#160;    __getitem__ = get_example</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="namespacedata_1_1voc__dataset.html#addd841781ee2a22eba8f68ddb22cff56">  142</a></span>&#160;VOC_BBOX_LABEL_NAMES = (</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="stringliteral">&#39;do_not_wash&#39;</span>,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="stringliteral">&#39;do_not_bleach&#39;</span>,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="stringliteral">&#39;do_not_iron&#39;</span>,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="stringliteral">&#39;do_not_dry_clean&#39;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    )</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_a30980398b348f66074ba5df4877d4868"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a30980398b348f66074ba5df4877d4868">data.voc_dataset.VOCBboxDataset.__len__</a></div><div class="ttdeci">def __len__(self)</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00084">voc_dataset.py:84</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_aa89f6c35005a575e2e6fc662a1541a85"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aa89f6c35005a575e2e6fc662a1541a85">data.voc_dataset.VOCBboxDataset.data_dir</a></div><div class="ttdeci">data_dir</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00077">voc_dataset.py:77</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html">data.voc_dataset.VOCBboxDataset</a></div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00008">voc_dataset.py:8</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_a02e09fc6c0b76a0fc535180f39836c03"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a02e09fc6c0b76a0fc535180f39836c03">data.voc_dataset.VOCBboxDataset.return_difficult</a></div><div class="ttdeci">return_difficult</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00079">voc_dataset.py:79</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_ab60914d184b9ff2ec8d6c86d934e1f6d"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#ab60914d184b9ff2ec8d6c86d934e1f6d">data.voc_dataset.VOCBboxDataset.use_difficult</a></div><div class="ttdeci">use_difficult</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00078">voc_dataset.py:78</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_aba91794ab3cbe768911a30be5d0df90b"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aba91794ab3cbe768911a30be5d0df90b">data.voc_dataset.VOCBboxDataset.get_example</a></div><div class="ttdeci">def get_example(self, i)</div><div class="ttdoc">input image에 대한 정보(B.B, label)를 return 해주는 함수</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00094">voc_dataset.py:94</a></div></div>
+<div class="ttc" id="anamespacedata_1_1util_html_a813ef4cac5d2113c55086cde41a4a102"><div class="ttname"><a href="namespacedata_1_1util.html#a813ef4cac5d2113c55086cde41a4a102">data.util.read_image</a></div><div class="ttdeci">def read_image(path, dtype=np.float32, color=True)</div><div class="ttdef"><b>Definition:</b> <a href="util_8py_source.html#l00006">util.py:6</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_a83e5da9f4a64783533365d88e9884923"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a83e5da9f4a64783533365d88e9884923">data.voc_dataset.VOCBboxDataset.__init__</a></div><div class="ttdeci">def __init__(self, data_dir, split='train_laundry', use_difficult=False, return_difficult=False)</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00064">voc_dataset.py:64</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_a3413d5deed704c87e74f7dded2a90f8d"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a3413d5deed704c87e74f7dded2a90f8d">data.voc_dataset.VOCBboxDataset.label_names</a></div><div class="ttdeci">label_names</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00080">voc_dataset.py:80</a></div></div>
+<div class="ttc" id="aclassdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset_html_a0e9db0ffff381e9eaa99d2120cd83512"><div class="ttname"><a href="classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a0e9db0ffff381e9eaa99d2120cd83512">data.voc_dataset.VOCBboxDataset.ids</a></div><div class="ttdeci">ids</div><div class="ttdef"><b>Definition:</b> <a href="voc__dataset_8py_source.html#l00076">voc_dataset.py:76</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="voc__dataset_8py.html">voc_dataset.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

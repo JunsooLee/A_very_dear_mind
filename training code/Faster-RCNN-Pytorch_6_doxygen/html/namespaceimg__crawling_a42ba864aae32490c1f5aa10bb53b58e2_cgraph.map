@@ -1,0 +1,5 @@
+<map id="img_crawling.img_check" name="img_crawling.img_check">
+<area shape="rect" id="node1" title="파일 확장자 check jpg &amp; png 만 남겨놓음" alt="" coords="5,31,169,57"/>
+<area shape="rect" id="node2" href="$namespaceimg__crawling.html#ac81e1627de47ed0e2b2b6d4f8ea804ba" title="구글 크롤링" alt="" coords="217,5,403,32"/>
+<area shape="rect" id="node3" href="$namespaceimg__crawling.html#a82bbc961ae715ce955829c976c3a18d3" title="크롤링한 파일 open 여부 판단" alt="" coords="228,56,392,83"/>
+</map>

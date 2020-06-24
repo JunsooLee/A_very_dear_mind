@@ -1,0 +1,91 @@
+\hypertarget{namespaceutils_1_1py__nms}{}\doxysection{utils.\+py\+\_\+nms 네임스페이스 참조}
+\label{namespaceutils_1_1py__nms}\index{utils.py\_nms@{utils.py\_nms}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378}{py\+\_\+cpu\+\_\+nms}} (rois, thresh)
+\begin{DoxyCompactList}\small\item\em Non-\/\+Maximum Suppression(\+N\+M\+S)\+: ground truth box와 Io\+U가 0.\+7이상 겹치는 anchor 값이 많이 나오기 때문에 하나만 남기고 나머지는 지운다. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378}\label{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378}} 
+\index{utils.py\_nms@{utils.py\_nms}!py\_cpu\_nms@{py\_cpu\_nms}}
+\index{py\_cpu\_nms@{py\_cpu\_nms}!utils.py\_nms@{utils.py\_nms}}
+\doxysubsubsection{\texorpdfstring{py\_cpu\_nms()}{py\_cpu\_nms()}}
+{\footnotesize\ttfamily def utils.\+py\+\_\+nms.\+py\+\_\+cpu\+\_\+nms (\begin{DoxyParamCaption}\item[{}]{rois,  }\item[{}]{thresh }\end{DoxyParamCaption})}
+
+
+
+Non-\/\+Maximum Suppression(\+N\+M\+S)\+: ground truth box와 Io\+U가 0.\+7이상 겹치는 anchor 값이 많이 나오기 때문에 하나만 남기고 나머지는 지운다. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em rois} & object가 존재할 상위 12000개의 예측된 anchor 좌표 \\
+\hline
+{\em thresh} & 0.\+7 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+keep \+: 12000개의 anchor box 중 Io\+U가 0.\+7이상인 index return \begin{DoxyVerb}Pure Python NMS baseline.
+Already Sorted
+
+return:
+keep: roi keep indice
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+py\+\_\+nms.\+py 파일의 9 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378}{py\_cpu\_nms}}(rois, thresh):}
+\DoxyCodeLine{10     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{    Pure Python NMS baseline.}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{    Already Sorted}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{14 \textcolor{stringliteral}{    return:}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{    keep: roi keep indice}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{17     y1 = rois[:, 0]}
+\DoxyCodeLine{18     x1 = rois[:, 1]}
+\DoxyCodeLine{19     y2 = rois[:, 2]}
+\DoxyCodeLine{20     x2 = rois[:, 3]}
+\DoxyCodeLine{21     areas = (x2 -\/ x1 + 1) * (y2 -\/ y1 + 1)}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     N = len(rois)}
+\DoxyCodeLine{24     order = np.array(range(N))}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     keep = []}
+\DoxyCodeLine{27     \textcolor{keywordflow}{while} order.size > 0:}
+\DoxyCodeLine{28         i = order[0]}
+\DoxyCodeLine{29         \textcolor{comment}{\# 겹치는 anchor 중 첫번재 anchor만 저장}}
+\DoxyCodeLine{30         keep.append(i)}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{\# x1 기준으로 x1좌표가 더 큰 좌표만 계산한다.(a,b의 계산이 b,a에서 다시 계산되는 것 방지)}}
+\DoxyCodeLine{33         xx1 = np.maximum(x1[i], x1[order[1:]])}
+\DoxyCodeLine{34         yy1 = np.maximum(y1[i], y1[order[1:]])}
+\DoxyCodeLine{35         xx2 = np.minimum(x2[i], x2[order[1:]])}
+\DoxyCodeLine{36         yy2 = np.minimum(y2[i], y2[order[1:]])}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{comment}{\# x1,x2(y1, y2)가 서로 역전되지 않는 경우를 생각한다.}}
+\DoxyCodeLine{39         w = np.maximum(0.0, xx2 -\/ xx1 + 1)}
+\DoxyCodeLine{40         h = np.maximum(0.0, yy2 -\/ yy1 + 1)}
+\DoxyCodeLine{41         inter = w * h}
+\DoxyCodeLine{42         \textcolor{comment}{\# ovr: anchor끼리의 IoU}}
+\DoxyCodeLine{43         ovr = inter / (areas[i] + areas[order[1:]] -\/ inter)}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         inds = np.where(ovr <= thresh)[0]}
+\DoxyCodeLine{46         order = order[inds + 1]}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{return} keep}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378_icgraph}
+\end{center}
+\end{figure}

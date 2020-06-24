@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/VOCdevkit/example_segmenter.m 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('example__segmenter_8m.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle">
+<div class="title">example_segmenter.m 파일 참조</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="example__segmenter_8m_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a3661443d6a9371845c82f0041ac8f560"><td class="memItemLeft" align="right" valign="top">example_segmenter Segmentation algorithm based <a class="el" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a> detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> This segmenter requires that some detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> are present in Results e <a class="el" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a> by running example_detector Segmentations are generated from detection bounding boxes <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a> example_segmenter <a class="el" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="example__segmenter_8m.html#a3661443d6a9371845c82f0041ac8f560">create_segmentations_from_detections</a> ('<a class="el" href="example__segmenter_8m.html#ac4175b14b54e59f4782cfb02a896a74e">comp3</a>', 1) VOCevalseg(VOCopts</td></tr>
+<tr class="separator:a3661443d6a9371845c82f0041ac8f560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:ac4175b14b54e59f4782cfb02a896a74e"><td class="memItemLeft" align="right" valign="top">example_segmenter Segmentation algorithm based <a class="el" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a> detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> This segmenter requires that some detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> are present in Results e <a class="el" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a> by running example_detector Segmentations are generated from detection bounding boxes <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a> example_segmenter <a class="el" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="example__segmenter_8m.html#ac4175b14b54e59f4782cfb02a896a74e">comp3</a></td></tr>
+<tr class="separator:ac4175b14b54e59f4782cfb02a896a74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a3661443d6a9371845c82f0041ac8f560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3661443d6a9371845c82f0041ac8f560">&#9670;&nbsp;</a></span>create_segmentations_from_detections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">example_segmenter Segmentation algorithm based <a class="el" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a> detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> This segmenter requires that some detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> are present in Results e <a class="el" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a> by running example_detector Segmentations are generated from detection bounding boxes <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a> example_segmenter <a class="el" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a> create_segmentations_from_detections </td>
+          <td>(</td>
+          <td class="paramtype">'<a class="el" href="example__segmenter_8m.html#ac4175b14b54e59f4782cfb02a896a74e">comp3</a>'&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="ac4175b14b54e59f4782cfb02a896a74e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4175b14b54e59f4782cfb02a896a74e">&#9670;&nbsp;</a></span>comp3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">example_segmenter Segmentation algorithm based <a class="el" href="viewanno_8m.html#a58ab1fd68e97078232808206b850161b">on</a> detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> This segmenter requires that some detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> are present in Results e <a class="el" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a> by running example_detector Segmentations are generated from detection bounding boxes <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a> example_segmenter <a class="el" href="viewanno_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a> comp3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="example__segmenter_8m_source.html">example_segmenter.m</a> 파일의 <a class="el" href="example__segmenter_8m_source.html#l00011">11</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="dir_d9f7cb0ee7ba4bfbc588b8b68234bda5.html">VOCdevkit</a></li><li class="navelem"><a class="el" href="example__segmenter_8m.html">example_segmenter.m</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/VOCdevkit/VOCcode/VOClabelcolormap.m 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_v_o_clabelcolormap_8m_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">VOClabelcolormap.m</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_v_o_clabelcolormap_8m.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;% VOCLABELCOLORMAP Creates a <a class="code" href="_v_o_creadrecxml_8m.html#a595dd0a82388b0f915674513f072ccda">label</a> <a class="code" href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">color</a> map such that adjacent <a class="code" href="_v_o_clabelcolormap_8m.html#a91d978a0855dc89b7af85f3e57fe6d17">indices</a> have different</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#a91d978a0855dc89b7af85f3e57fe6d17">    2</a></span>&#160;% colors.  Useful <span class="keywordflow">for</span> reading and writing <a class="code" href="namespacemain.html#ad27810fad03b934ace3a471c21bbf5f6">index</a> images which contain large <a class="code" href="_v_o_clabelcolormap_8m.html#a91d978a0855dc89b7af85f3e57fe6d17">indices</a>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;% by encoding them as RGB images.</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;%</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#a120cd8ce1acc559de7a1cbe7794b52bb">    5</a></span>&#160;% <a class="code" href="_v_o_clabelcolormap_8m.html#a120cd8ce1acc559de7a1cbe7794b52bb">CMAP</a> = VOCLABELCOLORMAP(N) creates a <a class="code" href="_v_o_creadrecxml_8m.html#a595dd0a82388b0f915674513f072ccda">label</a> <a class="code" href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">color</a> map with N entries.</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;function <a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a> = labelcolormap(N)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordflow">if</span> nargin==0</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    N=256</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a> = zeros(N,3);</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">   12</a></span>&#160;<span class="keywordflow">for</span> <a class="code" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>=1:N</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">   13</a></span>&#160;    <span class="keywordtype">id</span> = <a class="code" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>-1; <a class="code" href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">r</a>=0;<a class="code" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a>=0;<a class="code" href="_v_o_clabelcolormap_8m.html#a21ad0bd836b90d08f4cf640b4c298e7c">b</a>=0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">   14</a></span>&#160;    <span class="keywordflow">for</span> <a class="code" href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>=0:7</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">r</a> = bitor(<a class="code" href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">r</a>, bitshift(bitget(<span class="keywordtype">id</span>,1),7 - <a class="code" href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a> = bitor(<a class="code" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a>, bitshift(bitget(<span class="keywordtype">id</span>,2),7 - <a class="code" href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="_v_o_clabelcolormap_8m.html#a21ad0bd836b90d08f4cf640b4c298e7c">b</a> = bitor(<a class="code" href="_v_o_clabelcolormap_8m.html#a21ad0bd836b90d08f4cf640b4c298e7c">b</a>, bitshift(bitget(<span class="keywordtype">id</span>,3),7 - <a class="code" href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>));</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">   18</a></span>&#160;        <span class="keywordtype">id</span> = bitshift(<span class="keywordtype">id</span>,-3);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a>(<a class="code" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>,1)=<a class="code" href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">r</a>; <a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a>(<a class="code" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>,2)=<a class="code" href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a>; <a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a>(<a class="code" href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a>,3)=<a class="code" href="_v_o_clabelcolormap_8m.html#a21ad0bd836b90d08f4cf640b4c298e7c">b</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">   22</a></span>&#160;<a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a> = <a class="code" href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a> / 255;</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacemain_html_ad27810fad03b934ace3a471c21bbf5f6"><div class="ttname"><a href="namespacemain.html#ad27810fad03b934ace3a471c21bbf5f6">main.index</a></div><div class="ttdeci">index</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00642">main.py:642</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a514f1b439f404f86f77090fa9edc96ce"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce">r</a></div><div class="ttdeci">r</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00013">VOClabelcolormap.m:13</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_aac82a4a57e9e5838951a9f5b5132f21d"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div><div class="ttdeci">end[ids, confs, b1, b2, b3, b4]</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00029">create_segmentations_from_detections.m:29</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a21ad0bd836b90d08f4cf640b4c298e7c"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a21ad0bd836b90d08f4cf640b4c298e7c">b</a></div><div class="ttdeci">b</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00013">VOClabelcolormap.m:13</a></div></div>
+<div class="ttc" id="a_v_o_creadrecxml_8m_html_a595dd0a82388b0f915674513f072ccda"><div class="ttname"><a href="_v_o_creadrecxml_8m.html#a595dd0a82388b0f915674513f072ccda">label</a></div><div class="ttdeci">end p label</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_creadrecxml_8m_source.html#l00048">VOCreadrecxml.m:48</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a6f6ccfcf58b31cb6412107d9d5281426"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a6f6ccfcf58b31cb6412107d9d5281426">i</a></div><div class="ttdeci">for i</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00012">VOClabelcolormap.m:12</a></div></div>
+<div class="ttc" id="anamespacemain_html_aeabbf69db1809807f065c2d1e9a62567"><div class="ttname"><a href="namespacemain.html#aeabbf69db1809807f065c2d1e9a62567">main.color</a></div><div class="ttdeci">tuple color</div><div class="ttdef"><b>Definition:</b> <a href="main_8py_source.html#l00685">main.py:685</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a73c18c59a39b18382081ec00bb456d43"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a73c18c59a39b18382081ec00bb456d43">g</a></div><div class="ttdeci">g</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00013">VOClabelcolormap.m:13</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a2b41f8c3196a93b87c47b08c3614b5dc"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a></div><div class="ttdeci">end cmap</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00022">VOClabelcolormap.m:22</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a91d978a0855dc89b7af85f3e57fe6d17"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a91d978a0855dc89b7af85f3e57fe6d17">indices</a></div><div class="ttdeci">VOCLABELCOLORMAP Creates a label color map such that adjacent indices have different colors Useful for reading and writing index images which contain large indices</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00002">VOClabelcolormap.m:2</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_ac86694252f8dfdb19aaeadc4b7c342c6"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a></div><div class="ttdeci">for j</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00014">VOClabelcolormap.m:14</a></div></div>
+<div class="ttc" id="a_v_o_clabelcolormap_8m_html_a120cd8ce1acc559de7a1cbe7794b52bb"><div class="ttname"><a href="_v_o_clabelcolormap_8m.html#a120cd8ce1acc559de7a1cbe7794b52bb">CMAP</a></div><div class="ttdeci">VOCLABELCOLORMAP Creates a label color map such that adjacent indices have different colors Useful for reading and writing index images which contain large by encoding them as RGB images CMAP</div><div class="ttdef"><b>Definition:</b> <a href="_v_o_clabelcolormap_8m_source.html#l00005">VOClabelcolormap.m:5</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="dir_d9f7cb0ee7ba4bfbc588b8b68234bda5.html">VOCdevkit</a></li><li class="navelem"><a class="el" href="dir_9c92c13274e8c50362e9dac44526ce4e.html">VOCcode</a></li><li class="navelem"><a class="el" href="_v_o_clabelcolormap_8m.html">VOClabelcolormap.m</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

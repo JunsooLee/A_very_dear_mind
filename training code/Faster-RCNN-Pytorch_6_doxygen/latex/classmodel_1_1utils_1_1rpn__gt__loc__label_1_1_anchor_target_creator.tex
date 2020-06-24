@@ -1,0 +1,398 @@
+\hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator}{}\doxysection{model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator 클래스 참조}
+\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator}\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+
+
+model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aed554606d5aa40e03d91fa2cbcd7db43}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a8303c6b154b67236d349409a6f2b1028}{n\+\_\+sample}}=256, \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aa68c55c45f2739160dce85b658868882}{pos\+\_\+iou\+\_\+thresh}}=0.\+7, \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aae18f38f840bd34ed675278694b75be3}{neg\+\_\+iou\+\_\+thresh}}=0.\+3, \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a97070264d6fe083866a985c60ed78328}{pos\+\_\+ratio}}=0.\+5)
+\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_ab58a5bf203b10b40374f04bc18aa8b6e}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, anchor, img\+\_\+size)
+\begin{DoxyCompactList}\small\item\em R\+P\+N을 통해서 예측한 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a8303c6b154b67236d349409a6f2b1028}{n\+\_\+sample}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aa68c55c45f2739160dce85b658868882}{pos\+\_\+iou\+\_\+thresh}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aae18f38f840bd34ed675278694b75be3}{neg\+\_\+iou\+\_\+thresh}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a97070264d6fe083866a985c60ed78328}{pos\+\_\+ratio}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4dd694d006acdfe57da3b221ca366bd7}{\+\_\+create\+\_\+label}} (self, inside\+\_\+index, anchor, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}})
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item 1. 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4f50cf4a5663c99515b0d879b9ccdb61}{\+\_\+calc\+\_\+ious}} (self, anchor, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, inside\+\_\+index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}Assign the ground truth bounding boxes to anchors.
+
+Assigns the ground truth bounding boxes to anchors for training Region
+Proposal Networks introduced in Faster R-CNN [#]_.
+
+Offsets and scales to match anchors to the ground truth are
+calculated using the encoding scheme of
+:func:`model.utils.bbox_tools.bbox2loc`.
+
+.. [#] Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun. \
+Faster R-CNN: Towards Real-Time Object Detection with \
+Region Proposal Networks. NIPS 2015.
+
+
+ @param    n_sample (int): The number of regions to produce.
+
+ @param    pos_iou_thresh (float): Anchors with IoU above this threshold will be assigned as positive.
+
+ @param    neg_iou_thresh (float): Anchors with IoU below this threshold will be assigned as negative.
+
+ @param    pos_ratio (float): Ratio of positive regions in the sampled regions.\end{DoxyVerb}
+ 
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 5 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aed554606d5aa40e03d91fa2cbcd7db43}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aed554606d5aa40e03d91fa2cbcd7db43}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n\+\_\+sample = {\ttfamily 256},  }\item[{}]{pos\+\_\+iou\+\_\+thresh = {\ttfamily 0.7},  }\item[{}]{neg\+\_\+iou\+\_\+thresh = {\ttfamily 0.3},  }\item[{}]{pos\+\_\+ratio = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 30 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self,}
+\DoxyCodeLine{31                  n\_sample=256,}
+\DoxyCodeLine{32                  pos\_iou\_thresh=0.7, neg\_iou\_thresh=0.3,}
+\DoxyCodeLine{33                  pos\_ratio=0.5):}
+\DoxyCodeLine{34         self.n\_sample = n\_sample}
+\DoxyCodeLine{35         self.pos\_iou\_thresh = pos\_iou\_thresh}
+\DoxyCodeLine{36         self.neg\_iou\_thresh = neg\_iou\_thresh}
+\DoxyCodeLine{37         self.pos\_ratio = pos\_ratio}
+\DoxyCodeLine{38 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_ab58a5bf203b10b40374f04bc18aa8b6e}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_ab58a5bf203b10b40374f04bc18aa8b6e}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bbox,  }\item[{}]{anchor,  }\item[{}]{img\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+R\+P\+N을 통해서 예측한 
+
+
+\begin{DoxyParams}{매개변수}
+{\em bbox} & B.\+B GT \\
+\hline
+{\em anchor} & F.\+M 한 픽셀당 9개의 anchor 좌표 초기값, shape = (F.\+M H $\ast$ W $\ast$ A, 4) \\
+\hline
+{\em img\+\_\+size} & 이미지 크기 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+loc \+: 전체 anchor 좌표와 B.\+B와의 상대좌표를 기록한 배열 -\/-\/$>$ shape = (F.\+M H $\ast$ W $\ast$ A, 4) 이지만 안에는 값은 inside\+\_\+index 안에만 기록되어 있음 
+
+label \+: anchor에 대한 label을 기록한 배열 -\/-\/$>$ shape = (F.\+M H $\ast$ W $\ast$ A, 4) \begin{DoxyVerb}Assign ground truth supervision to sampled subset of anchors.
+
+Types of input arrays and output arrays are same.
+
+Here are notations.
+
+* :math:`S` is the number of anchors.
+* :math:`R` is the number of bounding boxes.
+
+Args:
+    bbox (array): Coordinates of bounding boxes. Its shape is
+:math:`(R, 4)`.
+    anchor (array): Coordinates of anchors. Its shape is
+:math:`(S, 4)`.
+    img_size (tuple of ints): A tuple :obj:`H, W`, which
+is a tuple of height and width of an image.
+
+Returns:
+    (array, array):
+
+    #NOTE: it's scale not only  offset
+    * **loc**: Offsets and scales to match the anchors to \
+the ground truth bounding boxes. Its shape is :math:`(S, 4)`.
+    * **label**: Labels of anchors with values \
+:obj:`(1=positive, 0=negative, -1=ignore)`. Its shape \
+is :math:`(S,)`.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 47 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47     \textcolor{keyword}{def }\_\_call\_\_(self, bbox, anchor, img\_size):}
+\DoxyCodeLine{48         \textcolor{stringliteral}{"""Assign ground truth supervision to sampled subset of anchors.}}
+\DoxyCodeLine{49 \textcolor{stringliteral}{}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{        Types of input arrays and output arrays are same.}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{        Here are notations.}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{        * :math:`S` is the number of anchors.}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{        * :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{            bbox (array): Coordinates of bounding boxes. Its shape is}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{                :math:`(R, 4)`.}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{            anchor (array): Coordinates of anchors. Its shape is}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{                :math:`(S, 4)`.}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{            img\_size (tuple of ints): A tuple :obj:`H, W`, which}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{                is a tuple of height and width of an image.}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{            (array, array):}}
+\DoxyCodeLine{67 \textcolor{stringliteral}{}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{            \#NOTE: it's scale not only  offset}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{            * **loc**: Offsets and scales to match the anchors to \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{                the ground truth bounding boxes. Its shape is :math:`(S, 4)`.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{            * **label**: Labels of anchors with values \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{                :obj:`(1=positive, 0=negative, -\/1=ignore)`. Its shape \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{                is :math:`(S,)`.}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         img\_H, img\_W = img\_size}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{comment}{\# 전체 base anchor 사이즈}}
+\DoxyCodeLine{80         n\_anchor = len(anchor)}
+\DoxyCodeLine{81         inside\_index = \mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621}{\_get\_inside\_index}}(anchor, img\_H, img\_W)}
+\DoxyCodeLine{82         anchor = anchor[inside\_index]}
+\DoxyCodeLine{83         argmax\_ious, label = self.\_create\_label(}
+\DoxyCodeLine{84             inside\_index, anchor, bbox)}
+\DoxyCodeLine{85         \textcolor{comment}{\# compute bounding box regression targets}}
+\DoxyCodeLine{86         \textcolor{comment}{\# anchor 와 실제 B.B 의 위치와의 차이를 나타낸다. Y,X, height, width 로 구성되있음}}
+\DoxyCodeLine{87         loc = \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}{bbox2loc}}(anchor, bbox[argmax\_ious])}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{comment}{\# map up to original set of anchors}}
+\DoxyCodeLine{90         \textcolor{comment}{\# labeling을 한 index의 label값만 가져온다.}}
+\DoxyCodeLine{91         label = \mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}{\_unmap}}(label, n\_anchor, inside\_index, fill=-\/1)}
+\DoxyCodeLine{92         \textcolor{comment}{\# 위에서 선택된 anchor들에서 실제 B.B.와의 상대적인 거리를 loc에 저장. 배열은 전체 base anchor size 만큼 설정, inside\_index 만 값을 가진다.}}
+\DoxyCodeLine{93         loc = \mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}{\_unmap}}(loc, n\_anchor, inside\_index, fill=0)}
+\DoxyCodeLine{94         \textcolor{keywordflow}{return} loc, label}
+\DoxyCodeLine{95 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_ab58a5bf203b10b40374f04bc18aa8b6e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4f50cf4a5663c99515b0d879b9ccdb61}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4f50cf4a5663c99515b0d879b9ccdb61}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!\_calc\_ious@{\_calc\_ious}}
+\index{\_calc\_ious@{\_calc\_ious}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_calc\_ious()}{\_calc\_ious()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+\_\+calc\+\_\+ious (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{anchor,  }\item[{}]{bbox,  }\item[{}]{inside\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 143 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143     \textcolor{keyword}{def }\_calc\_ious(self, anchor, bbox, inside\_index):}
+\DoxyCodeLine{144         \textcolor{comment}{\# ious between the anchors and the gt boxes}}
+\DoxyCodeLine{145         ious = \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}{bbox\_iou}}(anchor, bbox)}
+\DoxyCodeLine{146         argmax\_ious = ious.argmax(axis=1)}
+\DoxyCodeLine{147         max\_ious = ious[np.arange(len(inside\_index)), argmax\_ious]}
+\DoxyCodeLine{148         gt\_argmax\_ious = ious.argmax(axis=0)}
+\DoxyCodeLine{149         gt\_max\_ious = ious[gt\_argmax\_ious, np.arange(ious.shape[1])]}
+\DoxyCodeLine{150         gt\_argmax\_ious = np.where(ious == gt\_max\_ious)[0]}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152         \textcolor{keywordflow}{return} argmax\_ious, max\_ious, gt\_argmax\_ious}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4f50cf4a5663c99515b0d879b9ccdb61_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4f50cf4a5663c99515b0d879b9ccdb61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4dd694d006acdfe57da3b221ca366bd7}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4dd694d006acdfe57da3b221ca366bd7}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!\_create\_label@{\_create\_label}}
+\index{\_create\_label@{\_create\_label}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_create\_label()}{\_create\_label()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+\_\+create\+\_\+label (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{inside\+\_\+index,  }\item[{}]{anchor,  }\item[{}]{bbox }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+\begin{DoxyItemize}
+\item 1. 
+\end{DoxyItemize}
+
+각 anchor마다 최대 iou가 0.\+3 미만이면 해당 anchor의 label은 0이다.
+
+
+\begin{DoxyItemize}
+\item 2. 각 anchor마다 최대 iou가 0.\+7 이상이면 해당 anchor의 label은 1이다.
+\item 3. 각 gt box마다 최대 iou를 가지는 anchor의 label은 1이다.
+\item (anchor label = 0\+: background, 1\+: object, -\/1\+: 애매하므로 무시) 
+\begin{DoxyParams}{매개변수}
+{\em inside\+\_\+index} & 이미지 size 안에 존재하는 anchor index \\
+\hline
+{\em anchor} & anchor box \\
+\hline
+{\em bbox} & B.\+B GT \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+argmax\+\_\+ious anchor 박스에 대한 IoU 
+
+label argmax\+\_\+ious에 대한 labeling 값 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 107 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107     \textcolor{keyword}{def }\_create\_label(self, inside\_index, anchor, bbox):}
+\DoxyCodeLine{108         \textcolor{comment}{\# label: 1 is positive, 0 is negative, -\/1 is dont care}}
+\DoxyCodeLine{109         label = np.empty((len(inside\_index),), dtype=np.int32)}
+\DoxyCodeLine{110         label.fill(-\/1)}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         argmax\_ious, max\_ious, gt\_argmax\_ious = \(\backslash\)}
+\DoxyCodeLine{113             self.\_calc\_ious(anchor, bbox, inside\_index)}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{\# assign negative labels first so that positive labels can clobber them}}
+\DoxyCodeLine{116         label[max\_ious < self.neg\_iou\_thresh] = 0}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118         \textcolor{comment}{\# positive label: for each gt, anchor with highest iou}}
+\DoxyCodeLine{119         label[gt\_argmax\_ious] = 1}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{comment}{\# positive label: above threshold IOU}}
+\DoxyCodeLine{122         label[max\_ious >= self.pos\_iou\_thresh] = 1}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \textcolor{comment}{\# subsample positive labels if we have too many}}
+\DoxyCodeLine{125         n\_pos = int(self.pos\_ratio * self.n\_sample)}
+\DoxyCodeLine{126         pos\_index = np.where(label == 1)[0]}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if} len(pos\_index) > n\_pos:}
+\DoxyCodeLine{128             disable\_index = np.random.choice(}
+\DoxyCodeLine{129                 pos\_index, size=(len(pos\_index) -\/ n\_pos), replace=\textcolor{keyword}{False})}
+\DoxyCodeLine{130             label[disable\_index] = -\/1}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \textcolor{comment}{\# subsample negative labels if we have too many}}
+\DoxyCodeLine{133         n\_neg = self.n\_sample -\/ np.sum(label == 1)}
+\DoxyCodeLine{134         neg\_index = np.where(label == 0)[0]}
+\DoxyCodeLine{135         \textcolor{keywordflow}{if} len(neg\_index) > n\_neg:}
+\DoxyCodeLine{136             disable\_index = np.random.choice(}
+\DoxyCodeLine{137                 neg\_index, size=(len(neg\_index) -\/ n\_neg), replace=\textcolor{keyword}{False})}
+\DoxyCodeLine{138             label[disable\_index] = -\/1}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} argmax\_ious, label}
+\DoxyCodeLine{141 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4dd694d006acdfe57da3b221ca366bd7_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a4dd694d006acdfe57da3b221ca366bd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a8303c6b154b67236d349409a6f2b1028}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a8303c6b154b67236d349409a6f2b1028}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!n\_sample@{n\_sample}}
+\index{n\_sample@{n\_sample}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{n\_sample}{n\_sample}}
+{\footnotesize\ttfamily model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+n\+\_\+sample}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 31 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aae18f38f840bd34ed675278694b75be3}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aae18f38f840bd34ed675278694b75be3}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!neg\_iou\_thresh@{neg\_iou\_thresh}}
+\index{neg\_iou\_thresh@{neg\_iou\_thresh}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{neg\_iou\_thresh}{neg\_iou\_thresh}}
+{\footnotesize\ttfamily model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+neg\+\_\+iou\+\_\+thresh}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 33 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aa68c55c45f2739160dce85b658868882}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_aa68c55c45f2739160dce85b658868882}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!pos\_iou\_thresh@{pos\_iou\_thresh}}
+\index{pos\_iou\_thresh@{pos\_iou\_thresh}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{pos\_iou\_thresh}{pos\_iou\_thresh}}
+{\footnotesize\ttfamily model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+pos\+\_\+iou\+\_\+thresh}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 32 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a97070264d6fe083866a985c60ed78328}\label{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_a97070264d6fe083866a985c60ed78328}} 
+\index{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}!pos\_ratio@{pos\_ratio}}
+\index{pos\_ratio@{pos\_ratio}!model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator@{model.utils.rpn\_gt\_loc\_label.AnchorTargetCreator}}
+\doxysubsubsection{\texorpdfstring{pos\_ratio}{pos\_ratio}}
+{\footnotesize\ttfamily model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+Anchor\+Target\+Creator.\+pos\+\_\+ratio}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 34 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+model/utils/\mbox{\hyperlink{rpn__gt__loc__label_8py}{rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py}}\end{DoxyCompactItemize}

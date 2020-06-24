@@ -1,0 +1,130 @@
+\hypertarget{namespaceutils_1_1array__tool}{}\doxysection{utils.\+array\+\_\+tool 네임스페이스 참조}
+\label{namespaceutils_1_1array__tool}\index{utils.array\_tool@{utils.array\_tool}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1array__tool_a25ef79489c7aa23bffda35f70b6f67c5}{tonumpy}} (data)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372}{totensor}} (data, cuda=True)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae}{tovariable}} (data)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1array__tool_a8f03cd17f485c6ae29ea352983ffb34e}{scalar}} (data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}tools to convert specified type
+\end{DoxyVerb}
+ 
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1array__tool_a8f03cd17f485c6ae29ea352983ffb34e}\label{namespaceutils_1_1array__tool_a8f03cd17f485c6ae29ea352983ffb34e}} 
+\index{utils.array\_tool@{utils.array\_tool}!scalar@{scalar}}
+\index{scalar@{scalar}!utils.array\_tool@{utils.array\_tool}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}}
+{\footnotesize\ttfamily def utils.\+array\+\_\+tool.\+scalar (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+array\+\_\+tool.\+py 파일의 41 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1array__tool_a8f03cd17f485c6ae29ea352983ffb34e}{scalar}}(data):}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if} isinstance(data, np.ndarray):}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} data.reshape(1)[0]}
+\DoxyCodeLine{44     \textcolor{keywordflow}{if} isinstance(data, t.\_C.\_TensorBase):}
+\DoxyCodeLine{45         \textcolor{keywordflow}{return} data.view(1)[0]}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if} isinstance(data, t.autograd.Variable):}
+\DoxyCodeLine{47         \textcolor{keywordflow}{return} data.data.view(1)[0]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceutils_1_1array__tool_a25ef79489c7aa23bffda35f70b6f67c5}\label{namespaceutils_1_1array__tool_a25ef79489c7aa23bffda35f70b6f67c5}} 
+\index{utils.array\_tool@{utils.array\_tool}!tonumpy@{tonumpy}}
+\index{tonumpy@{tonumpy}!utils.array\_tool@{utils.array\_tool}}
+\doxysubsubsection{\texorpdfstring{tonumpy()}{tonumpy()}}
+{\footnotesize\ttfamily def utils.\+array\+\_\+tool.\+tonumpy (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+array\+\_\+tool.\+py 파일의 9 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1array__tool_a25ef79489c7aa23bffda35f70b6f67c5}{tonumpy}}(data):}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if} isinstance(data, np.ndarray):}
+\DoxyCodeLine{11         \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if} isinstance(data, t.\_C.\_TensorBase):}
+\DoxyCodeLine{13         \textcolor{keywordflow}{return} data.cpu().numpy()}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if} isinstance(data, t.autograd.Variable):}
+\DoxyCodeLine{15         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceutils_1_1array__tool_a25ef79489c7aa23bffda35f70b6f67c5}{tonumpy}}(data.data)}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372}\label{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372}} 
+\index{utils.array\_tool@{utils.array\_tool}!totensor@{totensor}}
+\index{totensor@{totensor}!utils.array\_tool@{utils.array\_tool}}
+\doxysubsubsection{\texorpdfstring{totensor()}{totensor()}}
+{\footnotesize\ttfamily def utils.\+array\+\_\+tool.\+totensor (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{cuda = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+array\+\_\+tool.\+py 파일의 18 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372}{totensor}}(data, cuda=True):}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} isinstance(data, np.ndarray):}
+\DoxyCodeLine{20         tensor = t.from\_numpy(data)}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if} isinstance(data, t.\_C.\_TensorBase):}
+\DoxyCodeLine{22         tensor = data}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if} isinstance(data, t.autograd.Variable):}
+\DoxyCodeLine{24         tensor = data.data}
+\DoxyCodeLine{25     \textcolor{keywordflow}{if} cuda:}
+\DoxyCodeLine{26         tensor = tensor.cuda()}
+\DoxyCodeLine{27     \textcolor{keywordflow}{return} tensor}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae}\label{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae}} 
+\index{utils.array\_tool@{utils.array\_tool}!tovariable@{tovariable}}
+\index{tovariable@{tovariable}!utils.array\_tool@{utils.array\_tool}}
+\doxysubsubsection{\texorpdfstring{tovariable()}{tovariable()}}
+{\footnotesize\ttfamily def utils.\+array\+\_\+tool.\+tovariable (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+array\+\_\+tool.\+py 파일의 30 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae}{tovariable}}(data):}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if} isinstance(data, np.ndarray):}
+\DoxyCodeLine{32         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae}{tovariable}}(\mbox{\hyperlink{namespaceutils_1_1array__tool_a968628bc077c3a4a2a777a0c2e6bf372}{totensor}}(data))}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if} isinstance(data, t.\_C.\_TensorBase):}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} t.autograd.Variable(data)}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} isinstance(data, t.autograd.Variable):}
+\DoxyCodeLine{36         \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{37     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{38         \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"UnKnow data type: \%s, input should be \{np.ndarray,Tensor,Variable\}"} \%\mbox{\hyperlink{namespacemain_add4e4c9e96030cc8c55af23e1b21a1c1}{type}}(data))}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1array__tool_abefb72b2da6a856c8ee0b3b32454d0ae_cgraph}
+\end{center}
+\end{figure}

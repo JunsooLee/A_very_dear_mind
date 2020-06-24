@@ -1,0 +1,355 @@
+\hypertarget{namespacemodel_1_1utils_1_1bbox__tools}{}\doxysection{model.\+utils.\+bbox\+\_\+tools 네임스페이스 참조}
+\label{namespacemodel_1_1utils_1_1bbox__tools}\index{model.utils.bbox\_tools@{model.utils.bbox\_tools}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}{bbox2loc}} (src\+\_\+bbox, dst\+\_\+bbox)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}{bbox\+\_\+iou}} (bbox\+\_\+a, bbox\+\_\+b)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a31b60cdafbb284e61cf8dcd87ee96a08}{loc2bbox}} (src\+\_\+bbox, loc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}\label{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}} 
+\index{model.utils.bbox\_tools@{model.utils.bbox\_tools}!bbox2loc@{bbox2loc}}
+\index{bbox2loc@{bbox2loc}!model.utils.bbox\_tools@{model.utils.bbox\_tools}}
+\doxysubsubsection{\texorpdfstring{bbox2loc()}{bbox2loc()}}
+{\footnotesize\ttfamily def model.\+utils.\+bbox\+\_\+tools.\+bbox2loc (\begin{DoxyParamCaption}\item[{}]{src\+\_\+bbox,  }\item[{}]{dst\+\_\+bbox }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Encodes the source and the destination bounding boxes to "loc".
+
+Given bounding boxes, this function computes offsets and scales
+to match the source bounding boxes to the target bounding boxes.
+Mathematcially, given a bounding box whose center is
+:math:`(y, x) = p_y, p_x` and
+size :math:`p_h, p_w` and the target bounding box whose center is
+:math:`g_y, g_x` and size :math:`g_h, g_w`, the offsets and scales
+:math:`t_y, t_x, t_h, t_w` can be computed by the following formulas.
+
+* :math:`t_y = \\frac{(g_y - p_y)} {p_h}`
+* :math:`t_x = \\frac{(g_x - p_x)} {p_w}`
+* :math:`t_h = \\log(\\frac{g_h} {p_h})`
+* :math:`t_w = \\log(\\frac{g_w} {p_w})`
+
+The output is same type as the type of the inputs.
+The encoding formulas are used in works such as R-CNN [#]_.
+
+.. [#] Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik. \
+Rich feature hierarchies for accurate object detection and semantic \
+segmentation. CVPR 2014.
+
+Args:
+    src_bbox (array): An image coordinate array whose shape is
+        :math:`(R, 4)`. :math:`R` is the number of bounding boxes.
+        These coordinates are
+        :math:`p_{ymin}, p_{xmin}, p_{ymax}, p_{xmax}`.
+    dst_bbox (array): An image coordinate array whose shape is
+        :math:`(R, 4)`.
+        These coordinates are
+        :math:`g_{ymin}, g_{xmin}, g_{ymax}, g_{xmax}`.
+
+Returns:
+    array:
+    Bounding box offsets and scales from :obj:`src_bbox` \
+    to :obj:`dst_bbox`. \
+    This has shape :math:`(R, 4)`.
+    The second axis contains four values :math:`t_y, t_x, t_h, t_w`.\end{DoxyVerb}
+ 
+
+bbox\+\_\+tools.\+py 파일의 4 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}{bbox2loc}}(src\_bbox, dst\_bbox):}
+\DoxyCodeLine{5     \textcolor{stringliteral}{"""Encodes the source and the destination bounding boxes to "loc".}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{    Given bounding boxes, this function computes offsets and scales}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{    to match the source bounding boxes to the target bounding boxes.}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{    Mathematcially, given a bounding box whose center is}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{    :math:`(y, x) = p\_y, p\_x` and}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{    size :math:`p\_h, p\_w` and the target bounding box whose center is}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{    :math:`g\_y, g\_x` and size :math:`g\_h, g\_w`, the offsets and scales}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{    :math:`t\_y, t\_x, t\_h, t\_w` can be computed by the following formulas.}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{    * :math:`t\_y = \(\backslash\)\(\backslash\)frac\{(g\_y -\/ p\_y)\} \{p\_h\}`}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{    * :math:`t\_x = \(\backslash\)\(\backslash\)frac\{(g\_x -\/ p\_x)\} \{p\_w\}`}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{    * :math:`t\_h = \(\backslash\)\(\backslash\)log(\(\backslash\)\(\backslash\)frac\{g\_h\} \{p\_h\})`}}
+\DoxyCodeLine{18 \textcolor{stringliteral}{    * :math:`t\_w = \(\backslash\)\(\backslash\)log(\(\backslash\)\(\backslash\)frac\{g\_w\} \{p\_w\})`}}
+\DoxyCodeLine{19 \textcolor{stringliteral}{}}
+\DoxyCodeLine{20 \textcolor{stringliteral}{    The output is same type as the type of the inputs.}}
+\DoxyCodeLine{21 \textcolor{stringliteral}{    The encoding formulas are used in works such as R-\/CNN [\#]\_.}}
+\DoxyCodeLine{22 \textcolor{stringliteral}{}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{    .. [\#] Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik. \(\backslash\)}}
+\DoxyCodeLine{24 \textcolor{stringliteral}{    Rich feature hierarchies for accurate object detection and semantic \(\backslash\)}}
+\DoxyCodeLine{25 \textcolor{stringliteral}{    segmentation. CVPR 2014.}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{28 \textcolor{stringliteral}{        src\_bbox (array): An image coordinate array whose shape is}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{            :math:`(R, 4)`. :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{            These coordinates are}}
+\DoxyCodeLine{31 \textcolor{stringliteral}{            :math:`p\_\{ymin\}, p\_\{xmin\}, p\_\{ymax\}, p\_\{xmax\}`.}}
+\DoxyCodeLine{32 \textcolor{stringliteral}{        dst\_bbox (array): An image coordinate array whose shape is}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{            :math:`(R, 4)`.}}
+\DoxyCodeLine{34 \textcolor{stringliteral}{            These coordinates are}}
+\DoxyCodeLine{35 \textcolor{stringliteral}{            :math:`g\_\{ymin\}, g\_\{xmin\}, g\_\{ymax\}, g\_\{xmax\}`.}}
+\DoxyCodeLine{36 \textcolor{stringliteral}{}}
+\DoxyCodeLine{37 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{38 \textcolor{stringliteral}{        array:}}
+\DoxyCodeLine{39 \textcolor{stringliteral}{        Bounding box offsets and scales from :obj:`src\_bbox` \(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{stringliteral}{        to :obj:`dst\_bbox`. \(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{stringliteral}{        This has shape :math:`(R, 4)`.}}
+\DoxyCodeLine{42 \textcolor{stringliteral}{        The second axis contains four values :math:`t\_y, t\_x, t\_h, t\_w`.}}
+\DoxyCodeLine{43 \textcolor{stringliteral}{}}
+\DoxyCodeLine{44 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     height = src\_bbox[:, 2] -\/ src\_bbox[:, 0]}
+\DoxyCodeLine{47     width = src\_bbox[:, 3] -\/ src\_bbox[:, 1]}
+\DoxyCodeLine{48     ctr\_y = src\_bbox[:, 0] + 0.5 * height}
+\DoxyCodeLine{49     ctr\_x = src\_bbox[:, 1] + 0.5 * width}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     base\_height = dst\_bbox[:, 2] -\/ dst\_bbox[:, 0]}
+\DoxyCodeLine{52     base\_width = dst\_bbox[:, 3] -\/ dst\_bbox[:, 1]}
+\DoxyCodeLine{53     base\_ctr\_y = dst\_bbox[:, 0] + 0.5 * base\_height}
+\DoxyCodeLine{54     base\_ctr\_x = dst\_bbox[:, 1] + 0.5 * base\_width}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     eps = xp.finfo(height.dtype).eps}
+\DoxyCodeLine{57     height = xp.maximum(height, eps)}
+\DoxyCodeLine{58     width = xp.maximum(width, eps)}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     dy = (base\_ctr\_y -\/ ctr\_y) / height}
+\DoxyCodeLine{61     dx = (base\_ctr\_x -\/ ctr\_x) / width}
+\DoxyCodeLine{62     dh = xp.log(base\_height / height)}
+\DoxyCodeLine{63     dw = xp.log(base\_width / width)}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     loc = xp.vstack((dy, dx, dh, dw)).transpose()}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} loc}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}\label{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}} 
+\index{model.utils.bbox\_tools@{model.utils.bbox\_tools}!bbox\_iou@{bbox\_iou}}
+\index{bbox\_iou@{bbox\_iou}!model.utils.bbox\_tools@{model.utils.bbox\_tools}}
+\doxysubsubsection{\texorpdfstring{bbox\_iou()}{bbox\_iou()}}
+{\footnotesize\ttfamily def model.\+utils.\+bbox\+\_\+tools.\+bbox\+\_\+iou (\begin{DoxyParamCaption}\item[{}]{bbox\+\_\+a,  }\item[{}]{bbox\+\_\+b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate the Intersection of Unions (IoUs) between bounding boxes.
+
+IoU is calculated as a ratio of area of the intersection
+and area of the union.
+
+This function accepts both :obj:`numpy.ndarray` and :obj:`cupy.ndarray` as
+inputs. Please note that both :obj:`bbox_a` and :obj:`bbox_b` need to be
+same type.
+The output is same type as the type of the inputs.
+
+Args:
+    bbox_a (array): An array whose shape is :math:`(N, 4)`.
+        :math:`N` is the number of bounding boxes.
+        The dtype should be :obj:`numpy.float32`.
+    bbox_b (array): An array similar to :obj:`bbox_a`,
+        whose shape is :math:`(K, 4)`.
+        The dtype should be :obj:`numpy.float32`.
+
+Returns:
+    array:
+    An array whose shape is :math:`(N, K)`. \
+    An element at index :math:`(n, k)` contains IoUs between \
+    :math:`n` th bounding box in :obj:`bbox_a` and :math:`k` th bounding \
+    box in :obj:`bbox_b`.\end{DoxyVerb}
+ 
+
+bbox\+\_\+tools.\+py 파일의 69 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}{bbox\_iou}}(bbox\_a, bbox\_b):}
+\DoxyCodeLine{70     \textcolor{stringliteral}{"""Calculate the Intersection of Unions (IoUs) between bounding boxes.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{    IoU is calculated as a ratio of area of the intersection}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{    and area of the union.}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{    This function accepts both :obj:`numpy.ndarray` and :obj:`cupy.ndarray` as}}
+\DoxyCodeLine{76 \textcolor{stringliteral}{    inputs. Please note that both :obj:`bbox\_a` and :obj:`bbox\_b` need to be}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{    same type.}}
+\DoxyCodeLine{78 \textcolor{stringliteral}{    The output is same type as the type of the inputs.}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{}}
+\DoxyCodeLine{80 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{        bbox\_a (array): An array whose shape is :math:`(N, 4)`.}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{            :math:`N` is the number of bounding boxes.}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{            The dtype should be :obj:`numpy.float32`.}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{        bbox\_b (array): An array similar to :obj:`bbox\_a`,}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{            whose shape is :math:`(K, 4)`.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{            The dtype should be :obj:`numpy.float32`.}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{        array:}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{        An array whose shape is :math:`(N, K)`. \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{        An element at index :math:`(n, k)` contains IoUs between \(\backslash\)}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{        :math:`n` th bounding box in :obj:`bbox\_a` and :math:`k` th bounding \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{        box in :obj:`bbox\_b`.}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if} bbox\_a.shape[1] != 4 \textcolor{keywordflow}{or} bbox\_b.shape[1] != 4:}
+\DoxyCodeLine{97         \textcolor{keywordflow}{raise} IndexError}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{\# top left}}
+\DoxyCodeLine{100     tl = xp.maximum(bbox\_a[:, \textcolor{keywordtype}{None}, :2], bbox\_b[:, :2])}
+\DoxyCodeLine{101     \textcolor{comment}{\# bottom right}}
+\DoxyCodeLine{102     br = xp.minimum(bbox\_a[:, \textcolor{keywordtype}{None}, 2:], bbox\_b[:, 2:])}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     area\_i = xp.prod(br -\/ tl, axis=2) * (tl < br).all(axis=2)}
+\DoxyCodeLine{105     area\_a = xp.prod(bbox\_a[:, 2:] -\/ bbox\_a[:, :2], axis=1)}
+\DoxyCodeLine{106     area\_b = xp.prod(bbox\_b[:, 2:] -\/ bbox\_b[:, :2], axis=1)}
+\DoxyCodeLine{107     \textcolor{keywordflow}{return} area\_i / (area\_a[:, \textcolor{keywordtype}{None}] + area\_b -\/ area\_i)}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1bbox__tools_a31b60cdafbb284e61cf8dcd87ee96a08}\label{namespacemodel_1_1utils_1_1bbox__tools_a31b60cdafbb284e61cf8dcd87ee96a08}} 
+\index{model.utils.bbox\_tools@{model.utils.bbox\_tools}!loc2bbox@{loc2bbox}}
+\index{loc2bbox@{loc2bbox}!model.utils.bbox\_tools@{model.utils.bbox\_tools}}
+\doxysubsubsection{\texorpdfstring{loc2bbox()}{loc2bbox()}}
+{\footnotesize\ttfamily def model.\+utils.\+bbox\+\_\+tools.\+loc2bbox (\begin{DoxyParamCaption}\item[{}]{src\+\_\+bbox,  }\item[{}]{loc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decode bounding boxes from bounding box offsets and scales.
+
+Given bounding box offsets and scales computed by
+:meth:`bbox2loc`, this function decodes the representation to
+coordinates in 2D image coordinates.
+
+Given scales and offsets :math:`t_y, t_x, t_h, t_w` and a bounding
+box whose center is :math:`(y, x) = p_y, p_x` and size :math:`p_h, p_w`,
+the decoded bounding box's center :math:`\\hat{g}_y`, :math:`\\hat{g}_x`
+and size :math:`\\hat{g}_h`, :math:`\\hat{g}_w` are calculated
+by the following formulas.
+
+* :math:`\\hat{g}_y = p_h t_y + p_y`
+* :math:`\\hat{g}_x = p_w t_x + p_x`
+* :math:`\\hat{g}_h = p_h \\exp(t_h)`
+* :math:`\\hat{g}_w = p_w \\exp(t_w)`
+
+The decoding formulas are used in works such as R-CNN [#]_.
+
+The output is same type as the type of the inputs.
+
+.. [#] Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik. \
+Rich feature hierarchies for accurate object detection and semantic \
+segmentation. CVPR 2014.
+
+Args:
+    src_bbox (array): A coordinates of bounding boxes.
+        Its shape is :math:`(R, 4)`. These coordinates are
+        :math:`p_{ymin}, p_{xmin}, p_{ymax}, p_{xmax}`.
+    loc (array): An array with offsets and scales.
+        The shapes of :obj:`src_bbox` and :obj:`loc` should be same.
+        This contains values :math:`t_y, t_x, t_h, t_w`.
+
+Returns:
+    array:
+    Decoded bounding box coordinates. Its shape is :math:`(R, 4)`. \
+    The second axis contains four values \
+    :math:`\\hat{g}_{ymin}, \\hat{g}_{xmin},
+    \\hat{g}_{ymax}, \\hat{g}_{xmax}`.\end{DoxyVerb}
+ 
+
+bbox\+\_\+tools.\+py 파일의 111 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a31b60cdafbb284e61cf8dcd87ee96a08}{loc2bbox}}(src\_bbox, loc):}
+\DoxyCodeLine{112     \textcolor{stringliteral}{"""Decode bounding boxes from bounding box offsets and scales.}}
+\DoxyCodeLine{113 \textcolor{stringliteral}{}}
+\DoxyCodeLine{114 \textcolor{stringliteral}{    Given bounding box offsets and scales computed by}}
+\DoxyCodeLine{115 \textcolor{stringliteral}{    :meth:`bbox2loc`, this function decodes the representation to}}
+\DoxyCodeLine{116 \textcolor{stringliteral}{    coordinates in 2D image coordinates.}}
+\DoxyCodeLine{117 \textcolor{stringliteral}{}}
+\DoxyCodeLine{118 \textcolor{stringliteral}{    Given scales and offsets :math:`t\_y, t\_x, t\_h, t\_w` and a bounding}}
+\DoxyCodeLine{119 \textcolor{stringliteral}{    box whose center is :math:`(y, x) = p\_y, p\_x` and size :math:`p\_h, p\_w`,}}
+\DoxyCodeLine{120 \textcolor{stringliteral}{    the decoded bounding box's center :math:`\(\backslash\)\(\backslash\)hat\{g\}\_y`, :math:`\(\backslash\)\(\backslash\)hat\{g\}\_x`}}
+\DoxyCodeLine{121 \textcolor{stringliteral}{    and size :math:`\(\backslash\)\(\backslash\)hat\{g\}\_h`, :math:`\(\backslash\)\(\backslash\)hat\{g\}\_w` are calculated}}
+\DoxyCodeLine{122 \textcolor{stringliteral}{    by the following formulas.}}
+\DoxyCodeLine{123 \textcolor{stringliteral}{}}
+\DoxyCodeLine{124 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_y = p\_h t\_y + p\_y`}}
+\DoxyCodeLine{125 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_x = p\_w t\_x + p\_x`}}
+\DoxyCodeLine{126 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_h = p\_h \(\backslash\)\(\backslash\)exp(t\_h)`}}
+\DoxyCodeLine{127 \textcolor{stringliteral}{    * :math:`\(\backslash\)\(\backslash\)hat\{g\}\_w = p\_w \(\backslash\)\(\backslash\)exp(t\_w)`}}
+\DoxyCodeLine{128 \textcolor{stringliteral}{}}
+\DoxyCodeLine{129 \textcolor{stringliteral}{    The decoding formulas are used in works such as R-\/CNN [\#]\_.}}
+\DoxyCodeLine{130 \textcolor{stringliteral}{}}
+\DoxyCodeLine{131 \textcolor{stringliteral}{    The output is same type as the type of the inputs.}}
+\DoxyCodeLine{132 \textcolor{stringliteral}{}}
+\DoxyCodeLine{133 \textcolor{stringliteral}{    .. [\#] Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik. \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{stringliteral}{    Rich feature hierarchies for accurate object detection and semantic \(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{stringliteral}{    segmentation. CVPR 2014.}}
+\DoxyCodeLine{136 \textcolor{stringliteral}{}}
+\DoxyCodeLine{137 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{138 \textcolor{stringliteral}{        src\_bbox (array): A coordinates of bounding boxes.}}
+\DoxyCodeLine{139 \textcolor{stringliteral}{            Its shape is :math:`(R, 4)`. These coordinates are}}
+\DoxyCodeLine{140 \textcolor{stringliteral}{            :math:`p\_\{ymin\}, p\_\{xmin\}, p\_\{ymax\}, p\_\{xmax\}`.}}
+\DoxyCodeLine{141 \textcolor{stringliteral}{        loc (array): An array with offsets and scales.}}
+\DoxyCodeLine{142 \textcolor{stringliteral}{            The shapes of :obj:`src\_bbox` and :obj:`loc` should be same.}}
+\DoxyCodeLine{143 \textcolor{stringliteral}{            This contains values :math:`t\_y, t\_x, t\_h, t\_w`.}}
+\DoxyCodeLine{144 \textcolor{stringliteral}{}}
+\DoxyCodeLine{145 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{146 \textcolor{stringliteral}{        array:}}
+\DoxyCodeLine{147 \textcolor{stringliteral}{        Decoded bounding box coordinates. Its shape is :math:`(R, 4)`. \(\backslash\)}}
+\DoxyCodeLine{148 \textcolor{stringliteral}{        The second axis contains four values \(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{stringliteral}{        :math:`\(\backslash\)\(\backslash\)hat\{g\}\_\{ymin\}, \(\backslash\)\(\backslash\)hat\{g\}\_\{xmin\},}}
+\DoxyCodeLine{150 \textcolor{stringliteral}{        \(\backslash\)\(\backslash\)hat\{g\}\_\{ymax\}, \(\backslash\)\(\backslash\)hat\{g\}\_\{xmax\}`.}}
+\DoxyCodeLine{151 \textcolor{stringliteral}{}}
+\DoxyCodeLine{152 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keywordflow}{if} src\_bbox.shape[0] == 0:}
+\DoxyCodeLine{155         \textcolor{keywordflow}{return} xp.zeros((0, 4), dtype=loc.dtype)}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     src\_bbox = src\_bbox.astype(src\_bbox.dtype, copy=\textcolor{keyword}{False})}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     src\_height = src\_bbox[:, 2] -\/ src\_bbox[:, 0]}
+\DoxyCodeLine{160     src\_width = src\_bbox[:, 3] -\/ src\_bbox[:, 1]}
+\DoxyCodeLine{161     src\_ctr\_y = src\_bbox[:, 0] + 0.5 * src\_height}
+\DoxyCodeLine{162     src\_ctr\_x = src\_bbox[:, 1] + 0.5 * src\_width}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     dy = loc[:, 0::4]}
+\DoxyCodeLine{165     dx = loc[:, 1::4]}
+\DoxyCodeLine{166     dh = loc[:, 2::4]}
+\DoxyCodeLine{167     dw = loc[:, 3::4]}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     ctr\_y = dy * src\_height[:, xp.newaxis] + src\_ctr\_y[:, xp.newaxis]}
+\DoxyCodeLine{170     ctr\_x = dx * src\_width[:, xp.newaxis] + src\_ctr\_x[:, xp.newaxis]}
+\DoxyCodeLine{171     h = xp.exp(dh) * src\_height[:, xp.newaxis]}
+\DoxyCodeLine{172     w = xp.exp(dw) * src\_width[:, xp.newaxis]}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     dst\_bbox = xp.zeros(loc.shape, dtype=loc.dtype)}
+\DoxyCodeLine{175     dst\_bbox[:, 0::4] = ctr\_y -\/ 0.5 * h}
+\DoxyCodeLine{176     dst\_bbox[:, 1::4] = ctr\_x -\/ 0.5 * w}
+\DoxyCodeLine{177     dst\_bbox[:, 2::4] = ctr\_y + 0.5 * h}
+\DoxyCodeLine{178     dst\_bbox[:, 3::4] = ctr\_x + 0.5 * w}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} dst\_bbox}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1bbox__tools_a31b60cdafbb284e61cf8dcd87ee96a08_icgraph}
+\end{center}
+\end{figure}

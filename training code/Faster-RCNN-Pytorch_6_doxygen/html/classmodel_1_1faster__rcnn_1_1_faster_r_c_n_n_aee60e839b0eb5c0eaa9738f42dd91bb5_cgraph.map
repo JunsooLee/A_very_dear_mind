@@ -1,0 +1,4 @@
+<map id="model.faster_rcnn.FasterRCNN.__init__" name="model.faster_rcnn.FasterRCNN.__init__">
+<area shape="rect" id="node1" title="model 정의 및 RPN &amp; ROI network 초기화 설정" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$namespacemodel_1_1vgg16.html#a5cb7b04ca5a0b084d2043915157d521b" title="imagenet pretrain vgg16모델 정의 및 상위 4개의 layer 파라미터 고정." alt="" coords="220,13,397,39"/>
+</map>

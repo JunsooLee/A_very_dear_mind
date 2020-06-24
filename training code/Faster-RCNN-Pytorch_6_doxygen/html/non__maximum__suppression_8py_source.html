@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: model/utils/nms/non_maximum_suppression.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('non__maximum__suppression_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">non_maximum_suppression.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="non__maximum__suppression_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html">    1</a></span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> cupy <span class="keyword">as</span> cp</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> torch <span class="keyword">as</span> t</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">from</span> ._nms_gpu_post <span class="keyword">import</span> _nms_gpu_post</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">import</span> warnings</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">from</span> ._nms_gpu_post_py <span class="keyword">import</span> _nms_gpu_post</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a931a2629f3b465e9b87243f809a7ffac">   12</a></span>&#160;@cp.util.memoize(for_each_device=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a4f9e7eff60ab89558d55caf54e284588">   13</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a4f9e7eff60ab89558d55caf54e284588">_load_kernel</a>(kernel_name, code, options=()):</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    cp.cuda.runtime.free(0)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">assert</span> isinstance(options, tuple)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    kernel_code = cp.cuda.compile_with_cache(code, options=options)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> kernel_code.get_function(kernel_name)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#afdf319cf0550a8ae6b02cac11c9c86e9">   20</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#afdf319cf0550a8ae6b02cac11c9c86e9">non_maximum_suppression</a>(bbox, thresh, score=None,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                            limit=None):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Suppress bounding boxes according to their IoUs.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">    This method checks each bounding box sequentially and selects the bounding</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">    box if the Intersection over Unions (IoUs) between the bounding box and the</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">    previously selected bounding boxes is less than :obj:`thresh`. This method</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    is mainly used as postprocessing of object detection.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">    The bounding boxes are selected from ones with higher scores.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral">    If :obj:`score` is not provided as an argument, the bounding box</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">    is ordered by its index in ascending order.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral">    The bounding boxes are expected to be packed into a two dimensional</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">    bounding boxes in the image. The second axis represents attributes of</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">    where the four attributes are coordinates of the top left and the</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">    bottom right vertices.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">    :obj:`score` is a float array of shape :math:`(R,)`. Each score indicates</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">    confidence of prediction.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">    This function accepts both :obj:`numpy.ndarray` and :obj:`cupy.ndarray` as</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">    an input. Please note that both :obj:`bbox` and :obj:`score` need to be</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">    the same type.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">    The type of the output is the same as the input.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">    Args:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">        bbox (array): Bounding boxes to be transformed. The shape is</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">            :math:`(R, 4)`. :math:`R` is the number of bounding boxes.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">        thresh (float): Threshold of IoUs.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">        score (array): An array of confidences whose shape is :math:`(R,)`.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">        limit (int): The upper bound of the number of the output bounding</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">            boxes. If it is not specified, this method selects as many</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral">            bounding boxes as possible.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral">    Returns:</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral">        array:</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="stringliteral">        An array with indices of bounding boxes that are selected. \</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">        They are sorted by the scores of bounding boxes in descending \</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">        order. \</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral">        The shape of this array is :math:`(K,)` and its dtype is\</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">        :obj:`numpy.int32`. Note that :math:`K \\leq R`.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a312b77e485123449844e07cc2d7af26c">_non_maximum_suppression_gpu</a>(bbox, thresh, score, limit)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a312b77e485123449844e07cc2d7af26c">   69</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a312b77e485123449844e07cc2d7af26c">_non_maximum_suppression_gpu</a>(bbox, thresh, score=None, limit=None):</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> len(bbox) == 0:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> cp.zeros((0,), dtype=np.int32)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    n_bbox = bbox.shape[0]</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> score <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        order = score.argsort()[::-1].astype(np.int32)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        order = cp.arange(n_bbox, dtype=np.int32)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    sorted_bbox = bbox[order, :]</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    selec, n_selec = <a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a898523c0d6b38f63089a706b6c2e332c">_call_nms_kernel</a>(</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        sorted_bbox, thresh)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    selec = selec[:n_selec]</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    selec = order[selec]</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> limit <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        selec = selec[:limit]</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> cp.asnumpy(selec)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#ac63ec6566592cc7890745ddb3b98f020">   90</a></span>&#160;_nms_gpu_code = <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">#define DIVUP(m,n) ((m) / (n) + ((m) % (n) &gt; 0))</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral">int const threadsPerBlock = sizeof(unsigned long long) * 8;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral">__device__</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral">inline float devIoU(float const *const bbox_a, float const *const bbox_b) {</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral">  float top = max(bbox_a[0], bbox_b[0]);</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral">  float bottom = min(bbox_a[2], bbox_b[2]);</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral">  float left = max(bbox_a[1], bbox_b[1]);</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral">  float right = min(bbox_a[3], bbox_b[3]);</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral">  float height = max(bottom - top, 0.f);</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral">  float width = max(right - left, 0.f);</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">  float area_i = height * width;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral">  float area_a = (bbox_a[2] - bbox_a[0]) * (bbox_a[3] - bbox_a[1]);</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">  float area_b = (bbox_b[2] - bbox_b[0]) * (bbox_b[3] - bbox_b[1]);</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">  return area_i / (area_a + area_b - area_i);</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">}</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">__global__</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">void nms_kernel(const int n_bbox, const float thresh,</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">                const float *dev_bbox,</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">                unsigned long long *dev_mask) {</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">  const int row_start = blockIdx.y;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">  const int col_start = blockIdx.x;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">  const int row_size =</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">        min(n_bbox - row_start * threadsPerBlock, threadsPerBlock);</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">  const int col_size =</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">        min(n_bbox - col_start * threadsPerBlock, threadsPerBlock);</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">  __shared__ float block_bbox[threadsPerBlock * 4];</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">  if (threadIdx.x &lt; col_size) {</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">    block_bbox[threadIdx.x * 4 + 0] =</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">        dev_bbox[(threadsPerBlock * col_start + threadIdx.x) * 4 + 0];</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">    block_bbox[threadIdx.x * 4 + 1] =</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">        dev_bbox[(threadsPerBlock * col_start + threadIdx.x) * 4 + 1];</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">    block_bbox[threadIdx.x * 4 + 2] =</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">        dev_bbox[(threadsPerBlock * col_start + threadIdx.x) * 4 + 2];</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">    block_bbox[threadIdx.x * 4 + 3] =</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">        dev_bbox[(threadsPerBlock * col_start + threadIdx.x) * 4 + 3];</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral">  }</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral">  __syncthreads();</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral">  if (threadIdx.x &lt; row_size) {</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="stringliteral">    const int cur_box_idx = threadsPerBlock * row_start + threadIdx.x;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="stringliteral">    const float *cur_box = dev_bbox + cur_box_idx * 4;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="stringliteral">    int i = 0;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="stringliteral">    unsigned long long t = 0;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="stringliteral">    int start = 0;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="stringliteral">    if (row_start == col_start) {</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="stringliteral">      start = threadIdx.x + 1;</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="stringliteral">    }</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="stringliteral">    for (i = start; i &lt; col_size; i++) {</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="stringliteral">      if (devIoU(cur_box, block_bbox + i * 4) &gt;= thresh) {</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="stringliteral">        t |= 1ULL &lt;&lt; i;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="stringliteral">      }</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="stringliteral">    }</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="stringliteral">    const int col_blocks = DIVUP(n_bbox, threadsPerBlock);</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="stringliteral">    dev_mask[cur_box_idx * col_blocks + col_start] = t;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="stringliteral">  }</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="stringliteral">}</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a898523c0d6b38f63089a706b6c2e332c">  155</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a898523c0d6b38f63089a706b6c2e332c">_call_nms_kernel</a>(bbox, thresh):</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment"># PyTorch does not support unsigned long Tensor.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment"># Doesn&#39;t matter,since it returns ndarray finally.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment"># So I&#39;ll keep it unmodified.</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    n_bbox = bbox.shape[0]</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    threads_per_block = 64</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    col_blocks = np.ceil(n_bbox / threads_per_block).astype(np.int32)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    blocks = (col_blocks, col_blocks, 1)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    threads = (threads_per_block, 1, 1)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    mask_dev = cp.zeros((n_bbox * col_blocks,), dtype=np.uint64)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    bbox = cp.ascontiguousarray(bbox, dtype=np.float32)  <span class="comment"># NOTE: 变成连续的</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    kern = <a class="code" href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a4f9e7eff60ab89558d55caf54e284588">_load_kernel</a>(<span class="stringliteral">&#39;nms_kernel&#39;</span>, _nms_gpu_code)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    kern(blocks, threads, args=(cp.int32(n_bbox), cp.float32(thresh),</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                bbox, mask_dev))</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    mask_host = mask_dev.get()</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    selection, n_selec = <a class="code" href="namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py.html#ab02016e7734eb4c138d94946307d79d6">_nms_gpu_post</a>(</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        mask_host, n_bbox, threads_per_block, col_blocks)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> selection, n_selec</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_html_afdf319cf0550a8ae6b02cac11c9c86e9"><div class="ttname"><a href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#afdf319cf0550a8ae6b02cac11c9c86e9">model.utils.nms.non_maximum_suppression.non_maximum_suppression</a></div><div class="ttdeci">def non_maximum_suppression(bbox, thresh, score=None, limit=None)</div><div class="ttdef"><b>Definition:</b> <a href="non__maximum__suppression_8py_source.html#l00020">non_maximum_suppression.py:20</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_html_a4f9e7eff60ab89558d55caf54e284588"><div class="ttname"><a href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a4f9e7eff60ab89558d55caf54e284588">model.utils.nms.non_maximum_suppression._load_kernel</a></div><div class="ttdeci">def _load_kernel(kernel_name, code, options=())</div><div class="ttdef"><b>Definition:</b> <a href="non__maximum__suppression_8py_source.html#l00013">non_maximum_suppression.py:13</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_html_a898523c0d6b38f63089a706b6c2e332c"><div class="ttname"><a href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a898523c0d6b38f63089a706b6c2e332c">model.utils.nms.non_maximum_suppression._call_nms_kernel</a></div><div class="ttdeci">def _call_nms_kernel(bbox, thresh)</div><div class="ttdef"><b>Definition:</b> <a href="non__maximum__suppression_8py_source.html#l00155">non_maximum_suppression.py:155</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_html_a312b77e485123449844e07cc2d7af26c"><div class="ttname"><a href="namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#a312b77e485123449844e07cc2d7af26c">model.utils.nms.non_maximum_suppression._non_maximum_suppression_gpu</a></div><div class="ttdeci">def _non_maximum_suppression_gpu(bbox, thresh, score=None, limit=None)</div><div class="ttdef"><b>Definition:</b> <a href="non__maximum__suppression_8py_source.html#l00069">non_maximum_suppression.py:69</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_html_ab02016e7734eb4c138d94946307d79d6"><div class="ttname"><a href="namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py.html#ab02016e7734eb4c138d94946307d79d6">model.utils.nms._nms_gpu_post_py._nms_gpu_post</a></div><div class="ttdeci">def _nms_gpu_post(mask, n_bbox, threads_per_block, col_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="__nms__gpu__post__py_8py_source.html#l00004">_nms_gpu_post_py.py:4</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="dir_cbff8d10e9ded990fcd3f852f93abb5b.html">utils</a></li><li class="navelem"><a class="el" href="dir_44c68a351cfd6ca8c78fc8bf09c0fda2.html">nms</a></li><li class="navelem"><a class="el" href="non__maximum__suppression_8py.html">non_maximum_suppression.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

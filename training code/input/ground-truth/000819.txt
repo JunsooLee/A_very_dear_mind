@@ -1,0 +1,4 @@
+do_not_wash 106 278 137 310
+do_not_wash 325 277 356 309
+do_not_iron 143 275 179 306
+do_not_iron 363 275 399 306

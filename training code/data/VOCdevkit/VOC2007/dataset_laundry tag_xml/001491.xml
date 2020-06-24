@@ -1,0 +1,26 @@
+<annotation>
+	<folder>까마귀</folder>
+	<filename>001710.jpg</filename>
+	<path>C:\Users\ysurk\Desktop\까마귀\001710.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>1142</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>542</xmin>
+			<ymin>613</ymin>
+			<xmax>619</xmax>
+			<ymax>663</ymax>
+		</bndbox>
+	</object>
+</annotation>

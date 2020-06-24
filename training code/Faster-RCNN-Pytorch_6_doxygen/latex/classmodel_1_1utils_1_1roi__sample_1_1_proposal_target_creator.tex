@@ -1,0 +1,340 @@
+\hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator}{}\doxysection{model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator 클래스 참조}
+\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator}\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+
+
+model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a9cbe5acf167a81c251fe87bcf0904a8b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0dc4a8a2e3124a57178385a2e64111e6}{n\+\_\+sample}}=128, \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a55879f7b1d62e790b189bc9c5026b58d}{pos\+\_\+ratio}}=0.\+25, \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_af05d1a6dbbd1d1fa80613e4605d837a9}{pos\+\_\+iou\+\_\+thresh}}=0.\+5, \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_ab736aa3432aac16d2b08126595bb2322}{neg\+\_\+iou\+\_\+thresh\+\_\+hi}}=0.\+5, \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0758299dadfd21d6f45d5ed3d7b98396}{neg\+\_\+iou\+\_\+thresh\+\_\+lo}}=0.\+0)
+\item 
+def \mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_adfc2e83970eaaf5c717106872988d4ec}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, roi, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, \mbox{\hyperlink{_v_o_creadrecxml_8m_a595dd0a82388b0f915674513f072ccda}{label}}, loc\+\_\+normalize\+\_\+mean=(0., 0., 0., 0.), loc\+\_\+normalize\+\_\+std=(0.\+1, 0.\+1, 0.\+2, 0.\+2))
+\begin{DoxyCompactList}\small\item\em R\+PN 네트워크에서 뽑은 sample anchor 중에서 Io\+U를 기준으로 pos와 negative의 비율을 1\+:3으로 맞춰 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0dc4a8a2e3124a57178385a2e64111e6}{n\+\_\+sample}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a55879f7b1d62e790b189bc9c5026b58d}{pos\+\_\+ratio}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_af05d1a6dbbd1d1fa80613e4605d837a9}{pos\+\_\+iou\+\_\+thresh}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_ab736aa3432aac16d2b08126595bb2322}{neg\+\_\+iou\+\_\+thresh\+\_\+hi}}
+\item 
+\mbox{\hyperlink{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0758299dadfd21d6f45d5ed3d7b98396}{neg\+\_\+iou\+\_\+thresh\+\_\+lo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}Assign ground truth bounding boxes to given RoIs.
+
+The :meth:`__call__` of this class generates training targets
+for each object proposal.
+This is used to train Faster RCNN [#]_.
+
+.. [#] Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun. \
+Faster R-CNN: Towards Real-Time Object Detection with \
+Region Proposal Networks. NIPS 2015.
+
+Args:
+    n_sample (int): The number of sampled regions.
+    pos_ratio (float): Fraction of regions that is labeled as a
+        foreground. # sample에서 pos한 비율
+    pos_iou_thresh (float): IoU threshold for a RoI to be considered as a
+        foreground. #pos로 간주되기 위한 GT와 겹치는 iou
+    neg_iou_thresh_hi (float): RoI is considered to be the background
+        if IoU is in # neg로 간주되기 위한 back ground와 겹치는 비율
+        [:obj:`neg_iou_thresh_hi`, :obj:`neg_iou_thresh_hi`).
+    neg_iou_thresh_lo (float): See above.\end{DoxyVerb}
+ 
+
+roi\+\_\+sample.\+py 파일의 4 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a9cbe5acf167a81c251fe87bcf0904a8b}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a9cbe5acf167a81c251fe87bcf0904a8b}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n\+\_\+sample = {\ttfamily 128},  }\item[{}]{pos\+\_\+ratio = {\ttfamily 0.25},  }\item[{}]{pos\+\_\+iou\+\_\+thresh = {\ttfamily 0.5},  }\item[{}]{neg\+\_\+iou\+\_\+thresh\+\_\+hi = {\ttfamily 0.5},  }\item[{}]{neg\+\_\+iou\+\_\+thresh\+\_\+lo = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+sample.\+py 파일의 28 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self,}
+\DoxyCodeLine{29                  n\_sample=128,}
+\DoxyCodeLine{30                  pos\_ratio=0.25, pos\_iou\_thresh=0.5,}
+\DoxyCodeLine{31                  neg\_iou\_thresh\_hi=0.5, neg\_iou\_thresh\_lo=0.0}
+\DoxyCodeLine{32                  ):}
+\DoxyCodeLine{33         self.n\_sample = n\_sample}
+\DoxyCodeLine{34         self.pos\_ratio = pos\_ratio}
+\DoxyCodeLine{35         self.pos\_iou\_thresh = pos\_iou\_thresh}
+\DoxyCodeLine{36         self.neg\_iou\_thresh\_hi = neg\_iou\_thresh\_hi}
+\DoxyCodeLine{37         self.neg\_iou\_thresh\_lo = neg\_iou\_thresh\_lo}
+\DoxyCodeLine{38 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_adfc2e83970eaaf5c717106872988d4ec}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_adfc2e83970eaaf5c717106872988d4ec}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{roi,  }\item[{}]{bbox,  }\item[{}]{label,  }\item[{}]{loc\+\_\+normalize\+\_\+mean = {\ttfamily (0.,~0.,~0.,~0.)},  }\item[{}]{loc\+\_\+normalize\+\_\+std = {\ttfamily (0.1,~0.1,~0.2,~0.2)} }\end{DoxyParamCaption})}
+
+
+
+R\+PN 네트워크에서 뽑은 sample anchor 중에서 Io\+U를 기준으로 pos와 negative의 비율을 1\+:3으로 맞춰 
+
+실제 object 가 있을법한 roi와 background 만 있는 roi를 뽑는다. 
+\begin{DoxyParams}{매개변수}
+{\em roi} & 예측된 sample anchor (최대 2000개) \\
+\hline
+{\em bbox} & B.\+B 정보 \\
+\hline
+{\em label} & B.\+B label 정보 \\
+\hline
+{\em loc\+\_\+normalize\+\_\+mean} & (0., 0., 0., 0.) \\
+\hline
+{\em loc\+\_\+normalize\+\_\+std} & (0.\+1, 0.\+1, 0.\+2, 0.\+2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+sample\+\_\+roi \+: sample anchor 중에서 pos 와 neg 비율 대로 뽑은 것 
+
+gt\+\_\+roi\+\_\+loc \+: 위에서 뽑은 anchor 와 B.\+B G.\+T와의 상대좌표 
+
+gt\+\_\+roi\+\_\+label \+: 위에서 뽑은 anchor 의 label \begin{DoxyVerb}Assigns ground truth to sampled proposals.
+
+This function samples total of :obj:`self.n_sample` RoIs
+from the combination of :obj:`roi` and :obj:`bbox`.
+The RoIs are assigned with the ground truth class labels as well as
+bounding box offsets and scales to match the ground truth bounding
+boxes. As many as :obj:`pos_ratio * self.n_sample` RoIs are
+sampled as foregrounds.
+
+Offsets and scales of bounding boxes are calculated using
+:func:`model.utils.bbox_tools.bbox2loc`.
+Also, types of input arrays and output arrays are same.
+
+Here are notations.
+
+* :math:`S` is the total number of sampled RoIs, which equals \
+    :obj:`self.n_sample`.
+* :math:`L` is number of object classes possibly including the \
+    background.
+
+Args:
+    roi (array): Region of Interests (RoIs) from which we sample.
+Its shape is :math:`(R, 4)`
+    bbox (array): The coordinates of ground truth bounding boxes.
+Its shape is :math:`(R', 4)`.
+    label (array): Ground truth bounding box labels. Its shape
+is :math:`(R',)`. Its range is :math:`[0, L - 1]`, where
+:math:`L` is the number of foreground classes.
+    loc_normalize_mean (tuple of four floats): Mean values to normalize
+coordinates of bouding boxes.
+    loc_normalize_std (tupler of four floats): Standard deviation of
+the coordinates of bounding boxes.
+
+Returns:
+    (array, array, array):
+
+    * **sample_roi**: Regions of interests that are sampled. \
+Its shape is :math:`(S, 4)`.
+    * **gt_roi_loc**: Offsets and scales to match \
+the sampled RoIs to the ground truth bounding boxes. \
+Its shape is :math:`(S, 4)`.
+    * **gt_roi_label**: Labels assigned to sampled RoIs. Its shape is \
+:math:`(S,)`. Its range is :math:`[0, L]`. The label with \
+value 0 is the background.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+roi\+\_\+sample.\+py 파일의 51 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51     \textcolor{keyword}{def }\_\_call\_\_(self, roi, bbox, label,}
+\DoxyCodeLine{52                  loc\_normalize\_mean=(0., 0., 0., 0.),}
+\DoxyCodeLine{53                  loc\_normalize\_std=(0.1, 0.1, 0.2, 0.2)):}
+\DoxyCodeLine{54         \textcolor{stringliteral}{"""Assigns ground truth to sampled proposals.}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{        This function samples total of :obj:`self.n\_sample` RoIs}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        from the combination of :obj:`roi` and :obj:`bbox`.}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{        The RoIs are assigned with the ground truth class labels as well as}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{        bounding box offsets and scales to match the ground truth bounding}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{        boxes. As many as :obj:`pos\_ratio * self.n\_sample` RoIs are}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{        sampled as foregrounds.}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{        Offsets and scales of bounding boxes are calculated using}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{        :func:`model.utils.bbox\_tools.bbox2loc`.}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{        Also, types of input arrays and output arrays are same.}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{}}
+\DoxyCodeLine{67 \textcolor{stringliteral}{        Here are notations.}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{        * :math:`S` is the total number of sampled RoIs, which equals \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{            :obj:`self.n\_sample`.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{        * :math:`L` is number of object classes possibly including the \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{            background.}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{            roi (array): Region of Interests (RoIs) from which we sample.}}
+\DoxyCodeLine{76 \textcolor{stringliteral}{                Its shape is :math:`(R, 4)`}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{            bbox (array): The coordinates of ground truth bounding boxes.}}
+\DoxyCodeLine{78 \textcolor{stringliteral}{                Its shape is :math:`(R', 4)`.}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{            label (array): Ground truth bounding box labels. Its shape}}
+\DoxyCodeLine{80 \textcolor{stringliteral}{                is :math:`(R',)`. Its range is :math:`[0, L -\/ 1]`, where}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{                :math:`L` is the number of foreground classes.}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{            loc\_normalize\_mean (tuple of four floats): Mean values to normalize}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{                coordinates of bouding boxes.}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{            loc\_normalize\_std (tupler of four floats): Standard deviation of}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{                the coordinates of bounding boxes.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{            (array, array, array):}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{            * **sample\_roi**: Regions of interests that are sampled. \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{                Its shape is :math:`(S, 4)`.}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{            * **gt\_roi\_loc**: Offsets and scales to match \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{                the sampled RoIs to the ground truth bounding boxes. \(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{                Its shape is :math:`(S, 4)`.}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{            * **gt\_roi\_label**: Labels assigned to sampled RoIs. Its shape is \(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{                :math:`(S,)`. Its range is :math:`[0, L]`. The label with \(\backslash\)}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{                value 0 is the background.}}
+\DoxyCodeLine{98 \textcolor{stringliteral}{}}
+\DoxyCodeLine{99 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{100         n\_bbox, \_ = bbox.shape}
+\DoxyCodeLine{101         \textcolor{comment}{\# sample로 뽑은 roi뒤에 B.B 정보를 붙인다.}}
+\DoxyCodeLine{102         roi = np.concatenate((roi, bbox), axis=0)}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         pos\_roi\_per\_image = np.round(self.n\_sample * self.pos\_ratio) \textcolor{comment}{\# 뽑을 pos 개수 128 * 0.25 = 32}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         iou = \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}{bbox\_iou}}(roi, bbox) \textcolor{comment}{\# sample anchor에 대한 iou}}
+\DoxyCodeLine{108         gt\_assignment = iou.argmax(axis=1) \textcolor{comment}{\# B.B 카테고리 중에서 iou가 큰 index값 설정}}
+\DoxyCodeLine{109         max\_iou = iou.max(axis=1) \textcolor{comment}{\# B.B 카테고리 중에서 iou가 큰 값 설정}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{comment}{\# Offset range of classes from [0, n\_fg\_class -\/ 1] to [1, n\_fg\_class].}}
+\DoxyCodeLine{112         \textcolor{comment}{\# +1 의미: 해주는 이유는 background 가 0으로 붙기 때문이다.}}
+\DoxyCodeLine{113         gt\_roi\_label = label[gt\_assignment] + 1}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{\# Select foreground RoIs as those with : roi 중에서 object 인 것만 select}}
+\DoxyCodeLine{116         pos\_index = np.where(max\_iou >= self.pos\_iou\_thresh)[0] \textcolor{comment}{\# 0.5 보다 큰 것만 select}}
+\DoxyCodeLine{117         pos\_roi\_per\_this\_image = int(\mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(pos\_roi\_per\_image, pos\_index.size))}
+\DoxyCodeLine{118         \textcolor{keywordflow}{if} pos\_index.size > 0:}
+\DoxyCodeLine{119             pos\_index = np.random.choice(}
+\DoxyCodeLine{120                 pos\_index, size=pos\_roi\_per\_this\_image, replace=\textcolor{keyword}{False})}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{comment}{\# Select background RoIs as those within : roi 중에서 background 인 것만 select}}
+\DoxyCodeLine{123         neg\_index = np.where((max\_iou < self.neg\_iou\_thresh\_hi) \&}
+\DoxyCodeLine{124                              (max\_iou >= self.neg\_iou\_thresh\_lo))[0]}
+\DoxyCodeLine{125         neg\_roi\_per\_this\_image = self.n\_sample -\/ pos\_roi\_per\_this\_image}
+\DoxyCodeLine{126         neg\_roi\_per\_this\_image = int(\mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(neg\_roi\_per\_this\_image,}
+\DoxyCodeLine{127                                          neg\_index.size))}
+\DoxyCodeLine{128         \textcolor{keywordflow}{if} neg\_index.size > 0:}
+\DoxyCodeLine{129             neg\_index = np.random.choice(}
+\DoxyCodeLine{130                 neg\_index, size=neg\_roi\_per\_this\_image, replace=\textcolor{keyword}{False})}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \textcolor{comment}{\# The indices that we're selecting (both positive and negative).}}
+\DoxyCodeLine{133         keep\_index = np.append(pos\_index, neg\_index) \textcolor{comment}{\# pos roi index 뒤에 neg roi index를 붙인다.}}
+\DoxyCodeLine{134         gt\_roi\_label = gt\_roi\_label[keep\_index]}
+\DoxyCodeLine{135         \textcolor{comment}{\# sample roi 의 negative 즉 background label 0으로 할당.}}
+\DoxyCodeLine{136         gt\_roi\_label[pos\_roi\_per\_this\_image:] = 0}
+\DoxyCodeLine{137         sample\_roi = roi[keep\_index]}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{comment}{\# Compute offsets and scales to match sampled RoIs to the GTs.}}
+\DoxyCodeLine{140         \textcolor{comment}{\# @note 뽑힌 sample roi(pos \& negative 비율 1 : 3) 와 실제 B.B 와의 상대좌표}}
+\DoxyCodeLine{141         gt\_roi\_loc = \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a3924d351ba94dd9bd75de88ecbf9d738}{bbox2loc}}(sample\_roi, bbox[gt\_assignment[keep\_index]])}
+\DoxyCodeLine{142         gt\_roi\_loc = ((gt\_roi\_loc -\/ np.array(loc\_normalize\_mean, np.float32)}
+\DoxyCodeLine{143                        ) / np.array(loc\_normalize\_std, np.float32))}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145         \textcolor{keywordflow}{return} sample\_roi, gt\_roi\_loc, gt\_roi\_label}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_adfc2e83970eaaf5c717106872988d4ec_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0dc4a8a2e3124a57178385a2e64111e6}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0dc4a8a2e3124a57178385a2e64111e6}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!n\_sample@{n\_sample}}
+\index{n\_sample@{n\_sample}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{n\_sample}{n\_sample}}
+{\footnotesize\ttfamily model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+n\+\_\+sample}
+
+
+
+roi\+\_\+sample.\+py 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_ab736aa3432aac16d2b08126595bb2322}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_ab736aa3432aac16d2b08126595bb2322}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!neg\_iou\_thresh\_hi@{neg\_iou\_thresh\_hi}}
+\index{neg\_iou\_thresh\_hi@{neg\_iou\_thresh\_hi}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{neg\_iou\_thresh\_hi}{neg\_iou\_thresh\_hi}}
+{\footnotesize\ttfamily model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+neg\+\_\+iou\+\_\+thresh\+\_\+hi}
+
+
+
+roi\+\_\+sample.\+py 파일의 32 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0758299dadfd21d6f45d5ed3d7b98396}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a0758299dadfd21d6f45d5ed3d7b98396}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!neg\_iou\_thresh\_lo@{neg\_iou\_thresh\_lo}}
+\index{neg\_iou\_thresh\_lo@{neg\_iou\_thresh\_lo}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{neg\_iou\_thresh\_lo}{neg\_iou\_thresh\_lo}}
+{\footnotesize\ttfamily model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+neg\+\_\+iou\+\_\+thresh\+\_\+lo}
+
+
+
+roi\+\_\+sample.\+py 파일의 33 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_af05d1a6dbbd1d1fa80613e4605d837a9}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_af05d1a6dbbd1d1fa80613e4605d837a9}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!pos\_iou\_thresh@{pos\_iou\_thresh}}
+\index{pos\_iou\_thresh@{pos\_iou\_thresh}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{pos\_iou\_thresh}{pos\_iou\_thresh}}
+{\footnotesize\ttfamily model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+pos\+\_\+iou\+\_\+thresh}
+
+
+
+roi\+\_\+sample.\+py 파일의 31 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a55879f7b1d62e790b189bc9c5026b58d}\label{classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_a55879f7b1d62e790b189bc9c5026b58d}} 
+\index{model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}!pos\_ratio@{pos\_ratio}}
+\index{pos\_ratio@{pos\_ratio}!model.utils.roi\_sample.ProposalTargetCreator@{model.utils.roi\_sample.ProposalTargetCreator}}
+\doxysubsubsection{\texorpdfstring{pos\_ratio}{pos\_ratio}}
+{\footnotesize\ttfamily model.\+utils.\+roi\+\_\+sample.\+Proposal\+Target\+Creator.\+pos\+\_\+ratio}
+
+
+
+roi\+\_\+sample.\+py 파일의 30 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+model/utils/\mbox{\hyperlink{roi__sample_8py}{roi\+\_\+sample.\+py}}\end{DoxyCompactItemize}

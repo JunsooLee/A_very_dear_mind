@@ -1,0 +1,6 @@
+<map id="trainer.trainer._smooth_l1_loss" name="trainer.trainer._smooth_l1_loss">
+<area shape="rect" id="node1" title=" " alt="" coords="813,5,965,47"/>
+<area shape="rect" id="node2" href="$namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664" title=" " alt="" coords="635,5,765,47"/>
+<area shape="rect" id="node3" href="$classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e" title="Train forward code" alt="" coords="328,13,587,39"/>
+<area shape="rect" id="node4" href="$classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51" title="Train step code" alt="" coords="5,13,280,39"/>
+</map>

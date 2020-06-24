@@ -1,0 +1,247 @@
+\hypertarget{classmodel_1_1roi__module_1_1_ro_i}{}\doxysection{model.\+roi\+\_\+module.\+RoI 클래스 참조}
+\label{classmodel_1_1roi__module_1_1_ro_i}\index{model.roi\_module.RoI@{model.roi\_module.RoI}}
+
+
+model.\+roi\+\_\+module.\+Ro\+I에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classmodel_1_1roi__module_1_1_ro_i__inherit__graph}
+\end{center}
+\end{figure}
+
+
+model.\+roi\+\_\+module.\+Ro\+I에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classmodel_1_1roi__module_1_1_ro_i__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_ad6e755b598e91b7d414bc52967104593}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, outh, outw, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_afd84ed8dd2d5e19238e13c7da5cc280e}{spatial\+\_\+scale}})
+\item 
+def \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a0e717a33f2817f59f8dec8910379c162}{forward}} (self, \mbox{\hyperlink{_v_o_creadrecxml_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}}, \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a01f951c4e45418ec2d7430743d14f10b}{rois}})
+\item 
+def \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_af28897926095ed848416bb3d35b1909a}{backward}} (self, grad\+\_\+output)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a791ff4e5db749a233a53b73f0c31a74f}{forward\+\_\+fn}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_ae0e98dcc8a1ae19ff0095f8108d51530}{backward\+\_\+fn}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_afd84ed8dd2d5e19238e13c7da5cc280e}{spatial\+\_\+scale}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a159765a56eb90120ffb2a37fcf2831e8}{in\+\_\+size}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_aba9da1b7bff20a8c46de0e98231c636b}{N}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a5b527de2166f57f08d53735387f7dbf9}{argmax\+\_\+data}}
+\item 
+\mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_a01f951c4e45418ec2d7430743d14f10b}{rois}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}NOTE：only CUDA-compatible
+\end{DoxyVerb}
+ 
+
+roi\+\_\+module.\+py 파일의 124 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_ad6e755b598e91b7d414bc52967104593}\label{classmodel_1_1roi__module_1_1_ro_i_ad6e755b598e91b7d414bc52967104593}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+Ro\+I.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{outh,  }\item[{}]{outw,  }\item[{}]{spatial\+\_\+scale }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 129 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, outh, outw, spatial\_scale):}
+\DoxyCodeLine{130         self.forward\_fn = \mbox{\hyperlink{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}{load\_kernel}}(\textcolor{stringliteral}{'roi\_forward'}, kernel\_forward)}
+\DoxyCodeLine{131         self.backward\_fn = \mbox{\hyperlink{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}{load\_kernel}}(\textcolor{stringliteral}{'roi\_backward'}, kernel\_backward)}
+\DoxyCodeLine{132         self.outh, self.outw, self.spatial\_scale = outh, outw, spatial\_scale}
+\DoxyCodeLine{133 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_af28897926095ed848416bb3d35b1909a}\label{classmodel_1_1roi__module_1_1_ro_i_af28897926095ed848416bb3d35b1909a}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!backward@{backward}}
+\index{backward@{backward}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+Ro\+I.\+backward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grad\+\_\+output }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 156 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{156     \textcolor{keyword}{def }backward(self, grad\_output):}
+\DoxyCodeLine{157         \textcolor{comment}{\# NOTE: IMPORTANT CONTIGUOUS}}
+\DoxyCodeLine{158         \textcolor{comment}{\# TODO: input}}
+\DoxyCodeLine{159         grad\_output = grad\_output.contiguous()}
+\DoxyCodeLine{160         B, C, H, W = self.in\_size}
+\DoxyCodeLine{161         grad\_input = t.zeros(self.in\_size).cuda()}
+\DoxyCodeLine{162         stream = \mbox{\hyperlink{namespacemodel_1_1roi__module_a9ff923badc2c06d001224f84946dcdcd}{Stream}}(ptr=torch.cuda.current\_stream().cuda\_stream)}
+\DoxyCodeLine{163         args = [grad\_output.data\_ptr(),}
+\DoxyCodeLine{164                 self.argmax\_data.data\_ptr(),}
+\DoxyCodeLine{165                 self.rois.data\_ptr(),}
+\DoxyCodeLine{166                 grad\_input.data\_ptr(),}
+\DoxyCodeLine{167                 self.N, self.spatial\_scale, C, H, W, self.outh, self.outw,}
+\DoxyCodeLine{168                 grad\_input.numel()]}
+\DoxyCodeLine{169         self.backward\_fn(args=args,}
+\DoxyCodeLine{170                          block=(CUDA\_NUM\_THREADS, 1, 1),}
+\DoxyCodeLine{171                          grid=(\mbox{\hyperlink{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}{GET\_BLOCKS}}(grad\_input.numel()), 1, 1),}
+\DoxyCodeLine{172                          stream=stream}
+\DoxyCodeLine{173                          )}
+\DoxyCodeLine{174         \textcolor{keywordflow}{return} grad\_input, \textcolor{keywordtype}{None}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1roi__module_1_1_ro_i_af28897926095ed848416bb3d35b1909a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_a0e717a33f2817f59f8dec8910379c162}\label{classmodel_1_1roi__module_1_1_ro_i_a0e717a33f2817f59f8dec8910379c162}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!forward@{forward}}
+\index{forward@{forward}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+Ro\+I.\+forward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{rois }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 134 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134     \textcolor{keyword}{def }forward(self, x, rois):}
+\DoxyCodeLine{135         \textcolor{comment}{\# NOTE: MAKE SURE input is contiguous too}}
+\DoxyCodeLine{136         x = x.contiguous()}
+\DoxyCodeLine{137         rois = rois.contiguous()}
+\DoxyCodeLine{138         self.in\_size = B, C, H, W = x.size()}
+\DoxyCodeLine{139         self.N = N = rois.size(0)}
+\DoxyCodeLine{140         output = t.zeros(N, C, self.outh, self.outw).cuda()}
+\DoxyCodeLine{141         self.argmax\_data = t.zeros(N, C, self.outh, self.outw).int().cuda()}
+\DoxyCodeLine{142         self.rois = rois}
+\DoxyCodeLine{143         args = [x.data\_ptr(), rois.data\_ptr(),}
+\DoxyCodeLine{144                 output.data\_ptr(),}
+\DoxyCodeLine{145                 self.argmax\_data.data\_ptr(),}
+\DoxyCodeLine{146                 self.spatial\_scale, C, H, W,}
+\DoxyCodeLine{147                 self.outh, self.outw,}
+\DoxyCodeLine{148                 output.numel()]}
+\DoxyCodeLine{149         stream = \mbox{\hyperlink{namespacemodel_1_1roi__module_a9ff923badc2c06d001224f84946dcdcd}{Stream}}(ptr=torch.cuda.current\_stream().cuda\_stream)}
+\DoxyCodeLine{150         self.forward\_fn(args=args,}
+\DoxyCodeLine{151                         block=(CUDA\_NUM\_THREADS, 1, 1),}
+\DoxyCodeLine{152                         grid=(\mbox{\hyperlink{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}{GET\_BLOCKS}}(output.numel()), 1, 1),}
+\DoxyCodeLine{153                         stream=stream)}
+\DoxyCodeLine{154         \textcolor{keywordflow}{return} output}
+\DoxyCodeLine{155 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1roi__module_1_1_ro_i_a0e717a33f2817f59f8dec8910379c162_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_a5b527de2166f57f08d53735387f7dbf9}\label{classmodel_1_1roi__module_1_1_ro_i_a5b527de2166f57f08d53735387f7dbf9}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!argmax\_data@{argmax\_data}}
+\index{argmax\_data@{argmax\_data}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{argmax\_data}{argmax\_data}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+argmax\+\_\+data}
+
+
+
+roi\+\_\+module.\+py 파일의 141 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_ae0e98dcc8a1ae19ff0095f8108d51530}\label{classmodel_1_1roi__module_1_1_ro_i_ae0e98dcc8a1ae19ff0095f8108d51530}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!backward\_fn@{backward\_fn}}
+\index{backward\_fn@{backward\_fn}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{backward\_fn}{backward\_fn}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+backward\+\_\+fn}
+
+
+
+roi\+\_\+module.\+py 파일의 131 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_a791ff4e5db749a233a53b73f0c31a74f}\label{classmodel_1_1roi__module_1_1_ro_i_a791ff4e5db749a233a53b73f0c31a74f}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!forward\_fn@{forward\_fn}}
+\index{forward\_fn@{forward\_fn}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{forward\_fn}{forward\_fn}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+forward\+\_\+fn}
+
+
+
+roi\+\_\+module.\+py 파일의 130 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_a159765a56eb90120ffb2a37fcf2831e8}\label{classmodel_1_1roi__module_1_1_ro_i_a159765a56eb90120ffb2a37fcf2831e8}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!in\_size@{in\_size}}
+\index{in\_size@{in\_size}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{in\_size}{in\_size}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+in\+\_\+size}
+
+
+
+roi\+\_\+module.\+py 파일의 138 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_aba9da1b7bff20a8c46de0e98231c636b}\label{classmodel_1_1roi__module_1_1_ro_i_aba9da1b7bff20a8c46de0e98231c636b}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!N@{N}}
+\index{N@{N}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+N}
+
+
+
+roi\+\_\+module.\+py 파일의 139 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_a01f951c4e45418ec2d7430743d14f10b}\label{classmodel_1_1roi__module_1_1_ro_i_a01f951c4e45418ec2d7430743d14f10b}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!rois@{rois}}
+\index{rois@{rois}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{rois}{rois}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+rois}
+
+
+
+roi\+\_\+module.\+py 파일의 142 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1roi__module_1_1_ro_i_afd84ed8dd2d5e19238e13c7da5cc280e}\label{classmodel_1_1roi__module_1_1_ro_i_afd84ed8dd2d5e19238e13c7da5cc280e}} 
+\index{model.roi\_module.RoI@{model.roi\_module.RoI}!spatial\_scale@{spatial\_scale}}
+\index{spatial\_scale@{spatial\_scale}!model.roi\_module.RoI@{model.roi\_module.RoI}}
+\doxysubsubsection{\texorpdfstring{spatial\_scale}{spatial\_scale}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Ro\+I.\+spatial\+\_\+scale}
+
+
+
+roi\+\_\+module.\+py 파일의 132 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{roi__module_8py}{roi\+\_\+module.\+py}}\end{DoxyCompactItemize}

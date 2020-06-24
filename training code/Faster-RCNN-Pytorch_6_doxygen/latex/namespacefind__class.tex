@@ -1,0 +1,99 @@
+\hypertarget{namespacefind__class}{}\doxysection{find\+\_\+class 네임스페이스 참조}
+\label{namespacefind__class}\index{find\_class@{find\_class}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefind__class_aa1d92bdb948df656837905069e49deda}{find\+\_\+class}} (class\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefind__class_a218bf8da157732fe193c6b2fe938ecbf}{searching\+\_\+class\+\_\+name}} = sys.\+argv\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}{parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\item 
+\mbox{\hyperlink{namespacefind__class_aa19831fcdd36c325ef54ad3dd4a4a2b0}{G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(\mbox{\hyperlink{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacefind__class_ab6990c7701c1219ed4269a1401a09e2b}{D\+R\+\_\+\+P\+A\+TH}} = os.\+path.\+join(\mbox{\hyperlink{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}detection-\/\mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}}\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacefind__class_aa1d92bdb948df656837905069e49deda}\label{namespacefind__class_aa1d92bdb948df656837905069e49deda}} 
+\index{find\_class@{find\_class}!find\_class@{find\_class}}
+\index{find\_class@{find\_class}!find\_class@{find\_class}}
+\doxysubsubsection{\texorpdfstring{find\_class()}{find\_class()}}
+{\footnotesize\ttfamily def find\+\_\+class.\+find\+\_\+class (\begin{DoxyParamCaption}\item[{}]{class\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+find\+\_\+class.\+py 파일의 14 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \textcolor{keyword}{def }\mbox{\hyperlink{namespacefind__class_aa1d92bdb948df656837905069e49deda}{find\_class}}(class\_name):}
+\DoxyCodeLine{15   file\_list = glob.glob(\textcolor{stringliteral}{'*.txt'})}
+\DoxyCodeLine{16   file\_list.sort()}
+\DoxyCodeLine{17   \textcolor{comment}{\# iterate through the text files}}
+\DoxyCodeLine{18   file\_found = \textcolor{keyword}{False}}
+\DoxyCodeLine{19   \textcolor{keywordflow}{for} txt\_file \textcolor{keywordflow}{in} file\_list:}
+\DoxyCodeLine{20     \textcolor{comment}{\# open txt file lines to a list}}
+\DoxyCodeLine{21     \textcolor{keyword}{with} open(txt\_file) \textcolor{keyword}{as} f:}
+\DoxyCodeLine{22       content = f.readlines()}
+\DoxyCodeLine{23     \textcolor{comment}{\# remove whitespace characters like `\(\backslash\)n` at the end of each line}}
+\DoxyCodeLine{24     content = [x.strip() \textcolor{keywordflow}{for} x \textcolor{keywordflow}{in} content]}
+\DoxyCodeLine{25     \textcolor{comment}{\# go through each line of eache file}}
+\DoxyCodeLine{26     \textcolor{keywordflow}{for} line \textcolor{keywordflow}{in} content:}
+\DoxyCodeLine{27       class\_name = line.split()[0]}
+\DoxyCodeLine{28       \textcolor{keywordflow}{if} class\_name == searching\_class\_name:}
+\DoxyCodeLine{29         print(\textcolor{stringliteral}{" "} + txt\_file)}
+\DoxyCodeLine{30         file\_found = \textcolor{keyword}{True}}
+\DoxyCodeLine{31         \textcolor{keywordflow}{break}}
+\DoxyCodeLine{32   \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} file\_found:}
+\DoxyCodeLine{33     print(\textcolor{stringliteral}{" No file found with that class"})}
+\DoxyCodeLine{34 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespacefind__class_ab6990c7701c1219ed4269a1401a09e2b}\label{namespacefind__class_ab6990c7701c1219ed4269a1401a09e2b}} 
+\index{find\_class@{find\_class}!DR\_PATH@{DR\_PATH}}
+\index{DR\_PATH@{DR\_PATH}!find\_class@{find\_class}}
+\doxysubsubsection{\texorpdfstring{DR\_PATH}{DR\_PATH}}
+{\footnotesize\ttfamily find\+\_\+class.\+D\+R\+\_\+\+P\+A\+TH = os.\+path.\+join(\mbox{\hyperlink{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}detection-\/\mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}}\textquotesingle{})}
+
+
+
+find\+\_\+class.\+py 파일의 38 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacefind__class_aa19831fcdd36c325ef54ad3dd4a4a2b0}\label{namespacefind__class_aa19831fcdd36c325ef54ad3dd4a4a2b0}} 
+\index{find\_class@{find\_class}!GT\_PATH@{GT\_PATH}}
+\index{GT\_PATH@{GT\_PATH}!find\_class@{find\_class}}
+\doxysubsubsection{\texorpdfstring{GT\_PATH}{GT\_PATH}}
+{\footnotesize\ttfamily find\+\_\+class.\+G\+T\+\_\+\+P\+A\+TH = os.\+path.\+join(\mbox{\hyperlink{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})}
+
+
+
+find\+\_\+class.\+py 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}\label{namespacefind__class_acc5d7e39b09eb9b42a546ac39bcf69b8}} 
+\index{find\_class@{find\_class}!parent\_path@{parent\_path}}
+\index{parent\_path@{parent\_path}!find\_class@{find\_class}}
+\doxysubsubsection{\texorpdfstring{parent\_path}{parent\_path}}
+{\footnotesize\ttfamily find\+\_\+class.\+parent\+\_\+path = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))}
+
+
+
+find\+\_\+class.\+py 파일의 35 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacefind__class_a218bf8da157732fe193c6b2fe938ecbf}\label{namespacefind__class_a218bf8da157732fe193c6b2fe938ecbf}} 
+\index{find\_class@{find\_class}!searching\_class\_name@{searching\_class\_name}}
+\index{searching\_class\_name@{searching\_class\_name}!find\_class@{find\_class}}
+\doxysubsubsection{\texorpdfstring{searching\_class\_name}{searching\_class\_name}}
+{\footnotesize\ttfamily find\+\_\+class.\+searching\+\_\+class\+\_\+name = sys.\+argv\mbox{[}1\mbox{]}}
+
+
+
+find\+\_\+class.\+py 파일의 12 번째 라인에서 정의되었습니다.
+

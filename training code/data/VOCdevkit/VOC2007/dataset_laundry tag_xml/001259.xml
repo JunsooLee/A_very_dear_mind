@@ -1,0 +1,38 @@
+<annotation>
+	<folder>한진 1297부터1463까지_라벨링하는중</folder>
+	<filename>001358.jpg</filename>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\한진 1297부터1463까지_라벨링하는중\001358.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>439</width>
+		<height>245</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_bleach</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>136</xmin>
+			<ymin>16</ymin>
+			<xmax>189</xmax>
+			<ymax>67</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>306</xmin>
+			<ymin>1</ymin>
+			<xmax>358</xmax>
+			<ymax>44</ymax>
+		</bndbox>
+	</object>
+</annotation>

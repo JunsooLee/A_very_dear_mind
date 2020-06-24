@@ -1,0 +1,162 @@
+\hypertarget{namespacemodel_1_1roi__module}{}\doxysection{model.\+roi\+\_\+module 네임스페이스 참조}
+\label{namespacemodel_1_1roi__module}\index{model.roi\_module@{model.roi\_module}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i}{RoI}}
+\item 
+class \mbox{\hyperlink{classmodel_1_1roi__module_1_1_ro_i_pooling2_d}{Ro\+I\+Pooling2D}}
+\item 
+class \mbox{\hyperlink{classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head}{V\+G\+G16\+Ro\+I\+Head}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}{normal\+\_\+init}} (m, mean, stddev, \mbox{\hyperlink{_v_o_creadrecxml_8m_a3807f4dd35ddd959bc96e9682277d72d}{truncated}}=False)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}{load\+\_\+kernel}} (kernel\+\_\+name, code, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}{G\+E\+T\+\_\+\+B\+L\+O\+C\+KS}} (N, K=\mbox{\hyperlink{namespacemodel_1_1roi__module_a2f2ddbdad0d2d25503ba4e2aca3331c3}{C\+U\+D\+A\+\_\+\+N\+U\+M\+\_\+\+T\+H\+R\+E\+A\+DS}})
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemodel_1_1roi__module_a9ff923badc2c06d001224f84946dcdcd}{Stream}} = namedtuple(\textquotesingle{}Stream\textquotesingle{}, \mbox{[}\textquotesingle{}ptr\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacemodel_1_1roi__module_a1ca547bd09f56c3d45369c3bb3b45e6f}{for\+\_\+each\+\_\+device}}
+\item 
+int \mbox{\hyperlink{namespacemodel_1_1roi__module_a2f2ddbdad0d2d25503ba4e2aca3331c3}{C\+U\+D\+A\+\_\+\+N\+U\+M\+\_\+\+T\+H\+R\+E\+A\+DS}} = 1024
+\item 
+string \mbox{\hyperlink{namespacemodel_1_1roi__module_a43acb367b82b7de3b1adfd0c4d588228}{kernel\+\_\+forward}}
+\item 
+string \mbox{\hyperlink{namespacemodel_1_1roi__module_a0763d2aae1fe7a59ac3dc0c4304d9e1c}{kernel\+\_\+backward}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}\label{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}} 
+\index{model.roi\_module@{model.roi\_module}!GET\_BLOCKS@{GET\_BLOCKS}}
+\index{GET\_BLOCKS@{GET\_BLOCKS}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{GET\_BLOCKS()}{GET\_BLOCKS()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+G\+E\+T\+\_\+\+B\+L\+O\+C\+KS (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{K = {\ttfamily \mbox{\hyperlink{namespacemodel_1_1roi__module_a2f2ddbdad0d2d25503ba4e2aca3331c3}{C\+U\+D\+A\+\_\+\+N\+U\+M\+\_\+\+T\+H\+R\+E\+A\+DS}}} }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 108 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b}{GET\_BLOCKS}}(N, K=CUDA\_NUM\_THREADS):}
+\DoxyCodeLine{109     \textcolor{keywordflow}{return} (N + K -\/ 1) // K}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1roi__module_a3f65478f8417e866dc878634aa42e76b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}\label{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}} 
+\index{model.roi\_module@{model.roi\_module}!load\_kernel@{load\_kernel}}
+\index{load\_kernel@{load\_kernel}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{load\_kernel()}{load\_kernel()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+load\+\_\+kernel (\begin{DoxyParamCaption}\item[{}]{kernel\+\_\+name,  }\item[{}]{code,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+roi\+\_\+module.\+py 파일의 98 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1roi__module_a243472e2a3a05e57c4f196330bd83aa6}{load\_kernel}}(kernel\_name, code, **kwargs):}
+\DoxyCodeLine{99     cp.cuda.runtime.free(0)}
+\DoxyCodeLine{100     code = Template(code).substitute(**kwargs)}
+\DoxyCodeLine{101     kernel\_code = cupy.cuda.compile\_with\_cache(code)}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} kernel\_code.get\_function(kernel\_name)}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}\label{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}} 
+\index{model.roi\_module@{model.roi\_module}!normal\_init@{normal\_init}}
+\index{normal\_init@{normal\_init}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{normal\_init()}{normal\_init()}}
+{\footnotesize\ttfamily def model.\+roi\+\_\+module.\+normal\+\_\+init (\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{mean,  }\item[{}]{stddev,  }\item[{}]{truncated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}weight initalizer: truncated normal and random normal.
+\end{DoxyVerb}
+ 
+
+roi\+\_\+module.\+py 파일의 12 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1roi__module_a057696dc8511e8d7420054be9ca3cee7}{normal\_init}}(m, mean, stddev, truncated=False):}
+\DoxyCodeLine{13     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{    weight initalizer: truncated normal and random normal.}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{16     \textcolor{comment}{\# x is a parameter}}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if} truncated:}
+\DoxyCodeLine{18         m.weight.data.normal\_().fmod\_(2).mul\_(stddev).add\_(mean)  \textcolor{comment}{\# not a perfect approximation}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{20         m.weight.data.normal\_(mean, stddev)}
+\DoxyCodeLine{21         m.bias.data.zero\_()}
+\DoxyCodeLine{22 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a2f2ddbdad0d2d25503ba4e2aca3331c3}\label{namespacemodel_1_1roi__module_a2f2ddbdad0d2d25503ba4e2aca3331c3}} 
+\index{model.roi\_module@{model.roi\_module}!CUDA\_NUM\_THREADS@{CUDA\_NUM\_THREADS}}
+\index{CUDA\_NUM\_THREADS@{CUDA\_NUM\_THREADS}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{CUDA\_NUM\_THREADS}{CUDA\_NUM\_THREADS}}
+{\footnotesize\ttfamily int model.\+roi\+\_\+module.\+C\+U\+D\+A\+\_\+\+N\+U\+M\+\_\+\+T\+H\+R\+E\+A\+DS = 1024}
+
+
+
+roi\+\_\+module.\+py 파일의 105 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a1ca547bd09f56c3d45369c3bb3b45e6f}\label{namespacemodel_1_1roi__module_a1ca547bd09f56c3d45369c3bb3b45e6f}} 
+\index{model.roi\_module@{model.roi\_module}!for\_each\_device@{for\_each\_device}}
+\index{for\_each\_device@{for\_each\_device}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{for\_each\_device}{for\_each\_device}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+for\+\_\+each\+\_\+device}
+
+
+
+roi\+\_\+module.\+py 파일의 97 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a0763d2aae1fe7a59ac3dc0c4304d9e1c}\label{namespacemodel_1_1roi__module_a0763d2aae1fe7a59ac3dc0c4304d9e1c}} 
+\index{model.roi\_module@{model.roi\_module}!kernel\_backward@{kernel\_backward}}
+\index{kernel\_backward@{kernel\_backward}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{kernel\_backward}{kernel\_backward}}
+{\footnotesize\ttfamily string model.\+roi\+\_\+module.\+kernel\+\_\+backward}
+
+
+
+roi\+\_\+module.\+py 파일의 244 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a43acb367b82b7de3b1adfd0c4d588228}\label{namespacemodel_1_1roi__module_a43acb367b82b7de3b1adfd0c4d588228}} 
+\index{model.roi\_module@{model.roi\_module}!kernel\_forward@{kernel\_forward}}
+\index{kernel\_forward@{kernel\_forward}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{kernel\_forward}{kernel\_forward}}
+{\footnotesize\ttfamily string model.\+roi\+\_\+module.\+kernel\+\_\+forward}
+
+
+
+roi\+\_\+module.\+py 파일의 181 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacemodel_1_1roi__module_a9ff923badc2c06d001224f84946dcdcd}\label{namespacemodel_1_1roi__module_a9ff923badc2c06d001224f84946dcdcd}} 
+\index{model.roi\_module@{model.roi\_module}!Stream@{Stream}}
+\index{Stream@{Stream}!model.roi\_module@{model.roi\_module}}
+\doxysubsubsection{\texorpdfstring{Stream}{Stream}}
+{\footnotesize\ttfamily model.\+roi\+\_\+module.\+Stream = namedtuple(\textquotesingle{}Stream\textquotesingle{}, \mbox{[}\textquotesingle{}ptr\textquotesingle{}\mbox{]})}
+
+
+
+roi\+\_\+module.\+py 파일의 94 번째 라인에서 정의되었습니다.
+

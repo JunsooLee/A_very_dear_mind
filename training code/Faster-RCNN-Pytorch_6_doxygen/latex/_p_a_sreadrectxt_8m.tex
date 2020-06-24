@@ -1,0 +1,204 @@
+\hypertarget{_p_a_sreadrectxt_8m}{}\doxysection{data/\+V\+O\+Cdevkit/\+V\+O\+Ccode/\+P\+A\+Sreadrectxt.m 파일 참조}
+\label{_p_a_sreadrectxt_8m}\index{data/VOCdevkit/VOCcode/PASreadrectxt.m@{data/VOCdevkit/VOCcode/PASreadrectxt.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a27e52935d2f2d4e1e166180105da2394}{if}} (\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}==-\/1)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a753c1932c75a7840ff734e0271ee6bad}{P\+A\+Serrmsg}} (\mbox{\hyperlink{_p_a_sreadrectxt_8m_a41c1c104698a79a3c40baa6a16bd6012}{P\+A\+Smsg}}, syserrmsg)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_af44bfed821f87e4d9da785c0dc1983a2}{while}} (\mbox{\hyperlink{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}{not\+E\+OF}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a3a59377ff4f4cf26f1b2d95a59779909}{if}} (\mbox{\hyperlink{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}{not\+E\+OF}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{objects}} (obj).\mbox{\hyperlink{_v_o_creadrecxml_8m_a595dd0a82388b0f915674513f072ccda}{label}}
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a41c1c104698a79a3c40baa6a16bd6012}{P\+A\+Smsg}} =sprintf(\textquotesingle{}Could not open \%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} for reading\textquotesingle{},filename)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_ad82d2fc91cb1ddb85d6d133814ee849e}{matchstrs}} =initstrings
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}{not\+E\+OF}} =1
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}} =fgetl(\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_ae17f1277b9528527a5cadeae33660a54}{matchnum}} =match(\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}},\mbox{\hyperlink{_p_a_sreadrectxt_8m_ad82d2fc91cb1ddb85d6d133814ee849e}{matchstrs}})
+\item 
+switch \mbox{\hyperlink{_p_a_sreadrectxt_8m_a97ee6abe7d21ae63d3399f62a2abd639}{case}}
+\item 
+switch \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_acc7536b522669f662d0054b15e86ad59}{imgname}} =char(imgname)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_a366519cccaef45faaed66df16be984cd}{imgsize}} =\mbox{[}\mbox{\hyperlink{_v_o_creadrecxml_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}} y \mbox{\hyperlink{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}{c}}\mbox{]}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_a3095fca25c460220855bbd3de86c2adc}{database}} =char(database)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_ab817851e1ff98f713358ea03223cf91d}{tmp}} =findstr(\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}},\textquotesingle{} \+: \textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a27e52935d2f2d4e1e166180105da2394}\label{_p_a_sreadrectxt_8m_a27e52935d2f2d4e1e166180105da2394}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!if@{if}}
+\index{if@{if}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}}}]{ = {\ttfamily =-\/1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a3a59377ff4f4cf26f1b2d95a59779909}\label{_p_a_sreadrectxt_8m_a3a59377ff4f4cf26f1b2d95a59779909}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!if@{if}}
+\index{if@{if}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}{not\+E\+OF}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}\label{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!objects@{objects}}
+\index{objects@{objects}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{objects()}{objects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} objects (\begin{DoxyParamCaption}\item[{obj}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a753c1932c75a7840ff734e0271ee6bad}\label{_p_a_sreadrectxt_8m_a753c1932c75a7840ff734e0271ee6bad}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!PASerrmsg@{PASerrmsg}}
+\index{PASerrmsg@{PASerrmsg}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{PASerrmsg()}{PASerrmsg()}}
+{\footnotesize\ttfamily P\+A\+Serrmsg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_sreadrectxt_8m_a41c1c104698a79a3c40baa6a16bd6012}{P\+A\+Smsg}}}]{,  }\item[{syserrmsg}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_af44bfed821f87e4d9da785c0dc1983a2}\label{_p_a_sreadrectxt_8m_af44bfed821f87e4d9da785c0dc1983a2}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!while@{while}}
+\index{while@{while}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{while()}{while()}}
+{\footnotesize\ttfamily while (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}{not\+E\+OF}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a97ee6abe7d21ae63d3399f62a2abd639}\label{_p_a_sreadrectxt_8m_a97ee6abe7d21ae63d3399f62a2abd639}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!case@{case}}
+\index{case@{case}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily case}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 16 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a3095fca25c460220855bbd3de86c2adc}\label{_p_a_sreadrectxt_8m_a3095fca25c460220855bbd3de86c2adc}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!database@{database}}
+\index{database@{database}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{database}{database}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} database =char(database)}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 22 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}\label{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!end@{end}}
+\index{end@{end}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily end}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 6 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_acc7536b522669f662d0054b15e86ad59}\label{_p_a_sreadrectxt_8m_acc7536b522669f662d0054b15e86ad59}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!imgname@{imgname}}
+\index{imgname@{imgname}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{imgname}{imgname}}
+{\footnotesize\ttfamily switch \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} imgname =char(imgname)}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 18 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a366519cccaef45faaed66df16be984cd}\label{_p_a_sreadrectxt_8m_a366519cccaef45faaed66df16be984cd}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!imgsize@{imgsize}}
+\index{imgsize@{imgsize}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{imgsize}{imgsize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} imgsize =\mbox{[}\mbox{\hyperlink{_v_o_creadrecxml_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}} y \mbox{\hyperlink{example__classifier_8m_ae0323a9039add2978bf5b49550572c7c}{c}}\mbox{]}}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 20 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}\label{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!line@{line}}
+\index{line@{line}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily line =fgetl(\mbox{\hyperlink{example__classifier_8m_a3a395a1d43df301fb7786d0285b3fa52}{fd}})}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_ae17f1277b9528527a5cadeae33660a54}\label{_p_a_sreadrectxt_8m_ae17f1277b9528527a5cadeae33660a54}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!matchnum@{matchnum}}
+\index{matchnum@{matchnum}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{matchnum}{matchnum}}
+{\footnotesize\ttfamily switch matchnum =match(\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}},\mbox{\hyperlink{_p_a_sreadrectxt_8m_ad82d2fc91cb1ddb85d6d133814ee849e}{matchstrs}})}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 15 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_ad82d2fc91cb1ddb85d6d133814ee849e}\label{_p_a_sreadrectxt_8m_ad82d2fc91cb1ddb85d6d133814ee849e}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!matchstrs@{matchstrs}}
+\index{matchstrs@{matchstrs}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{matchstrs}{matchstrs}}
+{\footnotesize\ttfamily matchstrs =initstrings}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 8 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}\label{_p_a_sreadrectxt_8m_ac5d52966a620316b22674a97c63a7499}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!notEOF@{notEOF}}
+\index{notEOF@{notEOF}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{notEOF}{notEOF}}
+{\footnotesize\ttfamily not\+E\+OF =1}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a41c1c104698a79a3c40baa6a16bd6012}\label{_p_a_sreadrectxt_8m_a41c1c104698a79a3c40baa6a16bd6012}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!PASmsg@{PASmsg}}
+\index{PASmsg@{PASmsg}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{PASmsg}{PASmsg}}
+{\footnotesize\ttfamily P\+A\+Smsg =sprintf(\textquotesingle{}Could not open \%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} for reading\textquotesingle{},filename)}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 4 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}\label{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!record@{record}}
+\index{record@{record}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{record}{record}}
+{\footnotesize\ttfamily record}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=PASreadrectxt(filename)}
+\DoxyCodeLine{  [fd,syserrmsg]=fopen(filename,\textcolor{stringliteral}{'rt'})}
+
+\end{DoxyCode}
+
+
+P\+A\+Sreadrectxt.\+m 파일의 1 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_p_a_sreadrectxt_8m_ab817851e1ff98f713358ea03223cf91d}\label{_p_a_sreadrectxt_8m_ab817851e1ff98f713358ea03223cf91d}} 
+\index{PASreadrectxt.m@{PASreadrectxt.m}!tmp@{tmp}}
+\index{tmp@{tmp}!PASreadrectxt.m@{PASreadrectxt.m}}
+\doxysubsubsection{\texorpdfstring{tmp}{tmp}}
+{\footnotesize\ttfamily tmp =findstr(\mbox{\hyperlink{_p_a_sreadrectxt_8m_a4fa05b1f00fcde100685cc887554b93b}{line}},\textquotesingle{} \+: \textquotesingle{})}
+
+
+
+P\+A\+Sreadrectxt.\+m 파일의 26 번째 라인에서 정의되었습니다.
+

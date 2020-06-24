@@ -1,0 +1,99 @@
+\hypertarget{namespacemodel_1_1utils_1_1rpn__gt__loc__label}{}\doxysection{model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label 네임스페이스 참조}
+\label{namespacemodel_1_1utils_1_1rpn__gt__loc__label}\index{model.utils.rpn\_gt\_loc\_label@{model.utils.rpn\_gt\_loc\_label}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator}{Anchor\+Target\+Creator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}{\+\_\+unmap}} (data, count, index, fill=0)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621}{\+\_\+get\+\_\+inside\+\_\+index}} (anchor, H, W)
+\begin{DoxyCompactList}\small\item\em 이미지 안에있는 anchor 박스의 index 반환 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621}\label{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621}} 
+\index{model.utils.rpn\_gt\_loc\_label@{model.utils.rpn\_gt\_loc\_label}!\_get\_inside\_index@{\_get\_inside\_index}}
+\index{\_get\_inside\_index@{\_get\_inside\_index}!model.utils.rpn\_gt\_loc\_label@{model.utils.rpn\_gt\_loc\_label}}
+\doxysubsubsection{\texorpdfstring{\_get\_inside\_index()}{\_get\_inside\_index()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+\_\+get\+\_\+inside\+\_\+index (\begin{DoxyParamCaption}\item[{}]{anchor,  }\item[{}]{H,  }\item[{}]{W }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+이미지 안에있는 anchor 박스의 index 반환 
+
+
+\begin{DoxyParams}{매개변수}
+{\em anchor} & F.\+M 한 픽셀당 9개의 anchor 좌표 초기값, shape = (H $\ast$ W $\ast$ A, 4) \\
+\hline
+{\em H} & image height \\
+\hline
+{\em W} & image width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+index\+\_\+inside \+: 이미지 size 안에 있는 anchor의 index 
+\end{DoxyReturn}
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 177 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{177 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621}{\_get\_inside\_index}}(anchor, H, W):}
+\DoxyCodeLine{178     \textcolor{comment}{\# Calc indicies of anchors which are located completely inside of the image}}
+\DoxyCodeLine{179     \textcolor{comment}{\# whose size is speficied.}}
+\DoxyCodeLine{180     index\_inside = np.where(}
+\DoxyCodeLine{181         (anchor[:, 0] >= 0) \&}
+\DoxyCodeLine{182         (anchor[:, 1] >= 0) \&}
+\DoxyCodeLine{183         (anchor[:, 2] <= H) \&}
+\DoxyCodeLine{184         (anchor[:, 3] <= W)}
+\DoxyCodeLine{185     )[0]}
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} index\_inside}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a898b2447d0eb22885e5d561283e22621_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}\label{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}} 
+\index{model.utils.rpn\_gt\_loc\_label@{model.utils.rpn\_gt\_loc\_label}!\_unmap@{\_unmap}}
+\index{\_unmap@{\_unmap}!model.utils.rpn\_gt\_loc\_label@{model.utils.rpn\_gt\_loc\_label}}
+\doxysubsubsection{\texorpdfstring{\_unmap()}{\_unmap()}}
+{\footnotesize\ttfamily def model.\+utils.\+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+\_\+unmap (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{count,  }\item[{}]{index,  }\item[{}]{fill = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rpn\+\_\+gt\+\_\+loc\+\_\+label.\+py 파일의 155 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{155 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d}{\_unmap}}(data, count, index, fill=0):}
+\DoxyCodeLine{156     \textcolor{comment}{\# Unmap a subset of item (data) back to the original set of items (of size count)}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{keywordflow}{if} len(data.shape) == 1:}
+\DoxyCodeLine{159         ret = np.empty((count,), dtype=data.dtype)}
+\DoxyCodeLine{160         ret.fill(fill)}
+\DoxyCodeLine{161         ret[index] = data}
+\DoxyCodeLine{162     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{163         ret = np.empty((count,) + data.shape[1:], dtype=data.dtype)}
+\DoxyCodeLine{164         ret.fill(fill)}
+\DoxyCodeLine{165         ret[index, :] = data}
+\DoxyCodeLine{166     \textcolor{keywordflow}{return} ret}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1rpn__gt__loc__label_a85478a1ea4aacd6dcbe2abdbe101bd4d_icgraph}
+\end{center}
+\end{figure}

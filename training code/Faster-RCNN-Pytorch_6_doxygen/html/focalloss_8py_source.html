@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: focalloss.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('focalloss_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">focalloss.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="focalloss_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacefocalloss.html">    1</a></span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> torch</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfocalloss_1_1_focal_loss.html">FocalLoss</a>(nn.Module):</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">    This is a implementation of Focal Loss with smooth label cross entropy supported which is proposed in</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">    &#39;Focal Loss for Dense Object Detection. (https://arxiv.org/abs/1708.02002)&#39;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">        Focal_Loss= -1*alpha*(1-pt)*log(pt)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">    :param num_class:</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    :param alpha: (tensor) 3D or 4D the scalar factor for this criterion</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">    :param gamma: (float,double) gamma &gt; 0 reduces the relative loss for well-classified examples (p&gt;0.5) putting more</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">                    focus on hard misclassified example</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    :param smooth: (float,double) smooth value when cross entropy</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">    :param balance_index: (int) balance class index, should be specific when alpha is float</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    :param size_average: (bool, optional) By default, the losses are averaged over each loss element in the batch.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#a40c2ae062c14be9d1aad73ecd13dc26d">   21</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classfocalloss_1_1_focal_loss.html#a40c2ae062c14be9d1aad73ecd13dc26d">__init__</a>(self, num_class, alpha=None, gamma=2, balance_index=-1, smooth=None, size_average=True):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        super(FocalLoss, self).<a class="code" href="classfocalloss_1_1_focal_loss.html#a40c2ae062c14be9d1aad73ecd13dc26d">__init__</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">   23</a></span>&#160;        self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a> = num_class</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">   24</a></span>&#160;        self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> = alpha</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#a52154ded28d0d1a380426bf424826333">   25</a></span>&#160;        self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a52154ded28d0d1a380426bf424826333">gamma</a> = gamma</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">   26</a></span>&#160;        self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a> = smooth</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#acee76026e00b15e72a6407fba475dedb">   27</a></span>&#160;        self.<a class="code" href="classfocalloss_1_1_focal_loss.html#acee76026e00b15e72a6407fba475dedb">size_average</a> = size_average</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> = torch.ones(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a>, 1)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">elif</span> isinstance(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a>, (list, np.ndarray)):</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">assert</span> len(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a>) == self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> = torch.FloatTensor(alpha).<a class="code" href="_p_a_semptyobject_8m.html#a6aa4664b4936f59c6ece3778daf31ec3">view</a>(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a>, 1)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> = self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> / self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a>.sum()</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">elif</span> isinstance(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a>, float):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            alpha = torch.ones(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a>, 1)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            alpha = alpha * (1 - self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            alpha[balance_index] = self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a> = alpha</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">raise</span> TypeError(<span class="stringliteral">&#39;Not support alpha type&#39;</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a> &lt; 0 <span class="keywordflow">or</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a> &gt; 1.0:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;smooth value should be in [0,1]&#39;</span>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classfocalloss_1_1_focal_loss.html#ae78d55934dcd11768e764948b2abe665">   47</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classfocalloss_1_1_focal_loss.html#ae78d55934dcd11768e764948b2abe665">forward</a>(self, logit, target):</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> logit.dim() &gt; 2:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment"># N,C,d1,d2 -&gt; N,C,m (m=d1*d2*...)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            logit = logit.view(logit.size(0), logit.size(1), -1)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            logit = logit.permute(0, 2, 1).contiguous()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            logit = logit.view(-1, logit.size(-1))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        target = target.view(-1, 1)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        epsilon = 1e-10</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        alpha = self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">alpha</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> alpha.device != logit.device:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            alpha = alpha.to(logit.device)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        idx = target.cpu().long()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        one_hot_key = torch.FloatTensor(target.size(0), self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a>).zero_()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        one_hot_key = one_hot_key.scatter_(1, idx, 1)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> one_hot_key.device != logit.device:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            one_hot_key = one_hot_key.to(logit.device)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            one_hot_key = torch.clamp(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                one_hot_key, self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a>/(self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">num_class</a>-1), 1.0 - self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">smooth</a>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        pt = (one_hot_key * logit).sum(1) + epsilon</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        logpt = pt.log()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        gamma = self.<a class="code" href="classfocalloss_1_1_focal_loss.html#a52154ded28d0d1a380426bf424826333">gamma</a></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        alpha_class = alpha[idx]</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        loss = -1 * alpha_class * torch.pow((1 - pt), gamma) * logpt</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="classfocalloss_1_1_focal_loss.html#acee76026e00b15e72a6407fba475dedb">size_average</a>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            loss = loss.mean()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            loss = loss.sum()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> loss</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_a306e325b1551a4e3a0d77b40760238d4"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#a306e325b1551a4e3a0d77b40760238d4">focalloss.FocalLoss.alpha</a></div><div class="ttdeci">alpha</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00024">focalloss.py:24</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_ae78d55934dcd11768e764948b2abe665"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#ae78d55934dcd11768e764948b2abe665">focalloss.FocalLoss.forward</a></div><div class="ttdeci">def forward(self, logit, target)</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00047">focalloss.py:47</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_acee76026e00b15e72a6407fba475dedb"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#acee76026e00b15e72a6407fba475dedb">focalloss.FocalLoss.size_average</a></div><div class="ttdeci">size_average</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00027">focalloss.py:27</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_a40c2ae062c14be9d1aad73ecd13dc26d"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#a40c2ae062c14be9d1aad73ecd13dc26d">focalloss.FocalLoss.__init__</a></div><div class="ttdeci">def __init__(self, num_class, alpha=None, gamma=2, balance_index=-1, smooth=None, size_average=True)</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00021">focalloss.py:21</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_a52154ded28d0d1a380426bf424826333"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#a52154ded28d0d1a380426bf424826333">focalloss.FocalLoss.gamma</a></div><div class="ttdeci">gamma</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00025">focalloss.py:25</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_a81f649b6cb397906201b8f6e831bdc10"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10">focalloss.FocalLoss.num_class</a></div><div class="ttdeci">num_class</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00023">focalloss.py:23</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html">focalloss.FocalLoss</a></div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00007">focalloss.py:7</a></div></div>
+<div class="ttc" id="a_p_a_semptyobject_8m_html_a6aa4664b4936f59c6ece3778daf31ec3"><div class="ttname"><a href="_p_a_semptyobject_8m.html#a6aa4664b4936f59c6ece3778daf31ec3">view</a></div><div class="ttdeci">object view</div><div class="ttdef"><b>Definition:</b> <a href="_p_a_semptyobject_8m_source.html#l00008">PASemptyobject.m:8</a></div></div>
+<div class="ttc" id="aclassfocalloss_1_1_focal_loss_html_a8764505235a0e47af1a26a358c89f1d8"><div class="ttname"><a href="classfocalloss_1_1_focal_loss.html#a8764505235a0e47af1a26a358c89f1d8">focalloss.FocalLoss.smooth</a></div><div class="ttdeci">smooth</div><div class="ttdef"><b>Definition:</b> <a href="focalloss_8py_source.html#l00026">focalloss.py:26</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="focalloss_8py.html">focalloss.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

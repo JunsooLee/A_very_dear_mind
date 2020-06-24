@@ -1,0 +1,4 @@
+<map id="data.util.read_image" name="data.util.read_image">
+<area shape="rect" id="node1" title=" " alt="" coords="236,13,375,39"/>
+<area shape="rect" id="node2" href="$classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#aba91794ab3cbe768911a30be5d0df90b" title="input image에 대한 정보(B.B, label)를 return 해주는 함수" alt="" coords="5,5,188,47"/>
+</map>

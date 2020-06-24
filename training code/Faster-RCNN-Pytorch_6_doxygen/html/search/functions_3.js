@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['caffe_5fnormalize_771',['caffe_normalize',['../namespacedata_1_1dataset.html#a9b4358cad3e2d16ef8c2c02e4cc0035f',1,'data::dataset']]],
+  ['calc_5fdetection_5fvoc_5fap_772',['calc_detection_voc_ap',['../namespaceutils_1_1eval__tool.html#abfdbc599564c3a388613f89a1b18f202',1,'utils::eval_tool']]],
+  ['calc_5fdetection_5fvoc_5fprec_5frec_773',['calc_detection_voc_prec_rec',['../namespaceutils_1_1eval__tool.html#a4c3aa581f1fb0e3db8877b9c50b648f3',1,'utils::eval_tool']]],
+  ['changeluminance_774',['ChangeLuminance',['../namespacedata_1_1dataset.html#a4f8359606b87375eb169724c39b8d727',1,'data::dataset']]],
+  ['cmap_775',['cmap',['../_v_o_clabelcolormap_8m.html#a1e14008880e05f69a3194184ef7aaacb',1,'cmap(i, 1):&#160;VOClabelcolormap.m'],['../_v_o_clabelcolormap_8m.html#ab18bc5ac351d148c5c3337135433503e',1,'cmap(i, 2):&#160;VOClabelcolormap.m'],['../_v_o_clabelcolormap_8m.html#a33382ecd401f9fc557d9017cdc4cc47e',1,'cmap(i, 3):&#160;VOClabelcolormap.m']]],
+  ['convert_5fyolo_5fcoordinates_5fto_5fvoc_776',['convert_yolo_coordinates_to_voc',['../namespaceconvert__gt__yolo.html#a950bc08a96ff9eb8fd8ee93c674f8bbb',1,'convert_gt_yolo']]],
+  ['copyfile_777',['copyfile',['../create__segmentations__from__detections_8m.html#aadb1b29f5c78cd3e91fed1b719699f09',1,'create_segmentations_from_detections.m']]],
+  ['create_5fsegmentations_5ffrom_5fdetections_778',['CREATE_SEGMENTATIONS_FROM_DETECTIONS',['../create__segmentations__from__detections_8m.html#afbb56728f3be5c2f09781b87295c94c4',1,'CREATE_SEGMENTATIONS_FROM_DETECTIONS(ID) creates segmentations from % the detection results with identifier ID e.g. &apos;comp3&apos;. All detections % will be used:&#160;create_segmentations_from_detections.m'],['../create__segmentations__from__detections_8m.html#ae1c555e5aa860a1101f87ac34d07ce0f',1,'CREATE_SEGMENTATIONS_FROM_DETECTIONS(ID, CONFIDENCE) as above:&#160;create_segmentations_from_detections.m'],['../create__segmentations__from__detections_8m.html#a43a553d7acf530851b2b315b31c8039f',1,'create_segmentations_from_detections(id, confidence) if nargin&lt; 2 confidence:&#160;create_segmentations_from_detections.m'],['../example__segmenter_8m.html#a3661443d6a9371845c82f0041ac8f560',1,'create_segmentations_from_detections(&apos;comp3&apos;, 1) VOCevalseg(VOCopts:&#160;example_segmenter.m']]],
+  ['crop_5fbbox_779',['crop_bbox',['../namespacedata_1_1util.html#a19153a63d60e5697a60821b2c574c5a8',1,'data::util']]]
+];

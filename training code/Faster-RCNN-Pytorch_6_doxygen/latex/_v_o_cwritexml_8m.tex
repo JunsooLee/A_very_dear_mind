@@ -1,0 +1,206 @@
+\hypertarget{_v_o_cwritexml_8m}{}\doxysection{data/\+V\+O\+Cdevkit/\+V\+O\+Ccode/\+V\+O\+Cwritexml.m 파일 참조}
+\label{_v_o_cwritexml_8m}\index{data/VOCdevkit/VOCcode/VOCwritexml.m@{data/VOCdevkit/VOCcode/VOCwritexml.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} \mbox{\hyperlink{_v_o_cwritexml_8m_abbd12f24bdd6e67a818a70fad327e8b7}{V\+O\+Cwritexml}} (\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, path) \mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a9378c1abb00e81198716a1becafca1f3}{writexml}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}, \mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, 0)
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a5e769bbbabcaddc548203741c7100228}{fclose}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a590875873f68bf8f7507ce1415016414}{$\sim$isempty}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}) \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} isstruct(\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}) for \mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_ae79c444fa33b6c8ea5dd3b133018c873}{fprintf}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textquotesingle{}$<$\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textbackslash{}n\textquotesingle{}, fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a69e5c8d3b24d183dd8f2c838383967a7}{writexml}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}, rec.(fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}), \mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}}+1)
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a978e60bae7f548ab27acd03de92aeb9b}{fprintf}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}\textquotesingle{}, repmat(char(9), 1, \mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}}))
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a218e30dcc2f1f602d5aa4c4cdbb1d498}{fprintf}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textquotesingle{}$<$/\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textbackslash{}n\textquotesingle{}, fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} else \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a763ecc04e35d10f55ec21fa0fda451a6}{$\sim$iscell}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}) \mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}
+\item 
+\mbox{\hyperlink{_v_o_cwritexml_8m_a98c9d662baf246c3efbb68545c138106}{fprintf}} (\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textquotesingle{}$<$\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textquotesingle{}, fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a9bd5620a64712c4baa786c7492276f07}{ischar}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}) \mbox{\hyperlink{_v_o_cwritexml_8m_a98c9d662baf246c3efbb68545c138106}{fprintf}}(\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}
+\item 
+elseif \mbox{\hyperlink{_v_o_cwritexml_8m_a3fa8d3f756a292c4aec90f6889be759a}{isnumeric}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}) \&\&numel(\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}
+\item 
+else \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}} (\textquotesingle{}unsupported type\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} \mbox{\hyperlink{_v_o_cwritexml_8m_aff37e7b29e3cb3dfff02f365283093f4}{xml}}
+\item 
+for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} for \mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}\label{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!error@{error}}
+\index{error@{error}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily else error (\begin{DoxyParamCaption}\item[{\textquotesingle{}unsupported type\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a5e769bbbabcaddc548203741c7100228}\label{_v_o_cwritexml_8m_a5e769bbbabcaddc548203741c7100228}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!fclose@{fclose}}
+\index{fclose@{fclose}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{fclose()}{fclose()}}
+{\footnotesize\ttfamily fclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a978e60bae7f548ab27acd03de92aeb9b}\label{_v_o_cwritexml_8m_a978e60bae7f548ab27acd03de92aeb9b}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily fprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}\textquotesingle{}}]{,  }\item[{repmat(char(9), 1, \mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a98c9d662baf246c3efbb68545c138106}\label{_v_o_cwritexml_8m_a98c9d662baf246c3efbb68545c138106}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily fprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\textquotesingle{}$<$\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textquotesingle{}}]{,  }\item[{fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_ae79c444fa33b6c8ea5dd3b133018c873}\label{_v_o_cwritexml_8m_ae79c444fa33b6c8ea5dd3b133018c873}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily fprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\textquotesingle{}$<$\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textbackslash{}n\textquotesingle{}}]{,  }\item[{fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a218e30dcc2f1f602d5aa4c4cdbb1d498}\label{_v_o_cwritexml_8m_a218e30dcc2f1f602d5aa4c4cdbb1d498}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} fprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\textquotesingle{}$<$/\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} $>$\textbackslash{}n\textquotesingle{}}]{,  }\item[{fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a9bd5620a64712c4baa786c7492276f07}\label{_v_o_cwritexml_8m_a9bd5620a64712c4baa786c7492276f07}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!ischar@{ischar}}
+\index{ischar@{ischar}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{ischar()}{ischar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} ischar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a3fa8d3f756a292c4aec90f6889be759a}\label{_v_o_cwritexml_8m_a3fa8d3f756a292c4aec90f6889be759a}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!isnumeric@{isnumeric}}
+\index{isnumeric@{isnumeric}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{isnumeric()}{isnumeric()}}
+{\footnotesize\ttfamily elseif isnumeric (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}}]{ }\end{DoxyParamCaption}) \&\&}
+
+
+
+V\+O\+Cwritexml.\+m 파일의 30 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\})\&\&numel(\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\})==1}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_v_o_cwritexml_8m_abbd12f24bdd6e67a818a70fad327e8b7}\label{_v_o_cwritexml_8m_abbd12f24bdd6e67a818a70fad327e8b7}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!VOCwritexml@{VOCwritexml}}
+\index{VOCwritexml@{VOCwritexml}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{VOCwritexml()}{VOCwritexml()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} V\+O\+Cwritexml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}}]{,  }\item[{path}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a9378c1abb00e81198716a1becafca1f3}\label{_v_o_cwritexml_8m_a9378c1abb00e81198716a1becafca1f3}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!writexml@{writexml}}
+\index{writexml@{writexml}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{writexml()}{writexml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily writexml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a69e5c8d3b24d183dd8f2c838383967a7}\label{_v_o_cwritexml_8m_a69e5c8d3b24d183dd8f2c838383967a7}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!writexml@{writexml}}
+\index{writexml@{writexml}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{writexml()}{writexml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily writexml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}}}]{,  }\item[{rec.}]{fn\{i\})(j,  }\item[{\mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}}+}]{1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a763ecc04e35d10f55ec21fa0fda451a6}\label{_v_o_cwritexml_8m_a763ecc04e35d10f55ec21fa0fda451a6}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!````~iscell@{$\sim$iscell}}
+\index{````~iscell@{$\sim$iscell}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$iscell()}{~iscell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} else \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$iscell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a590875873f68bf8f7507ce1415016414}\label{_v_o_cwritexml_8m_a590875873f68bf8f7507ce1415016414}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!````~isempty@{$\sim$isempty}}
+\index{````~isempty@{$\sim$isempty}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$isempty()}{~isempty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$\mbox{\hyperlink{_v_o_cevallayout_8m_ab37b91ce71ef992db31fcd57378bc6f7}{isempty}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}\label{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!f@{f}}
+\index{f@{f}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} f \{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\})}
+
+
+
+V\+O\+Cwritexml.\+m 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}\label{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!i@{i}}
+\index{i@{i}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily for i}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:\mbox{\hyperlink{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(fn)}
+\DoxyCodeLine{    \mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}=\mbox{\hyperlink{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}{rec}}.(fn\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})}
+
+\end{DoxyCode}
+
+
+V\+O\+Cwritexml.\+m 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}\label{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!j@{j}}
+\index{j@{j}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} for j}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:\mbox{\hyperlink{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}})}
+\DoxyCodeLine{                \mbox{\hyperlink{_v_o_cwritexml_8m_ae79c444fa33b6c8ea5dd3b133018c873}{fprintf}}(\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\textcolor{stringliteral}{'\%s'},repmat(\textcolor{keywordtype}{char}(9),1,\mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}}))}
+
+\end{DoxyCode}
+
+
+V\+O\+Cwritexml.\+m 파일의 25 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}\label{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!s@{s}}
+\index{s@{s}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} s}
+
+
+
+V\+O\+Cwritexml.\+m 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cwritexml_8m_aff37e7b29e3cb3dfff02f365283093f4}\label{_v_o_cwritexml_8m_aff37e7b29e3cb3dfff02f365283093f4}} 
+\index{VOCwritexml.m@{VOCwritexml.m}!xml@{xml}}
+\index{xml@{xml}!VOCwritexml.m@{VOCwritexml.m}}
+\doxysubsubsection{\texorpdfstring{xml}{xml}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} xml}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \mbox{\hyperlink{_v_o_cwritexml_8m_a9378c1abb00e81198716a1becafca1f3}{writexml}}(\mbox{\hyperlink{example__classifier_8m_a5529432d078422ca7c117da6d1a6d6be}{fid}},\mbox{\hyperlink{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}{rec}},\mbox{\hyperlink{_v_o_creadrecxml_8m_a9128b97f1eff70c68165cfdbfa3043b1}{depth}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{fn=fieldnames(\mbox{\hyperlink{example__detector_8m_a3cee98edb8881e3381ce5ac42812fe41}{rec}})}
+
+\end{DoxyCode}
+
+
+V\+O\+Cwritexml.\+m 파일의 7 번째 라인에서 정의되었습니다.
+

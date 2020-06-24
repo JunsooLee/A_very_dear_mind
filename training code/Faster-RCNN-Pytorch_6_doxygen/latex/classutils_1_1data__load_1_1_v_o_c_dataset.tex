@@ -1,0 +1,175 @@
+\hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset}{}\doxysection{utils.\+data\+\_\+load.\+V\+O\+C\+Dataset 클래스 참조}
+\label{classutils_1_1data__load_1_1_v_o_c_dataset}\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+
+
+utils.\+data\+\_\+load.\+V\+O\+C\+Dataset에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classutils_1_1data__load_1_1_v_o_c_dataset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+utils.\+data\+\_\+load.\+V\+O\+C\+Dataset에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classutils_1_1data__load_1_1_v_o_c_dataset__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a3bd77e26d42eb7a4404512948ac21dfa}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a3dc29865fc5cf3f565d6e61773b7f3e2}{opt}}, \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a80718294877ed06a03f013d2036bf903}{train}}=True)
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a1be64c69f53af81bd111f812f29f476e}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} (self, idx)
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a3c1a93b4a54571595f4f30af9ae9de82}{\+\_\+\+\_\+len\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a3dc29865fc5cf3f565d6e61773b7f3e2}{opt}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a80718294877ed06a03f013d2036bf903}{train}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset_a628ac270ac73bcdf55b2c1f5856982bd}{db}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}returned image: 
+scaled image (mean, std, /255), float32, HWC, RGB
+mean=[0.485, 0.456, 0.406]
+std=[0.229, 0.224, 0.225]
+\end{DoxyVerb}
+ 
+
+data\+\_\+load.\+py 파일의 178 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a3bd77e26d42eb7a4404512948ac21dfa}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a3bd77e26d42eb7a4404512948ac21dfa}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{opt,  }\item[{}]{train = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 185 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, opt, train=True):}
+\DoxyCodeLine{186         self.opt = opt}
+\DoxyCodeLine{187         self.train = train}
+\DoxyCodeLine{188         \textcolor{keywordflow}{if} train:}
+\DoxyCodeLine{189             self.db = VOCBboxDataset(opt.voc\_data\_dir)}
+\DoxyCodeLine{190         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{191             self.db = VOCBboxDataset(opt.voc\_data\_dir, split=\textcolor{stringliteral}{'test'}, use\_difficult=\textcolor{keyword}{True})}
+\DoxyCodeLine{192 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a1be64c69f53af81bd111f812f29f476e}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a1be64c69f53af81bd111f812f29f476e}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{idx }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 193 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193     \textcolor{keyword}{def }\_\_getitem\_\_(self, idx):}
+\DoxyCodeLine{194         ori\_img, bbox, label, difficult = self.db.get\_example(idx)}
+\DoxyCodeLine{195         }
+\DoxyCodeLine{196         \textcolor{comment}{\# RESCALE -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{197         \textcolor{comment}{\# image rescale to [opt.min\_size, opt.max\_size]}}
+\DoxyCodeLine{198         H0, W0, C = ori\_img.shape}
+\DoxyCodeLine{199         scale = \mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(self.opt.min\_size/\mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}}(H0, W0), self.opt.max\_size/\mbox{\hyperlink{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(H0, W0))}
+\DoxyCodeLine{200         scaled\_img = cv2.resize(ori\_img, (0,0), fx=scale, fy=scale)}
+\DoxyCodeLine{201         H1, W1, \_ = scaled\_img.shape}
+\DoxyCodeLine{202         \textcolor{comment}{\# bbox rescale}}
+\DoxyCodeLine{203         bbox = scale * bbox}
+\DoxyCodeLine{204         }
+\DoxyCodeLine{205         \textcolor{comment}{\# NORMALIZE -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{206         normalized\_img = scaled\_img / 255.0}
+\DoxyCodeLine{207         normalized\_img = (normalized\_img -\/ np.array([0.485, 0.456, 0.406])) / np.array([0.229, 0.224, 0.225])}
+\DoxyCodeLine{208         }
+\DoxyCodeLine{209         \textcolor{comment}{\# HORIZON FLIP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{210         \textcolor{keywordflow}{if} self.train \textcolor{keywordflow}{and} random.random() < 0.5:}
+\DoxyCodeLine{211             normalized\_img = normalized\_img[:,::-\/1,:]}
+\DoxyCodeLine{212             bbox[:,1], bbox[:,3] = W1 -\/ bbox[:, 3], W1 -\/ bbox[:, 1]}
+\DoxyCodeLine{213         \textcolor{keywordflow}{return} normalized\_img.astype(np.float32), bbox, label, scale}
+\DoxyCodeLine{214 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classutils_1_1data__load_1_1_v_o_c_dataset_a1be64c69f53af81bd111f812f29f476e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a3c1a93b4a54571595f4f30af9ae9de82}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a3c1a93b4a54571595f4f30af9ae9de82}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!\_\_len\_\_@{\_\_len\_\_}}
+\index{\_\_len\_\_@{\_\_len\_\_}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_len\_\_()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 215 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{215     \textcolor{keyword}{def }\_\_len\_\_(self):}
+\DoxyCodeLine{216         \textcolor{keywordflow}{return} len(self.db)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a628ac270ac73bcdf55b2c1f5856982bd}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a628ac270ac73bcdf55b2c1f5856982bd}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!db@{db}}
+\index{db@{db}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+db}
+
+
+
+data\+\_\+load.\+py 파일의 189 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a3dc29865fc5cf3f565d6e61773b7f3e2}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a3dc29865fc5cf3f565d6e61773b7f3e2}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!opt@{opt}}
+\index{opt@{opt}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{opt}{opt}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+opt}
+
+
+
+data\+\_\+load.\+py 파일의 186 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_dataset_a80718294877ed06a03f013d2036bf903}\label{classutils_1_1data__load_1_1_v_o_c_dataset_a80718294877ed06a03f013d2036bf903}} 
+\index{utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}!train@{train}}
+\index{train@{train}!utils.data\_load.VOCDataset@{utils.data\_load.VOCDataset}}
+\doxysubsubsection{\texorpdfstring{train}{train}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Dataset.\+train}
+
+
+
+data\+\_\+load.\+py 파일의 187 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{data__load_8py}{data\+\_\+load.\+py}}\end{DoxyCompactItemize}

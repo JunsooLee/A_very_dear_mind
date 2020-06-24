@@ -1,0 +1,114 @@
+\hypertarget{namespace_evaluation}{}\doxysection{Evaluation 네임스페이스 참조}
+\label{namespace_evaluation}\index{Evaluation@{Evaluation}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}{eval}} (dataloader, \mbox{\hyperlink{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}{faster\+\_\+rcnn}}, test\+\_\+num=10000)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}{faster\+\_\+rcnn}} = \mbox{\hyperlink{classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n}{Faster\+R\+C\+NN}}()
+\item 
+\mbox{\hyperlink{namespace_evaluation_ae3845842865d8b46e7bfe23fd4f47832}{testset}} = \mbox{\hyperlink{classdata_1_1dataset_1_1_test_dataset}{Test\+Dataset}}(opt)
+\item 
+\mbox{\hyperlink{namespace_evaluation_afcd3f7de77db063f8da64996698aded0}{test\+\_\+dataloader}}
+\item 
+def \mbox{\hyperlink{namespace_evaluation_af576cde7e1370521e8dc8c61aa3f2de5}{eval\+\_\+result}} = \mbox{\hyperlink{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}{eval}}(\mbox{\hyperlink{namespace_evaluation_afcd3f7de77db063f8da64996698aded0}{test\+\_\+dataloader}}, \mbox{\hyperlink{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}{faster\+\_\+rcnn}}, test\+\_\+num=1000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}\label{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}} 
+\index{Evaluation@{Evaluation}!eval@{eval}}
+\index{eval@{eval}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily def Evaluation.\+eval (\begin{DoxyParamCaption}\item[{}]{dataloader,  }\item[{}]{faster\+\_\+rcnn,  }\item[{}]{test\+\_\+num = {\ttfamily 10000} }\end{DoxyParamCaption})}
+
+
+
+Evaluation.\+py 파일의 20 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}{eval}}(dataloader, faster\_rcnn, test\_num=10000):}
+\DoxyCodeLine{21     pred\_bboxes, pred\_labels, pred\_scores = list(), list(), list()}
+\DoxyCodeLine{22     gt\_bboxes, gt\_labels, gt\_difficults = list(), list(), list()}
+\DoxyCodeLine{23     \textcolor{keywordflow}{for} ii, (imgs, sizes, gt\_bboxes\_, gt\_labels\_, gt\_difficults\_) \textcolor{keywordflow}{in} tqdm(enumerate(dataloader)):}
+\DoxyCodeLine{24         sizes = [sizes[0][0], sizes[1][0]]}
+\DoxyCodeLine{25         pred\_bboxes\_, pred\_labels\_, pred\_scores\_ = faster\_rcnn.predict(imgs, [sizes])}
+\DoxyCodeLine{26         gt\_bboxes += list(gt\_bboxes\_.numpy())}
+\DoxyCodeLine{27         gt\_labels += list(gt\_labels\_.numpy())}
+\DoxyCodeLine{28         gt\_difficults += list(gt\_difficults\_.numpy())}
+\DoxyCodeLine{29         pred\_bboxes += pred\_bboxes\_}
+\DoxyCodeLine{30         pred\_labels += pred\_labels\_}
+\DoxyCodeLine{31         pred\_scores += pred\_scores\_}
+\DoxyCodeLine{32         \textcolor{keywordflow}{if} ii == test\_num: \textcolor{keywordflow}{break}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     result = \mbox{\hyperlink{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}{eval\_detection\_voc}}(}
+\DoxyCodeLine{35         pred\_bboxes, pred\_labels, pred\_scores,}
+\DoxyCodeLine{36         gt\_bboxes, gt\_labels, gt\_difficults,}
+\DoxyCodeLine{37         use\_07\_metric=\textcolor{keyword}{True})}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} result}
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespace_evaluation_af576cde7e1370521e8dc8c61aa3f2de5}\label{namespace_evaluation_af576cde7e1370521e8dc8c61aa3f2de5}} 
+\index{Evaluation@{Evaluation}!eval\_result@{eval\_result}}
+\index{eval\_result@{eval\_result}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{eval\_result}{eval\_result}}
+{\footnotesize\ttfamily def Evaluation.\+eval\+\_\+result = \mbox{\hyperlink{namespace_evaluation_ad8a1aa2d59b6d64bebd8713508b9b122}{eval}}(\mbox{\hyperlink{namespace_evaluation_afcd3f7de77db063f8da64996698aded0}{test\+\_\+dataloader}}, \mbox{\hyperlink{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}{faster\+\_\+rcnn}}, test\+\_\+num=1000)}
+
+
+
+Evaluation.\+py 파일의 50 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}\label{namespace_evaluation_a213be9fcdab8e83c57b7f1c929f8b97a}} 
+\index{Evaluation@{Evaluation}!faster\_rcnn@{faster\_rcnn}}
+\index{faster\_rcnn@{faster\_rcnn}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{faster\_rcnn}{faster\_rcnn}}
+{\footnotesize\ttfamily Evaluation.\+faster\+\_\+rcnn = \mbox{\hyperlink{classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n}{Faster\+R\+C\+NN}}()}
+
+
+
+Evaluation.\+py 파일의 41 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_evaluation_afcd3f7de77db063f8da64996698aded0}\label{namespace_evaluation_afcd3f7de77db063f8da64996698aded0}} 
+\index{Evaluation@{Evaluation}!test\_dataloader@{test\_dataloader}}
+\index{test\_dataloader@{test\_dataloader}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{test\_dataloader}{test\_dataloader}}
+{\footnotesize\ttfamily Evaluation.\+test\+\_\+dataloader}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  data\_.DataLoader(testset,}
+\DoxyCodeLine{2                                        batch\_size=1,}
+\DoxyCodeLine{3                                        num\_workers=8,}
+\DoxyCodeLine{4                                        shuffle=\textcolor{keyword}{False},}
+\DoxyCodeLine{5                                        pin\_memory=\textcolor{keyword}{True})}
+
+\end{DoxyCode}
+
+
+Evaluation.\+py 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespace_evaluation_ae3845842865d8b46e7bfe23fd4f47832}\label{namespace_evaluation_ae3845842865d8b46e7bfe23fd4f47832}} 
+\index{Evaluation@{Evaluation}!testset@{testset}}
+\index{testset@{testset}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{testset}{testset}}
+{\footnotesize\ttfamily Evaluation.\+testset = \mbox{\hyperlink{classdata_1_1dataset_1_1_test_dataset}{Test\+Dataset}}(opt)}
+
+
+
+Evaluation.\+py 파일의 43 번째 라인에서 정의되었습니다.
+

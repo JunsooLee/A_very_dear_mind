@@ -1,0 +1,288 @@
+\hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset}{}\doxysection{utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset 클래스 참조}
+\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset}\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+
+
+utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classutils_1_1data__load_1_1_v_o_c_bbox_dataset__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a060e76de7b1c640014aea43498848404}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5a7b86e3752e1ad4021314fabfc63537}{data\+\_\+dir}}, split=\textquotesingle{}trainval\textquotesingle{}, \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4280edd7320728cf62072f8b06c94fac}{use\+\_\+difficult}}=False, \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4196c4f25b47cf01f1580eb1019fa383}{return\+\_\+difficult}}=False)
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5f4a383e857a78a34fa09b6649a087a9}{\+\_\+\+\_\+len\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a40524d57203d2df970803dc7af39c4b9}{get\+\_\+example}} (self, \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8475ebb8f485a279d2ae5b5b944a6b82}{ids}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5a7b86e3752e1ad4021314fabfc63537}{data\+\_\+dir}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4280edd7320728cf62072f8b06c94fac}{use\+\_\+difficult}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4196c4f25b47cf01f1580eb1019fa383}{return\+\_\+difficult}}
+\item 
+\mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8f10821928b98cced05a8656210e6948}{label\+\_\+names}}
+\end{DoxyCompactItemize}
+\doxysubsection*{정적 Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a0f91a3af24a18d71d8f213aca972812a}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} = \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a40524d57203d2df970803dc7af39c4b9}{get\+\_\+example}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}Bounding box dataset for PASCAL `VOC`_.
+
+.. _`VOC`: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/
+
+The index corresponds to each image.
+
+When queried by an index, if :obj:`return_difficult == False`,
+this dataset returns a corresponding
+:obj:`img, bbox, label`, a tuple of an image, bounding boxes and labels.
+This is the default behaviour.
+If :obj:`return_difficult == True`, this dataset returns corresponding
+:obj:`img, bbox, label, difficult`. :obj:`difficult` is a boolean array
+that indicates whether bounding boxes are labeled as difficult or not.
+
+The bounding boxes are packed into a two dimensional tensor of shape
+:math:`(R, 4)`, where :math:`R` is the number of bounding boxes in
+the image. The second axis represents attributes of the bounding box.
+They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`, where the
+four attributes are coordinates of the top left and the bottom right
+vertices.
+
+The labels are packed into a one dimensional tensor of shape :math:`(R,)`.
+:math:`R` is the number of bounding boxes in the image.
+The class name of the label :math:`l` is :math:`l` th element of
+:obj:`VOC_BBOX_LABEL_NAMES`.
+
+The array :obj:`difficult` is a one dimensional boolean array of shape
+:math:`(R,)`. :math:`R` is the number of bounding boxes in the image.
+If :obj:`use_difficult` is :obj:`False`, this array is
+a boolean array with all :obj:`False`.
+
+The type of the image, the bounding boxes and the labels are as follows.
+
+* :obj:`img.dtype == numpy.float32`
+* :obj:`bbox.dtype == numpy.float32`
+* :obj:`label.dtype == numpy.int32`
+* :obj:`difficult.dtype == numpy.bool`
+
+Args:
+    data_dir (string): Path to the root of the training data. 
+        i.e. "/data/image/voc/VOCdevkit/VOC2007/"
+    split ({'train', 'val', 'trainval', 'test'}): Select a split of the
+        dataset. :obj:`test` split is only available for
+        2007 dataset.
+    year ({'2007', '2012'}): Use a dataset prepared for a challenge
+        held in :obj:`year`.
+    use_difficult (bool): If :obj:`True`, use images that are labeled as
+        difficult in the original annotation.
+    return_difficult (bool): If :obj:`True`, this dataset returns
+        a boolean array
+        that indicates whether bounding boxes are labeled as difficult
+        or not. The default value is :obj:`False`.\end{DoxyVerb}
+ 
+
+data\+\_\+load.\+py 파일의 29 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a060e76de7b1c640014aea43498848404}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a060e76de7b1c640014aea43498848404}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data\+\_\+dir,  }\item[{}]{split = {\ttfamily \textquotesingle{}trainval\textquotesingle{}},  }\item[{}]{use\+\_\+difficult = {\ttfamily False},  }\item[{}]{return\+\_\+difficult = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 85 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(self, data\_dir, split='trainval',}
+\DoxyCodeLine{86                  use\_difficult=False, return\_difficult=False,}
+\DoxyCodeLine{87                  ):}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         id\_list\_file = os.path.join(}
+\DoxyCodeLine{90             data\_dir, \textcolor{stringliteral}{'ImageSets/Main/\{0\}.txt'}.format(split))}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92         self.ids = [id\_.strip() \textcolor{keywordflow}{for} id\_ \textcolor{keywordflow}{in} open(id\_list\_file)]}
+\DoxyCodeLine{93         self.data\_dir = data\_dir}
+\DoxyCodeLine{94         self.use\_difficult = use\_difficult}
+\DoxyCodeLine{95         self.return\_difficult = return\_difficult}
+\DoxyCodeLine{96         self.label\_names = VOC\_BBOX\_LABEL\_NAMES}
+\DoxyCodeLine{97 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5f4a383e857a78a34fa09b6649a087a9}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5f4a383e857a78a34fa09b6649a087a9}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!\_\_len\_\_@{\_\_len\_\_}}
+\index{\_\_len\_\_@{\_\_len\_\_}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_len\_\_()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 98 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98     \textcolor{keyword}{def }\_\_len\_\_(self):}
+\DoxyCodeLine{99         \textcolor{keywordflow}{return} len(self.ids)}
+\DoxyCodeLine{100 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a40524d57203d2df970803dc7af39c4b9}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a40524d57203d2df970803dc7af39c4b9}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!get\_example@{get\_example}}
+\index{get\_example@{get\_example}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{get\_example()}{get\_example()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+get\+\_\+example (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the i-th example.
+
+Returns a color image and bounding boxes. The image is in CHW format.
+The returned image is RGB.
+
+Args:
+    i (int): The index of the example.
+
+Returns:
+    tuple of an image and bounding boxes
+    img: RGB image with shape [H, W, C], type float32\end{DoxyVerb}
+ 
+
+data\+\_\+load.\+py 파일의 101 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101     \textcolor{keyword}{def }get\_example(self, i):}
+\DoxyCodeLine{102         \textcolor{stringliteral}{"""Returns the i-\/th example.}}
+\DoxyCodeLine{103 \textcolor{stringliteral}{}}
+\DoxyCodeLine{104 \textcolor{stringliteral}{        Returns a color image and bounding boxes. The image is in CHW format.}}
+\DoxyCodeLine{105 \textcolor{stringliteral}{        The returned image is RGB.}}
+\DoxyCodeLine{106 \textcolor{stringliteral}{}}
+\DoxyCodeLine{107 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{108 \textcolor{stringliteral}{            i (int): The index of the example.}}
+\DoxyCodeLine{109 \textcolor{stringliteral}{}}
+\DoxyCodeLine{110 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{111 \textcolor{stringliteral}{            tuple of an image and bounding boxes}}
+\DoxyCodeLine{112 \textcolor{stringliteral}{            img: RGB image with shape [H, W, C], type float32}}
+\DoxyCodeLine{113 \textcolor{stringliteral}{}}
+\DoxyCodeLine{114 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{115         id\_ = self.ids[i]}
+\DoxyCodeLine{116         anno = ET.parse(}
+\DoxyCodeLine{117             os.path.join(self.data\_dir, \textcolor{stringliteral}{'Annotations'}, id\_ + \textcolor{stringliteral}{'.xml'}))}
+\DoxyCodeLine{118         bbox = list()}
+\DoxyCodeLine{119         label = list()}
+\DoxyCodeLine{120         difficult = list()}
+\DoxyCodeLine{121         \textcolor{keywordflow}{for} obj \textcolor{keywordflow}{in} anno.findall(\textcolor{stringliteral}{'object'}):}
+\DoxyCodeLine{122             \textcolor{comment}{\# when in not using difficult split, and the object is}}
+\DoxyCodeLine{123             \textcolor{comment}{\# difficult, skipt it.}}
+\DoxyCodeLine{124             \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} self.use\_difficult \textcolor{keywordflow}{and} int(obj.find(\textcolor{stringliteral}{'difficult'}).text) == 1:}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127             difficult.append(int(obj.find(\textcolor{stringliteral}{'difficult'}).text))}
+\DoxyCodeLine{128             bndbox\_anno = obj.find(\textcolor{stringliteral}{'bndbox'})}
+\DoxyCodeLine{129             \textcolor{comment}{\# subtract 1 to make pixel indexes 0-\/based}}
+\DoxyCodeLine{130             bbox.append([}
+\DoxyCodeLine{131                 int(bndbox\_anno.find(tag).text) -\/ 1}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} (\textcolor{stringliteral}{'ymin'}, \textcolor{stringliteral}{'xmin'}, \textcolor{stringliteral}{'ymax'}, \textcolor{stringliteral}{'xmax'})])}
+\DoxyCodeLine{133             name = obj.find(\textcolor{stringliteral}{'name'}).text.lower().strip()}
+\DoxyCodeLine{134             label.append(VOC\_BBOX\_LABEL\_NAMES.index(name))}
+\DoxyCodeLine{135         bbox = np.stack(bbox).astype(np.float32)}
+\DoxyCodeLine{136         label = np.stack(label).astype(np.int32)}
+\DoxyCodeLine{137         \textcolor{comment}{\# When `use\_difficult==False`, all elements in `difficult` are False.}}
+\DoxyCodeLine{138         difficult = np.array(difficult, dtype=np.bool).astype(np.uint8)  \textcolor{comment}{\# PyTorch don't support np.bool}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{comment}{\# Load a image}}
+\DoxyCodeLine{141         img\_file = os.path.join(self.data\_dir, \textcolor{stringliteral}{'JPEGImages'}, id\_ + \textcolor{stringliteral}{'.jpg'})}
+\DoxyCodeLine{142         img = plt.imread(img\_file)}
+\DoxyCodeLine{143         img = img.astype(np.float32)}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145         \textcolor{comment}{\# if self.return\_difficult:}}
+\DoxyCodeLine{146         \textcolor{comment}{\#     return img, bbox, label, difficult}}
+\DoxyCodeLine{147         \textcolor{keywordflow}{return} img, bbox, label, difficult}
+\DoxyCodeLine{148 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a0f91a3af24a18d71d8f213aca972812a}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a0f91a3af24a18d71d8f213aca972812a}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_}{\_\_getitem\_\_}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+\_\+\+\_\+getitem\+\_\+\+\_\+ = \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a40524d57203d2df970803dc7af39c4b9}{get\+\_\+example}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+data\+\_\+load.\+py 파일의 149 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5a7b86e3752e1ad4021314fabfc63537}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a5a7b86e3752e1ad4021314fabfc63537}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+data\+\_\+dir}
+
+
+
+data\+\_\+load.\+py 파일의 91 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8475ebb8f485a279d2ae5b5b944a6b82}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8475ebb8f485a279d2ae5b5b944a6b82}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!ids@{ids}}
+\index{ids@{ids}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{ids}{ids}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+ids}
+
+
+
+data\+\_\+load.\+py 파일의 90 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8f10821928b98cced05a8656210e6948}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a8f10821928b98cced05a8656210e6948}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!label\_names@{label\_names}}
+\index{label\_names@{label\_names}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{label\_names}{label\_names}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+label\+\_\+names}
+
+
+
+data\+\_\+load.\+py 파일의 94 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4196c4f25b47cf01f1580eb1019fa383}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4196c4f25b47cf01f1580eb1019fa383}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!return\_difficult@{return\_difficult}}
+\index{return\_difficult@{return\_difficult}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{return\_difficult}{return\_difficult}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+return\+\_\+difficult}
+
+
+
+data\+\_\+load.\+py 파일의 93 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4280edd7320728cf62072f8b06c94fac}\label{classutils_1_1data__load_1_1_v_o_c_bbox_dataset_a4280edd7320728cf62072f8b06c94fac}} 
+\index{utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}!use\_difficult@{use\_difficult}}
+\index{use\_difficult@{use\_difficult}!utils.data\_load.VOCBboxDataset@{utils.data\_load.VOCBboxDataset}}
+\doxysubsubsection{\texorpdfstring{use\_difficult}{use\_difficult}}
+{\footnotesize\ttfamily utils.\+data\+\_\+load.\+V\+O\+C\+Bbox\+Dataset.\+use\+\_\+difficult}
+
+
+
+data\+\_\+load.\+py 파일의 92 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{data__load_8py}{data\+\_\+load.\+py}}\end{DoxyCompactItemize}

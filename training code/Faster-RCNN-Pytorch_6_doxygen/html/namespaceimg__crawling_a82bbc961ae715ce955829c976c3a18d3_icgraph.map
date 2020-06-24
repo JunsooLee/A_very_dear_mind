@@ -1,0 +1,4 @@
+<map id="img_crawling.img_delete" name="img_crawling.img_delete">
+<area shape="rect" id="node1" title="크롤링한 파일 open 여부 판단" alt="" coords="217,5,381,32"/>
+<area shape="rect" id="node2" href="$namespaceimg__crawling.html#a42ba864aae32490c1f5aa10bb53b58e2" title="파일 확장자 check jpg &amp; png 만 남겨놓음" alt="" coords="5,5,169,32"/>
+</map>

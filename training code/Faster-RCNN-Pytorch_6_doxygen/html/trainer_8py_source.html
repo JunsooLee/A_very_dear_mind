@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: trainer/trainer.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('trainer_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">trainer.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="trainer_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacetrainer_1_1trainer.html">    1</a></span>&#160;<span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> time</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> F</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacemodel_1_1utils_1_1roi__sample.html">model.utils.roi_sample</a> <span class="keyword">import</span> ProposalTargetCreator</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacemodel_1_1utils_1_1rpn__gt__loc__label.html">model.utils.rpn_gt_loc_label</a> <span class="keyword">import</span> AnchorTargetCreator</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> torch <span class="keyword">import</span> nn</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> torch <span class="keyword">as</span> t</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> utils <span class="keyword">import</span> array_tool <span class="keyword">as</span> at</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceutils_1_1config.html">utils.config</a> <span class="keyword">import</span> opt</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacetrainer_1_1trainer.html#af7f4095ccf1d1e68a9de60102936ab09">   15</a></span>&#160;LossTuple = namedtuple(<span class="stringliteral">&#39;LossTuple&#39;</span>,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                       [<span class="stringliteral">&#39;rpn_loc_loss&#39;</span>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                        <span class="stringliteral">&#39;rpn_cls_loss&#39;</span>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        <span class="stringliteral">&#39;roi_loc_loss&#39;</span>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        <span class="stringliteral">&#39;roi_cls_loss&#39;</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        <span class="stringliteral">&#39;total_loss&#39;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                        ])</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html">FasterRCNNTrainer</a>(nn.Module):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;wrapper for conveniently training. return losses</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    The losses include:</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral">    * :obj:`rpn_loc_loss`: The localization loss for \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">        Region Proposal Network (RPN).</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral">    * :obj:`rpn_cls_loss`: The classification loss for RPN.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral">    * :obj:`roi_loc_loss`: The localization loss for the head module.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">    * :obj:`roi_cls_loss`: The classification loss for the head module.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">    * :obj:`total_loss`: The sum of 4 loss above.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">    Args:</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">        faster_rcnn (model.FasterRCNN):</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral">            A Faster R-CNN model that is going to be trained.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ad895a227899f59687507d786f688142e">   41</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ad895a227899f59687507d786f688142e">__init__</a>(self, faster_rcnn):</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        super(FasterRCNNTrainer, self).<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ad895a227899f59687507d786f688142e">__init__</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">   44</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a> = faster_rcnn</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a85782798c1dea1fdc3c842c4c6657f66">   45</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a85782798c1dea1fdc3c842c4c6657f66">rpn_sigma</a> = opt.rpn_sigma</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a71c4bf599a2529633d3513294ac3b357">   46</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a71c4bf599a2529633d3513294ac3b357">roi_sigma</a> = opt.roi_sigma</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment"># target creator create gt_bbox gt_label etc as training targets. </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abf7b9da182f3cc3943da1893fd267070">   49</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abf7b9da182f3cc3943da1893fd267070">anchor_target_creator</a> = <a class="code" href="classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html">AnchorTargetCreator</a>()</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a0502776c51d33285e5be3d12ef074475">   50</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a0502776c51d33285e5be3d12ef074475">proposal_target_creator</a> = <a class="code" href="classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html">ProposalTargetCreator</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a1cc0be2dc6218efbe42b86b8556e99ac">   52</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a1cc0be2dc6218efbe42b86b8556e99ac">loc_normalize_mean</a> = faster_rcnn.loc_normalize_mean</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abd942225e0f18bdd46b9a6db4d32e829">   53</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abd942225e0f18bdd46b9a6db4d32e829">loc_normalize_std</a> = faster_rcnn.loc_normalize_std</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">   55</a></span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">optimizer</a> = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.get_optimizer()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e">   65</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e">forward</a>(self, imgs, bboxes, labels, scale):</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Forward Faster R-CNN and calculate losses.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral">        Here are notations used.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">        * :math:`N` is the batch size.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral">        * :math:`R` is the number of bounding boxes per image.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">        Currently, only :math:`N=1` is supported.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral">        Args:</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">            imgs (~torch.autograd.Variable): A variable with a batch of images.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral">            --&gt; shape: 1 * 3 * height * width</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">            bboxes (~torch.autograd.Variable): A batch of bounding boxes.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">                Its shape is :math:`(N, R, 4)`.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">            labels (~torch.autograd..Variable): A batch of labels.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">                Its shape is :math:`(N, R)`. The background is excluded from</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">                the definition, which means that the range of the value</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">                is :math:`[0, L - 1]`. :math:`L` is the number of foreground</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">                classes.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">            scale (float): Amount of scaling applied to</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">                the raw image during preprocessing.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">        Returns:</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">            namedtuple of 5 losses</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        n = bboxes.shape[0]</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> n != 1:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;Currently only batch size 1 is supported.&#39;</span>)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        _, _, H, W = imgs.shape</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        img_size = (H, W)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment"># F.M shape = (1 * 512 * height(input height/16) * width(input width/16))</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        features = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.<a class="code" href="example__classifier_8m.html#ae2af5012782a0b8a6f0389240434eb0c">extractor</a>(imgs)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment"># ------------------ RPN forward -------------------#</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment"># rpn.py</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        rpn_locs, rpn_scores, rois, roi_indices, anchor = \</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.rpn(features, img_size, scale)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment"># Since batch size is one, convert variables to singular form ex) 1 * 1984 * 4 이면 1984 * 4로 변경</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        bbox = bboxes[0]</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        label = labels[0]</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        rpn_score = rpn_scores[0]</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        rpn_loc = rpn_locs[0]</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        roi = rois</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment"># ------------------ RPN losses -------------------#</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment"># rpn_gt_loc_label.py</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        gt_rpn_loc, gt_rpn_label = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abf7b9da182f3cc3943da1893fd267070">anchor_target_creator</a>(</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            at.tonumpy(bbox),</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            anchor,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            img_size)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment"># 전체 anchor 좌표와 B.B와의 상대좌표를 기록한 배열 --&gt; shape = (F.M H * W * A, 4) 이지만 안에는 값은 inside_index 안에만 기록되어 있음</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        gt_rpn_label = at.tovariable(gt_rpn_label).long()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment"># anchor에 대한 label을 기록한 배열 --&gt; shape = (F.M H * W * A, 4(ctr_y, ctr_X, h, w))</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        gt_rpn_loc = at.tovariable(gt_rpn_loc)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment"># RPN regression loss</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        rpn_loc_loss = <a class="code" href="namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664">_fast_rcnn_loc_loss</a>(</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            rpn_loc, <span class="comment"># rpn_locs --&gt; F.M의 하나의 픽셀당 9개의 anchor들 = pred location 즉 layer를 통해서 나온 값이다.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            gt_rpn_loc,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            gt_rpn_label.data,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a85782798c1dea1fdc3c842c4c6657f66">rpn_sigma</a>)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment"># RPN classification loss</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment"># TODO focal loss 적용 해보기</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        rpn_cls_loss = F.cross_entropy(rpn_score, gt_rpn_label.cuda(), ignore_index=-1)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment"># ------------------ Sample RoIs and forward -------------------#</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment"># roi_sample.py</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        sample_roi, gt_roi_loc, gt_roi_label = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a0502776c51d33285e5be3d12ef074475">proposal_target_creator</a>(</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            roi,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            at.tonumpy(bbox),</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            at.tonumpy(label),</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a1cc0be2dc6218efbe42b86b8556e99ac">loc_normalize_mean</a>,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abd942225e0f18bdd46b9a6db4d32e829">loc_normalize_std</a>)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment"># @note it&#39;s all zero because now it only support for batch=1 now</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        sample_roi_index = t.zeros(len(sample_roi))</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment"># roi_module.py</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment"># TODO network 수정 시 pooling layer input 변경</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        roi_cls_loc, roi_score = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.head(</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            features,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            sample_roi,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            sample_roi_index)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment"># ------------------ ROI losses (fast rcnn loss) -------------------#</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        n_sample = roi_cls_loc.shape[0]</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        roi_cls_loc = roi_cls_loc.view(n_sample, -1, 4)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        roi_loc = roi_cls_loc[t.arange(0, n_sample).long().cuda(), \</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                              at.totensor(gt_roi_label).long()]</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        gt_roi_label = at.tovariable(gt_roi_label).long()</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        gt_roi_loc = at.tovariable(gt_roi_loc)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment"># ROI regression loss</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        roi_loc_loss = <a class="code" href="namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664">_fast_rcnn_loc_loss</a>(</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            roi_loc.contiguous(), <span class="comment"># layer 거쳐서 나온 B.B</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            gt_roi_loc.float(), <span class="comment"># 실제 B.B 와의 상대좌표 결과값.</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            gt_roi_label.data, <span class="comment"># label값. pos와 neg 섞여 있음</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a71c4bf599a2529633d3513294ac3b357">roi_sigma</a>)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment"># ROI classification loss</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        roi_cls_loss = nn.CrossEntropyLoss()(roi_score, gt_roi_label.cuda())</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment"># ------------------------------------------------------------------#</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        losses = [rpn_loc_loss, rpn_cls_loss, roi_loc_loss, roi_cls_loss]</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        losses = losses + [sum(losses)] <span class="comment"># loss[4]째에 전체다 더한 것을 보냄.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        print(losses)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacetrainer_1_1trainer.html#af7f4095ccf1d1e68a9de60102936ab09">LossTuple</a>(*losses)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51">  188</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51">train_step</a>(self, imgs, bboxes, labels, scale):</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">optimizer</a>.zero_grad()</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        losses = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e">forward</a>(imgs, bboxes, labels, scale)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment"># TODO: 단계별로 학습</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment"># 현재는 RPN &amp; ROI 합친 loss backward</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        losses.total_loss.backward()</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">optimizer</a>.step()</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> losses</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab67a69d3acacbf55be66451e3f3ae757">  197</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab67a69d3acacbf55be66451e3f3ae757">save</a>(self, save_optimizer=False, save_path=None, **kwargs):</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;serialize models include optimizer and other info</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="stringliteral">        return path where the model-file is stored.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="stringliteral">        Args:</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="stringliteral">            save_optimizer (bool): whether save optimizer.state_dict().</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="stringliteral">            save_path (string): where to save model, if it&#39;s None, save_path</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="stringliteral">                is generate using time str and info from kwargs.</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="stringliteral">        Returns:</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="stringliteral">            save_path(str): the path to save models.</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        save_dict = dict()</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        save_dict[<span class="stringliteral">&#39;model&#39;</span>] = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.state_dict()</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        save_dict[<span class="stringliteral">&#39;config&#39;</span>] = opt._state_dict()</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        save_dict[<span class="stringliteral">&#39;other_info&#39;</span>] = kwargs</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="comment"># save_dict[&#39;vis_info&#39;] = self.vis.state_dict()</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> save_optimizer:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            save_dict[<span class="stringliteral">&#39;optimizer&#39;</span>] = self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">optimizer</a>.state_dict()</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">if</span> save_path <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            timestr = time.strftime(<span class="stringliteral">&#39;%m%d%H%M&#39;</span>)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            save_path = <span class="stringliteral">&#39;./checkpoints/fasterrcnn_%s&#39;</span> % timestr</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">for</span> k_, v_ <span class="keywordflow">in</span> kwargs.items():</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                save_path += <span class="stringliteral">&#39;_%.4s&#39;</span> % v_</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            save_path += <span class="stringliteral">&#39;.pth&#39;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        save_dir = os.path.dirname(save_path)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(save_dir):</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            os.makedirs(save_dir)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        t.save(save_dict, save_path)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment"># self.vis.save([self.vis.env])</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> save_path</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a15aba4b87ce03c4c47074dfed702cad5">  232</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a15aba4b87ce03c4c47074dfed702cad5">load</a>(self, path, load_optimizer=True, parse_opt=False, ):</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        state_dict = t.load(path)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;model&#39;</span> <span class="keywordflow">in</span> state_dict:</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.load_state_dict(state_dict[<span class="stringliteral">&#39;model&#39;</span>])</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span>:  <span class="comment"># legacy way, for backward compatibility</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">faster_rcnn</a>.load_state_dict(state_dict)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">return</span> self</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> parse_opt:</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            opt._parse(state_dict[<span class="stringliteral">&#39;config&#39;</span>])</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;optimizer&#39;</span> <span class="keywordflow">in</span> state_dict <span class="keywordflow">and</span> load_optimizer:</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            self.<a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">optimizer</a>.load_state_dict(state_dict[<span class="stringliteral">&#39;optimizer&#39;</span>])</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> self</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a7f8ea203d8d248e8df09e3d7c53581a4">  245</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a7f8ea203d8d248e8df09e3d7c53581a4">update_meters</a>(self, losses):</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        loss_d = {k: at.scalar(v) <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> losses._asdict().items()}</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">for</span> key, meter <span class="keywordflow">in</span> self.meters.items():</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            meter.add(loss_d[key])</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#af85f859ed833b523e162e4b0e8278173">  250</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#af85f859ed833b523e162e4b0e8278173">reset_meters</a>(self):</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">for</span> key, meter <span class="keywordflow">in</span> self.meters.items():</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            meter.reset()</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        self.roi_cm.reset()</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        self.rpn_cm.reset()</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a9f737e863596d6b656919faefcf07ca4">  256</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a9f737e863596d6b656919faefcf07ca4">get_meter_data</a>(self):</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> {k: v.value()[0] <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> self.meters.items()}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="namespacetrainer_1_1trainer.html#aeace27043682fd4e4743b550a2527405">  259</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacetrainer_1_1trainer.html#aeace27043682fd4e4743b550a2527405">_smooth_l1_loss</a>(x, t, in_weight, sigma):</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    sigma2 = sigma ** 2</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    t = t.float()</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    diff = in_weight * (x - t)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    abs_diff = diff.abs()</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    flag = (abs_diff.data &lt; (1. / sigma2)).float()</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    flag = Variable(flag)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    y = (flag * (sigma2 / 2.) * (diff ** 2) +</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;         (1 - flag) * (abs_diff - 0.5 / sigma2))</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span> y.sum()</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664">  271</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664">_fast_rcnn_loc_loss</a>(pred_loc, gt_loc, gt_label, sigma):</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    in_weight = t.zeros(gt_loc.shape).cuda()</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment"># Localization loss is calculated only for positive rois.</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment"># NOTE:  unlike origin implementation, </span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment"># we don&#39;t need inside_weight and outside_weight, they can calculate by gt_label</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    in_weight[(gt_label &gt; 0).<a class="code" href="_p_a_semptyobject_8m.html#a6aa4664b4936f59c6ece3778daf31ec3">view</a>(-1, 1).expand_as(in_weight).cuda()] = 1</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    loc_loss = <a class="code" href="namespacetrainer_1_1trainer.html#aeace27043682fd4e4743b550a2527405">_smooth_l1_loss</a>(pred_loc, gt_loc, Variable(in_weight), sigma)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment"># Normalize by total number of negtive and positive rois.</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    loc_loss /= (gt_label &gt;= 0).sum()  <span class="comment"># ignore gt_label==-1 for rpn_loss</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> loc_loss</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacemodel_1_1utils_1_1roi__sample_html"><div class="ttname"><a href="namespacemodel_1_1utils_1_1roi__sample.html">model.utils.roi_sample</a></div><div class="ttdef"><b>Definition:</b> <a href="roi__sample_8py_source.html#l00001">roi_sample.py:1</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a585898ea7cd93f2a4d0dec901ce9ad0b"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a585898ea7cd93f2a4d0dec901ce9ad0b">trainer.trainer.FasterRCNNTrainer.faster_rcnn</a></div><div class="ttdeci">faster_rcnn</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00044">trainer.py:44</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a15aba4b87ce03c4c47074dfed702cad5"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a15aba4b87ce03c4c47074dfed702cad5">trainer.trainer.FasterRCNNTrainer.load</a></div><div class="ttdeci">def load(self, path, load_optimizer=True, parse_opt=False)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00232">trainer.py:232</a></div></div>
+<div class="ttc" id="anamespacetrainer_1_1trainer_html_af7f4095ccf1d1e68a9de60102936ab09"><div class="ttname"><a href="namespacetrainer_1_1trainer.html#af7f4095ccf1d1e68a9de60102936ab09">trainer.trainer.LossTuple</a></div><div class="ttdeci">LossTuple</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00015">trainer.py:15</a></div></div>
+<div class="ttc" id="aclassmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator_html"><div class="ttname"><a href="classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html">model.utils.rpn_gt_loc_label.AnchorTargetCreator</a></div><div class="ttdef"><b>Definition:</b> <a href="rpn__gt__loc__label_8py_source.html#l00005">rpn_gt_loc_label.py:5</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_ad895a227899f59687507d786f688142e"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ad895a227899f59687507d786f688142e">trainer.trainer.FasterRCNNTrainer.__init__</a></div><div class="ttdeci">def __init__(self, faster_rcnn)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00041">trainer.py:41</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_abf7b9da182f3cc3943da1893fd267070"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abf7b9da182f3cc3943da1893fd267070">trainer.trainer.FasterRCNNTrainer.anchor_target_creator</a></div><div class="ttdeci">anchor_target_creator</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00049">trainer.py:49</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a0502776c51d33285e5be3d12ef074475"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a0502776c51d33285e5be3d12ef074475">trainer.trainer.FasterRCNNTrainer.proposal_target_creator</a></div><div class="ttdeci">proposal_target_creator</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00050">trainer.py:50</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_af85f859ed833b523e162e4b0e8278173"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#af85f859ed833b523e162e4b0e8278173">trainer.trainer.FasterRCNNTrainer.reset_meters</a></div><div class="ttdeci">def reset_meters(self)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00250">trainer.py:250</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_aa18be9d9e223d098f280c5ae7967e737"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#aa18be9d9e223d098f280c5ae7967e737">trainer.trainer.FasterRCNNTrainer.optimizer</a></div><div class="ttdeci">optimizer</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00055">trainer.py:55</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html">trainer.trainer.FasterRCNNTrainer</a></div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00024">trainer.py:24</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_abd942225e0f18bdd46b9a6db4d32e829"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#abd942225e0f18bdd46b9a6db4d32e829">trainer.trainer.FasterRCNNTrainer.loc_normalize_std</a></div><div class="ttdeci">loc_normalize_std</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00053">trainer.py:53</a></div></div>
+<div class="ttc" id="anamespacetrainer_1_1trainer_html_a9e9a6a7e132183a3066e077779de4664"><div class="ttname"><a href="namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664">trainer.trainer._fast_rcnn_loc_loss</a></div><div class="ttdeci">def _fast_rcnn_loc_loss(pred_loc, gt_loc, gt_label, sigma)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00271">trainer.py:271</a></div></div>
+<div class="ttc" id="aexample__classifier_8m_html_ae2af5012782a0b8a6f0389240434eb0c"><div class="ttname"><a href="example__classifier_8m.html#ae2af5012782a0b8a6f0389240434eb0c">extractor</a></div><div class="ttdeci">trivial feature extractor</div><div class="ttdef"><b>Definition:</b> <a href="example__classifier_8m_source.html#l00093">example_classifier.m:93</a></div></div>
+<div class="ttc" id="aclassmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator_html"><div class="ttname"><a href="classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html">model.utils.roi_sample.ProposalTargetCreator</a></div><div class="ttdef"><b>Definition:</b> <a href="roi__sample_8py_source.html#l00004">roi_sample.py:4</a></div></div>
+<div class="ttc" id="anamespacetrainer_1_1trainer_html_aeace27043682fd4e4743b550a2527405"><div class="ttname"><a href="namespacetrainer_1_1trainer.html#aeace27043682fd4e4743b550a2527405">trainer.trainer._smooth_l1_loss</a></div><div class="ttdeci">def _smooth_l1_loss(x, t, in_weight, sigma)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00259">trainer.py:259</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a7f8ea203d8d248e8df09e3d7c53581a4"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a7f8ea203d8d248e8df09e3d7c53581a4">trainer.trainer.FasterRCNNTrainer.update_meters</a></div><div class="ttdeci">def update_meters(self, losses)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00245">trainer.py:245</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_ab67a69d3acacbf55be66451e3f3ae757"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab67a69d3acacbf55be66451e3f3ae757">trainer.trainer.FasterRCNNTrainer.save</a></div><div class="ttdeci">def save(self, save_optimizer=False, save_path=None, **kwargs)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00197">trainer.py:197</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a85782798c1dea1fdc3c842c4c6657f66"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a85782798c1dea1fdc3c842c4c6657f66">trainer.trainer.FasterRCNNTrainer.rpn_sigma</a></div><div class="ttdeci">rpn_sigma</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00045">trainer.py:45</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a71c4bf599a2529633d3513294ac3b357"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a71c4bf599a2529633d3513294ac3b357">trainer.trainer.FasterRCNNTrainer.roi_sigma</a></div><div class="ttdeci">roi_sigma</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00046">trainer.py:46</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a9f737e863596d6b656919faefcf07ca4"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a9f737e863596d6b656919faefcf07ca4">trainer.trainer.FasterRCNNTrainer.get_meter_data</a></div><div class="ttdeci">def get_meter_data(self)</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00256">trainer.py:256</a></div></div>
+<div class="ttc" id="a_p_a_semptyobject_8m_html_a6aa4664b4936f59c6ece3778daf31ec3"><div class="ttname"><a href="_p_a_semptyobject_8m.html#a6aa4664b4936f59c6ece3778daf31ec3">view</a></div><div class="ttdeci">object view</div><div class="ttdef"><b>Definition:</b> <a href="_p_a_semptyobject_8m_source.html#l00008">PASemptyobject.m:8</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_ab0bc299051a745ffe6ef5c4660e05f51"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51">trainer.trainer.FasterRCNNTrainer.train_step</a></div><div class="ttdeci">def train_step(self, imgs, bboxes, labels, scale)</div><div class="ttdoc">Train step code</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00188">trainer.py:188</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1config_html"><div class="ttname"><a href="namespaceutils_1_1config.html">utils.config</a></div><div class="ttdef"><b>Definition:</b> <a href="config_8py_source.html#l00001">config.py:1</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a90ffc337dd9734de3e90f4c6dfc2225e"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e">trainer.trainer.FasterRCNNTrainer.forward</a></div><div class="ttdeci">def forward(self, imgs, bboxes, labels, scale)</div><div class="ttdoc">Train forward code</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00065">trainer.py:65</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html_a1cc0be2dc6218efbe42b86b8556e99ac"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a1cc0be2dc6218efbe42b86b8556e99ac">trainer.trainer.FasterRCNNTrainer.loc_normalize_mean</a></div><div class="ttdeci">loc_normalize_mean</div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00052">trainer.py:52</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1utils_1_1rpn__gt__loc__label_html"><div class="ttname"><a href="namespacemodel_1_1utils_1_1rpn__gt__loc__label.html">model.utils.rpn_gt_loc_label</a></div><div class="ttdef"><b>Definition:</b> <a href="rpn__gt__loc__label_8py_source.html#l00001">rpn_gt_loc_label.py:1</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_642e4ba8134f7c05196b3e0b90f5f2cf.html">trainer</a></li><li class="navelem"><a class="el" href="trainer_8py.html">trainer.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

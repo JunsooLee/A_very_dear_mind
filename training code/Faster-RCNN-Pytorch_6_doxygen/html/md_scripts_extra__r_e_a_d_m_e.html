@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Extra</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('md_scripts_extra__r_e_a_d_m_e.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Extra </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+ground-truth:</h1>
+<ul>
+<li><p class="startli">### convert <code>xml</code> to our format:</p>
+<p class="startli">1) Insert ground-truth xml files into <b>ground-truth/</b> 2) Run the python script: <code>python <a class="el" href="convert__gt__xml_8py.html">convert_gt_xml.py</a></code></p>
+</li>
+<li><p class="startli">### convert YOLO to our format:</p>
+<p class="startli">1) Add class list to the file <code>class_list.txt</code> 2) Insert ground-truth files into <b>ground-truth/</b> 3) Insert images into <b>images/</b> 4) Run the python script: <code>python <a class="el" href="convert__gt__yolo_8py.html">convert_gt_yolo.py</a></code></p>
+</li>
+<li><p class="startli">### convert keras-yolo3 to our format:</p>
+<p class="startli">1) Add or update the class list to the file <code>class_list.txt</code> 2) Use the parameter <code>--gt</code> to set the <b>ground-truth</b> source. 3) Run the python script: <code>python3 <a class="el" href="convert__keras-yolo3_8py.html">convert_keras-yolo3.py</a> --gt &lt;gt_file_path&gt;</code> 1) Supports only python 3. 2) This code can handle recursive annotation structure. Just use the <code>-r</code> parameter. 3) The converted annotation is placed by default in a new from_kerasyolo3 folder. You can change that with the parameter <code>-o</code>. 4) The format is defined according with github.com/qqwweee/keras-yolo3</p>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+detection-results:</h1>
+<ul>
+<li><p class="startli">### convert darkflow <code>json</code> to our format:</p>
+<p class="startli">1) Insert result json files into <b>detection-results/</b> 2) Run the python script: <code>python <a class="el" href="convert__dr__darkflow__json_8py.html">convert_dr_darkflow_json.py</a></code></p>
+</li>
+<li><p class="startli">### convert YOLO to our format:</p>
+<p class="startli">After runnuning darknet on a list of images, e.g.: <code>darknet.exe detector test data/voc.data yolo-voc.cfg yolo-voc.weights -dont_show -ext_output &lt; data/test.txt &gt; result.txt</code></p>
+<p class="startli">1) Copy the file <code>result.txt</code> to the folder <code>extra/</code> 2) Run the python script: <code>python <a class="el" href="convert__dr__yolo_8py.html">convert_dr_yolo.py</a></code></p>
+</li>
+<li><p class="startli">### convert keras-yolo3 to our format:</p>
+<p class="startli">1) Add or update the class list to the file <code>class_list.txt</code> 2) Use the parameter <code>--dr</code> to set the <b>detection-results</b> source. 3) Run the python script: <code>python3 <a class="el" href="convert__keras-yolo3_8py.html">convert_keras-yolo3.py</a> --dr &lt;dr_file_path&gt;</code> 1) Supports only python 3. 2) This code can handle recursive annotation structure. Just use the <code>-r</code> parameter. 3) The converted annotation is placed by default in a new from_kerasyolo3 folder. You can change that with the parameter <code>-o</code>. 4) The format is defined according with github.com/gustavovaliati/keras-yolo3</p>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Find the files that contain a specific class of objects</h1>
+<p>1) Run the <code><a class="el" href="find__class_8py.html">find_class.py</a></code> script and specify the <b>class</b> as argument, e.g. <code>python <a class="el" href="find__class_8py.html">find_class.py</a> chair</code></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Intersect ground-truth and detection-results files</h1>
+<p>This script ensures same number of files in ground-truth and detection-results folder. When you encounter file not found error, it's usually because you have mismatched numbers of ground-truth and detection-results files. You can use this script to move ground-truth and detection-results files that are not in the intersection into a backup folder (backup_no_matches_found). This will retain only files that have the same name in both folders.</p>
+<p>1) Prepare <code>.txt</code> files in your <code>ground-truth</code> and <code>detection-results</code> folders. 2) Run the <code><a class="el" href="intersect-gt-and-dr_8py.html">intersect-gt-and-dr.py</a></code> script to move non-intersected files into a backup folder (default: <code>backup_no_matches_found</code>).</p>
+<p><code>python <a class="el" href="intersect-gt-and-dr_8py.html">intersect-gt-and-dr.py</a></code> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

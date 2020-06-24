@@ -1,0 +1,346 @@
+\hypertarget{namespaceutils_1_1vis__tool}{}\doxysection{utils.\+vis\+\_\+tool 네임스페이스 참조}
+\label{namespaceutils_1_1vis__tool}\index{utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer}{Visualizer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900}{vis\+\_\+image}} (img, ax=None)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1}{vis\+\_\+bbox}} (img, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, \mbox{\hyperlink{_v_o_creadrecxml_8m_a595dd0a82388b0f915674513f072ccda}{label}}=None, score=None, ax=None)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a}{fig2data}} (fig)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a}{fig4vis}} (fig)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1vis__tool_aa9dbfbf41f74029a0dfe728069815bb0}{visdom\+\_\+bbox}} ($\ast$args, $\ast$$\ast$kwargs)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{namespaceutils_1_1vis__tool_acdfe4443adb7c355eeae81e4147013f5}{V\+O\+C\+\_\+\+B\+B\+O\+X\+\_\+\+L\+A\+B\+E\+L\+\_\+\+N\+A\+M\+ES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a}\label{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!fig2data@{fig2data}}
+\index{fig2data@{fig2data}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{fig2data()}{fig2data()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+fig2data (\begin{DoxyParamCaption}\item[{}]{fig }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}brief Convert a Matplotlib figure to a 4D numpy array with RGBA 
+channels and return it
+
+@param fig: a matplotlib figure
+@return a numpy 3D array of RGBA values
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 115 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{115 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a}{fig2data}}(fig):}
+\DoxyCodeLine{116     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{117 \textcolor{stringliteral}{    brief Convert a Matplotlib figure to a 4D numpy array with RGBA }}
+\DoxyCodeLine{118 \textcolor{stringliteral}{    channels and return it}}
+\DoxyCodeLine{119 \textcolor{stringliteral}{}}
+\DoxyCodeLine{120 \textcolor{stringliteral}{    @param fig: a matplotlib figure}}
+\DoxyCodeLine{121 \textcolor{stringliteral}{    @return a numpy 3D array of RGBA values}}
+\DoxyCodeLine{122 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{123     \textcolor{comment}{\# draw the renderer}}
+\DoxyCodeLine{124     fig.canvas.draw()}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{\# Get the RGBA buffer from the figure}}
+\DoxyCodeLine{127     w, h = fig.canvas.get\_width\_height()}
+\DoxyCodeLine{128     buf = np.fromstring(fig.canvas.tostring\_argb(), dtype=np.uint8)}
+\DoxyCodeLine{129     buf.shape = (w, h, 4)}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{comment}{\# canvas.tostring\_argb give pixmap in ARGB mode. Roll the ALPHA channel to have it in RGBA mode}}
+\DoxyCodeLine{132     buf = np.roll(buf, 3, axis=2)}
+\DoxyCodeLine{133     \textcolor{keywordflow}{return} buf.reshape(h, w, 4)}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a}\label{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!fig4vis@{fig4vis}}
+\index{fig4vis@{fig4vis}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{fig4vis()}{fig4vis()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+fig4vis (\begin{DoxyParamCaption}\item[{}]{fig }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}convert figure to ndarray
+\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 136 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a}{fig4vis}}(fig):}
+\DoxyCodeLine{137     \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{138 \textcolor{stringliteral}{    convert figure to ndarray}}
+\DoxyCodeLine{139 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{140     ax = fig.get\_figure()}
+\DoxyCodeLine{141     img\_data = \mbox{\hyperlink{namespaceutils_1_1vis__tool_a6037ff9c99aba8c78eb97ac45fa39e7a}{fig2data}}(ax).astype(np.int32)}
+\DoxyCodeLine{142     plot.close()}
+\DoxyCodeLine{143     \textcolor{comment}{\# HWC-\/>CHW}}
+\DoxyCodeLine{144     \textcolor{keywordflow}{return} img\_data[:, :, :3].transpose((2, 0, 1)) / 255.}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1}\label{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!vis\_bbox@{vis\_bbox}}
+\index{vis\_bbox@{vis\_bbox}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{vis\_bbox()}{vis\_bbox()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+vis\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{bbox,  }\item[{}]{label = {\ttfamily None},  }\item[{}]{score = {\ttfamily None},  }\item[{}]{ax = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Visualize bounding boxes inside image.
+
+Args:
+    img (~numpy.ndarray): An array of shape :math:`(3, height, width)`.
+        This is in RGB format and the range of its value is
+        :math:`[0, 255]`.
+    bbox (~numpy.ndarray): An array of shape :math:`(R, 4)`, where
+        :math:`R` is the number of bounding boxes in the image.
+        Each element is organized
+        by :math:`(y_{min}, x_{min}, y_{max}, x_{max})` in the second axis.
+    label (~numpy.ndarray): An integer array of shape :math:`(R,)`.
+        The values correspond to id for label names stored in
+        :obj:`label_names`. This is optional.
+    score (~numpy.ndarray): A float array of shape :math:`(R,)`.
+         Each value indicates how confident the prediction is.
+         This is optional.
+    label_names (iterable of strings): Name of labels ordered according
+        to label ids. If this is :obj:`None`, labels will be skipped.
+    ax (matplotlib.axes.Axis): The visualization is displayed on this
+        axis. If this is :obj:`None` (default), a new axis is created.
+
+Returns:
+    ~matploblib.axes.Axes:
+    Returns the Axes object with the plot for further tweaking.\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 46 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1}{vis\_bbox}}(img, bbox, label=None, score=None, ax=None):}
+\DoxyCodeLine{47     \textcolor{stringliteral}{"""Visualize bounding boxes inside image.}}
+\DoxyCodeLine{48 \textcolor{stringliteral}{}}
+\DoxyCodeLine{49 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{        img (~numpy.ndarray): An array of shape :math:`(3, height, width)`.}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{            This is in RGB format and the range of its value is}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{            :math:`[0, 255]`.}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{        bbox (~numpy.ndarray): An array of shape :math:`(R, 4)`, where}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{            :math:`R` is the number of bounding boxes in the image.}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{            Each element is organized}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{            by :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})` in the second axis.}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        label (~numpy.ndarray): An integer array of shape :math:`(R,)`.}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{            The values correspond to id for label names stored in}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{            :obj:`label\_names`. This is optional.}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{        score (~numpy.ndarray): A float array of shape :math:`(R,)`.}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{             Each value indicates how confident the prediction is.}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{             This is optional.}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{        label\_names (iterable of strings): Name of labels ordered according}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{            to label ids. If this is :obj:`None`, labels will be skipped.}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{        ax (matplotlib.axes.Axis): The visualization is displayed on this}}
+\DoxyCodeLine{66 \textcolor{stringliteral}{            axis. If this is :obj:`None` (default), a new axis is created.}}
+\DoxyCodeLine{67 \textcolor{stringliteral}{}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{        ~matploblib.axes.Axes:}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{        Returns the Axes object with the plot for further tweaking.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     label\_names = list(VOC\_BBOX\_LABEL\_NAMES) + [\textcolor{stringliteral}{'bg'}]}
+\DoxyCodeLine{75     \textcolor{comment}{\# add for index `-\/1`}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} label \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None} \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} len(bbox) == len(label):}
+\DoxyCodeLine{77         \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'The length of label must be same as that of bbox'})}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} score \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None} \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} len(bbox) == len(score):}
+\DoxyCodeLine{79         \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'The length of score must be same as that of bbox'})}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{\# Returns newly instantiated matplotlib.axes.Axes object if ax is None}}
+\DoxyCodeLine{82     ax = \mbox{\hyperlink{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900}{vis\_image}}(img, ax=ax)}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{\# If there is no bounding box to display, visualize the image and exit.}}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} len(bbox) == 0:}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} ax}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordflow}{for} i, bb \textcolor{keywordflow}{in} enumerate(bbox):}
+\DoxyCodeLine{89         xy = (bb[1], bb[0])}
+\DoxyCodeLine{90         height = bb[2] -\/ bb[0]}
+\DoxyCodeLine{91         width = bb[3] -\/ bb[1]}
+\DoxyCodeLine{92         ax.add\_patch(plot.Rectangle(}
+\DoxyCodeLine{93             xy, width, height, fill=\textcolor{keyword}{False}, edgecolor=\textcolor{stringliteral}{'red'}, linewidth=2))}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         caption = list()}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordflow}{if} label \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None} \textcolor{keywordflow}{and} label\_names \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{98             lb = label[i]}
+\DoxyCodeLine{99             \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (-\/1 <= lb < len(label\_names)):  \textcolor{comment}{\# modfy here to add backgroud}}
+\DoxyCodeLine{100                 \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'No corresponding name is given'})}
+\DoxyCodeLine{101             caption.append(label\_names[lb])}
+\DoxyCodeLine{102         \textcolor{keywordflow}{if} score \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{103             sc = score[i]}
+\DoxyCodeLine{104             caption.append(\textcolor{stringliteral}{'\{:.2f\}'}.format(sc))}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \textcolor{keywordflow}{if} len(caption) > 0:}
+\DoxyCodeLine{107             ax.text(bb[1], bb[0],}
+\DoxyCodeLine{108                     \textcolor{stringliteral}{': '}.join(caption),}
+\DoxyCodeLine{109                     style=\textcolor{stringliteral}{'italic'},}
+\DoxyCodeLine{110                     bbox=\{\textcolor{stringliteral}{'facecolor'}: \textcolor{stringliteral}{'white'}, \textcolor{stringliteral}{'alpha'}: 0.5, \textcolor{stringliteral}{'pad'}: 0\})}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordflow}{return} ax}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900}\label{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!vis\_image@{vis\_image}}
+\index{vis\_image@{vis\_image}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{vis\_image()}{vis\_image()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+vis\+\_\+image (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{ax = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Visualize a color image.
+
+Args:
+    img (~numpy.ndarray): An array of shape :math:`(3, height, width)`.
+        This is in RGB format and the range of its value is
+        :math:`[0, 255]`.
+    ax (matplotlib.axes.Axis): The visualization is displayed on this
+        axis. If this is :obj:`None` (default), a new axis is created.
+
+Returns:
+    ~matploblib.axes.Axes:
+    Returns the Axes object with the plot for further tweaking.\end{DoxyVerb}
+ 
+
+vis\+\_\+tool.\+py 파일의 21 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900}{vis\_image}}(img, ax=None):}
+\DoxyCodeLine{22     \textcolor{stringliteral}{"""Visualize a color image.}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{}}
+\DoxyCodeLine{24 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{25 \textcolor{stringliteral}{        img (~numpy.ndarray): An array of shape :math:`(3, height, width)`.}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{            This is in RGB format and the range of its value is}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{            :math:`[0, 255]`.}}
+\DoxyCodeLine{28 \textcolor{stringliteral}{        ax (matplotlib.axes.Axis): The visualization is displayed on this}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{            axis. If this is :obj:`None` (default), a new axis is created.}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{}}
+\DoxyCodeLine{31 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{32 \textcolor{stringliteral}{        ~matploblib.axes.Axes:}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{        Returns the Axes object with the plot for further tweaking.}}
+\DoxyCodeLine{34 \textcolor{stringliteral}{}}
+\DoxyCodeLine{35 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordflow}{if} ax \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{38         fig = plot.figure()}
+\DoxyCodeLine{39         ax = fig.add\_subplot(1, 1, 1)}
+\DoxyCodeLine{40     \textcolor{comment}{\# CHW -\/> HWC}}
+\DoxyCodeLine{41     img = img.transpose((1, 2, 0))}
+\DoxyCodeLine{42     ax.imshow(img.astype(np.uint8))}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} ax}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1vis__tool_acfc3316abaf25195ab710c0938db8900_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_aa9dbfbf41f74029a0dfe728069815bb0}\label{namespaceutils_1_1vis__tool_aa9dbfbf41f74029a0dfe728069815bb0}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!visdom\_bbox@{visdom\_bbox}}
+\index{visdom\_bbox@{visdom\_bbox}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{visdom\_bbox()}{visdom\_bbox()}}
+{\footnotesize\ttfamily def utils.\+vis\+\_\+tool.\+visdom\+\_\+bbox (\begin{DoxyParamCaption}\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+vis\+\_\+tool.\+py 파일의 147 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1vis__tool_aa9dbfbf41f74029a0dfe728069815bb0}{visdom\_bbox}}(*args, **kwargs):}
+\DoxyCodeLine{148     fig = \mbox{\hyperlink{namespaceutils_1_1vis__tool_a17101b1304e5b6a86602f8ebdea02ed1}{vis\_bbox}}(*args, **kwargs)}
+\DoxyCodeLine{149     data = \mbox{\hyperlink{namespaceutils_1_1vis__tool_a26df7ac01ed590276e768db1610c674a}{fig4vis}}(fig)}
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1vis__tool_aa9dbfbf41f74029a0dfe728069815bb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1vis__tool_acdfe4443adb7c355eeae81e4147013f5}\label{namespaceutils_1_1vis__tool_acdfe4443adb7c355eeae81e4147013f5}} 
+\index{utils.vis\_tool@{utils.vis\_tool}!VOC\_BBOX\_LABEL\_NAMES@{VOC\_BBOX\_LABEL\_NAMES}}
+\index{VOC\_BBOX\_LABEL\_NAMES@{VOC\_BBOX\_LABEL\_NAMES}!utils.vis\_tool@{utils.vis\_tool}}
+\doxysubsubsection{\texorpdfstring{VOC\_BBOX\_LABEL\_NAMES}{VOC\_BBOX\_LABEL\_NAMES}}
+{\footnotesize\ttfamily tuple utils.\+vis\+\_\+tool.\+V\+O\+C\+\_\+\+B\+B\+O\+X\+\_\+\+L\+A\+B\+E\+L\+\_\+\+N\+A\+M\+ES}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  (}
+\DoxyCodeLine{2     \textcolor{stringliteral}{'do\_not\_wash'},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{'do\_not\_bleach'},}
+\DoxyCodeLine{4     \textcolor{stringliteral}{'do\_not\_iron'},}
+\DoxyCodeLine{5     \textcolor{stringliteral}{'do\_not\_dry\_clean'}}
+\DoxyCodeLine{6     )}
+
+\end{DoxyCode}
+
+
+vis\+\_\+tool.\+py 파일의 13 번째 라인에서 정의되었습니다.
+

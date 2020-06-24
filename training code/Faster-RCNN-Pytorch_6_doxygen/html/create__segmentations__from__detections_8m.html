@@ -1,0 +1,1001 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: data/VOCdevkit/create_segmentations_from_detections.m 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('create__segmentations__from__detections_8m.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle">
+<div class="title">create_segmentations_from_detections.m 파일 참조</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="create__segmentations__from__detections_8m_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:afbb56728f3be5c2f09781b87295c94c4"><td class="memItemLeft" align="right" valign="top">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#afbb56728f3be5c2f09781b87295c94c4">CREATE_SEGMENTATIONS_FROM_DETECTIONS</a> (ID) creates <a class="el" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a> from % the detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> with identifier ID e.g. '<a class="el" href="example__segmenter_8m.html#ac4175b14b54e59f4782cfb02a896a74e">comp3</a>'. All detections % will be used</td></tr>
+<tr class="separator:afbb56728f3be5c2f09781b87295c94c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c555e5aa860a1101f87ac34d07ce0f"><td class="memItemLeft" align="right" valign="top">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> no matter what their <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> level&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ae1c555e5aa860a1101f87ac34d07ce0f">CREATE_SEGMENTATIONS_FROM_DETECTIONS</a> (ID, CONFIDENCE) as above</td></tr>
+<tr class="separator:ae1c555e5aa860a1101f87ac34d07ce0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a553d7acf530851b2b315b31c8039f"><td class="memItemLeft" align="right" valign="top">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> no matter what their <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> level but only detections above the specified <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> will be used <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a43a553d7acf530851b2b315b31c8039f">create_segmentations_from_detections</a> (<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>, <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a>) <a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> nargin&lt; 2 <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a></td></tr>
+<tr class="separator:a43a553d7acf530851b2b315b31c8039f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b313c72deeb29df11af543120e785dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> change this path <a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> you install the VOC code elsewhere&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a4b313c72deeb29df11af543120e785dc">addpath</a> ([cd '/VOCcode'])</td></tr>
+<tr class="separator:a4b313c72deeb29df11af543120e785dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a704b2ccbe4102fce5b1bbe7cbab7b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a5a704b2ccbe4102fce5b1bbe7cbab7b5">~exist</a> (<a class="el" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a>, 'file') <a class="el" href="_v_o_cwritexml_8m.html#a6ded8204cc9ab5b812a3022fae39d491">error</a>('Could not find detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> file to use to create <a class="el" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a>(%<a class="el" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a> not found)'</td></tr>
+<tr class="separator:a5a704b2ccbe4102fce5b1bbe7cbab7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabaa857e5ed99a4ac2762f1c5e11845a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aabaa857e5ed99a4ac2762f1c5e11845a">~strcmp</a> (<a class="el" href="create__segmentations__from__detections_8m.html#a0de540de92b56d91faa6b3f3b028dadb">imgid</a>, <a class="el" href="create__segmentations__from__detections_8m.html#af6f5156a3c567f96f6806e218d0e1d0a">previd</a>) <a class="el" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a></td></tr>
+<tr class="separator:aabaa857e5ed99a4ac2762f1c5e11845a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7d2d6eb40a497bd6c1be23847d1aa4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aad7d2d6eb40a497bd6c1be23847d1aa4">isempty</a> (<a class="el" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>) <a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a></td></tr>
+<tr class="separator:aad7d2d6eb40a497bd6c1be23847d1aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481eaa5c46f1d50c2fed3de34e2dfc99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a481eaa5c46f1d50c2fed3de34e2dfc99">im</a> (<a class="el" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>).det(<a class="el" href="create__segmentations__from__detections_8m.html#a33d07d5bf16c1c6b2ca7b6f39d577819">detnum</a>)</td></tr>
+<tr class="separator:a481eaa5c46f1d50c2fed3de34e2dfc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1dd1e25823180f1d3919ec5ead4bc01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ab1dd1e25823180f1d3919ec5ead4bc01">~exist</a> (<a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a>, 'dir') mkdir(<a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a>)</td></tr>
+<tr class="separator:ab1dd1e25823180f1d3919ec5ead4bc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819358c1a6afef977a1f2947b590cb22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> <a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a819358c1a6afef977a1f2947b590cb22">~exist</a> (<a class="el" href="create__segmentations__from__detections_8m.html#ab86194113de1f568f1b5af0dfe44ea3f">resultsdirinst</a>, 'dir') mkdir(<a class="el" href="create__segmentations__from__detections_8m.html#ab86194113de1f568f1b5af0dfe44ea3f">resultsdirinst</a>)</td></tr>
+<tr class="separator:a819358c1a6afef977a1f2947b590cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6605bd3238f2d50434a6746d6b7b9d27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a6605bd3238f2d50434a6746d6b7b9d27">imwrite</a> (instim, <a class="el" href="_v_o_clabelcolormap_8m.html#a33382ecd401f9fc557d9017cdc4cc47e">cmap</a>, <a class="el" href="create__segmentations__from__detections_8m.html#a7c3fe17d66d4049e49c3e31b23f7d45c">instlabelfile</a>)</td></tr>
+<tr class="separator:a6605bd3238f2d50434a6746d6b7b9d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db4417aea71c9481782f6b73cb44eed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a5db4417aea71c9481782f6b73cb44eed">imwrite</a> (<a class="el" href="create__segmentations__from__detections_8m.html#ae61bb997ec3c2b287344d61a3243666d">classim</a>, <a class="el" href="_v_o_clabelcolormap_8m.html#a33382ecd401f9fc557d9017cdc4cc47e">cmap</a>, <a class="el" href="create__segmentations__from__detections_8m.html#a73e3c8a3ba3ada873361b96e1883554f">classlabelfile</a>)</td></tr>
+<tr class="separator:a5db4417aea71c9481782f6b73cb44eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a388d67cc7f8e554f94f4c50336f61df1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_semptyobject_8m.html#a23228aaa27047917c376277897125fc5">class</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a388d67cc7f8e554f94f4c50336f61df1">png</a> ()</td></tr>
+<tr class="separator:a388d67cc7f8e554f94f4c50336f61df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb1b29f5c78cd3e91fed1b719699f09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aadb1b29f5c78cd3e91fed1b719699f09">copyfile</a> (gtlabelfile, <a class="el" href="create__segmentations__from__detections_8m.html#a069fca71d9b681cb063bc48fdcc062e1">gtclasslabelfile</a>)</td></tr>
+<tr class="separator:aadb1b29f5c78cd3e91fed1b719699f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa160ec930c48d76dcf908b285ecde341"><td class="memItemLeft" align="right" valign="top">zeros([H W]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aa160ec930c48d76dcf908b285ecde341">uint8</a> ()</td></tr>
+<tr class="separator:aa160ec930c48d76dcf908b285ecde341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a326eb43af45972a4fdc78c1221c88164"><td class="memItemLeft" align="right" valign="top">initialize VOC options&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a326eb43af45972a4fdc78c1221c88164">VOCinit</a></td></tr>
+<tr class="separator:a326eb43af45972a4fdc78c1221c88164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13fee0a586ad088ccbdcd93bc41ed713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="example__classifier_8m.html#a998f67887464aef7f044115722929ded">load</a> detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a13fee0a586ad088ccbdcd93bc41ed713">tic</a></td></tr>
+<tr class="separator:a13fee0a586ad088ccbdcd93bc41ed713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0219463ca56ea4d76dd99a82f1ec09b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a> ={}</td></tr>
+<tr class="separator:a0219463ca56ea4d76dd99a82f1ec09b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a5982738c2f3a2efa4b40de5383c51"><td class="memItemLeft" align="right" valign="top">for&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a37a5982738c2f3a2efa4b40de5383c51">clsnum</a></td></tr>
+<tr class="separator:a37a5982738c2f3a2efa4b40de5383c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96e0a892e83be68fa7c0a23ade73ffe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a></td></tr>
+<tr class="separator:ab96e0a892e83be68fa7c0a23ade73ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac82a4a57e9e5838951a9f5b5132f21d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a> [<a class="el" href="_v_o_cevallayout_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>, confs, b1, b2, b3, b4] =textread(<a class="el" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a>,'%<a class="el" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a>')</td></tr>
+<tr class="separator:aac82a4a57e9e5838951a9f5b5132f21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dea2bec10df0af54d58d7c28fc6a6f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a4dea2bec10df0af54d58d7c28fc6a6f6">BBOXS</a> =[b1 b2 b3 b4]</td></tr>
+<tr class="separator:a4dea2bec10df0af54d58d7c28fc6a6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f5156a3c567f96f6806e218d0e1d0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#af6f5156a3c567f96f6806e218d0e1d0a">previd</a> =''</td></tr>
+<tr class="separator:af6f5156a3c567f96f6806e218d0e1d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac86694252f8dfdb19aaeadc4b7c342c6"><td class="memItemLeft" align="right" valign="top">for&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a></td></tr>
+<tr class="separator:ac86694252f8dfdb19aaeadc4b7c342c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd84b46ee6d2e3ae04d2920f4e78bfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aadd84b46ee6d2e3ae04d2920f4e78bfd">drawnow</a></td></tr>
+<tr class="separator:aadd84b46ee6d2e3ae04d2920f4e78bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de540de92b56d91faa6b3f3b028dadb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a0de540de92b56d91faa6b3f3b028dadb">imgid</a> = <a class="el" href="_v_o_cevallayout_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>}</td></tr>
+<tr class="separator:a0de540de92b56d91faa6b3f3b028dadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d3ad0492e9a549c5506e3572424365"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a91d3ad0492e9a549c5506e3572424365">conf</a> = confs(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>)</td></tr>
+<tr class="separator:a91d3ad0492e9a549c5506e3572424365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0246615b51b182c933b7cffb655a7bdc"><td class="memItemLeft" align="right" valign="top">detinfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a0246615b51b182c933b7cffb655a7bdc">bbox</a> = <a class="el" href="create__segmentations__from__detections_8m.html#a4dea2bec10df0af54d58d7c28fc6a6f6">BBOXS</a>(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>,:)</td></tr>
+<tr class="separator:a0246615b51b182c933b7cffb655a7bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a517e3e42b3d109bc480c74e3a655c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a> = numel(<a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a>)</td></tr>
+<tr class="separator:aa1a517e3e42b3d109bc480c74e3a655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d07d5bf16c1c6b2ca7b6f39d577819"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a33d07d5bf16c1c6b2ca7b6f39d577819">detnum</a> =1</td></tr>
+<tr class="separator:a33d07d5bf16c1c6b2ca7b6f39d577819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae039d76e4cd9e3c90e19b1015059ee10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> <a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> Write <a class="el" href="_v_o_cevalcls_8m.html#ad0aff65122095c8b2cfb9f97e1e6bcff">out</a> the <a class="el" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a> = sprintf(VOCopts.seg.clsresdir,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset)</td></tr>
+<tr class="separator:ae039d76e4cd9e3c90e19b1015059ee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86194113de1f568f1b5af0dfe44ea3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ab86194113de1f568f1b5af0dfe44ea3f">resultsdirinst</a> = sprintf(VOCopts.seg.instresdir,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset)</td></tr>
+<tr class="separator:ab86194113de1f568f1b5af0dfe44ea3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b41f8c3196a93b87c47b08c3614b5dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a2b41f8c3196a93b87c47b08c3614b5dc">cmap</a> = VOClabelcolormap(255)</td></tr>
+<tr class="separator:a2b41f8c3196a93b87c47b08c3614b5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50afcbd6b9acbf9bb5b89ee3779e2737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a> = <a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a>{<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>}</td></tr>
+<tr class="separator:a50afcbd6b9acbf9bb5b89ee3779e2737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e3c8a3ba3ada873361b96e1883554f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a73e3c8a3ba3ada873361b96e1883554f">classlabelfile</a> = sprintf(VOCopts.seg.clsrespath,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td></tr>
+<tr class="separator:a73e3c8a3ba3ada873361b96e1883554f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3fe17d66d4049e49c3e31b23f7d45c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a7c3fe17d66d4049e49c3e31b23f7d45c">instlabelfile</a> = sprintf(VOCopts.seg.instrespath,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td></tr>
+<tr class="separator:a7c3fe17d66d4049e49c3e31b23f7d45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8ca418c8b24530b25214a679aba14b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a7b8ca418c8b24530b25214a679aba14b">imgfile</a> = sprintf(VOCopts.imgpath,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td></tr>
+<tr class="separator:a7b8ca418c8b24530b25214a679aba14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab073d932759bd40e9f93bb12d544ee96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ab073d932759bd40e9f93bb12d544ee96">imginfo</a> = imfinfo(<a class="el" href="create__segmentations__from__detections_8m.html#a7b8ca418c8b24530b25214a679aba14b">imgfile</a>)</td></tr>
+<tr class="separator:ab073d932759bd40e9f93bb12d544ee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069fca71d9b681cb063bc48fdcc062e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#a069fca71d9b681cb063bc48fdcc062e1">gtclasslabelfile</a> = sprintf('%<a class="el" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>/%<a class="el" href="create__segmentations__from__detections_8m.html#a388d67cc7f8e554f94f4c50336f61df1">d_gt.png</a>',<a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a>,imnums(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>))</td></tr>
+<tr class="separator:a069fca71d9b681cb063bc48fdcc062e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61bb997ec3c2b287344d61a3243666d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create__segmentations__from__detections_8m.html#ae61bb997ec3c2b287344d61a3243666d">classim</a> = <a class="el" href="create__segmentations__from__detections_8m.html#aa160ec930c48d76dcf908b285ecde341">uint8</a>(zeros([H W]))</td></tr>
+<tr class="separator:ae61bb997ec3c2b287344d61a3243666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a4b313c72deeb29df11af543120e785dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b313c72deeb29df11af543120e785dc">&#9670;&nbsp;</a></span>addpath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> change this path <a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> you install the VOC code elsewhere addpath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadb1b29f5c78cd3e91fed1b719699f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadb1b29f5c78cd3e91fed1b719699f09">&#9670;&nbsp;</a></span>copyfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">copyfile </td>
+          <td>(</td>
+          <td class="paramtype">gtlabelfile&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#a069fca71d9b681cb063bc48fdcc062e1">gtclasslabelfile</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbb56728f3be5c2f09781b87295c94c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb56728f3be5c2f09781b87295c94c4">&#9670;&nbsp;</a></span>CREATE_SEGMENTATIONS_FROM_DETECTIONS() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> CREATE_SEGMENTATIONS_FROM_DETECTIONS </td>
+          <td>(</td>
+          <td class="paramtype">ID&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1c555e5aa860a1101f87ac34d07ce0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c555e5aa860a1101f87ac34d07ce0f">&#9670;&nbsp;</a></span>CREATE_SEGMENTATIONS_FROM_DETECTIONS() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> no matter what their <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> level CREATE_SEGMENTATIONS_FROM_DETECTIONS </td>
+          <td>(</td>
+          <td class="paramtype">ID&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CONFIDENCE&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43a553d7acf530851b2b315b31c8039f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a553d7acf530851b2b315b31c8039f">&#9670;&nbsp;</a></span>create_segmentations_from_detections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Creates segmentation <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> from detection <a class="el" href="_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4">results</a> no matter what their <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> level but only detections above the specified <a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a> will be used <a class="el" href="_v_o_cxml2struct_8m.html#a89dac2bba162e6f61bc72eb4d8db5e29">function</a> create_segmentations_from_detections </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_v_o_cevallayout_8m.html#a6330b680cc4c09a584ab93b0a37e73ca">confidence</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a481eaa5c46f1d50c2fed3de34e2dfc99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481eaa5c46f1d50c2fed3de34e2dfc99">&#9670;&nbsp;</a></span>im()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> im </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5db4417aea71c9481782f6b73cb44eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db4417aea71c9481782f6b73cb44eed">&#9670;&nbsp;</a></span>imwrite() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imwrite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#ae61bb997ec3c2b287344d61a3243666d">classim</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_v_o_clabelcolormap_8m.html#a33382ecd401f9fc557d9017cdc4cc47e">cmap</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#a73e3c8a3ba3ada873361b96e1883554f">classlabelfile</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6605bd3238f2d50434a6746d6b7b9d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6605bd3238f2d50434a6746d6b7b9d27">&#9670;&nbsp;</a></span>imwrite() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imwrite </td>
+          <td>(</td>
+          <td class="paramtype">instim&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_v_o_clabelcolormap_8m.html#a33382ecd401f9fc557d9017cdc4cc47e">cmap</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#a7c3fe17d66d4049e49c3e31b23f7d45c">instlabelfile</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad7d2d6eb40a497bd6c1be23847d1aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7d2d6eb40a497bd6c1be23847d1aa4">&#9670;&nbsp;</a></span>isempty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> isempty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_v_o_cxml2struct_8m.html#aa1a517e3e42b3d109bc480c74e3a655c">ind</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00050">50</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                  {<a class="code" href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a>+1}=<a class="code" href="create__segmentations__from__detections_8m.html#a0de540de92b56d91faa6b3f3b028dadb">imgid</a>;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a388d67cc7f8e554f94f4c50336f61df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388d67cc7f8e554f94f4c50336f61df1">&#9670;&nbsp;</a></span>png()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_semptyobject_8m.html#a23228aaa27047917c376277897125fc5">class</a> png </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa160ec930c48d76dcf908b285ecde341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa160ec930c48d76dcf908b285ecde341">&#9670;&nbsp;</a></span>uint8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">zeros([H W] uint8 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1dd1e25823180f1d3919ec5ead4bc01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1dd1e25823180f1d3919ec5ead4bc01">&#9670;&nbsp;</a></span>~exist() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> ~exist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">'dir'&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a819358c1a6afef977a1f2947b590cb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819358c1a6afef977a1f2947b590cb22">&#9670;&nbsp;</a></span>~exist() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> <a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> ~exist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#ab86194113de1f568f1b5af0dfe44ea3f">resultsdirinst</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">'dir'&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a704b2ccbe4102fce5b1bbe7cbab7b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a704b2ccbe4102fce5b1bbe7cbab7b5">&#9670;&nbsp;</a></span>~exist() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> ~exist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">'file'&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aabaa857e5ed99a4ac2762f1c5e11845a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabaa857e5ed99a4ac2762f1c5e11845a">&#9670;&nbsp;</a></span>~strcmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> ~<a class="el" href="_p_a_sreadrecord_8m.html#ac8c32e9c713240d74818c89b8003e629">strcmp</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#a0de540de92b56d91faa6b3f3b028dadb">imgid</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="create__segmentations__from__detections_8m.html#af6f5156a3c567f96f6806e218d0e1d0a">previd</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="a0246615b51b182c933b7cffb655a7bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0246615b51b182c933b7cffb655a7bdc">&#9670;&nbsp;</a></span>bbox</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#a494a20ecd0a0354be80b354322b62cc1">record</a> <a class="el" href="_p_a_sreadrectxt_8m.html#a0bf98fb7969bc788e93663007dfc0739">objects</a>(obj bbox = <a class="el" href="create__segmentations__from__detections_8m.html#a4dea2bec10df0af54d58d7c28fc6a6f6">BBOXS</a>(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>,:)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4dea2bec10df0af54d58d7c28fc6a6f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dea2bec10df0af54d58d7c28fc6a6f6">&#9670;&nbsp;</a></span>BBOXS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BBOXS =[b1 b2 b3 b4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00030">30</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae61bb997ec3c2b287344d61a3243666d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61bb997ec3c2b287344d61a3243666d">&#9670;&nbsp;</a></span>classim</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">classim = <a class="el" href="create__segmentations__from__detections_8m.html#aa160ec930c48d76dcf908b285ecde341">uint8</a>(zeros([H W]))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00106">106</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a73e3c8a3ba3ada873361b96e1883554f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e3c8a3ba3ada873361b96e1883554f">&#9670;&nbsp;</a></span>classlabelfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">classlabelfile = sprintf(VOCopts.seg.clsrespath,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00084">84</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a37a5982738c2f3a2efa4b40de5383c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a5982738c2f3a2efa4b40de5383c51">&#9670;&nbsp;</a></span>clsnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> detinfo clsnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>초기값:</b><div class="fragment"><div class="line">= 1:VOCopts.nclasses</div>
+<div class="line">    <a class="code" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a> = sprintf(VOCopts.detrespath,<span class="keywordtype">id</span>,VOCopts.classes{clsnum})</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2b41f8c3196a93b87c47b08c3614b5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b41f8c3196a93b87c47b08c3614b5dc">&#9670;&nbsp;</a></span>cmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> cmap = VOClabelcolormap(255)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00073">73</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a91d3ad0492e9a549c5506e3572424365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91d3ad0492e9a549c5506e3572424365">&#9670;&nbsp;</a></span>conf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">detinfo conf = confs(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00041">41</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a33d07d5bf16c1c6b2ca7b6f39d577819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d07d5bf16c1c6b2ca7b6f39d577819">&#9670;&nbsp;</a></span>detnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">else detnum =1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00053">53</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aadd84b46ee6d2e3ae04d2920f4e78bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd84b46ee6d2e3ae04d2920f4e78bfd">&#9670;&nbsp;</a></span>drawnow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">drawnow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aac82a4a57e9e5838951a9f5b5132f21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac82a4a57e9e5838951a9f5b5132f21d">&#9670;&nbsp;</a></span>end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">end[<a class="el" href="_v_o_cevallayout_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>, confs, b1, b2, b3, b4] =textread(<a class="el" href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a>,'%<a class="el" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a> %<a class="el" href="_v_o_cwritexml_8m.html#a0b421d987000ed7a8e263776e85c5cc9">f</a>')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00029">29</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a069fca71d9b681cb063bc48fdcc062e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069fca71d9b681cb063bc48fdcc062e1">&#9670;&nbsp;</a></span>gtclasslabelfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtclasslabelfile = sprintf('%<a class="el" href="_v_o_cwritexml_8m.html#aaa7c61c7163e7fc36352afb33ce6c3dd">s</a>/%<a class="el" href="create__segmentations__from__detections_8m.html#a388d67cc7f8e554f94f4c50336f61df1">d_gt.png</a>',<a class="el" href="create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10">resultsdir</a>,imnums(<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00097">97</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7b8ca418c8b24530b25214a679aba14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b8ca418c8b24530b25214a679aba14b">&#9670;&nbsp;</a></span>imgfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imgfile = sprintf(VOCopts.imgpath,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00087">87</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0de540de92b56d91faa6b3f3b028dadb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de540de92b56d91faa6b3f3b028dadb">&#9670;&nbsp;</a></span>imgid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> imgid = <a class="el" href="_v_o_cevallayout_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>{<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00040">40</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0219463ca56ea4d76dd99a82f1ec09b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0219463ca56ea4d76dd99a82f1ec09b1">&#9670;&nbsp;</a></span>imgids</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imgids ={}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab073d932759bd40e9f93bb12d544ee96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab073d932759bd40e9f93bb12d544ee96">&#9670;&nbsp;</a></span>imginfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imginfo = imfinfo(<a class="el" href="create__segmentations__from__detections_8m.html#a7b8ca418c8b24530b25214a679aba14b">imgfile</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00088">88</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a50afcbd6b9acbf9bb5b89ee3779e2737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50afcbd6b9acbf9bb5b89ee3779e2737">&#9670;&nbsp;</a></span>imname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> imname = <a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a>{<a class="el" href="_v_o_cwritexml_8m.html#a8f47e0001258b78994326e2d07d7c51d">j</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00082">82</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa1a517e3e42b3d109bc480c74e3a655c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a517e3e42b3d109bc480c74e3a655c">&#9670;&nbsp;</a></span>ind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ind = numel(<a class="el" href="create__segmentations__from__detections_8m.html#a0219463ca56ea4d76dd99a82f1ec09b1">imgids</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7c3fe17d66d4049e49c3e31b23f7d45c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3fe17d66d4049e49c3e31b23f7d45c">&#9670;&nbsp;</a></span>instlabelfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">instlabelfile = sprintf(VOCopts.seg.instrespath,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset,<a class="el" href="create__segmentations__from__detections_8m.html#a50afcbd6b9acbf9bb5b89ee3779e2737">imname</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00085">85</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac86694252f8dfdb19aaeadc4b7c342c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86694252f8dfdb19aaeadc4b7c342c6">&#9670;&nbsp;</a></span>j</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">for j</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>초기값:</b><div class="fragment"><div class="line">=1:numel(<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>)</div>
+<div class="line">        % display progress</div>
+<div class="line">        <span class="keywordflow">if</span> toc&gt;1</div>
+<div class="line">            <a class="code" href="example__classifier_8m.html#a590d7618b070763052e6233d7c8ba6f9">fprintf</a>(<span class="stringliteral">&#39;class %d/%d: load detections: %d/%d\n&#39;</span>,<a class="code" href="create__segmentations__from__detections_8m.html#a37a5982738c2f3a2efa4b40de5383c51">clsnum</a>,VOCopts.nclasses,<a class="code" href="create__segmentations__from__detections_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a>,numel(<a class="code" href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a>))</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00032">32</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af6f5156a3c567f96f6806e218d0e1d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f5156a3c567f96f6806e218d0e1d0a">&#9670;&nbsp;</a></span>previd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">previd =''</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae039d76e4cd9e3c90e19b1015059ee10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae039d76e4cd9e3c90e19b1015059ee10">&#9670;&nbsp;</a></span>resultsdir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> <a class="el" href="_p_a_sreadrectxt_8m.html#afb358f48b1646c750fb9da6c6585be2b">end</a> Write <a class="el" href="_v_o_cevalcls_8m.html#ad0aff65122095c8b2cfb9f97e1e6bcff">out</a> the <a class="el" href="viewanno_8m.html#aa0b08e5898b5b1828d5ce29a4f8e303b">segmentations</a> resultsdir = sprintf(VOCopts.seg.clsresdir,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00062">62</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab86194113de1f568f1b5af0dfe44ea3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab86194113de1f568f1b5af0dfe44ea3f">&#9670;&nbsp;</a></span>resultsdirinst</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">resultsdirinst = sprintf(VOCopts.seg.instresdir,<a class="el" href="_v_o_clabelcolormap_8m.html#acf2488b95c97e0378c9bf49de3b50f28">id</a>,VOCopts.testset)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab96e0a892e83be68fa7c0a23ade73ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab96e0a892e83be68fa7c0a23ade73ffe">&#9670;&nbsp;</a></span>resultsfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_v_o_cevallayout_8m.html#ac9e620f26c1ecbbd423b3deefc8017b9">if</a> resultsfile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00027">27</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a13fee0a586ad088ccbdcd93bc41ed713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13fee0a586ad088ccbdcd93bc41ed713">&#9670;&nbsp;</a></span>tic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">classify each <a class="el" href="viewdet_8m.html#aed3e051aea1aa75805be67a5c29d1d55">image</a> tic</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00022">22</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a326eb43af45972a4fdc78c1221c88164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326eb43af45972a4fdc78c1221c88164">&#9670;&nbsp;</a></span>VOCinit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">initialize VOC options VOCinit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="create__segmentations__from__detections_8m_source.html">create_segmentations_from_detections.m</a> 파일의 <a class="el" href="create__segmentations__from__detections_8m_source.html#l00018">18</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_ac86694252f8dfdb19aaeadc4b7c342c6"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#ac86694252f8dfdb19aaeadc4b7c342c6">j</a></div><div class="ttdeci">for j</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00032">create_segmentations_from_detections.m:32</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_a37a5982738c2f3a2efa4b40de5383c51"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#a37a5982738c2f3a2efa4b40de5383c51">clsnum</a></div><div class="ttdeci">for clsnum</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00024">create_segmentations_from_detections.m:24</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_aac82a4a57e9e5838951a9f5b5132f21d"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#aac82a4a57e9e5838951a9f5b5132f21d">end</a></div><div class="ttdeci">end[ids, confs, b1, b2, b3, b4]</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00029">create_segmentations_from_detections.m:29</a></div></div>
+<div class="ttc" id="aviewdet_8m_html_ac098c7b706e0f36aef1053e4eb6e0ae2"><div class="ttname"><a href="viewdet_8m.html#ac098c7b706e0f36aef1053e4eb6e0ae2">ids</a></div><div class="ttdeci">ids</div><div class="ttdef"><b>Definition:</b> <a href="viewdet_8m_source.html#l00049">viewdet.m:49</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_ab96e0a892e83be68fa7c0a23ade73ffe"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe">resultsfile</a></div><div class="ttdeci">if resultsfile</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00027">create_segmentations_from_detections.m:27</a></div></div>
+<div class="ttc" id="acreate__segmentations__from__detections_8m_html_a0de540de92b56d91faa6b3f3b028dadb"><div class="ttname"><a href="create__segmentations__from__detections_8m.html#a0de540de92b56d91faa6b3f3b028dadb">imgid</a></div><div class="ttdeci">end imgid</div><div class="ttdef"><b>Definition:</b> <a href="create__segmentations__from__detections_8m_source.html#l00040">create_segmentations_from_detections.m:40</a></div></div>
+<div class="ttc" id="aexample__classifier_8m_html_a590d7618b070763052e6233d7c8ba6f9"><div class="ttname"><a href="example__classifier_8m.html#a590d7618b070763052e6233d7c8ba6f9">fprintf</a></div><div class="ttdeci">compute and display PR if i&lt; VOCopts.nclasses fprintf( 'press any key to continue with next class...\n');drawnow;pause;endend% train classifierfunction classifier=train(VOCopts, cls)% load 'train' image set for class[ids, classifier.gt]=textread(sprintf(VOCopts.clsimgsetpath, cls, 'train'),'%s %d');% extract features for each imageclassifier.FD=zeros(0, length(ids));tic;for i=1:length(ids) % display progress if toc &gt; fprintf('%s:train:%d/%d\n', cls, i, length(ids))</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_472fafaf0f039b9e6b043966c1ef7dbf.html">data</a></li><li class="navelem"><a class="el" href="dir_d9f7cb0ee7ba4bfbc588b8b68234bda5.html">VOCdevkit</a></li><li class="navelem"><a class="el" href="create__segmentations__from__detections_8m.html">create_segmentations_from_detections.m</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

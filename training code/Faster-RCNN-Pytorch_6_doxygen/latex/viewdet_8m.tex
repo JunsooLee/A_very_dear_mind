@@ -1,0 +1,424 @@
+\hypertarget{viewdet_8m}{}\doxysection{data/\+V\+O\+Cdevkit/viewdet.m 파일 참조}
+\label{viewdet_8m}\index{data/VOCdevkit/viewdet.m@{data/VOCdevkit/viewdet.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} viewdet(\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, onlytp) \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} nargin$<$ 1 \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\mbox{[} \textquotesingle{}usage \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} nargin$<$ 2 onlytp=false;\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}}\% change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhereaddpath(\mbox{[}cd \textquotesingle{}/V\+O\+Ccode\textquotesingle{}\mbox{]});\% initialize V\+OC options\+V\+O\+Cinit;\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} \mbox{\hyperlink{viewanno_8m_a6b112fb9f67000cb49d3b8a54d1fb3f6}{set}}\mbox{[}gtids, \mbox{\hyperlink{_v_o_cevallayout_8m_aeeb7263bc62091985bdabfb0015cbc29}{t}}\mbox{]}=textread(sprintf(V\+O\+Copts.\+imgsetpath, V\+O\+Copts.\+testset),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{});\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} ground truth objectstic;\mbox{\hyperlink{_v_o_cevallayout_8m_ae0070ea45b2592ce3701ab9e486e58a0}{npos}}=0;for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(gtids) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc $>$ \mbox{\hyperlink{viewdet_8m_af1ae7f72dc9d78f5d09a2ca53ed8f112}{fprintf}} (\textquotesingle{}\%s\+:viewdet\+:load\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(gtids))
+\item 
+\mbox{\hyperlink{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}{gt}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).\mbox{\hyperlink{_v_o_cevaldet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{viewdet_8m_ab4bafd64f8f7978ac5572d2856f772f5}{isempty}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}) \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\textquotesingle{}unrecognized \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \char`\"{}\%s\char`\"{}\textquotesingle{}
+\item 
+elseif \mbox{\hyperlink{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}{length}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}})$>$1 \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\textquotesingle{}multiple \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \char`\"{}\%s\char`\"{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}} (\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(2), bbgt(2))
+\item 
+\mbox{\hyperlink{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}{min}} (\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(3), bbgt(3))
+\item 
+\mbox{\hyperlink{viewdet_8m_a69ab5a290db7ecb803d915a13b913643}{min}} (\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(4), bbgt(4))\mbox{]}
+\item 
+\mbox{\hyperlink{viewdet_8m_a5d8ced56d814fc099a4967e463118b27}{plot}} (bbgt(\mbox{[}1 3 3 1 1\mbox{]}), bbgt(\mbox{[}2 2 4 4 2\mbox{]}), \textquotesingle{}y-\/\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}, 2)
+\item 
+\mbox{\hyperlink{viewdet_8m_aaad72ea9cd295453961e8097ca51e14c}{plot}} (\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}1 3 3 1 1\mbox{]}), \mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}2 2 4 4 2\mbox{]}), \textquotesingle{}g\+:\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}, 2)
+\item 
+else \mbox{\hyperlink{viewdet_8m_a79ffc99429b2597685c4f3692c2069d5}{plot}} (\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}1 3 3 1 1\mbox{]}), \mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}2 2 4 4 2\mbox{]}), \textquotesingle{}\mbox{\hyperlink{_v_o_clabelcolormap_8m_a514f1b439f404f86f77090fa9edc96ce}{r}}-\/\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}, 2)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{viewdet_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}
+\item 
+\mbox{\hyperlink{viewdet_8m_a8fb092330ecda60587643305d0d9738a}{tic}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} read annotation \mbox{\hyperlink{viewdet_8m_a2f01939e7907ea640b4b7e663d1a2ced}{rec}} =P\+A\+Sreadrecord(sprintf(V\+O\+Copts.\+annopath,gtids\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))
+\item 
+extract \mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{objects}} of \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} \mbox{\hyperlink{viewdet_8m_af98a326664c84a939a062e59616d05cd}{clsinds}} =strmatch(\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},\{\mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{rec.\+objects}}(\+:).\mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}}\},\textquotesingle{}exact\textquotesingle{})
+\item 
+\mbox{\hyperlink{viewdet_8m_ae0070ea45b2592ce3701ab9e486e58a0}{npos}} =npos+sum($\sim$\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).diff)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \mbox{\hyperlink{viewdet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} \mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}, b1, b2, b3, b4\mbox{]} =textread(sprintf(V\+O\+Copts.\+detrespath,\textquotesingle{}\mbox{\hyperlink{example__segmenter_8m_ac4175b14b54e59f4782cfb02a896a74e}{comp3}}\textquotesingle{},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{viewdet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}} =\mbox{[}b1 b2 b3 b4\mbox{]}\textquotesingle{}
+\item 
+sort detections by decreasing \mbox{\hyperlink{viewdet_8m_ad6832fa8e2228bc5c6e684daaa051b0f}{confidence}} \mbox{[}sc, si\mbox{]} =sort(-\/confidence)
+\item 
+\mbox{\hyperlink{viewdet_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}} =ids(si)
+\item 
+\mbox{\hyperlink{_v_o_creadrecxml_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}} detections \mbox{\hyperlink{viewdet_8m_a1d8ecd161082ea597b225a4a25e780ba}{nd}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}})
+\item 
+for \mbox{\hyperlink{viewdet_8m_a48665fb4f42738b9fb0af96e08692283}{d}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} find ground truth \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \mbox{\hyperlink{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}{i}} =strmatch(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\},gtids,\textquotesingle{}exact\textquotesingle{})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} assign detection to ground truth \mbox{\hyperlink{_p_a_semptyobject_8m_a73866c1bbed3d157dc7c8a2655bbf8bd}{object}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} any \mbox{\hyperlink{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}{bb}} =\mbox{\hyperlink{_v_o_cevaldet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}}(\+:,\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}})
+\item 
+\mbox{\hyperlink{viewdet_8m_ab809ca4031387991e228c15abc1a8922}{ovmax}} =-\/inf
+\item 
+for \mbox{\hyperlink{viewdet_8m_ac86694252f8dfdb19aaeadc4b7c342c6}{j}}
+\item 
+\mbox{\hyperlink{viewdet_8m_a8115153332991997460b9f236e0da71a}{bi}} =\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(1),bbgt(1))
+\item 
+\mbox{\hyperlink{viewdet_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(3)-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(1)+1
+\item 
+\mbox{\hyperlink{viewdet_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(4)-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(2)+1
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevallayout_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}} \&\mbox{\hyperlink{_v_o_cevallayout_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}} compute overlap as area of intersection area of union \mbox{\hyperlink{viewdet_8m_a117cb301402308415451f49aa0df22e5}{ua}}
+\item 
+\mbox{\hyperlink{viewdet_8m_aeab82fc694d738ade31349c417f199cd}{ov}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}}$\ast$\mbox{\hyperlink{_v_o_cevallayout_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}}/\mbox{\hyperlink{_v_o_cevallayout_8m_ac79cf9edff7ef4e779cd63a967f02752}{ua}}
+\item 
+\mbox{\hyperlink{viewdet_8m_a764b39950f3ce86a8b050a07b6e5d108}{jmax}} =\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} skip false positives \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} onlytp \& \mbox{\hyperlink{viewdet_8m_a0826fd390b1abfa27704b03aa2be93a6}{ovmax$<$ V\+O\+Copts.\+minoverlap continue end \% read image I=imread(sprintf(\+V\+O\+Copts.\+imgpath, gtids\{i\}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(\+I);hold on;if ovmax $>$}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} hold \mbox{\hyperlink{viewdet_8m_ad1ef7ba37f963bb7388eb76554f52c28}{off}}
+\item 
+axis \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{viewdet_8m_af1ae7f72dc9d78f5d09a2ca53ed8f112}\label{viewdet_8m_af1ae7f72dc9d78f5d09a2ca53ed8f112}} 
+\index{viewdet.m@{viewdet.m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{fprintf()}{fprintf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} viewdet (\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},onlytp) \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} nargin$<$1 \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\mbox{[}\textquotesingle{}usage \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} nargin$<$2 onlytp=false;\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}}\% change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhereaddpath(\mbox{[}cd \textquotesingle{}/V\+O\+Ccode\textquotesingle{}\mbox{]});\% initialize V\+OC options\+V\+O\+Cinit;\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \mbox{\hyperlink{example__layout_8m_ab97743966606b56e7ec17c8bce8c2e3b}{test}} \mbox{\hyperlink{viewanno_8m_a6b112fb9f67000cb49d3b8a54d1fb3f6}{set}}\mbox{[}gtids,\mbox{\hyperlink{_v_o_cevallayout_8m_aeeb7263bc62091985bdabfb0015cbc29}{t}}\mbox{]}=textread(sprintf(V\+O\+Copts.\+imgsetpath,V\+O\+Copts.\+testset),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\textquotesingle{});\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} ground truth objectstic;\mbox{\hyperlink{_v_o_cevallayout_8m_ae0070ea45b2592ce3701ab9e486e58a0}{npos}}=0;for \mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}=1\+:\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(gtids) \% display progress \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} toc$>$ fprintf (\begin{DoxyParamCaption}\item[{\textquotesingle{}\%s\+:viewdet\+:load\+:\%\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}/\%d\textbackslash{}n\textquotesingle{}}]{,  }\item[{\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(gtids)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}\label{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}} 
+\index{viewdet.m@{viewdet.m}!gt@{gt}}
+\index{gt@{gt}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{gt()}{gt()}}
+{\footnotesize\ttfamily gt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_ab4bafd64f8f7978ac5572d2856f772f5}\label{viewdet_8m_ab4bafd64f8f7978ac5572d2856f772f5}} 
+\index{viewdet.m@{viewdet.m}!isempty@{isempty}}
+\index{isempty@{isempty}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{isempty()}{isempty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}\label{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}} 
+\index{viewdet.m@{viewdet.m}!length@{length}}
+\index{length@{length}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily elseif length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}\label{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}} 
+\index{viewdet.m@{viewdet.m}!max@{max}}
+\index{max@{max}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(2)}]{,  }\item[{bbgt(2)}]{ }\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}\label{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4}} 
+\index{viewdet.m@{viewdet.m}!min@{min}}
+\index{min@{min}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(3)}]{,  }\item[{bbgt(3)}]{ }\end{DoxyParamCaption})}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{viewdet_8m_a830cd235a9bd6ad5766625b1cca857f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{viewdet_8m_a69ab5a290db7ecb803d915a13b913643}\label{viewdet_8m_a69ab5a290db7ecb803d915a13b913643}} 
+\index{viewdet.m@{viewdet.m}!min@{min}}
+\index{min@{min}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(4)}]{,  }\item[{bbgt(4)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_aaad72ea9cd295453961e8097ca51e14c}\label{viewdet_8m_aaad72ea9cd295453961e8097ca51e14c}} 
+\index{viewdet.m@{viewdet.m}!plot@{plot}}
+\index{plot@{plot}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}1 3 3 1 1\mbox{]})}]{,  }\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}2 2 4 4 2\mbox{]})}]{,  }\item[{\textquotesingle{}g\+:\textquotesingle{}}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_a79ffc99429b2597685c4f3692c2069d5}\label{viewdet_8m_a79ffc99429b2597685c4f3692c2069d5}} 
+\index{viewdet.m@{viewdet.m}!plot@{plot}}
+\index{plot@{plot}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily else plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}1 3 3 1 1\mbox{]})}]{,  }\item[{\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(\mbox{[}2 2 4 4 2\mbox{]})}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{_v_o_clabelcolormap_8m_a514f1b439f404f86f77090fa9edc96ce}{r}}-\/\textquotesingle{}}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{viewdet_8m_a5d8ced56d814fc099a4967e463118b27}\label{viewdet_8m_a5d8ced56d814fc099a4967e463118b27}} 
+\index{viewdet.m@{viewdet.m}!plot@{plot}}
+\index{plot@{plot}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily plot (\begin{DoxyParamCaption}\item[{bbgt(\mbox{[}1 3 3 1 1\mbox{]})}]{,  }\item[{bbgt(\mbox{[}2 2 4 4 2\mbox{]})}]{,  }\item[{\textquotesingle{}y-\/\textquotesingle{}}]{,  }\item[{\textquotesingle{}\mbox{\hyperlink{viewanno_8m_aa6875f7349c0f7137328b3cb1264c8d8}{linewidth}}\textquotesingle{}}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{viewdet_8m_af50881ced34c7d9e6bce100bf33dec60}\label{viewdet_8m_af50881ced34c7d9e6bce100bf33dec60}} 
+\index{viewdet.m@{viewdet.m}!BB@{BB}}
+\index{BB@{BB}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{BB}{BB}}
+{\footnotesize\ttfamily BB =\mbox{[}b1 b2 b3 b4\mbox{]}\textquotesingle{}}
+
+
+
+viewdet.\+m 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}\label{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}} 
+\index{viewdet.m@{viewdet.m}!bb@{bb}}
+\index{bb@{bb}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{bb}{bb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} assign detection to ground truth \mbox{\hyperlink{_p_a_semptyobject_8m_a73866c1bbed3d157dc7c8a2655bbf8bd}{object}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} any bb =\mbox{\hyperlink{_v_o_cevaldet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}}(\+:,\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}})}
+
+
+
+viewdet.\+m 파일의 72 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a8115153332991997460b9f236e0da71a}\label{viewdet_8m_a8115153332991997460b9f236e0da71a}} 
+\index{viewdet.m@{viewdet.m}!bi@{bi}}
+\index{bi@{bi}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{bi}{bi}}
+{\footnotesize\ttfamily bi =\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(\mbox{\hyperlink{viewanno_8m_a40822d6abf63a875299209914bccb8f2}{bb}}(1),bbgt(1))}
+
+
+
+viewdet.\+m 파일의 76 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_af98a326664c84a939a062e59616d05cd}\label{viewdet_8m_af98a326664c84a939a062e59616d05cd}} 
+\index{viewdet.m@{viewdet.m}!clsinds@{clsinds}}
+\index{clsinds@{clsinds}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{clsinds}{clsinds}}
+{\footnotesize\ttfamily extract \mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{objects}} of \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} clsinds =strmatch(\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},\{\mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{rec.\+objects}}(\+:).\mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}}\},\textquotesingle{}exact\textquotesingle{})}
+
+
+
+viewdet.\+m 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ad6832fa8e2228bc5c6e684daaa051b0f}\label{viewdet_8m_ad6832fa8e2228bc5c6e684daaa051b0f}} 
+\index{viewdet.m@{viewdet.m}!confidence@{confidence}}
+\index{confidence@{confidence}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{confidence}{confidence}}
+{\footnotesize\ttfamily sort detections by decreasing confidence\mbox{[}sc, si\mbox{]} =sort(-\/confidence)}
+
+
+
+viewdet.\+m 파일의 48 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a48665fb4f42738b9fb0af96e08692283}\label{viewdet_8m_a48665fb4f42738b9fb0af96e08692283}} 
+\index{viewdet.m@{viewdet.m}!d@{d}}
+\index{d@{d}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily for d}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:\mbox{\hyperlink{viewdet_8m_a1d8ecd161082ea597b225a4a25e780ba}{nd}}}
+\DoxyCodeLine{    \% display progress}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} onlytp\&toc>1}
+\DoxyCodeLine{        \mbox{\hyperlink{viewdet_8m_af1ae7f72dc9d78f5d09a2ca53ed8f112}{fprintf}}(\textcolor{stringliteral}{'\%s: viewdet: find true pos: \%d/\%d\(\backslash\)n'},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},\mbox{\hyperlink{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}{i}},\mbox{\hyperlink{viewdet_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(gtids))}
+
+\end{DoxyCode}
+
+
+viewdet.\+m 파일의 55 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}\label{viewdet_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}} 
+\index{viewdet.m@{viewdet.m}!drawnow@{drawnow}}
+\index{drawnow@{drawnow}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{drawnow}{drawnow}}
+{\footnotesize\ttfamily drawnow}
+
+
+
+viewdet.\+m 파일의 28 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}\label{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}} 
+\index{viewdet.m@{viewdet.m}!i@{i}}
+\index{i@{i}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} find ground truth \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} i =strmatch(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cevallayout_8m_a8f5ae177038811db9ecdc0d34cb2f619}{d}}\},gtids,\textquotesingle{}exact\textquotesingle{})}
+
+
+
+viewdet.\+m 파일의 64 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}\label{viewdet_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}} 
+\index{viewdet.m@{viewdet.m}!ids@{ids}}
+\index{ids@{ids}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ids}{ids}}
+{\footnotesize\ttfamily elseif ids =ids(si)}
+
+
+
+viewdet.\+m 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ac89a82f003e44988500a557dd2b5f0a3}\label{viewdet_8m_ac89a82f003e44988500a557dd2b5f0a3}} 
+\index{viewdet.m@{viewdet.m}!ih@{ih}}
+\index{ih@{ih}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ih}{ih}}
+{\footnotesize\ttfamily ih =\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(4)-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(2)+1}
+
+
+
+viewdet.\+m 파일의 78 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}\label{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}} 
+\index{viewdet.m@{viewdet.m}!image@{image}}
+\index{image@{image}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily axis image}
+
+
+
+viewdet.\+m 파일의 111 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a208dffd1660b7f5a7600d87fa9bc38a1}\label{viewdet_8m_a208dffd1660b7f5a7600d87fa9bc38a1}} 
+\index{viewdet.m@{viewdet.m}!iw@{iw}}
+\index{iw@{iw}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{iw}{iw}}
+{\footnotesize\ttfamily iw =\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(3)-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a8115153332991997460b9f236e0da71a}{bi}}(1)+1}
+
+
+
+viewdet.\+m 파일의 77 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ac86694252f8dfdb19aaeadc4b7c342c6}\label{viewdet_8m_ac86694252f8dfdb19aaeadc4b7c342c6}} 
+\index{viewdet.m@{viewdet.m}!j@{j}}
+\index{j@{j}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily for j}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:size(\mbox{\hyperlink{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}{gt}}(\mbox{\hyperlink{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}{i}}).\mbox{\hyperlink{viewdet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}},2)}
+\DoxyCodeLine{        \mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}=\mbox{\hyperlink{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}{gt}}(\mbox{\hyperlink{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}{i}}).\mbox{\hyperlink{viewdet_8m_af50881ced34c7d9e6bce100bf33dec60}{BB}}(:,\mbox{\hyperlink{viewdet_8m_ac86694252f8dfdb19aaeadc4b7c342c6}{j}})}
+
+\end{DoxyCode}
+
+
+viewdet.\+m 파일의 74 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a764b39950f3ce86a8b050a07b6e5d108}\label{viewdet_8m_a764b39950f3ce86a8b050a07b6e5d108}} 
+\index{viewdet.m@{viewdet.m}!jmax@{jmax}}
+\index{jmax@{jmax}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{jmax}{jmax}}
+{\footnotesize\ttfamily jmax =\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}}
+
+
+
+viewdet.\+m 파일의 87 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a1d8ecd161082ea597b225a4a25e780ba}\label{viewdet_8m_a1d8ecd161082ea597b225a4a25e780ba}} 
+\index{viewdet.m@{viewdet.m}!nd@{nd}}
+\index{nd@{nd}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{nd}{nd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_creadrecxml_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}} detections nd =\mbox{\hyperlink{_v_o_cevallayout_8m_a78386645c299ac47ae8356c9eb8af518}{length}}(\mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}})}
+
+
+
+viewdet.\+m 파일의 53 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ae0070ea45b2592ce3701ab9e486e58a0}\label{viewdet_8m_ae0070ea45b2592ce3701ab9e486e58a0}} 
+\index{viewdet.m@{viewdet.m}!npos@{npos}}
+\index{npos@{npos}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{npos}{npos}}
+{\footnotesize\ttfamily npos =npos+sum($\sim$\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).diff)}
+
+
+
+viewdet.\+m 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ad1ef7ba37f963bb7388eb76554f52c28}\label{viewdet_8m_ad1ef7ba37f963bb7388eb76554f52c28}} 
+\index{viewdet.m@{viewdet.m}!off@{off}}
+\index{off@{off}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{off}{off}}
+{\footnotesize\ttfamily axis off}
+
+
+
+viewdet.\+m 파일의 110 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_aeab82fc694d738ade31349c417f199cd}\label{viewdet_8m_aeab82fc694d738ade31349c417f199cd}} 
+\index{viewdet.m@{viewdet.m}!ov@{ov}}
+\index{ov@{ov}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ov}{ov}}
+{\footnotesize\ttfamily ov =\mbox{\hyperlink{_v_o_cevallayout_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}}$\ast$\mbox{\hyperlink{_v_o_cevallayout_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}}/\mbox{\hyperlink{_v_o_cevallayout_8m_ac79cf9edff7ef4e779cd63a967f02752}{ua}}}
+
+
+
+viewdet.\+m 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_ab809ca4031387991e228c15abc1a8922}\label{viewdet_8m_ab809ca4031387991e228c15abc1a8922}} 
+\index{viewdet.m@{viewdet.m}!ovmax@{ovmax}}
+\index{ovmax@{ovmax}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ovmax}{ovmax}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} assign detection as true false \mbox{\hyperlink{_v_o_cevaldet_8m_a1631e0b2eedfa7046df7334f67832273}{positive}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} ovmax =-\/inf}
+
+
+
+viewdet.\+m 파일의 73 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a0826fd390b1abfa27704b03aa2be93a6}\label{viewdet_8m_a0826fd390b1abfa27704b03aa2be93a6}} 
+\index{viewdet.m@{viewdet.m}!ovmax$<$ VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\lcurly{}i\rcurly{}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax $>$@{ovmax$<$ VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\lcurly{}i\rcurly{}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax $>$}}
+\index{ovmax$<$ VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\lcurly{}i\rcurly{}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax $>$@{ovmax$<$ VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\lcurly{}i\rcurly{}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax $>$}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ovmax$<$ VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\lcurly{}i\rcurly{}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax $>$}{ovmax< VOCopts.minoverlap continue end \% read image I=imread(sprintf(VOCopts.imgpath, gtids\{i\}));\% draw detection bounding box and ground truth bounding box(if any) imagesc(I);hold on;if ovmax >}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} skip false positives \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} onlytp\& \mbox{\hyperlink{_v_o_cevallayout_8m_ab809ca4031387991e228c15abc1a8922}{ovmax}}$<$ V\+O\+Copts.\+minoverlap continue \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \% read \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \mbox{\hyperlink{viewanno_8m_a3531373f5f2661781b7461b59d54fceb}{I}}=imread(sprintf(V\+O\+Copts.\+imgpath, gtids\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})); \% draw detection bounding box and ground truth bounding box(\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} any) imagesc(\mbox{\hyperlink{viewanno_8m_a3531373f5f2661781b7461b59d54fceb}{I}}); hold \mbox{\hyperlink{viewanno_8m_a58ab1fd68e97078232808206b850161b}{on}}; \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevallayout_8m_ab809ca4031387991e228c15abc1a8922}{ovmax}} $>$}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=VOCopts.minoverlap}
+\DoxyCodeLine{        \mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}=\mbox{\hyperlink{viewdet_8m_ac5a07869bae2390f52b0c9d88fcc0d1e}{gt}}(\mbox{\hyperlink{viewdet_8m_a77ec3e56583f1a470637aa2cdee100a8}{i}}).BB(:,\mbox{\hyperlink{viewdet_8m_a764b39950f3ce86a8b050a07b6e5d108}{jmax}})}
+
+\end{DoxyCode}
+
+
+viewdet.\+m 파일의 103 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a2f01939e7907ea640b4b7e663d1a2ced}\label{viewdet_8m_a2f01939e7907ea640b4b7e663d1a2ced}} 
+\index{viewdet.m@{viewdet.m}!rec@{rec}}
+\index{rec@{rec}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{rec}{rec}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} read annotation rec =P\+A\+Sreadrecord(sprintf(V\+O\+Copts.\+annopath,gtids\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\}))}
+
+
+
+viewdet.\+m 파일의 33 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}\label{viewdet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}} 
+\index{viewdet.m@{viewdet.m}!results@{results}}
+\index{results@{results}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} results\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}, b1, b2, b3, b4\mbox{]} =textread(sprintf(V\+O\+Copts.\+detrespath,\textquotesingle{}\mbox{\hyperlink{example__segmenter_8m_ac4175b14b54e59f4782cfb02a896a74e}{comp3}}\textquotesingle{},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})}
+
+
+
+viewdet.\+m 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a8fb092330ecda60587643305d0d9738a}\label{viewdet_8m_a8fb092330ecda60587643305d0d9738a}} 
+\index{viewdet.m@{viewdet.m}!tic@{tic}}
+\index{tic@{tic}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{tic}{tic}}
+{\footnotesize\ttfamily tic}
+
+
+
+viewdet.\+m 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{viewdet_8m_a117cb301402308415451f49aa0df22e5}\label{viewdet_8m_a117cb301402308415451f49aa0df22e5}} 
+\index{viewdet.m@{viewdet.m}!ua@{ua}}
+\index{ua@{ua}!viewdet.m@{viewdet.m}}
+\doxysubsubsection{\texorpdfstring{ua}{ua}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevallayout_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}} \&\mbox{\hyperlink{_v_o_cevallayout_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}} compute overlap as area of intersection area of union ua}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=(\mbox{\hyperlink{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}{bb}}(3)-\/\mbox{\hyperlink{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}{bb}}(1)+1)*(\mbox{\hyperlink{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}{bb}}(4)-\/\mbox{\hyperlink{viewdet_8m_a7c99f4e291d274c239d7ed7aa877853c}{bb}}(2)+1)+...}
+\DoxyCodeLine{               (\mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}(3)-\/\mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}(1)+1)*(\mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}(4)-\/\mbox{\hyperlink{namespacemain_a8b9414437806a98d80534f528df4c3a9}{bbgt}}(2)+1)-\/...}
+\DoxyCodeLine{               \mbox{\hyperlink{viewdet_8m_a208dffd1660b7f5a7600d87fa9bc38a1}{iw}}*\mbox{\hyperlink{viewdet_8m_ac89a82f003e44988500a557dd2b5f0a3}{ih}}}
+
+\end{DoxyCode}
+
+
+viewdet.\+m 파일의 81 번째 라인에서 정의되었습니다.
+

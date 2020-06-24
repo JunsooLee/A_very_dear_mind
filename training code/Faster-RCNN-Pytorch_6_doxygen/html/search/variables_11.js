@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['r_1170',['r',['../_v_o_clabelcolormap_8m.html#a514f1b439f404f86f77090fa9edc96ce',1,'VOClabelcolormap.m']]],
+  ['rank_5fpos_1171',['rank_pos',['../namespacemain.html#a47b5a86e64cd27a90d944d01fa32f5ef',1,'main']]],
+  ['rec_1172',['rec',['../example__detector_8m.html#a3cee98edb8881e3381ce5ac42812fe41',1,'rec():&#160;example_detector.m'],['../viewdet_8m.html#a2f01939e7907ea640b4b7e663d1a2ced',1,'rec():&#160;viewdet.m'],['../_p_a_sreadrecord_8m.html#a3cee98edb8881e3381ce5ac42812fe41',1,'rec():&#160;PASreadrecord.m'],['../_v_o_cevalcls_8m.html#a7c8cb9c29630901b8b5da4cdd7401d36',1,'rec():&#160;VOCevalcls.m'],['../_v_o_cevaldet_8m.html#a7c8cb9c29630901b8b5da4cdd7401d36',1,'rec():&#160;VOCevaldet.m'],['../_v_o_cevallayout_8m.html#a7c8cb9c29630901b8b5da4cdd7401d36',1,'rec():&#160;VOCevallayout.m'],['../_v_o_creadrecxml_8m.html#a7c8cb9c29630901b8b5da4cdd7401d36',1,'rec():&#160;VOCreadrecxml.m'],['../_v_o_creadxml_8m.html#a0f9ef333637ae8cf7020b986a0b421bf',1,'rec():&#160;VOCreadxml.m'],['../namespacemain.html#a62f66c02342ad8d7875e59ffaa2d2cc2',1,'main.rec()']]],
+  ['recall_1173',['recall',['../_v_o_cevalcls_8m.html#a7d78b8de1e16bcbaff847b985c4b7cf9',1,'VOCevalcls.m']]],
+  ['record_1174',['record',['../_p_a_semptyrecord_8m.html#a23e2eef31f623dfdbcba9ddc48fdeeae',1,'record():&#160;PASemptyrecord.m'],['../_p_a_sreadrectxt_8m.html#a494a20ecd0a0354be80b354322b62cc1',1,'record():&#160;PASreadrectxt.m']]],
+  ['required_1175',['required',['../namespaceconvert__keras-yolo3.html#ae89c5783c1f43818b187b227122067f7',1,'convert_keras-yolo3']]],
+  ['res_1176',['res',['../_v_o_cevallayout_8m.html#ab0bd7560790c13b656fd58e17e35143e',1,'res():&#160;VOCevallayout.m'],['../_v_o_cxml2struct_8m.html#ab0bd7560790c13b656fd58e17e35143e',1,'res():&#160;VOCxml2struct.m']]],
+  ['results_1177',['results',['../viewdet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4',1,'results():&#160;viewdet.m'],['../_v_o_cevalcls_8m.html#a3c45c6e8cc9bddbfc079eb42fe2a3a32',1,'results():&#160;VOCevalcls.m'],['../_v_o_cevaldet_8m.html#abbc14cd19430997d1d1a8f2f3a2aa1a4',1,'results():&#160;VOCevaldet.m']]],
+  ['results_5ffiles_5fpath_1178',['results_files_path',['../namespacemain.html#a76e3d998d9ad8d1052a42d5d0a150cc7',1,'main']]],
+  ['resultsdir_1179',['resultsdir',['../create__segmentations__from__detections_8m.html#ae039d76e4cd9e3c90e19b1015059ee10',1,'create_segmentations_from_detections.m']]],
+  ['resultsdirinst_1180',['resultsdirinst',['../create__segmentations__from__detections_8m.html#ab86194113de1f568f1b5af0dfe44ea3f',1,'create_segmentations_from_detections.m']]],
+  ['resultsfile_1181',['resultsfile',['../create__segmentations__from__detections_8m.html#ab96e0a892e83be68fa7c0a23ade73ffe',1,'create_segmentations_from_detections.m']]],
+  ['return_5fdifficult_1182',['return_difficult',['../classdata_1_1voc__dataset_1_1_v_o_c_bbox_dataset.html#a02e09fc6c0b76a0fc535180f39836c03',1,'data.voc_dataset.VOCBboxDataset.return_difficult()'],['../classutils_1_1data__load_1_1_v_o_c_bbox_dataset.html#a4196c4f25b47cf01f1580eb1019fa383',1,'utils.data_load.VOCBboxDataset.return_difficult()']]],
+  ['reverse_1183',['reverse',['../namespacemain.html#a427e07955cbb898a8884045288a2a44b',1,'main']]],
+  ['right_1184',['right',['../namespacemain.html#a27d966ffb41bb9ab440432664d251096',1,'main.right()'],['../namespaceconvert__dr__darkflow__json.html#abb56b06c50126ac5b1475a73fe981407',1,'convert_dr_darkflow_json.right()'],['../namespaceconvert__dr__yolo.html#aa379b8e6fc749c5ebee07ad3464b2d4e',1,'convert_dr_yolo.right()'],['../namespaceconvert__gt__xml.html#a6a4f4e4a6a3ed43ca7a5eaf9cdbec84e',1,'convert_gt_xml.right()'],['../namespaceconvert__gt__yolo.html#a5bcae40f2c51c25fa392575e18835385',1,'convert_gt_yolo.right()']]],
+  ['roi_1185',['RoI',['../classmodel_1_1roi__module_1_1_ro_i_pooling2_d.html#a3889aefcf1169fa046ab1400121a32c1',1,'model.roi_module.RoIPooling2D.RoI()'],['../classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head.html#a56ce24d1bb87446db8d5f075ed83908c',1,'model.roi_module.VGG16RoIHead.roi()']]],
+  ['roi_5fsigma_1186',['roi_sigma',['../classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a71c4bf599a2529633d3513294ac3b357',1,'trainer.trainer.FasterRCNNTrainer.roi_sigma()'],['../classutils_1_1config_1_1_config.html#aab011b9e1229a39c3d36d0dd2a0a93ac',1,'utils.config.Config.roi_sigma()']]],
+  ['roi_5fsize_1187',['roi_size',['../classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head.html#ac6933969a5ad7c90e83ed15d3deae77d',1,'model::roi_module::VGG16RoIHead']]],
+  ['rois_1188',['rois',['../classmodel_1_1roi__module_1_1_ro_i.html#a01f951c4e45418ec2d7430743d14f10b',1,'model::roi_module::RoI']]],
+  ['root_1189',['root',['../namespaceconvert__gt__xml.html#a934ece4ebf79a2dda6347ee9d1b2c169',1,'convert_gt_xml']]],
+  ['rounded_5fprec_1190',['rounded_prec',['../namespacemain.html#a35643382990e6f71c1f84ea60e412e93',1,'main']]],
+  ['rounded_5frec_1191',['rounded_rec',['../namespacemain.html#a1778131ed03c42359e8741db8a2f5135',1,'main']]],
+  ['rpn_1192',['rpn',['../classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#ab9162f0daa50e00065a5f9eefca562a0',1,'model::faster_rcnn::FasterRCNN']]],
+  ['rpn_5fsigma_1193',['rpn_sigma',['../classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a85782798c1dea1fdc3c842c4c6657f66',1,'trainer.trainer.FasterRCNNTrainer.rpn_sigma()'],['../classutils_1_1config_1_1_config.html#adaae554152b5796fde6ab90bccb55b97',1,'utils.config.Config.rpn_sigma()']]]
+];

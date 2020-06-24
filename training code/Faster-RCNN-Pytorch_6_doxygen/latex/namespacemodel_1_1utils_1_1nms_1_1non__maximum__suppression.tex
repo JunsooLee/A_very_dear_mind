@@ -1,0 +1,289 @@
+\hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression}{}\doxysection{model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression 네임스페이스 참조}
+\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression}\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588}{\+\_\+load\+\_\+kernel}} (kernel\+\_\+name, code, options=())
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9}{non\+\_\+maximum\+\_\+suppression}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, thresh, score=None, limit=None)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c}{\+\_\+non\+\_\+maximum\+\_\+suppression\+\_\+gpu}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, thresh, score=None, limit=None)
+\item 
+def \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c}{\+\_\+call\+\_\+nms\+\_\+kernel}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, thresh)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a931a2629f3b465e9b87243f809a7ffac}{for\+\_\+each\+\_\+device}}
+\item 
+string \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_ac63ec6566592cc7890745ddb3b98f020}{\+\_\+nms\+\_\+gpu\+\_\+code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!\_call\_nms\_kernel@{\_call\_nms\_kernel}}
+\index{\_call\_nms\_kernel@{\_call\_nms\_kernel}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{\_call\_nms\_kernel()}{\_call\_nms\_kernel()}}
+{\footnotesize\ttfamily def model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+\_\+call\+\_\+nms\+\_\+kernel (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{thresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 155 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{155 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c}{\_call\_nms\_kernel}}(bbox, thresh):}
+\DoxyCodeLine{156     \textcolor{comment}{\# PyTorch does not support unsigned long Tensor.}}
+\DoxyCodeLine{157     \textcolor{comment}{\# Doesn't matter,since it returns ndarray finally.}}
+\DoxyCodeLine{158     \textcolor{comment}{\# So I'll keep it unmodified.}}
+\DoxyCodeLine{159     n\_bbox = bbox.shape[0]}
+\DoxyCodeLine{160     threads\_per\_block = 64}
+\DoxyCodeLine{161     col\_blocks = np.ceil(n\_bbox / threads\_per\_block).astype(np.int32)}
+\DoxyCodeLine{162     blocks = (col\_blocks, col\_blocks, 1)}
+\DoxyCodeLine{163     threads = (threads\_per\_block, 1, 1)}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     mask\_dev = cp.zeros((n\_bbox * col\_blocks,), dtype=np.uint64)}
+\DoxyCodeLine{166     bbox = cp.ascontiguousarray(bbox, dtype=np.float32)  \textcolor{comment}{\# NOTE: 变成连续的}}
+\DoxyCodeLine{167     kern = \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588}{\_load\_kernel}}(\textcolor{stringliteral}{'nms\_kernel'}, \_nms\_gpu\_code)}
+\DoxyCodeLine{168     kern(blocks, threads, args=(cp.int32(n\_bbox), cp.float32(thresh),}
+\DoxyCodeLine{169                                 bbox, mask\_dev))}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     mask\_host = mask\_dev.get()}
+\DoxyCodeLine{172     selection, n\_selec = \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1__nms__gpu__post__py_ab02016e7734eb4c138d94946307d79d6}{\_nms\_gpu\_post}}(}
+\DoxyCodeLine{173         mask\_host, n\_bbox, threads\_per\_block, col\_blocks)}
+\DoxyCodeLine{174     \textcolor{keywordflow}{return} selection, n\_selec}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!\_load\_kernel@{\_load\_kernel}}
+\index{\_load\_kernel@{\_load\_kernel}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{\_load\_kernel()}{\_load\_kernel()}}
+{\footnotesize\ttfamily def model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+\_\+load\+\_\+kernel (\begin{DoxyParamCaption}\item[{}]{kernel\+\_\+name,  }\item[{}]{code,  }\item[{}]{options = {\ttfamily ()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 13 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588}{\_load\_kernel}}(kernel\_name, code, options=()):}
+\DoxyCodeLine{14     cp.cuda.runtime.free(0)}
+\DoxyCodeLine{15     \textcolor{keyword}{assert} isinstance(options, tuple)}
+\DoxyCodeLine{16     kernel\_code = cp.cuda.compile\_with\_cache(code, options=options)}
+\DoxyCodeLine{17     \textcolor{keywordflow}{return} kernel\_code.get\_function(kernel\_name)}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a4f9e7eff60ab89558d55caf54e284588_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!\_non\_maximum\_suppression\_gpu@{\_non\_maximum\_suppression\_gpu}}
+\index{\_non\_maximum\_suppression\_gpu@{\_non\_maximum\_suppression\_gpu}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{\_non\_maximum\_suppression\_gpu()}{\_non\_maximum\_suppression\_gpu()}}
+{\footnotesize\ttfamily def model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+\_\+non\+\_\+maximum\+\_\+suppression\+\_\+gpu (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{thresh,  }\item[{}]{score = {\ttfamily None},  }\item[{}]{limit = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 69 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c}{\_non\_maximum\_suppression\_gpu}}(bbox, thresh, score=None, limit=None):}
+\DoxyCodeLine{70     \textcolor{keywordflow}{if} len(bbox) == 0:}
+\DoxyCodeLine{71         \textcolor{keywordflow}{return} cp.zeros((0,), dtype=np.int32)}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     n\_bbox = bbox.shape[0]}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordflow}{if} score \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{76         order = score.argsort()[::-\/1].astype(np.int32)}
+\DoxyCodeLine{77     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{78         order = cp.arange(n\_bbox, dtype=np.int32)}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     sorted\_bbox = bbox[order, :]}
+\DoxyCodeLine{81     selec, n\_selec = \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a898523c0d6b38f63089a706b6c2e332c}{\_call\_nms\_kernel}}(}
+\DoxyCodeLine{82         sorted\_bbox, thresh)}
+\DoxyCodeLine{83     selec = selec[:n\_selec]}
+\DoxyCodeLine{84     selec = order[selec]}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} limit \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{86         selec = selec[:limit]}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} cp.asnumpy(selec)}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!non\_maximum\_suppression@{non\_maximum\_suppression}}
+\index{non\_maximum\_suppression@{non\_maximum\_suppression}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{non\_maximum\_suppression()}{non\_maximum\_suppression()}}
+{\footnotesize\ttfamily def model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+non\+\_\+maximum\+\_\+suppression (\begin{DoxyParamCaption}\item[{}]{bbox,  }\item[{}]{thresh,  }\item[{}]{score = {\ttfamily None},  }\item[{}]{limit = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Suppress bounding boxes according to their IoUs.
+
+This method checks each bounding box sequentially and selects the bounding
+box if the Intersection over Unions (IoUs) between the bounding box and the
+previously selected bounding boxes is less than :obj:`thresh`. This method
+is mainly used as postprocessing of object detection.
+The bounding boxes are selected from ones with higher scores.
+If :obj:`score` is not provided as an argument, the bounding box
+is ordered by its index in ascending order.
+
+The bounding boxes are expected to be packed into a two dimensional
+tensor of shape :math:`(R, 4)`, where :math:`R` is the number of
+bounding boxes in the image. The second axis represents attributes of
+the bounding box. They are :math:`(y_{min}, x_{min}, y_{max}, x_{max})`,
+where the four attributes are coordinates of the top left and the
+bottom right vertices.
+
+:obj:`score` is a float array of shape :math:`(R,)`. Each score indicates
+confidence of prediction.
+
+This function accepts both :obj:`numpy.ndarray` and :obj:`cupy.ndarray` as
+an input. Please note that both :obj:`bbox` and :obj:`score` need to be
+the same type.
+The type of the output is the same as the input.
+
+Args:
+    bbox (array): Bounding boxes to be transformed. The shape is
+        :math:`(R, 4)`. :math:`R` is the number of bounding boxes.
+    thresh (float): Threshold of IoUs.
+    score (array): An array of confidences whose shape is :math:`(R,)`.
+    limit (int): The upper bound of the number of the output bounding
+        boxes. If it is not specified, this method selects as many
+        bounding boxes as possible.
+
+Returns:
+    array:
+    An array with indices of bounding boxes that are selected. \
+    They are sorted by the scores of bounding boxes in descending \
+    order. \
+    The shape of this array is :math:`(K,)` and its dtype is\
+    :obj:`numpy.int32`. Note that :math:`K \\leq R`.\end{DoxyVerb}
+ 
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 20 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \textcolor{keyword}{def }\mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9}{non\_maximum\_suppression}}(bbox, thresh, score=None,}
+\DoxyCodeLine{21                             limit=None):}
+\DoxyCodeLine{22     \textcolor{stringliteral}{"""Suppress bounding boxes according to their IoUs.}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{}}
+\DoxyCodeLine{24 \textcolor{stringliteral}{    This method checks each bounding box sequentially and selects the bounding}}
+\DoxyCodeLine{25 \textcolor{stringliteral}{    box if the Intersection over Unions (IoUs) between the bounding box and the}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{    previously selected bounding boxes is less than :obj:`thresh`. This method}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{    is mainly used as postprocessing of object detection.}}
+\DoxyCodeLine{28 \textcolor{stringliteral}{    The bounding boxes are selected from ones with higher scores.}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{    If :obj:`score` is not provided as an argument, the bounding box}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{    is ordered by its index in ascending order.}}
+\DoxyCodeLine{31 \textcolor{stringliteral}{}}
+\DoxyCodeLine{32 \textcolor{stringliteral}{    The bounding boxes are expected to be packed into a two dimensional}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{    tensor of shape :math:`(R, 4)`, where :math:`R` is the number of}}
+\DoxyCodeLine{34 \textcolor{stringliteral}{    bounding boxes in the image. The second axis represents attributes of}}
+\DoxyCodeLine{35 \textcolor{stringliteral}{    the bounding box. They are :math:`(y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\})`,}}
+\DoxyCodeLine{36 \textcolor{stringliteral}{    where the four attributes are coordinates of the top left and the}}
+\DoxyCodeLine{37 \textcolor{stringliteral}{    bottom right vertices.}}
+\DoxyCodeLine{38 \textcolor{stringliteral}{}}
+\DoxyCodeLine{39 \textcolor{stringliteral}{    :obj:`score` is a float array of shape :math:`(R,)`. Each score indicates}}
+\DoxyCodeLine{40 \textcolor{stringliteral}{    confidence of prediction.}}
+\DoxyCodeLine{41 \textcolor{stringliteral}{}}
+\DoxyCodeLine{42 \textcolor{stringliteral}{    This function accepts both :obj:`numpy.ndarray` and :obj:`cupy.ndarray` as}}
+\DoxyCodeLine{43 \textcolor{stringliteral}{    an input. Please note that both :obj:`bbox` and :obj:`score` need to be}}
+\DoxyCodeLine{44 \textcolor{stringliteral}{    the same type.}}
+\DoxyCodeLine{45 \textcolor{stringliteral}{    The type of the output is the same as the input.}}
+\DoxyCodeLine{46 \textcolor{stringliteral}{}}
+\DoxyCodeLine{47 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{48 \textcolor{stringliteral}{        bbox (array): Bounding boxes to be transformed. The shape is}}
+\DoxyCodeLine{49 \textcolor{stringliteral}{            :math:`(R, 4)`. :math:`R` is the number of bounding boxes.}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{        thresh (float): Threshold of IoUs.}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{        score (array): An array of confidences whose shape is :math:`(R,)`.}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{        limit (int): The upper bound of the number of the output bounding}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{            boxes. If it is not specified, this method selects as many}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{            bounding boxes as possible.}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        array:}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{        An array with indices of bounding boxes that are selected. \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{        They are sorted by the scores of bounding boxes in descending \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{        order. \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{        The shape of this array is :math:`(K,)` and its dtype is\(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{        :obj:`numpy.int32`. Note that :math:`K \(\backslash\)\(\backslash\)leq R`.}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a312b77e485123449844e07cc2d7af26c}{\_non\_maximum\_suppression\_gpu}}(bbox, thresh, score, limit)}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_afdf319cf0550a8ae6b02cac11c9c86e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_ac63ec6566592cc7890745ddb3b98f020}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_ac63ec6566592cc7890745ddb3b98f020}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!\_nms\_gpu\_code@{\_nms\_gpu\_code}}
+\index{\_nms\_gpu\_code@{\_nms\_gpu\_code}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{\_nms\_gpu\_code}{\_nms\_gpu\_code}}
+{\footnotesize\ttfamily string model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+\_\+nms\+\_\+gpu\+\_\+code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 90 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a931a2629f3b465e9b87243f809a7ffac}\label{namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression_a931a2629f3b465e9b87243f809a7ffac}} 
+\index{model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}!for\_each\_device@{for\_each\_device}}
+\index{for\_each\_device@{for\_each\_device}!model.utils.nms.non\_maximum\_suppression@{model.utils.nms.non\_maximum\_suppression}}
+\doxysubsubsection{\texorpdfstring{for\_each\_device}{for\_each\_device}}
+{\footnotesize\ttfamily model.\+utils.\+nms.\+non\+\_\+maximum\+\_\+suppression.\+for\+\_\+each\+\_\+device}
+
+
+
+non\+\_\+maximum\+\_\+suppression.\+py 파일의 12 번째 라인에서 정의되었습니다.
+

@@ -1,0 +1,102 @@
+\hypertarget{namespaceutils_1_1data__load}{}\doxysection{utils.\+data\+\_\+load 네임스페이스 참조}
+\label{namespaceutils_1_1data__load}\index{utils.data\_load@{utils.data\_load}}
+\doxysubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_bbox_dataset}{V\+O\+C\+Bbox\+Dataset}}
+\item 
+class \mbox{\hyperlink{classutils_1_1data__load_1_1_v_o_c_dataset}{V\+O\+C\+Dataset}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1data__load_ae16842520dc9dfdbd003da6f0ade5ec6}{save\+\_\+pkl}} (filename, \mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}})
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1data__load_a5f887551212c49e84980aa047664b845}{load\+\_\+pkl}} (filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{namespaceutils_1_1data__load_addb235d6f174d422ffa3313858066abf}{V\+O\+C\+\_\+\+B\+B\+O\+X\+\_\+\+L\+A\+B\+E\+L\+\_\+\+N\+A\+M\+ES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1data__load_a5f887551212c49e84980aa047664b845}\label{namespaceutils_1_1data__load_a5f887551212c49e84980aa047664b845}} 
+\index{utils.data\_load@{utils.data\_load}!load\_pkl@{load\_pkl}}
+\index{load\_pkl@{load\_pkl}!utils.data\_load@{utils.data\_load}}
+\doxysubsubsection{\texorpdfstring{load\_pkl()}{load\_pkl()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+load\+\_\+pkl (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 21 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1data__load_a5f887551212c49e84980aa047664b845}{load\_pkl}}(filename):}
+\DoxyCodeLine{22     \textcolor{keyword}{with} open(filename, \textcolor{stringliteral}{'rb'}) \textcolor{keyword}{as} handle:}
+\DoxyCodeLine{23         b = pickle.load(handle)}
+\DoxyCodeLine{24         \textcolor{keywordflow}{return} b}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{\# -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{comment}{\# VOC Objection Datasets}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceutils_1_1data__load_ae16842520dc9dfdbd003da6f0ade5ec6}\label{namespaceutils_1_1data__load_ae16842520dc9dfdbd003da6f0ade5ec6}} 
+\index{utils.data\_load@{utils.data\_load}!save\_pkl@{save\_pkl}}
+\index{save\_pkl@{save\_pkl}!utils.data\_load@{utils.data\_load}}
+\doxysubsubsection{\texorpdfstring{save\_pkl()}{save\_pkl()}}
+{\footnotesize\ttfamily def utils.\+data\+\_\+load.\+save\+\_\+pkl (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{f }\end{DoxyParamCaption})}
+
+
+
+data\+\_\+load.\+py 파일의 17 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1data__load_ae16842520dc9dfdbd003da6f0ade5ec6}{save\_pkl}}(filename, f):}
+\DoxyCodeLine{18     \textcolor{keyword}{with} open(filename, \textcolor{stringliteral}{'wb'}) \textcolor{keyword}{as} handle:}
+\DoxyCodeLine{19         pickle.dump(f, handle, protocol=pickle.HIGHEST\_PROTOCOL)}
+\DoxyCodeLine{20 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1data__load_addb235d6f174d422ffa3313858066abf}\label{namespaceutils_1_1data__load_addb235d6f174d422ffa3313858066abf}} 
+\index{utils.data\_load@{utils.data\_load}!VOC\_BBOX\_LABEL\_NAMES@{VOC\_BBOX\_LABEL\_NAMES}}
+\index{VOC\_BBOX\_LABEL\_NAMES@{VOC\_BBOX\_LABEL\_NAMES}!utils.data\_load@{utils.data\_load}}
+\doxysubsubsection{\texorpdfstring{VOC\_BBOX\_LABEL\_NAMES}{VOC\_BBOX\_LABEL\_NAMES}}
+{\footnotesize\ttfamily tuple utils.\+data\+\_\+load.\+V\+O\+C\+\_\+\+B\+B\+O\+X\+\_\+\+L\+A\+B\+E\+L\+\_\+\+N\+A\+M\+ES}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  (}
+\DoxyCodeLine{2     \textcolor{stringliteral}{'aeroplane'},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{'bicycle'},}
+\DoxyCodeLine{4     \textcolor{stringliteral}{'bird'},}
+\DoxyCodeLine{5     \textcolor{stringliteral}{'boat'},}
+\DoxyCodeLine{6     \textcolor{stringliteral}{'bottle'},}
+\DoxyCodeLine{7     \textcolor{stringliteral}{'bus'},}
+\DoxyCodeLine{8     \textcolor{stringliteral}{'car'},}
+\DoxyCodeLine{9     \textcolor{stringliteral}{'cat'},}
+\DoxyCodeLine{10     \textcolor{stringliteral}{'chair'},}
+\DoxyCodeLine{11     \textcolor{stringliteral}{'cow'},}
+\DoxyCodeLine{12     \textcolor{stringliteral}{'diningtable'},}
+\DoxyCodeLine{13     \textcolor{stringliteral}{'dog'},}
+\DoxyCodeLine{14     \textcolor{stringliteral}{'horse'},}
+\DoxyCodeLine{15     \textcolor{stringliteral}{'motorbike'},}
+\DoxyCodeLine{16     \textcolor{stringliteral}{'person'},}
+\DoxyCodeLine{17     \textcolor{stringliteral}{'pottedplant'},}
+\DoxyCodeLine{18     \textcolor{stringliteral}{'sheep'},}
+\DoxyCodeLine{19     \textcolor{stringliteral}{'sofa'},}
+\DoxyCodeLine{20     \textcolor{stringliteral}{'train'},}
+\DoxyCodeLine{21     \textcolor{stringliteral}{'tvmonitor'})}
+
+\end{DoxyCode}
+
+
+data\+\_\+load.\+py 파일의 152 번째 라인에서 정의되었습니다.
+

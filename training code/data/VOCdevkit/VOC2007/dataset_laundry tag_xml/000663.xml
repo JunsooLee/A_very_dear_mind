@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data73.png</filename>
+	<path>C:\Users\ysurk\Documents\GitHub\A_very_dear_mind\data_crawling_img\data73.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>900</width>
+		<height>596</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_wash</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>94</xmin>
+			<ymin>310</ymin>
+			<xmax>191</xmax>
+			<ymax>402</ymax>
+		</bndbox>
+	</object>
+</annotation>

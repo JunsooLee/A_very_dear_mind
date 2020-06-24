@@ -1,0 +1,457 @@
+\hypertarget{create__segmentations__from__detections_8m}{}\doxysection{data/\+V\+O\+Cdevkit/create\+\_\+segmentations\+\_\+from\+\_\+detections.m 파일 참조}
+\label{create__segmentations__from__detections_8m}\index{data/VOCdevkit/create\_segmentations\_from\_detections.m@{data/VOCdevkit/create\_segmentations\_from\_detections.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} \mbox{\hyperlink{create__segmentations__from__detections_8m_afbb56728f3be5c2f09781b87295c94c4}{C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+G\+M\+E\+N\+T\+A\+T\+I\+O\+N\+S\+\_\+\+F\+R\+O\+M\+\_\+\+D\+E\+T\+E\+C\+T\+I\+O\+NS}} (ID) creates \mbox{\hyperlink{viewanno_8m_aa0b08e5898b5b1828d5ce29a4f8e303b}{segmentations}} from \% the detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} with identifier ID e.\+g. \textquotesingle{}\mbox{\hyperlink{example__segmenter_8m_ac4175b14b54e59f4782cfb02a896a74e}{comp3}}\textquotesingle{}. All detections \% will be used
+\item 
+Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} no matter what their \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} level \mbox{\hyperlink{create__segmentations__from__detections_8m_ae1c555e5aa860a1101f87ac34d07ce0f}{C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+G\+M\+E\+N\+T\+A\+T\+I\+O\+N\+S\+\_\+\+F\+R\+O\+M\+\_\+\+D\+E\+T\+E\+C\+T\+I\+O\+NS}} (ID, C\+O\+N\+F\+I\+D\+E\+N\+CE) as above
+\item 
+Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} no matter what their \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} level but only detections above the specified \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} will be used \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a43a553d7acf530851b2b315b31c8039f}{create\+\_\+segmentations\+\_\+from\+\_\+detections}} (\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}) \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} nargin$<$ 2 \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere \mbox{\hyperlink{create__segmentations__from__detections_8m_a4b313c72deeb29df11af543120e785dc}{addpath}} (\mbox{[}cd \textquotesingle{}/V\+O\+Ccode\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a5a704b2ccbe4102fce5b1bbe7cbab7b5}{$\sim$exist}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}}, \textquotesingle{}file\textquotesingle{}) \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\textquotesingle{}Could not find detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} file to use to create \mbox{\hyperlink{viewanno_8m_aa0b08e5898b5b1828d5ce29a4f8e303b}{segmentations}}(\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} not found)\textquotesingle{}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_aabaa857e5ed99a4ac2762f1c5e11845a}{$\sim$strcmp}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}{imgid}}, \mbox{\hyperlink{create__segmentations__from__detections_8m_af6f5156a3c567f96f6806e218d0e1d0a}{previd}}) \mbox{\hyperlink{_v_o_cxml2struct_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_aad7d2d6eb40a497bd6c1be23847d1aa4}{isempty}} (\mbox{\hyperlink{_v_o_cxml2struct_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}}) \mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}{im}} (\mbox{\hyperlink{_v_o_cxml2struct_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}}).det(\mbox{\hyperlink{create__segmentations__from__detections_8m_a33d07d5bf16c1c6b2ca7b6f39d577819}{detnum}})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_ab1dd1e25823180f1d3919ec5ead4bc01}{$\sim$exist}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}}, \textquotesingle{}dir\textquotesingle{}) mkdir(\mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a819358c1a6afef977a1f2947b590cb22}{$\sim$exist}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}{resultsdirinst}}, \textquotesingle{}dir\textquotesingle{}) mkdir(\mbox{\hyperlink{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}{resultsdirinst}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a6605bd3238f2d50434a6746d6b7b9d27}{imwrite}} (instim, \mbox{\hyperlink{_v_o_clabelcolormap_8m_a33382ecd401f9fc557d9017cdc4cc47e}{cmap}}, \mbox{\hyperlink{create__segmentations__from__detections_8m_a7c3fe17d66d4049e49c3e31b23f7d45c}{instlabelfile}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a5db4417aea71c9481782f6b73cb44eed}{imwrite}} (\mbox{\hyperlink{create__segmentations__from__detections_8m_ae61bb997ec3c2b287344d61a3243666d}{classim}}, \mbox{\hyperlink{_v_o_clabelcolormap_8m_a33382ecd401f9fc557d9017cdc4cc47e}{cmap}}, \mbox{\hyperlink{create__segmentations__from__detections_8m_a73e3c8a3ba3ada873361b96e1883554f}{classlabelfile}})
+\item 
+\mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a388d67cc7f8e554f94f4c50336f61df1}{png}} ()
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_aadb1b29f5c78cd3e91fed1b719699f09}{copyfile}} (gtlabelfile, \mbox{\hyperlink{create__segmentations__from__detections_8m_a069fca71d9b681cb063bc48fdcc062e1}{gtclasslabelfile}})
+\item 
+zeros(\mbox{[}H W\mbox{]} \mbox{\hyperlink{create__segmentations__from__detections_8m_aa160ec930c48d76dcf908b285ecde341}{uint8}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+initialize V\+OC options \mbox{\hyperlink{create__segmentations__from__detections_8m_a326eb43af45972a4fdc78c1221c88164}{V\+O\+Cinit}}
+\item 
+\mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a13fee0a586ad088ccbdcd93bc41ed713}{tic}}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}} =\{\}
+\item 
+for \mbox{\hyperlink{create__segmentations__from__detections_8m_a37a5982738c2f3a2efa4b40de5383c51}{clsnum}}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_aac82a4a57e9e5838951a9f5b5132f21d}{end}} \mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, confs, b1, b2, b3, b4\mbox{]} =textread(\mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}},\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a4dea2bec10df0af54d58d7c28fc6a6f6}{B\+B\+O\+XS}} =\mbox{[}b1 b2 b3 b4\mbox{]}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_af6f5156a3c567f96f6806e218d0e1d0a}{previd}} =\textquotesingle{}\textquotesingle{}
+\item 
+for \mbox{\hyperlink{create__segmentations__from__detections_8m_ac86694252f8dfdb19aaeadc4b7c342c6}{j}}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}{imgid}} = \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a91d3ad0492e9a549c5506e3572424365}{conf}} = confs(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}})
+\item 
+detinfo \mbox{\hyperlink{create__segmentations__from__detections_8m_a0246615b51b182c933b7cffb655a7bdc}{bbox}} = \mbox{\hyperlink{create__segmentations__from__detections_8m_a4dea2bec10df0af54d58d7c28fc6a6f6}{B\+B\+O\+XS}}(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}},\+:)
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}} = numel(\mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a33d07d5bf16c1c6b2ca7b6f39d577819}{detnum}} =1
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} Write \mbox{\hyperlink{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}{out}} the \mbox{\hyperlink{viewanno_8m_aa0b08e5898b5b1828d5ce29a4f8e303b}{segmentations}} \mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}} = sprintf(V\+O\+Copts.\+seg.\+clsresdir,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset)
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}{resultsdirinst}} = sprintf(V\+O\+Copts.\+seg.\+instresdir,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a2b41f8c3196a93b87c47b08c3614b5dc}{cmap}} = V\+O\+Clabelcolormap(255)
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}} = \mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a73e3c8a3ba3ada873361b96e1883554f}{classlabelfile}} = sprintf(V\+O\+Copts.\+seg.\+clsrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a7c3fe17d66d4049e49c3e31b23f7d45c}{instlabelfile}} = sprintf(V\+O\+Copts.\+seg.\+instrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a7b8ca418c8b24530b25214a679aba14b}{imgfile}} = sprintf(V\+O\+Copts.\+imgpath,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_ab073d932759bd40e9f93bb12d544ee96}{imginfo}} = imfinfo(\mbox{\hyperlink{create__segmentations__from__detections_8m_a7b8ca418c8b24530b25214a679aba14b}{imgfile}})
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_a069fca71d9b681cb063bc48fdcc062e1}{gtclasslabelfile}} = sprintf(\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}/\%\mbox{\hyperlink{create__segmentations__from__detections_8m_a388d67cc7f8e554f94f4c50336f61df1}{d\+\_\+gt.\+png}}\textquotesingle{},\mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}},imnums(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}))
+\item 
+\mbox{\hyperlink{create__segmentations__from__detections_8m_ae61bb997ec3c2b287344d61a3243666d}{classim}} = \mbox{\hyperlink{create__segmentations__from__detections_8m_aa160ec930c48d76dcf908b285ecde341}{uint8}}(zeros(\mbox{[}H W\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a4b313c72deeb29df11af543120e785dc}\label{create__segmentations__from__detections_8m_a4b313c72deeb29df11af543120e785dc}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!addpath@{addpath}}
+\index{addpath@{addpath}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{addpath()}{addpath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} change this path \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} you install the V\+OC code elsewhere addpath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aadb1b29f5c78cd3e91fed1b719699f09}\label{create__segmentations__from__detections_8m_aadb1b29f5c78cd3e91fed1b719699f09}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!copyfile@{copyfile}}
+\index{copyfile@{copyfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{copyfile()}{copyfile()}}
+{\footnotesize\ttfamily copyfile (\begin{DoxyParamCaption}\item[{gtlabelfile}]{,  }\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_a069fca71d9b681cb063bc48fdcc062e1}{gtclasslabelfile}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_afbb56728f3be5c2f09781b87295c94c4}\label{create__segmentations__from__detections_8m_afbb56728f3be5c2f09781b87295c94c4}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS@{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS}}
+\index{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS@{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS()}{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+G\+M\+E\+N\+T\+A\+T\+I\+O\+N\+S\+\_\+\+F\+R\+O\+M\+\_\+\+D\+E\+T\+E\+C\+T\+I\+O\+NS (\begin{DoxyParamCaption}\item[{ID}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ae1c555e5aa860a1101f87ac34d07ce0f}\label{create__segmentations__from__detections_8m_ae1c555e5aa860a1101f87ac34d07ce0f}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS@{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS}}
+\index{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS@{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS()}{CREATE\_SEGMENTATIONS\_FROM\_DETECTIONS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} no matter what their \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} level C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+G\+M\+E\+N\+T\+A\+T\+I\+O\+N\+S\+\_\+\+F\+R\+O\+M\+\_\+\+D\+E\+T\+E\+C\+T\+I\+O\+NS (\begin{DoxyParamCaption}\item[{ID}]{,  }\item[{C\+O\+N\+F\+I\+D\+E\+N\+CE}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a43a553d7acf530851b2b315b31c8039f}\label{create__segmentations__from__detections_8m_a43a553d7acf530851b2b315b31c8039f}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!create\_segmentations\_from\_detections@{create\_segmentations\_from\_detections}}
+\index{create\_segmentations\_from\_detections@{create\_segmentations\_from\_detections}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{create\_segmentations\_from\_detections()}{create\_segmentations\_from\_detections()}}
+{\footnotesize\ttfamily Creates segmentation \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} from detection \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} no matter what their \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} level but only detections above the specified \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}} will be used \mbox{\hyperlink{_v_o_cxml2struct_8m_a89dac2bba162e6f61bc72eb4d8db5e29}{function}} create\+\_\+segmentations\+\_\+from\+\_\+detections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}\label{create__segmentations__from__detections_8m_a481eaa5c46f1d50c2fed3de34e2dfc99}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!im@{im}}
+\index{im@{im}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{im()}{im()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} im (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cxml2struct_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a5db4417aea71c9481782f6b73cb44eed}\label{create__segmentations__from__detections_8m_a5db4417aea71c9481782f6b73cb44eed}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imwrite@{imwrite}}
+\index{imwrite@{imwrite}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imwrite()}{imwrite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily imwrite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_ae61bb997ec3c2b287344d61a3243666d}{classim}}}]{,  }\item[{\mbox{\hyperlink{_v_o_clabelcolormap_8m_a33382ecd401f9fc557d9017cdc4cc47e}{cmap}}}]{,  }\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_a73e3c8a3ba3ada873361b96e1883554f}{classlabelfile}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a6605bd3238f2d50434a6746d6b7b9d27}\label{create__segmentations__from__detections_8m_a6605bd3238f2d50434a6746d6b7b9d27}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imwrite@{imwrite}}
+\index{imwrite@{imwrite}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imwrite()}{imwrite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily imwrite (\begin{DoxyParamCaption}\item[{instim}]{,  }\item[{\mbox{\hyperlink{_v_o_clabelcolormap_8m_a33382ecd401f9fc557d9017cdc4cc47e}{cmap}}}]{,  }\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_a7c3fe17d66d4049e49c3e31b23f7d45c}{instlabelfile}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aad7d2d6eb40a497bd6c1be23847d1aa4}\label{create__segmentations__from__detections_8m_aad7d2d6eb40a497bd6c1be23847d1aa4}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!isempty@{isempty}}
+\index{isempty@{isempty}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{isempty()}{isempty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cxml2struct_8m_aa1a517e3e42b3d109bc480c74e3a655c}{ind}}}]{ }\end{DoxyParamCaption})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 50 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                   \{\mbox{\hyperlink{create__segmentations__from__detections_8m_aac82a4a57e9e5838951a9f5b5132f21d}{end}}+1\}=\mbox{\hyperlink{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}{imgid}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a388d67cc7f8e554f94f4c50336f61df1}\label{create__segmentations__from__detections_8m_a388d67cc7f8e554f94f4c50336f61df1}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!png@{png}}
+\index{png@{png}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{png()}{png()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_semptyobject_8m_a23228aaa27047917c376277897125fc5}{class}} png (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aa160ec930c48d76dcf908b285ecde341}\label{create__segmentations__from__detections_8m_aa160ec930c48d76dcf908b285ecde341}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!uint8@{uint8}}
+\index{uint8@{uint8}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{uint8()}{uint8()}}
+{\footnotesize\ttfamily zeros(\mbox{[}H W\mbox{]} uint8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ab1dd1e25823180f1d3919ec5ead4bc01}\label{create__segmentations__from__detections_8m_ab1dd1e25823180f1d3919ec5ead4bc01}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!````~exist@{$\sim$exist}}
+\index{````~exist@{$\sim$exist}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$exist()}{~exist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}}}]{,  }\item[{\textquotesingle{}dir\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a819358c1a6afef977a1f2947b590cb22}\label{create__segmentations__from__detections_8m_a819358c1a6afef977a1f2947b590cb22}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!````~exist@{$\sim$exist}}
+\index{````~exist@{$\sim$exist}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$exist()}{~exist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}{resultsdirinst}}}]{,  }\item[{\textquotesingle{}dir\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a5a704b2ccbe4102fce5b1bbe7cbab7b5}\label{create__segmentations__from__detections_8m_a5a704b2ccbe4102fce5b1bbe7cbab7b5}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!````~exist@{$\sim$exist}}
+\index{````~exist@{$\sim$exist}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$exist()}{~exist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}}}]{,  }\item[{\textquotesingle{}file\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aabaa857e5ed99a4ac2762f1c5e11845a}\label{create__segmentations__from__detections_8m_aabaa857e5ed99a4ac2762f1c5e11845a}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!````~strcmp@{$\sim$strcmp}}
+\index{````~strcmp@{$\sim$strcmp}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{$\sim$strcmp()}{~strcmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} $\sim$\mbox{\hyperlink{_p_a_sreadrecord_8m_ac8c32e9c713240d74818c89b8003e629}{strcmp}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}{imgid}}}]{,  }\item[{\mbox{\hyperlink{create__segmentations__from__detections_8m_af6f5156a3c567f96f6806e218d0e1d0a}{previd}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a0246615b51b182c933b7cffb655a7bdc}\label{create__segmentations__from__detections_8m_a0246615b51b182c933b7cffb655a7bdc}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!bbox@{bbox}}
+\index{bbox@{bbox}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{bbox}{bbox}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_a494a20ecd0a0354be80b354322b62cc1}{record}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_a0bf98fb7969bc788e93663007dfc0739}{objects}}(obj bbox = \mbox{\hyperlink{create__segmentations__from__detections_8m_a4dea2bec10df0af54d58d7c28fc6a6f6}{B\+B\+O\+XS}}(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}},\+:)}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a4dea2bec10df0af54d58d7c28fc6a6f6}\label{create__segmentations__from__detections_8m_a4dea2bec10df0af54d58d7c28fc6a6f6}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!BBOXS@{BBOXS}}
+\index{BBOXS@{BBOXS}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{BBOXS}{BBOXS}}
+{\footnotesize\ttfamily B\+B\+O\+XS =\mbox{[}b1 b2 b3 b4\mbox{]}}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 30 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ae61bb997ec3c2b287344d61a3243666d}\label{create__segmentations__from__detections_8m_ae61bb997ec3c2b287344d61a3243666d}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!classim@{classim}}
+\index{classim@{classim}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{classim}{classim}}
+{\footnotesize\ttfamily classim = \mbox{\hyperlink{create__segmentations__from__detections_8m_aa160ec930c48d76dcf908b285ecde341}{uint8}}(zeros(\mbox{[}H W\mbox{]}))}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 106 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a73e3c8a3ba3ada873361b96e1883554f}\label{create__segmentations__from__detections_8m_a73e3c8a3ba3ada873361b96e1883554f}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!classlabelfile@{classlabelfile}}
+\index{classlabelfile@{classlabelfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{classlabelfile}{classlabelfile}}
+{\footnotesize\ttfamily classlabelfile = sprintf(V\+O\+Copts.\+seg.\+clsrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a37a5982738c2f3a2efa4b40de5383c51}\label{create__segmentations__from__detections_8m_a37a5982738c2f3a2efa4b40de5383c51}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!clsnum@{clsnum}}
+\index{clsnum@{clsnum}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{clsnum}{clsnum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} detinfo clsnum}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= 1:VOCopts.nclasses}
+\DoxyCodeLine{    \mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}} = sprintf(VOCopts.detrespath,\textcolor{keywordtype}{id},VOCopts.classes\{clsnum\})}
+
+\end{DoxyCode}
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 24 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a2b41f8c3196a93b87c47b08c3614b5dc}\label{create__segmentations__from__detections_8m_a2b41f8c3196a93b87c47b08c3614b5dc}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!cmap@{cmap}}
+\index{cmap@{cmap}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{cmap}{cmap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} cmap = V\+O\+Clabelcolormap(255)}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 73 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a91d3ad0492e9a549c5506e3572424365}\label{create__segmentations__from__detections_8m_a91d3ad0492e9a549c5506e3572424365}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!conf@{conf}}
+\index{conf@{conf}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{conf}{conf}}
+{\footnotesize\ttfamily detinfo conf = confs(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 41 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a33d07d5bf16c1c6b2ca7b6f39d577819}\label{create__segmentations__from__detections_8m_a33d07d5bf16c1c6b2ca7b6f39d577819}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!detnum@{detnum}}
+\index{detnum@{detnum}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{detnum}{detnum}}
+{\footnotesize\ttfamily else detnum =1}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 53 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}\label{create__segmentations__from__detections_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!drawnow@{drawnow}}
+\index{drawnow@{drawnow}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{drawnow}{drawnow}}
+{\footnotesize\ttfamily drawnow}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aac82a4a57e9e5838951a9f5b5132f21d}\label{create__segmentations__from__detections_8m_aac82a4a57e9e5838951a9f5b5132f21d}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!end@{end}}
+\index{end@{end}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily end\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, confs, b1, b2, b3, b4\mbox{]} =textread(\mbox{\hyperlink{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}{resultsfile}},\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a069fca71d9b681cb063bc48fdcc062e1}\label{create__segmentations__from__detections_8m_a069fca71d9b681cb063bc48fdcc062e1}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!gtclasslabelfile@{gtclasslabelfile}}
+\index{gtclasslabelfile@{gtclasslabelfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{gtclasslabelfile}{gtclasslabelfile}}
+{\footnotesize\ttfamily gtclasslabelfile = sprintf(\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}/\%\mbox{\hyperlink{create__segmentations__from__detections_8m_a388d67cc7f8e554f94f4c50336f61df1}{d\+\_\+gt.\+png}}\textquotesingle{},\mbox{\hyperlink{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}{resultsdir}},imnums(\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}))}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 97 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a7b8ca418c8b24530b25214a679aba14b}\label{create__segmentations__from__detections_8m_a7b8ca418c8b24530b25214a679aba14b}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imgfile@{imgfile}}
+\index{imgfile@{imgfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imgfile}{imgfile}}
+{\footnotesize\ttfamily imgfile = sprintf(V\+O\+Copts.\+imgpath,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 87 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}\label{create__segmentations__from__detections_8m_a0de540de92b56d91faa6b3f3b028dadb}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imgid@{imgid}}
+\index{imgid@{imgid}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imgid}{imgid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} imgid = \mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}\label{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imgids@{imgids}}
+\index{imgids@{imgids}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imgids}{imgids}}
+{\footnotesize\ttfamily imgids =\{\}}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 23 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ab073d932759bd40e9f93bb12d544ee96}\label{create__segmentations__from__detections_8m_ab073d932759bd40e9f93bb12d544ee96}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imginfo@{imginfo}}
+\index{imginfo@{imginfo}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imginfo}{imginfo}}
+{\footnotesize\ttfamily imginfo = imfinfo(\mbox{\hyperlink{create__segmentations__from__detections_8m_a7b8ca418c8b24530b25214a679aba14b}{imgfile}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 88 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}\label{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!imname@{imname}}
+\index{imname@{imname}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{imname}{imname}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} imname = \mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}\}}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_aa1a517e3e42b3d109bc480c74e3a655c}\label{create__segmentations__from__detections_8m_aa1a517e3e42b3d109bc480c74e3a655c}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!ind@{ind}}
+\index{ind@{ind}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{ind}{ind}}
+{\footnotesize\ttfamily ind = numel(\mbox{\hyperlink{create__segmentations__from__detections_8m_a0219463ca56ea4d76dd99a82f1ec09b1}{imgids}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 52 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a7c3fe17d66d4049e49c3e31b23f7d45c}\label{create__segmentations__from__detections_8m_a7c3fe17d66d4049e49c3e31b23f7d45c}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!instlabelfile@{instlabelfile}}
+\index{instlabelfile@{instlabelfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{instlabelfile}{instlabelfile}}
+{\footnotesize\ttfamily instlabelfile = sprintf(V\+O\+Copts.\+seg.\+instrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset,\mbox{\hyperlink{create__segmentations__from__detections_8m_a50afcbd6b9acbf9bb5b89ee3779e2737}{imname}})}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 85 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ac86694252f8dfdb19aaeadc4b7c342c6}\label{create__segmentations__from__detections_8m_ac86694252f8dfdb19aaeadc4b7c342c6}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!j@{j}}
+\index{j@{j}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily for j}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:numel(\mbox{\hyperlink{viewdet_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}})}
+\DoxyCodeLine{        \% display progress}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} toc>1}
+\DoxyCodeLine{            \mbox{\hyperlink{example__classifier_8m_a590d7618b070763052e6233d7c8ba6f9}{fprintf}}(\textcolor{stringliteral}{'class \%d/\%d: load detections: \%d/\%d\(\backslash\)n'},\mbox{\hyperlink{create__segmentations__from__detections_8m_a37a5982738c2f3a2efa4b40de5383c51}{clsnum}},VOCopts.nclasses,\mbox{\hyperlink{create__segmentations__from__detections_8m_ac86694252f8dfdb19aaeadc4b7c342c6}{j}},numel(\mbox{\hyperlink{viewdet_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}))}
+
+\end{DoxyCode}
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 32 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_af6f5156a3c567f96f6806e218d0e1d0a}\label{create__segmentations__from__detections_8m_af6f5156a3c567f96f6806e218d0e1d0a}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!previd@{previd}}
+\index{previd@{previd}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{previd}{previd}}
+{\footnotesize\ttfamily previd =\textquotesingle{}\textquotesingle{}}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 31 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}\label{create__segmentations__from__detections_8m_ae039d76e4cd9e3c90e19b1015059ee10}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!resultsdir@{resultsdir}}
+\index{resultsdir@{resultsdir}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{resultsdir}{resultsdir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} Write \mbox{\hyperlink{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}{out}} the \mbox{\hyperlink{viewanno_8m_aa0b08e5898b5b1828d5ce29a4f8e303b}{segmentations}} resultsdir = sprintf(V\+O\+Copts.\+seg.\+clsresdir,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset)}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}\label{create__segmentations__from__detections_8m_ab86194113de1f568f1b5af0dfe44ea3f}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!resultsdirinst@{resultsdirinst}}
+\index{resultsdirinst@{resultsdirinst}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{resultsdirinst}{resultsdirinst}}
+{\footnotesize\ttfamily resultsdirinst = sprintf(V\+O\+Copts.\+seg.\+instresdir,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},V\+O\+Copts.\+testset)}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 63 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}\label{create__segmentations__from__detections_8m_ab96e0a892e83be68fa7c0a23ade73ffe}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!resultsfile@{resultsfile}}
+\index{resultsfile@{resultsfile}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{resultsfile}{resultsfile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} resultsfile}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 27 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a13fee0a586ad088ccbdcd93bc41ed713}\label{create__segmentations__from__detections_8m_a13fee0a586ad088ccbdcd93bc41ed713}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!tic@{tic}}
+\index{tic@{tic}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{tic}{tic}}
+{\footnotesize\ttfamily classify each \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} tic}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 22 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{create__segmentations__from__detections_8m_a326eb43af45972a4fdc78c1221c88164}\label{create__segmentations__from__detections_8m_a326eb43af45972a4fdc78c1221c88164}} 
+\index{create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}!VOCinit@{VOCinit}}
+\index{VOCinit@{VOCinit}!create\_segmentations\_from\_detections.m@{create\_segmentations\_from\_detections.m}}
+\doxysubsubsection{\texorpdfstring{VOCinit}{VOCinit}}
+{\footnotesize\ttfamily initialize V\+OC options V\+O\+Cinit}
+
+
+
+create\+\_\+segmentations\+\_\+from\+\_\+detections.\+m 파일의 18 번째 라인에서 정의되었습니다.
+

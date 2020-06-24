@@ -1,0 +1,15 @@
+<map id="trainer.trainer.FasterRCNNTrainer.train_step" name="trainer.trainer.FasterRCNNTrainer.train_step">
+<area shape="rect" id="node1" title="Train step code" alt="" coords="5,188,280,215"/>
+<area shape="rect" id="node2" href="$classfocalloss_1_1_focal_loss.html#ae78d55934dcd11768e764948b2abe665" title=" " alt="" coords="366,5,549,32"/>
+<area shape="rect" id="node3" href="$classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head.html#aad62e98a7dfdb139780bd87ef8193582" title="RoIPooling network" alt="" coords="364,57,551,98"/>
+<area shape="rect" id="node4" href="$classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#ad8814dbce037bc4f849dd4baed13caab" title=" " alt="" coords="374,122,541,163"/>
+<area shape="rect" id="node5" href="$classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#a90ffc337dd9734de3e90f4c6dfc2225e" title="Train forward code" alt="" coords="328,188,587,215"/>
+<area shape="rect" id="node8" href="$classmodel_1_1rpn_1_1_region_proposal_network.html#af31a9e19a3ce53383f7cb6cd9c0023eb" title="Forward Region Proposal Network." alt="" coords="370,239,545,281"/>
+<area shape="rect" id="node12" href="$classmodel_1_1roi__module_1_1_ro_i_pooling2_d.html#a80092965e496b0a27d607bdc7bdb35c0" title=" " alt="" coords="359,305,556,346"/>
+<area shape="rect" id="node13" href="$classmodel_1_1roi__module_1_1_ro_i.html#a0e717a33f2817f59f8dec8910379c162" title=" " alt="" coords="361,371,553,397"/>
+<area shape="rect" id="node6" href="$namespacetrainer_1_1trainer.html#a9e9a6a7e132183a3066e077779de4664" title=" " alt="" coords="657,151,787,193"/>
+<area shape="rect" id="node7" href="$namespacetrainer_1_1trainer.html#aeace27043682fd4e4743b550a2527405" title=" " alt="" coords="857,151,1009,193"/>
+<area shape="rect" id="node9" href="$namespaceutils_1_1anchors.html#acdf683862d82c02c7293f3afeb42c269" title="F.M 한 픽셀에 대응하는 3개의 크기 * 3개의 비율을 가지는 9개의 기본 anchor 생성" alt="" coords="637,217,807,244"/>
+<area shape="rect" id="node10" href="$namespaceutils_1_1anchors.html#a7b74cf0d5e1e9eabc0ac7329586981ee" title="RPN 네트워크를 통해 나온 anchor 좌표(상대좌표)값을 input image에 매칭" alt="" coords="649,269,795,310"/>
+<area shape="rect" id="node11" href="$namespaceutils_1_1py__nms.html#aa2049c381281c09368157cfc1366c378" title="Non&#45;Maximum Suppression(NMS): ground truth box와 IoU가 0.7이상 겹치는 anchor 값이 많이 나오기 때문에 하나만 남기고 나머지는 지운다." alt="" coords="635,335,809,361"/>
+</map>

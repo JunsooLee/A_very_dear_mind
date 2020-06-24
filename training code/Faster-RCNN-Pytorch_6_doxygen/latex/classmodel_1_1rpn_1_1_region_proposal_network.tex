@@ -1,0 +1,353 @@
+\hypertarget{classmodel_1_1rpn_1_1_region_proposal_network}{}\doxysection{model.\+rpn.\+Region\+Proposal\+Network 클래스 참조}
+\label{classmodel_1_1rpn_1_1_region_proposal_network}\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+
+
+model.\+rpn.\+Region\+Proposal\+Network에 대한 상속 다이어그램 \+: \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classmodel_1_1rpn_1_1_region_proposal_network__inherit__graph}
+\end{center}
+\end{figure}
+
+
+model.\+rpn.\+Region\+Proposal\+Network에 대한 협력 다이어그램\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classmodel_1_1rpn_1_1_region_proposal_network__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_aea0234e5994d57548967f3d7170f4aff}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, in\+\_\+channels=512, mid\+\_\+channels=512, ratios=\mbox{[}0.\+5, 1, 2\mbox{]}, scales=\mbox{[}0.\+5, 1, 2\mbox{]}, \mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_ad731e32b551d88ff97afaf7f9efe6e71}{feat\+\_\+stride}}=16)
+\item 
+def \mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_af31a9e19a3ce53383f7cb6cd9c0023eb}{forward}} (self, h, img\+\_\+size, scale=1.)
+\begin{DoxyCompactList}\small\item\em Forward Region Proposal Network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_a9e46d98c336fa5b7b810d67d00ff928f}{anchor\+\_\+base}}
+\item 
+\mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_ad731e32b551d88ff97afaf7f9efe6e71}{feat\+\_\+stride}}
+\item 
+\mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_a33c59853e9b66a5e43e883bdacc285c8}{conv1}}
+\item 
+\mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_a77a97b0e2d8d1c8903f155c4faaaf449}{score}}
+\item 
+\mbox{\hyperlink{classmodel_1_1rpn_1_1_region_proposal_network_a6bbbc1d7a037523d8c844a0d0771a3df}{loc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+\begin{DoxyVerb}@brief Region Proposal Network introduced in Faster R-CNN.
+
+@param  in_channels (int): The channel size of input.
+
+@param  mid_channels (int): The channel size of the intermediate tensor.
+
+@param  ratios (list of floats): This is ratios of width to height of the anchors.
+
+@param  anchor_scales (list of numbers): This is areas of anchors.
+       Those areas will be the product of the square of an element in
+       :obj:`anchor_scales` and the original area of the reference window.
+
+@param  feat_stride (int): Stride size after extracting features from an image.
+
+@param  initialW (callable): Initial weight value. If :obj:`None` then this
+        function uses Gaussian distribution scaled by 0.1 to initialize weight.
+        May also be a callable that takes an array and edits its values.
+
+@param proposal_creator_params (dict): Key valued paramters for
+       :class:`model.utils.creator_tools.ProposalCreator`.
+
+.. seealso::
+    :class:`~model.utils.creator_tools.ProposalCreator`\end{DoxyVerb}
+ 
+
+rpn.\+py 파일의 8 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{생성자 \& 소멸자 문서화}
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_aea0234e5994d57548967f3d7170f4aff}\label{classmodel_1_1rpn_1_1_region_proposal_network_aea0234e5994d57548967f3d7170f4aff}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+rpn.\+Region\+Proposal\+Network.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{in\+\_\+channels = {\ttfamily 512},  }\item[{}]{mid\+\_\+channels = {\ttfamily 512},  }\item[{}]{ratios = {\ttfamily \mbox{[}0.5,~1,~2\mbox{]}},  }\item[{}]{scales = {\ttfamily \mbox{[}0.5,~1,~2\mbox{]}},  }\item[{}]{feat\+\_\+stride = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+
+
+rpn.\+py 파일의 36 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36     \textcolor{keyword}{def }\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}(}
+\DoxyCodeLine{37             self, in\_channels=512, mid\_channels=512, ratios=[0.5, 1, 2],}
+\DoxyCodeLine{38             scales=[0.5, 1, 2], feat\_stride=16):}
+\DoxyCodeLine{39         super(RegionProposalNetwork, self).\mbox{\hyperlink{classutils_1_1vis__tool_1_1_visualizer_a2d7471603ca0e5fff1ad001341c31f46}{\_\_init\_\_}}()}
+\DoxyCodeLine{40         \textcolor{comment}{\# prepare anchor base}}
+\DoxyCodeLine{41         \textcolor{comment}{\# side\_length 는 16 * 16 의 single box (block side length)}}
+\DoxyCodeLine{42         self.anchor\_base = \mbox{\hyperlink{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}{generate\_anchor\_base}}(side\_length=16, }
+\DoxyCodeLine{43             ratios=ratios, scales=scales, strides=feat\_stride)}
+\DoxyCodeLine{44         self.feat\_stride = feat\_stride}
+\DoxyCodeLine{45         \textcolor{comment}{\# network params}}
+\DoxyCodeLine{46         n\_anchor = self.anchor\_base.shape[0] \textcolor{comment}{\# n\_anchor = 9 : anchor의}}
+\DoxyCodeLine{47         self.conv1 = nn.Conv2d(in\_channels, mid\_channels, 3, 1, 1) \textcolor{comment}{\# input, output, kernel, stride, padding : 3 * 3 filter 해준다.}}
+\DoxyCodeLine{48         self.score = nn.Conv2d(mid\_channels, n\_anchor * 2, 1, 1, 0) \textcolor{comment}{\# B.B 에 대한 점수 object 인지 object 가 아닌지}}
+\DoxyCodeLine{49         self.loc = nn.Conv2d(mid\_channels, n\_anchor * 4, 1, 1, 0) \textcolor{comment}{\# regression 에 대한 위치 (regression location)}}
+\DoxyCodeLine{50         \mbox{\hyperlink{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}{normal\_init}}(self.conv1, 0, 0.01)}
+\DoxyCodeLine{51         \mbox{\hyperlink{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}{normal\_init}}(self.score, 0, 0.01)}
+\DoxyCodeLine{52         \mbox{\hyperlink{namespacemodel_1_1rpn_ab5fbe15270d7d13fa12aa751e35f2223}{normal\_init}}(self.loc, 0, 0.01)}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_af31a9e19a3ce53383f7cb6cd9c0023eb}\label{classmodel_1_1rpn_1_1_region_proposal_network_af31a9e19a3ce53383f7cb6cd9c0023eb}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!forward@{forward}}
+\index{forward@{forward}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily def model.\+rpn.\+Region\+Proposal\+Network.\+forward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{h,  }\item[{}]{img\+\_\+size,  }\item[{}]{scale = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+
+
+Forward Region Proposal Network. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em h} & F.\+M 의미, shape = (N, C, H, W) \\
+\hline
+{\em img\+\_\+size} & Resize 된 크기의 input image \\
+\hline
+{\em scale} & Resize의 비율 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+rpn\+\_\+locs \+: F.\+M의 한 픽셀에 해당하는 9개의 anchor 좌표, shape = (N, H W A, 4) 
+
+rpn\+\_\+scores \+: F.\+M의 한 픽셀에 해당하는 9개의 anchor 각각에 대한 object 존재 확률값 shape = (N, H W A, 2) 
+
+rois \+: 예측된 sample anchor 
+
+\mbox{[}0\mbox{]}$\ast$len(rois) \+: sample anchor 개수 만큼의 list 
+
+anchors \+: F.\+M 한 픽셀당 9개의 anchor 좌표 초기값, shape = (H W A, 4) \begin{DoxyVerb}- :math:`N` is batch size.
+- :math:`C` channel size of the input.
+- :math:`H` and :math:`W` are height and witdh of the input feature.
+- :math:`A` is number of anchors assigned to each pixel.
+
+Args:
+    x (~torch.autograd.Variable): The Features extracted from images.
+Its shape is :math:`(N, C, H, W)`.
+
+    img_size (tuple of ints): A tuple :obj:`height, width`, which contains image size after scaling.
+
+    scale (float): The amount of scaling done to the input images after reading them from files.
+
+Returns:
+    (~torch.autograd.Variable, ~torch.autograd.Variable, array, array, array):
+
+    This is a tuple of five following values.
+
+    * **rpn_locs**: Predicted bounding box offsets and scales for \
+anchors. Its shape is :math:`(N, H W A, 4)`.
+    * **rpn_scores**:  Predicted foreground scores for \
+anchors. Its shape is :math:`(N, H W A, 2)`.
+    * **rois**: A bounding box array containing coordinates of \
+proposal boxes.  This is a concatenation of bounding box \
+arrays from multiple images in the batch. \
+Its shape is :math:`(R', 4)`. Given :math:`R_i` predicted \
+bounding boxes from the :math:`i` th image, \
+:math:`R' = \\sum _{i=1} ^ N R_i`.
+    * **roi_indices**: An array containing indices of images to
+which RoIs correspond to. Its shape is :math:`(R',)`.
+    * **anchor**: Coordinates of enumerated shifted anchors. \
+Its shape is :math:`(H W A, 4)`.\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+rpn.\+py 파일의 67 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67     \textcolor{keyword}{def }forward(self, h, img\_size, scale=1.):}
+\DoxyCodeLine{68         \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{        -\/ :math:`N` is batch size.}}
+\DoxyCodeLine{70 \textcolor{stringliteral}{        -\/ :math:`C` channel size of the input.}}
+\DoxyCodeLine{71 \textcolor{stringliteral}{        -\/ :math:`H` and :math:`W` are height and witdh of the input feature.}}
+\DoxyCodeLine{72 \textcolor{stringliteral}{        -\/ :math:`A` is number of anchors assigned to each pixel.}}
+\DoxyCodeLine{73 \textcolor{stringliteral}{}}
+\DoxyCodeLine{74 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{75 \textcolor{stringliteral}{            x (~torch.autograd.Variable): The Features extracted from images.}}
+\DoxyCodeLine{76 \textcolor{stringliteral}{                Its shape is :math:`(N, C, H, W)`.}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{}}
+\DoxyCodeLine{78 \textcolor{stringliteral}{            img\_size (tuple of ints): A tuple :obj:`height, width`, which contains image size after scaling.}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{}}
+\DoxyCodeLine{80 \textcolor{stringliteral}{            scale (float): The amount of scaling done to the input images after reading them from files.}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{            (~torch.autograd.Variable, ~torch.autograd.Variable, array, array, array):}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{            This is a tuple of five following values.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{            * **rpn\_locs**: Predicted bounding box offsets and scales for \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{                anchors. Its shape is :math:`(N, H W A, 4)`.}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{            * **rpn\_scores**:  Predicted foreground scores for \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{                anchors. Its shape is :math:`(N, H W A, 2)`.}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{            * **rois**: A bounding box array containing coordinates of \(\backslash\)}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{                proposal boxes.  This is a concatenation of bounding box \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{                arrays from multiple images in the batch. \(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{                Its shape is :math:`(R', 4)`. Given :math:`R\_i` predicted \(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{                bounding boxes from the :math:`i` th image, \(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{                :math:`R' = \(\backslash\)\(\backslash\)sum \_\{i=1\} \string^ N R\_i`.}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{            * **roi\_indices**: An array containing indices of images to}}
+\DoxyCodeLine{98 \textcolor{stringliteral}{                which RoIs correspond to. Its shape is :math:`(R',)`.}}
+\DoxyCodeLine{99 \textcolor{stringliteral}{            * **anchor**: Coordinates of enumerated shifted anchors. \(\backslash\)}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{                Its shape is :math:`(H W A, 4)`.}}
+\DoxyCodeLine{101 \textcolor{stringliteral}{}}
+\DoxyCodeLine{102 \textcolor{stringliteral}{        """}}
+\DoxyCodeLine{103         \textcolor{comment}{\# NMS에 넣기 전 뽑는 objectness가 높은 순서의 anchor 개수}}
+\DoxyCodeLine{104         n\_pre\_nms = 12000}
+\DoxyCodeLine{105         \textcolor{comment}{\# NMS로 뽑을 anchor 수 (최대 2000개, 2000개보다 적을 수 있음)}}
+\DoxyCodeLine{106         n\_post\_nms = 2000}
+\DoxyCodeLine{107         \textcolor{comment}{\# NMS G.T 와 겹치는 anchor의 IoU threshold}}
+\DoxyCodeLine{108         nms\_thresh = 0.7}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \textcolor{comment}{\# feature map의 shape}}
+\DoxyCodeLine{111         n, \_, hh, ww = h.shape}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         \textcolor{comment}{\# utils -\/-\/> anchors.py}}
+\DoxyCodeLine{114         anchors = \mbox{\hyperlink{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}{get\_anchors}}(self.anchor\_base, self.feat\_stride, hh, ww)}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117         hidd = F.relu(self.conv1(h))}
+\DoxyCodeLine{118         \textcolor{comment}{\# rpn\_locs shape = 1 * 36(9 * 4) * feature map height * feature map width}}
+\DoxyCodeLine{119         rpn\_locs = self.loc(hidd)}
+\DoxyCodeLine{120         \textcolor{comment}{\# rpn\_scores shape = 1 * 18(9 * 2) * feature map height * feature map width}}
+\DoxyCodeLine{121         rpn\_scores = self.score(hidd)}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123         \textcolor{comment}{\# shape : 1 * (feature height * feature width * 9) * 4}}
+\DoxyCodeLine{124         rpn\_locs = rpn\_locs.permute(0, 2, 3, 1).contiguous().\mbox{\hyperlink{_p_a_semptyobject_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}}(n, -\/1, 4)}
+\DoxyCodeLine{125         \textcolor{comment}{\# shape : 1 * (feature height * feature width * 9) * 2}}
+\DoxyCodeLine{126         rpn\_scores = rpn\_scores.permute(0, 2, 3, 1).contiguous().\mbox{\hyperlink{_p_a_semptyobject_8m_a6aa4664b4936f59c6ece3778daf31ec3}{view}}(n, -\/1, 2)}
+\DoxyCodeLine{127         \textcolor{comment}{\# 0 or 1 중 1(object에 대한 확률 값)}}
+\DoxyCodeLine{128         scores = rpn\_scores[:,:,1].data.cpu().numpy()[0]}
+\DoxyCodeLine{129         }
+\DoxyCodeLine{130         \textcolor{comment}{\# RPN을 통해서 나온 anchor값(상대좌표)을 input image 크기의 anchor 좌표로 변환}}
+\DoxyCodeLine{131         rois = \mbox{\hyperlink{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}{get\_rois\_from\_loc\_anchors}}(anchors, rpn\_locs[0].data.cpu().numpy())}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \textcolor{comment}{\# rois의 좌표 값이 이미지 크기 밖에 있을 경우 np,clip을 통해 보정}}
+\DoxyCodeLine{134         rois[:, ::2] = np.clip(rois[:, ::2], 0, img\_size[0])}
+\DoxyCodeLine{135         rois[:, 1::2] = np.clip(rois[:, 1::2], 0, img\_size[1])}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{comment}{\# scale: change type (tensor -\/> array)}}
+\DoxyCodeLine{138         scale = scale.numpy()}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{comment}{\# 이미지를 resize 하기 때문에 최소 픽셀값 "16" 값에도 scale 곱함}}
+\DoxyCodeLine{141         min\_size = 16.}
+\DoxyCodeLine{142         min\_size = min\_size * scale}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         hs = rois[:, 2] -\/ rois[:, 0] \textcolor{comment}{\# height}}
+\DoxyCodeLine{145         ws = rois[:, 3] -\/ rois[:, 1] \textcolor{comment}{\# width}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147         keep = np.where((hs >= min\_size) \& (ws >= min\_size))[0]}
+\DoxyCodeLine{148         rois = rois[keep, :] \textcolor{comment}{\# 최소 픽셀 이상인 anchor의 select (anchor 박스의 크기가 16 * 16 보다 작으면 탈락)}}
+\DoxyCodeLine{149         scores = scores[keep]}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151         \textcolor{comment}{\# ravel(): 다차원 배열을 1차원으로 펼침}}
+\DoxyCodeLine{152         \textcolor{comment}{\# argsort(): 오름차순 정렬된 원소의 index를 반환}}
+\DoxyCodeLine{153         \textcolor{comment}{\# [::-\/1]: 역순으로 반환}}
+\DoxyCodeLine{154         \textcolor{comment}{\# order: object 존재 score가 높은 순서대로 index 저장}}
+\DoxyCodeLine{155         order = scores.ravel().argsort()[::-\/1]}
+\DoxyCodeLine{156         \textcolor{keywordflow}{if} n\_pre\_nms > 0:}
+\DoxyCodeLine{157             order = order[:n\_pre\_nms] \textcolor{comment}{\# score 가 높은 순서대로 12000개 뽑음}}
+\DoxyCodeLine{158         rois = rois[order, :]}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160         \textcolor{comment}{\# NMS (py\_nms.py)}}
+\DoxyCodeLine{161         keep = \mbox{\hyperlink{namespaceutils_1_1py__nms_aa2049c381281c09368157cfc1366c378}{py\_cpu\_nms}}(rois, nms\_thresh)}
+\DoxyCodeLine{162         \textcolor{comment}{\# IoU 0.7보다 큰 것중에서 상위 2000개를 선택. 꼭 2000개가 아니라 2000개보다 작을 수도 있다}}
+\DoxyCodeLine{163         keep = keep[:n\_post\_nms]}
+\DoxyCodeLine{164         \textcolor{comment}{\# 2000개 정도를 (2000보다 작은수도 있음) 뽑은 것의 roi만 저장}}
+\DoxyCodeLine{165         rois = rois[keep]}
+\DoxyCodeLine{166         \textcolor{keywordflow}{return} rpn\_locs, rpn\_scores, rois, [0]*len(rois), anchors}
+\DoxyCodeLine{167 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1rpn_1_1_region_proposal_network_af31a9e19a3ce53383f7cb6cd9c0023eb_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodel_1_1rpn_1_1_region_proposal_network_af31a9e19a3ce53383f7cb6cd9c0023eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_a9e46d98c336fa5b7b810d67d00ff928f}\label{classmodel_1_1rpn_1_1_region_proposal_network_a9e46d98c336fa5b7b810d67d00ff928f}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!anchor\_base@{anchor\_base}}
+\index{anchor\_base@{anchor\_base}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{anchor\_base}{anchor\_base}}
+{\footnotesize\ttfamily model.\+rpn.\+Region\+Proposal\+Network.\+anchor\+\_\+base}
+
+
+
+rpn.\+py 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_a33c59853e9b66a5e43e883bdacc285c8}\label{classmodel_1_1rpn_1_1_region_proposal_network_a33c59853e9b66a5e43e883bdacc285c8}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!conv1@{conv1}}
+\index{conv1@{conv1}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{conv1}{conv1}}
+{\footnotesize\ttfamily model.\+rpn.\+Region\+Proposal\+Network.\+conv1}
+
+
+
+rpn.\+py 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_ad731e32b551d88ff97afaf7f9efe6e71}\label{classmodel_1_1rpn_1_1_region_proposal_network_ad731e32b551d88ff97afaf7f9efe6e71}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!feat\_stride@{feat\_stride}}
+\index{feat\_stride@{feat\_stride}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{feat\_stride}{feat\_stride}}
+{\footnotesize\ttfamily model.\+rpn.\+Region\+Proposal\+Network.\+feat\+\_\+stride}
+
+
+
+rpn.\+py 파일의 42 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_a6bbbc1d7a037523d8c844a0d0771a3df}\label{classmodel_1_1rpn_1_1_region_proposal_network_a6bbbc1d7a037523d8c844a0d0771a3df}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!loc@{loc}}
+\index{loc@{loc}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{loc}{loc}}
+{\footnotesize\ttfamily model.\+rpn.\+Region\+Proposal\+Network.\+loc}
+
+
+
+rpn.\+py 파일의 47 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{classmodel_1_1rpn_1_1_region_proposal_network_a77a97b0e2d8d1c8903f155c4faaaf449}\label{classmodel_1_1rpn_1_1_region_proposal_network_a77a97b0e2d8d1c8903f155c4faaaf449}} 
+\index{model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}!score@{score}}
+\index{score@{score}!model.rpn.RegionProposalNetwork@{model.rpn.RegionProposalNetwork}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily model.\+rpn.\+Region\+Proposal\+Network.\+score}
+
+
+
+rpn.\+py 파일의 46 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{rpn_8py}{rpn.\+py}}\end{DoxyCompactItemize}

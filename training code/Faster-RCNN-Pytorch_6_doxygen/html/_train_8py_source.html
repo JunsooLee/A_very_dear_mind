@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Train.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_train_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Train.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_train_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespace_train.html">    1</a></span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceutils_1_1config.html">utils.config</a> <span class="keyword">import</span> opt</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceutils_1_1data__load.html">utils.data_load</a> <span class="keyword">import</span> save_pkl, load_pkl</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> torch <span class="keyword">import</span> nn</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> torch.utils <span class="keyword">import</span> data <span class="keyword">as</span> data_</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> torch <span class="keyword">as</span> t</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> utils <span class="keyword">import</span> array_tool <span class="keyword">as</span> at</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> torch</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacedata_1_1dataset.html">data.dataset</a> <span class="keyword">import</span> Dataset, TestDataset, inverse_normalize</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacemodel_1_1faster__rcnn.html">model.faster_rcnn</a> <span class="keyword">import</span> FasterRCNN</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> <a class="code" href="namespacetrainer_1_1trainer.html">trainer.trainer</a> <span class="keyword">import</span> FasterRCNNTrainer</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> <a class="code" href="namespaceutils_1_1eval__tool.html">utils.eval_tool</a> <span class="keyword">import</span> eval_detection_voc</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespace_train.html#a073c054b09d56829c4927f2c5fe5d47a">   35</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespace_train.html#a073c054b09d56829c4927f2c5fe5d47a">eval</a>(dataloader, faster_rcnn, test_num=1000):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    pred_bboxes, pred_labels, pred_scores = list(), list(), list()</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    gt_bboxes, gt_labels, gt_difficults = list(), list(), list()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> ii, (imgs, sizes, gt_bboxes_, gt_labels_, gt_difficults_) <span class="keywordflow">in</span> tqdm(enumerate(dataloader)):</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        sizes = [sizes[0][0], sizes[1][0]]</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        pred_bboxes_, pred_labels_, pred_scores_ = faster_rcnn.predict(imgs, [sizes])</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        gt_bboxes += list(gt_bboxes_.numpy())</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        gt_labels += list(gt_labels_.numpy())</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        gt_difficults += list(gt_difficults_.numpy())</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        pred_bboxes += pred_bboxes_</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        pred_labels += pred_labels_</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pred_scores += pred_scores_</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> ii == test_num: <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    result = <a class="code" href="namespaceutils_1_1eval__tool.html#ad492f468b79187fc9e5441c757151f28">eval_detection_voc</a>(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        pred_bboxes, pred_labels, pred_scores,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        gt_bboxes, gt_labels, gt_difficults,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        use_07_metric=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> result</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespace_train.html#a7a6eb595c3a045d47da0a7d07ab81f4f">   59</a></span>&#160;    dataset = <a class="code" href="classdata_1_1dataset_1_1_dataset.html">Dataset</a>(opt)</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespace_train.html#ad5dd2bbaf3d73ba5855c2fd8c8f8a932">   60</a></span>&#160;    dataloader = data_.DataLoader(dataset,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                  batch_size=1,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                  shuffle=<span class="keyword">True</span>,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                  num_workers=opt.num_workers)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespace_train.html#af7f4906b37df5d331aa2d484bd3d9d64">   65</a></span>&#160;    testset = <a class="code" href="classdata_1_1dataset_1_1_test_dataset.html">TestDataset</a>(opt)</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespace_train.html#ac74afadc0876c3e36b91217667a26705">   66</a></span>&#160;    test_dataloader = data_.DataLoader(testset,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                       batch_size=1,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                       num_workers=opt.test_num_workers,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                       shuffle=<span class="keyword">False</span>, \</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       pin_memory=<span class="keyword">True</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                       )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment"># faster_rcnn.py --&gt; roi head &amp; rpn 초기화</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespace_train.html#a7ffe10a5665102960b6d172e059dd72b">   74</a></span>&#160;    faster_rcnn = <a class="code" href="classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html">FasterRCNN</a>()</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespace_train.html#a26489931632bdf07047257bfdecec8bb">   75</a></span>&#160;    trainer = <a class="code" href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html">FasterRCNNTrainer</a>(faster_rcnn).cuda()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment"># pre train model 경로 설정</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> opt.load_path:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        trainer.load(opt.load_path)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        print(<span class="stringliteral">&#39;load pretrained model from %s&#39;</span> % opt.load_path)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespace_train.html#acfde390cc257e047061f213ac4f1ba38">   82</a></span>&#160;    lr_ = opt.lr</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="namespace_train.html#a75d6c70fc72ec8eb7ff195a34a9b3925">   83</a></span>&#160;    best_map = 0</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> epoch <span class="keywordflow">in</span> range(20):</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespace_train.html#a1dbaf679257ac9a494ad34dfa55bf857">   85</a></span>&#160;        loss_list_roi_cls = []</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespace_train.html#a8ed3b645bbfbfbca1d34d7b9a99e181c">   86</a></span>&#160;        loss_list_roi_loc = []</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="namespace_train.html#a7742547b172c0b0d7d920b21cd076dd6">   87</a></span>&#160;        loss_list_rpn_cls = []</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespace_train.html#a827cd592db34974bfaae07051f57a6e7">   88</a></span>&#160;        loss_list_rpn_loc = []</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">for</span> ii, (img, bbox_, label_, scale) <span class="keywordflow">in</span> tqdm(enumerate(dataloader)):</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment"># scale: 이미지 resize 비율 의미</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="namespace_train.html#a3a18f44e41a35886a41f1e16b04083d3">   91</a></span>&#160;            scale = at.scalar(scale)</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespace_train.html#a3893fdf2d4070c6a0128c09f4305a8f0">   92</a></span>&#160;            img, bbox, label = img.cuda().float(), bbox_.cuda(), label_.cuda()</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            img, bbox, label = Variable(img), Variable(bbox), Variable(label)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment"># network forwarding</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="namespace_train.html#a09f7b01cea52bdb49d4ed4117f8648f4">   95</a></span>&#160;            loss_list = trainer.train_step(img, bbox, label, scale)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            loss_list_roi_cls.append(loss_list.roi_cls_loss)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            loss_list_roi_loc.append(loss_list.roi_loc_loss)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            loss_list_rpn_cls.append(loss_list.rpn_cls_loss)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            loss_list_rpn_loc.append(loss_list.rpn_loc_loss)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        print(<span class="stringliteral">&quot;--------------------------&quot;</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        print(<span class="stringliteral">&quot;current epoch: &quot;</span>, epoch)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        print(<span class="stringliteral">&quot;rpn_loc loss: &quot;</span>, torch.mean(torch.stack(loss_list_rpn_loc)))</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        print(<span class="stringliteral">&quot;rpn_cls loss: &quot;</span>, torch.mean(torch.stack(loss_list_rpn_cls)))</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        print(<span class="stringliteral">&quot;roi_loc loss: &quot;</span>, torch.mean(torch.stack(loss_list_roi_loc)))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        print(<span class="stringliteral">&quot;roi_cls loss: &quot;</span>, torch.mean(torch.stack(loss_list_roi_cls)))</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        print(<span class="stringliteral">&quot;--------------------------&quot;</span>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment"># 학습된 모델 저장</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="namespace_train.html#a45a17572c46cae0212432ab30c9d55c3">  109</a></span>&#160;        trainer.save(save_optimizer=<span class="keyword">True</span>, best_map=epoch)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment"># Learning rate 0.1 줄이기</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> epoch == 10:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            trainer.faster_rcnn.scale_lr(opt.lr_decay)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            lr_ = lr_ * opt.lr_decay</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespace_train.html#aa77fc258a8bb1ca01927e7ac13d0bd9f">  117</a></span>&#160;    eval_result = <a class="code" href="namespace_train.html#a073c054b09d56829c4927f2c5fe5d47a">eval</a>(test_dataloader, faster_rcnn, test_num=opt.test_num)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> eval_result[<span class="stringliteral">&#39;map&#39;</span>] &gt; best_map:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        best_map = eval_result[<span class="stringliteral">&#39;map&#39;</span>]</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment"># 학습된 모델 저장</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        best_path = trainer.save(best_map=best_map)</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassdata_1_1dataset_1_1_dataset_html"><div class="ttname"><a href="classdata_1_1dataset_1_1_dataset.html">data.dataset.Dataset</a></div><div class="ttdef"><b>Definition:</b> <a href="dataset_8py_source.html#l00153">dataset.py:153</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1eval__tool_html"><div class="ttname"><a href="namespaceutils_1_1eval__tool.html">utils.eval_tool</a></div><div class="ttdef"><b>Definition:</b> <a href="eval__tool_8py_source.html#l00001">eval_tool.py:1</a></div></div>
+<div class="ttc" id="anamespacedata_1_1dataset_html"><div class="ttname"><a href="namespacedata_1_1dataset.html">data.dataset</a></div><div class="ttdef"><b>Definition:</b> <a href="dataset_8py_source.html#l00001">dataset.py:1</a></div></div>
+<div class="ttc" id="aclasstrainer_1_1trainer_1_1_faster_r_c_n_n_trainer_html"><div class="ttname"><a href="classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html">trainer.trainer.FasterRCNNTrainer</a></div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00024">trainer.py:24</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1data__load_html"><div class="ttname"><a href="namespaceutils_1_1data__load.html">utils.data_load</a></div><div class="ttdef"><b>Definition:</b> <a href="data__load_8py_source.html#l00001">data_load.py:1</a></div></div>
+<div class="ttc" id="anamespacemodel_1_1faster__rcnn_html"><div class="ttname"><a href="namespacemodel_1_1faster__rcnn.html">model.faster_rcnn</a></div><div class="ttdef"><b>Definition:</b> <a href="faster__rcnn_8py_source.html#l00001">faster_rcnn.py:1</a></div></div>
+<div class="ttc" id="anamespacetrainer_1_1trainer_html"><div class="ttname"><a href="namespacetrainer_1_1trainer.html">trainer.trainer</a></div><div class="ttdef"><b>Definition:</b> <a href="trainer_8py_source.html#l00001">trainer.py:1</a></div></div>
+<div class="ttc" id="anamespace_train_html_a073c054b09d56829c4927f2c5fe5d47a"><div class="ttname"><a href="namespace_train.html#a073c054b09d56829c4927f2c5fe5d47a">Train.eval</a></div><div class="ttdeci">def eval(dataloader, faster_rcnn, test_num=1000)</div><div class="ttdoc">&quot;MAP&quot;를 구하기 위한 함수</div><div class="ttdef"><b>Definition:</b> <a href="_train_8py_source.html#l00035">Train.py:35</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1config_html"><div class="ttname"><a href="namespaceutils_1_1config.html">utils.config</a></div><div class="ttdef"><b>Definition:</b> <a href="config_8py_source.html#l00001">config.py:1</a></div></div>
+<div class="ttc" id="aclassmodel_1_1faster__rcnn_1_1_faster_r_c_n_n_html"><div class="ttname"><a href="classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html">model.faster_rcnn.FasterRCNN</a></div><div class="ttdef"><b>Definition:</b> <a href="faster__rcnn_8py_source.html#l00017">faster_rcnn.py:17</a></div></div>
+<div class="ttc" id="aclassdata_1_1dataset_1_1_test_dataset_html"><div class="ttname"><a href="classdata_1_1dataset_1_1_test_dataset.html">data.dataset.TestDataset</a></div><div class="ttdef"><b>Definition:</b> <a href="dataset_8py_source.html#l00175">dataset.py:175</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1eval__tool_html_ad492f468b79187fc9e5441c757151f28"><div class="ttname"><a href="namespaceutils_1_1eval__tool.html#ad492f468b79187fc9e5441c757151f28">utils.eval_tool.eval_detection_voc</a></div><div class="ttdeci">def eval_detection_voc(pred_bboxes, pred_labels, pred_scores, gt_bboxes, gt_labels, gt_difficults=None, iou_thresh=0.5, use_07_metric=False)</div><div class="ttdef"><b>Definition:</b> <a href="eval__tool_8py_source.html#l00011">eval_tool.py:11</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_train_8py.html">Train.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

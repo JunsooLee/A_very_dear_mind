@@ -1,0 +1,495 @@
+\hypertarget{namespaceutils_1_1eval__tool}{}\doxysection{utils.\+eval\+\_\+tool 네임스페이스 참조}
+\label{namespaceutils_1_1eval__tool}\index{utils.eval\_tool@{utils.eval\_tool}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}{eval\+\_\+detection\+\_\+voc}} (pred\+\_\+bboxes, pred\+\_\+labels, pred\+\_\+scores, gt\+\_\+bboxes, gt\+\_\+labels, gt\+\_\+difficults=None, iou\+\_\+thresh=0.\+5, use\+\_\+07\+\_\+metric=False)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3}{calc\+\_\+detection\+\_\+voc\+\_\+prec\+\_\+rec}} (pred\+\_\+bboxes, pred\+\_\+labels, pred\+\_\+scores, gt\+\_\+bboxes, gt\+\_\+labels, gt\+\_\+difficults=None, iou\+\_\+thresh=0.\+5)
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202}{calc\+\_\+detection\+\_\+voc\+\_\+ap}} (\mbox{\hyperlink{_v_o_cevallayout_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}}, \mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, use\+\_\+07\+\_\+metric=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202}\label{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202}} 
+\index{utils.eval\_tool@{utils.eval\_tool}!calc\_detection\_voc\_ap@{calc\_detection\_voc\_ap}}
+\index{calc\_detection\_voc\_ap@{calc\_detection\_voc\_ap}!utils.eval\_tool@{utils.eval\_tool}}
+\doxysubsubsection{\texorpdfstring{calc\_detection\_voc\_ap()}{calc\_detection\_voc\_ap()}}
+{\footnotesize\ttfamily def utils.\+eval\+\_\+tool.\+calc\+\_\+detection\+\_\+voc\+\_\+ap (\begin{DoxyParamCaption}\item[{}]{prec,  }\item[{}]{rec,  }\item[{}]{use\+\_\+07\+\_\+metric = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate average precisions based on evaluation code of PASCAL VOC.
+This function calculates average precisions
+from given precisions and recalls.
+The code is based on the evaluation code used in PASCAL VOC Challenge.
+Args:
+    prec (list of numpy.array): A list of arrays.
+        :obj:`prec[l]` indicates precision for class :math:`l`.
+        If :obj:`prec[l]` is :obj:`None`, this function returns
+        :obj:`numpy.nan` for class :math:`l`.
+    rec (list of numpy.array): A list of arrays.
+        :obj:`rec[l]` indicates recall for class :math:`l`.
+        If :obj:`rec[l]` is :obj:`None`, this function returns
+        :obj:`numpy.nan` for class :math:`l`.
+    use_07_metric (bool): Whether to use PASCAL VOC 2007 evaluation metric
+        for calculating average precision. The default value is
+        :obj:`False`.
+Returns:
+    ~numpy.ndarray:
+    This function returns an array of average precisions.
+    The :math:`l`-th value corresponds to the average precision
+    for class :math:`l`. If :obj:`prec[l]` or :obj:`rec[l]` is
+    :obj:`None`, the corresponding value is set to :obj:`numpy.nan`.
+\end{DoxyVerb}
+ 
+
+eval\+\_\+tool.\+py 파일의 233 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{233 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202}{calc\_detection\_voc\_ap}}(prec, rec, use\_07\_metric=False):}
+\DoxyCodeLine{234     \textcolor{stringliteral}{"""Calculate average precisions based on evaluation code of PASCAL VOC.}}
+\DoxyCodeLine{235 \textcolor{stringliteral}{    This function calculates average precisions}}
+\DoxyCodeLine{236 \textcolor{stringliteral}{    from given precisions and recalls.}}
+\DoxyCodeLine{237 \textcolor{stringliteral}{    The code is based on the evaluation code used in PASCAL VOC Challenge.}}
+\DoxyCodeLine{238 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{239 \textcolor{stringliteral}{        prec (list of numpy.array): A list of arrays.}}
+\DoxyCodeLine{240 \textcolor{stringliteral}{            :obj:`prec[l]` indicates precision for class :math:`l`.}}
+\DoxyCodeLine{241 \textcolor{stringliteral}{            If :obj:`prec[l]` is :obj:`None`, this function returns}}
+\DoxyCodeLine{242 \textcolor{stringliteral}{            :obj:`numpy.nan` for class :math:`l`.}}
+\DoxyCodeLine{243 \textcolor{stringliteral}{        rec (list of numpy.array): A list of arrays.}}
+\DoxyCodeLine{244 \textcolor{stringliteral}{            :obj:`rec[l]` indicates recall for class :math:`l`.}}
+\DoxyCodeLine{245 \textcolor{stringliteral}{            If :obj:`rec[l]` is :obj:`None`, this function returns}}
+\DoxyCodeLine{246 \textcolor{stringliteral}{            :obj:`numpy.nan` for class :math:`l`.}}
+\DoxyCodeLine{247 \textcolor{stringliteral}{        use\_07\_metric (bool): Whether to use PASCAL VOC 2007 evaluation metric}}
+\DoxyCodeLine{248 \textcolor{stringliteral}{            for calculating average precision. The default value is}}
+\DoxyCodeLine{249 \textcolor{stringliteral}{            :obj:`False`.}}
+\DoxyCodeLine{250 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{251 \textcolor{stringliteral}{        ~numpy.ndarray:}}
+\DoxyCodeLine{252 \textcolor{stringliteral}{        This function returns an array of average precisions.}}
+\DoxyCodeLine{253 \textcolor{stringliteral}{        The :math:`l`-\/th value corresponds to the average precision}}
+\DoxyCodeLine{254 \textcolor{stringliteral}{        for class :math:`l`. If :obj:`prec[l]` or :obj:`rec[l]` is}}
+\DoxyCodeLine{255 \textcolor{stringliteral}{        :obj:`None`, the corresponding value is set to :obj:`numpy.nan`.}}
+\DoxyCodeLine{256 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     n\_fg\_class = len(prec)}
+\DoxyCodeLine{259     ap = np.empty(n\_fg\_class)}
+\DoxyCodeLine{260     \textcolor{keywordflow}{for} l \textcolor{keywordflow}{in} six.moves.range(n\_fg\_class):}
+\DoxyCodeLine{261         \textcolor{keywordflow}{if} prec[l] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None} \textcolor{keywordflow}{or} rec[l] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{262             ap[l] = np.nan}
+\DoxyCodeLine{263             \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265         \textcolor{keywordflow}{if} use\_07\_metric:}
+\DoxyCodeLine{266             \textcolor{comment}{\# 11 point metric}}
+\DoxyCodeLine{267             ap[l] = 0}
+\DoxyCodeLine{268             \textcolor{keywordflow}{for} t \textcolor{keywordflow}{in} np.arange(0., 1.1, 0.1):}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{if} np.sum(rec[l] >= t) == 0:}
+\DoxyCodeLine{270                     p = 0}
+\DoxyCodeLine{271                 \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{272                     p = np.max(np.nan\_to\_num(prec[l])[rec[l] >= t])}
+\DoxyCodeLine{273                 ap[l] += p / 11}
+\DoxyCodeLine{274         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{275             \textcolor{comment}{\# correct AP calculation}}
+\DoxyCodeLine{276             \textcolor{comment}{\# first append sentinel values at the end}}
+\DoxyCodeLine{277             mpre = np.concatenate(([0], np.nan\_to\_num(prec[l]), [0]))}
+\DoxyCodeLine{278             mrec = np.concatenate(([0], rec[l], [1]))}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280             mpre = np.maximum.accumulate(mpre[::-\/1])[::-\/1]}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282             \textcolor{comment}{\# to calculate area under PR curve, look for points}}
+\DoxyCodeLine{283             \textcolor{comment}{\# where X axis (recall) changes value}}
+\DoxyCodeLine{284             i = np.where(mrec[1:] != mrec[:-\/1])[0]}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286             \textcolor{comment}{\# and sum (\(\backslash\)Delta recall) * prec}}
+\DoxyCodeLine{287             ap[l] = np.sum((mrec[i + 1] -\/ mrec[i]) * mpre[i + 1])}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     \textcolor{keywordflow}{return} ap}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3}\label{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3}} 
+\index{utils.eval\_tool@{utils.eval\_tool}!calc\_detection\_voc\_prec\_rec@{calc\_detection\_voc\_prec\_rec}}
+\index{calc\_detection\_voc\_prec\_rec@{calc\_detection\_voc\_prec\_rec}!utils.eval\_tool@{utils.eval\_tool}}
+\doxysubsubsection{\texorpdfstring{calc\_detection\_voc\_prec\_rec()}{calc\_detection\_voc\_prec\_rec()}}
+{\footnotesize\ttfamily def utils.\+eval\+\_\+tool.\+calc\+\_\+detection\+\_\+voc\+\_\+prec\+\_\+rec (\begin{DoxyParamCaption}\item[{}]{pred\+\_\+bboxes,  }\item[{}]{pred\+\_\+labels,  }\item[{}]{pred\+\_\+scores,  }\item[{}]{gt\+\_\+bboxes,  }\item[{}]{gt\+\_\+labels,  }\item[{}]{gt\+\_\+difficults = {\ttfamily None},  }\item[{}]{iou\+\_\+thresh = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate precision and recall based on evaluation code of PASCAL VOC.
+This function calculates precision and recall of
+predicted bounding boxes obtained from a dataset which has :math:`N`
+images.
+The code is based on the evaluation code used in PASCAL VOC Challenge.
+Args:
+    pred_bboxes (iterable of numpy.ndarray): An iterable of :math:`N`
+        sets of bounding boxes.
+        Its index corresponds to an index for the base dataset.
+        Each element of :obj:`pred_bboxes` is a set of coordinates
+        of bounding boxes. This is an array whose shape is :math:`(R, 4)`,
+        where :math:`R` corresponds
+        to the number of bounding boxes, which may vary among boxes.
+        The second axis corresponds to
+        :math:`y_{min}, x_{min}, y_{max}, x_{max}` of a bounding box.
+    pred_labels (iterable of numpy.ndarray): An iterable of labels.
+        Similar to :obj:`pred_bboxes`, its index corresponds to an
+        index for the base dataset. Its length is :math:`N`.
+    pred_scores (iterable of numpy.ndarray): An iterable of confidence
+        scores for predicted bounding boxes. Similar to :obj:`pred_bboxes`,
+        its index corresponds to an index for the base dataset.
+        Its length is :math:`N`.
+    gt_bboxes (iterable of numpy.ndarray): An iterable of ground truth
+        bounding boxes
+        whose length is :math:`N`. An element of :obj:`gt_bboxes` is a
+        bounding box whose shape is :math:`(R, 4)`. Note that the number of
+        bounding boxes in each image does not need to be same as the number
+        of corresponding predicted boxes.
+    gt_labels (iterable of numpy.ndarray): An iterable of ground truth
+        labels which are organized similarly to :obj:`gt_bboxes`.
+    gt_difficults (iterable of numpy.ndarray): An iterable of boolean
+        arrays which is organized similarly to :obj:`gt_bboxes`.
+        This tells whether the
+        corresponding ground truth bounding box is difficult or not.
+        By default, this is :obj:`None`. In that case, this function
+        considers all bounding boxes to be not difficult.
+    iou_thresh (float): A prediction is correct if its Intersection over
+        Union with the ground truth is above this value..
+Returns:
+    tuple of two lists:
+    This function returns two lists: :obj:`prec` and :obj:`rec`.
+    * :obj:`prec`: A list of arrays. :obj:`prec[l]` is precision \
+        for class :math:`l`. If class :math:`l` does not exist in \
+        either :obj:`pred_labels` or :obj:`gt_labels`, :obj:`prec[l]` is \
+        set to :obj:`None`.
+    * :obj:`rec`: A list of arrays. :obj:`rec[l]` is recall \
+        for class :math:`l`. If class :math:`l` that is not marked as \
+        difficult does not exist in \
+        :obj:`gt_labels`, :obj:`rec[l]` is \
+        set to :obj:`None`.
+\end{DoxyVerb}
+ 
+
+eval\+\_\+tool.\+py 파일의 77 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{77 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3}{calc\_detection\_voc\_prec\_rec}}(}
+\DoxyCodeLine{78         pred\_bboxes, pred\_labels, pred\_scores, gt\_bboxes, gt\_labels,}
+\DoxyCodeLine{79         gt\_difficults=None,}
+\DoxyCodeLine{80         iou\_thresh=0.5):}
+\DoxyCodeLine{81     \textcolor{stringliteral}{"""Calculate precision and recall based on evaluation code of PASCAL VOC.}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{    This function calculates precision and recall of}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{    predicted bounding boxes obtained from a dataset which has :math:`N`}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{    images.}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{    The code is based on the evaluation code used in PASCAL VOC Challenge.}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{        pred\_bboxes (iterable of numpy.ndarray): An iterable of :math:`N`}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{            sets of bounding boxes.}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{            Its index corresponds to an index for the base dataset.}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{            Each element of :obj:`pred\_bboxes` is a set of coordinates}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{            of bounding boxes. This is an array whose shape is :math:`(R, 4)`,}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{            where :math:`R` corresponds}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{            to the number of bounding boxes, which may vary among boxes.}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{            The second axis corresponds to}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{            :math:`y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\}` of a bounding box.}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{        pred\_labels (iterable of numpy.ndarray): An iterable of labels.}}
+\DoxyCodeLine{97 \textcolor{stringliteral}{            Similar to :obj:`pred\_bboxes`, its index corresponds to an}}
+\DoxyCodeLine{98 \textcolor{stringliteral}{            index for the base dataset. Its length is :math:`N`.}}
+\DoxyCodeLine{99 \textcolor{stringliteral}{        pred\_scores (iterable of numpy.ndarray): An iterable of confidence}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{            scores for predicted bounding boxes. Similar to :obj:`pred\_bboxes`,}}
+\DoxyCodeLine{101 \textcolor{stringliteral}{            its index corresponds to an index for the base dataset.}}
+\DoxyCodeLine{102 \textcolor{stringliteral}{            Its length is :math:`N`.}}
+\DoxyCodeLine{103 \textcolor{stringliteral}{        gt\_bboxes (iterable of numpy.ndarray): An iterable of ground truth}}
+\DoxyCodeLine{104 \textcolor{stringliteral}{            bounding boxes}}
+\DoxyCodeLine{105 \textcolor{stringliteral}{            whose length is :math:`N`. An element of :obj:`gt\_bboxes` is a}}
+\DoxyCodeLine{106 \textcolor{stringliteral}{            bounding box whose shape is :math:`(R, 4)`. Note that the number of}}
+\DoxyCodeLine{107 \textcolor{stringliteral}{            bounding boxes in each image does not need to be same as the number}}
+\DoxyCodeLine{108 \textcolor{stringliteral}{            of corresponding predicted boxes.}}
+\DoxyCodeLine{109 \textcolor{stringliteral}{        gt\_labels (iterable of numpy.ndarray): An iterable of ground truth}}
+\DoxyCodeLine{110 \textcolor{stringliteral}{            labels which are organized similarly to :obj:`gt\_bboxes`.}}
+\DoxyCodeLine{111 \textcolor{stringliteral}{        gt\_difficults (iterable of numpy.ndarray): An iterable of boolean}}
+\DoxyCodeLine{112 \textcolor{stringliteral}{            arrays which is organized similarly to :obj:`gt\_bboxes`.}}
+\DoxyCodeLine{113 \textcolor{stringliteral}{            This tells whether the}}
+\DoxyCodeLine{114 \textcolor{stringliteral}{            corresponding ground truth bounding box is difficult or not.}}
+\DoxyCodeLine{115 \textcolor{stringliteral}{            By default, this is :obj:`None`. In that case, this function}}
+\DoxyCodeLine{116 \textcolor{stringliteral}{            considers all bounding boxes to be not difficult.}}
+\DoxyCodeLine{117 \textcolor{stringliteral}{        iou\_thresh (float): A prediction is correct if its Intersection over}}
+\DoxyCodeLine{118 \textcolor{stringliteral}{            Union with the ground truth is above this value..}}
+\DoxyCodeLine{119 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{120 \textcolor{stringliteral}{        tuple of two lists:}}
+\DoxyCodeLine{121 \textcolor{stringliteral}{        This function returns two lists: :obj:`prec` and :obj:`rec`.}}
+\DoxyCodeLine{122 \textcolor{stringliteral}{        * :obj:`prec`: A list of arrays. :obj:`prec[l]` is precision \(\backslash\)}}
+\DoxyCodeLine{123 \textcolor{stringliteral}{            for class :math:`l`. If class :math:`l` does not exist in \(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{stringliteral}{            either :obj:`pred\_labels` or :obj:`gt\_labels`, :obj:`prec[l]` is \(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{stringliteral}{            set to :obj:`None`.}}
+\DoxyCodeLine{126 \textcolor{stringliteral}{        * :obj:`rec`: A list of arrays. :obj:`rec[l]` is recall \(\backslash\)}}
+\DoxyCodeLine{127 \textcolor{stringliteral}{            for class :math:`l`. If class :math:`l` that is not marked as \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{stringliteral}{            difficult does not exist in \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{stringliteral}{            :obj:`gt\_labels`, :obj:`rec[l]` is \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{stringliteral}{            set to :obj:`None`.}}
+\DoxyCodeLine{131 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     pred\_bboxes = iter(pred\_bboxes)}
+\DoxyCodeLine{134     pred\_labels = iter(pred\_labels)}
+\DoxyCodeLine{135     pred\_scores = iter(pred\_scores)}
+\DoxyCodeLine{136     gt\_bboxes = iter(gt\_bboxes)}
+\DoxyCodeLine{137     gt\_labels = iter(gt\_labels)}
+\DoxyCodeLine{138     \textcolor{keywordflow}{if} gt\_difficults \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{139         gt\_difficults = itertools.repeat(\textcolor{keywordtype}{None})}
+\DoxyCodeLine{140     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{141         gt\_difficults = iter(gt\_difficults)}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     n\_pos = defaultdict(int)}
+\DoxyCodeLine{144     score = defaultdict(list)}
+\DoxyCodeLine{145     match = defaultdict(list)}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordflow}{for} pred\_bbox, pred\_label, pred\_score, gt\_bbox, gt\_label, gt\_difficult \textcolor{keywordflow}{in} \(\backslash\)}
+\DoxyCodeLine{148             six.moves.zip(}
+\DoxyCodeLine{149                 pred\_bboxes, pred\_labels, pred\_scores,}
+\DoxyCodeLine{150                 gt\_bboxes, gt\_labels, gt\_difficults):}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152         \textcolor{keywordflow}{if} gt\_difficult \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{153             gt\_difficult = np.zeros(gt\_bbox.shape[0], dtype=bool)}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \textcolor{keywordflow}{for} l \textcolor{keywordflow}{in} np.unique(np.concatenate((pred\_label, gt\_label)).astype(int)):}
+\DoxyCodeLine{156             pred\_mask\_l = pred\_label == l}
+\DoxyCodeLine{157             pred\_bbox\_l = pred\_bbox[pred\_mask\_l]}
+\DoxyCodeLine{158             pred\_score\_l = pred\_score[pred\_mask\_l]}
+\DoxyCodeLine{159             \textcolor{comment}{\# sort by score}}
+\DoxyCodeLine{160             order = pred\_score\_l.argsort()[::-\/1]}
+\DoxyCodeLine{161             pred\_bbox\_l = pred\_bbox\_l[order]}
+\DoxyCodeLine{162             pred\_score\_l = pred\_score\_l[order]}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164             gt\_mask\_l = gt\_label == l}
+\DoxyCodeLine{165             gt\_bbox\_l = gt\_bbox[gt\_mask\_l]}
+\DoxyCodeLine{166             gt\_difficult\_l = gt\_difficult[gt\_mask\_l]}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168             n\_pos[l] += np.logical\_not(gt\_difficult\_l).sum()}
+\DoxyCodeLine{169             score[l].extend(pred\_score\_l)}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171             \textcolor{keywordflow}{if} len(pred\_bbox\_l) == 0:}
+\DoxyCodeLine{172                 \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{173             \textcolor{keywordflow}{if} len(gt\_bbox\_l) == 0:}
+\DoxyCodeLine{174                 match[l].extend((0,) * pred\_bbox\_l.shape[0])}
+\DoxyCodeLine{175                 \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177             \textcolor{comment}{\# VOC evaluation follows integer typed bounding boxes.}}
+\DoxyCodeLine{178             pred\_bbox\_l = pred\_bbox\_l.copy()}
+\DoxyCodeLine{179             pred\_bbox\_l[:, 2:] += 1}
+\DoxyCodeLine{180             gt\_bbox\_l = gt\_bbox\_l.copy()}
+\DoxyCodeLine{181             gt\_bbox\_l[:, 2:] += 1}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183             iou = \mbox{\hyperlink{namespacemodel_1_1utils_1_1bbox__tools_a1a8e6b10ec7536583f4d8cb0f8386ee6}{bbox\_iou}}(pred\_bbox\_l, gt\_bbox\_l)}
+\DoxyCodeLine{184             gt\_index = iou.argmax(axis=1)}
+\DoxyCodeLine{185             \textcolor{comment}{\# set -\/1 if there is no matching ground truth}}
+\DoxyCodeLine{186             gt\_index[iou.max(axis=1) < iou\_thresh] = -\/1}
+\DoxyCodeLine{187             del iou}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189             selec = np.zeros(gt\_bbox\_l.shape[0], dtype=bool)}
+\DoxyCodeLine{190             \textcolor{keywordflow}{for} gt\_idx \textcolor{keywordflow}{in} gt\_index:}
+\DoxyCodeLine{191                 \textcolor{keywordflow}{if} gt\_idx >= 0:}
+\DoxyCodeLine{192                     \textcolor{keywordflow}{if} gt\_difficult\_l[gt\_idx]:}
+\DoxyCodeLine{193                         match[l].append(-\/1)}
+\DoxyCodeLine{194                     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{195                         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} selec[gt\_idx]:}
+\DoxyCodeLine{196                             match[l].append(1)}
+\DoxyCodeLine{197                         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{198                             match[l].append(0)}
+\DoxyCodeLine{199                     selec[gt\_idx] = \textcolor{keyword}{True}}
+\DoxyCodeLine{200                 \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{201                     match[l].append(0)}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{keywordflow}{for} iter\_ \textcolor{keywordflow}{in} (}
+\DoxyCodeLine{204             pred\_bboxes, pred\_labels, pred\_scores,}
+\DoxyCodeLine{205             gt\_bboxes, gt\_labels, gt\_difficults):}
+\DoxyCodeLine{206         \textcolor{keywordflow}{if} next(iter\_, \textcolor{keywordtype}{None}) \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{207             \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{'Length of input iterables need to be same.'})}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     n\_fg\_class = \mbox{\hyperlink{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(n\_pos.keys()) + 1}
+\DoxyCodeLine{210     prec = [\textcolor{keywordtype}{None}] * n\_fg\_class}
+\DoxyCodeLine{211     rec = [\textcolor{keywordtype}{None}] * n\_fg\_class}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keywordflow}{for} l \textcolor{keywordflow}{in} n\_pos.keys():}
+\DoxyCodeLine{214         score\_l = np.array(score[l])}
+\DoxyCodeLine{215         match\_l = np.array(match[l], dtype=np.int8)}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         order = score\_l.argsort()[::-\/1]}
+\DoxyCodeLine{218         match\_l = match\_l[order]}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220         tp = np.cumsum(match\_l == 1)}
+\DoxyCodeLine{221         fp = np.cumsum(match\_l == 0)}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{comment}{\# If an element of fp + tp is 0,}}
+\DoxyCodeLine{224         \textcolor{comment}{\# the corresponding element of prec[l] is nan.}}
+\DoxyCodeLine{225         prec[l] = tp / (fp + tp)}
+\DoxyCodeLine{226         \textcolor{comment}{\# If n\_pos[l] is 0, rec[l] is None.}}
+\DoxyCodeLine{227         \textcolor{keywordflow}{if} n\_pos[l] > 0:}
+\DoxyCodeLine{228             rec[l] = tp / n\_pos[l]}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     \textcolor{keywordflow}{return} prec, rec}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}\label{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}} 
+\index{utils.eval\_tool@{utils.eval\_tool}!eval\_detection\_voc@{eval\_detection\_voc}}
+\index{eval\_detection\_voc@{eval\_detection\_voc}!utils.eval\_tool@{utils.eval\_tool}}
+\doxysubsubsection{\texorpdfstring{eval\_detection\_voc()}{eval\_detection\_voc()}}
+{\footnotesize\ttfamily def utils.\+eval\+\_\+tool.\+eval\+\_\+detection\+\_\+voc (\begin{DoxyParamCaption}\item[{}]{pred\+\_\+bboxes,  }\item[{}]{pred\+\_\+labels,  }\item[{}]{pred\+\_\+scores,  }\item[{}]{gt\+\_\+bboxes,  }\item[{}]{gt\+\_\+labels,  }\item[{}]{gt\+\_\+difficults = {\ttfamily None},  }\item[{}]{iou\+\_\+thresh = {\ttfamily 0.5},  }\item[{}]{use\+\_\+07\+\_\+metric = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate average precisions based on evaluation code of PASCAL VOC.
+This function evaluates predicted bounding boxes obtained from a dataset
+which has :math:`N` images by using average precision for each class.
+The code is based on the evaluation code used in PASCAL VOC Challenge.
+Args:
+    pred_bboxes (iterable of numpy.ndarray): An iterable of :math:`N`
+        sets of bounding boxes.
+        Its index corresponds to an index for the base dataset.
+        Each element of :obj:`pred_bboxes` is a set of coordinates
+        of bounding boxes. This is an array whose shape is :math:`(R, 4)`,
+        where :math:`R` corresponds
+        to the number of bounding boxes, which may vary among boxes.
+        The second axis corresponds to
+        :math:`y_{min}, x_{min}, y_{max}, x_{max}` of a bounding box.
+    pred_labels (iterable of numpy.ndarray): An iterable of labels.
+        Similar to :obj:`pred_bboxes`, its index corresponds to an
+        index for the base dataset. Its length is :math:`N`.
+    pred_scores (iterable of numpy.ndarray): An iterable of confidence
+        scores for predicted bounding boxes. Similar to :obj:`pred_bboxes`,
+        its index corresponds to an index for the base dataset.
+        Its length is :math:`N`.
+    gt_bboxes (iterable of numpy.ndarray): An iterable of ground truth
+        bounding boxes
+        whose length is :math:`N`. An element of :obj:`gt_bboxes` is a
+        bounding box whose shape is :math:`(R, 4)`. Note that the number of
+        bounding boxes in each image does not need to be same as the number
+        of corresponding predicted boxes.
+    gt_labels (iterable of numpy.ndarray): An iterable of ground truth
+        labels which are organized similarly to :obj:`gt_bboxes`.
+    gt_difficults (iterable of numpy.ndarray): An iterable of boolean
+        arrays which is organized similarly to :obj:`gt_bboxes`.
+        This tells whether the
+        corresponding ground truth bounding box is difficult or not.
+        By default, this is :obj:`None`. In that case, this function
+        considers all bounding boxes to be not difficult.
+    iou_thresh (float): A prediction is correct if its Intersection over
+        Union with the ground truth is above this value.
+    use_07_metric (bool): Whether to use PASCAL VOC 2007 evaluation metric
+        for calculating average precision. The default value is
+        :obj:`False`.
+Returns:
+    dict:
+    The keys, value-types and the description of the values are listed
+    below.
+    * **ap** (*numpy.ndarray*): An array of average precisions. \
+        The :math:`l`-th value corresponds to the average precision \
+        for class :math:`l`. If class :math:`l` does not exist in \
+        either :obj:`pred_labels` or :obj:`gt_labels`, the corresponding \
+        value is set to :obj:`numpy.nan`.
+    * **map** (*float*): The average of Average Precisions over classes.
+\end{DoxyVerb}
+ 
+
+eval\+\_\+tool.\+py 파일의 11 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28}{eval\_detection\_voc}}(}
+\DoxyCodeLine{12         pred\_bboxes, pred\_labels, pred\_scores, gt\_bboxes, gt\_labels,}
+\DoxyCodeLine{13         gt\_difficults=None,}
+\DoxyCodeLine{14         iou\_thresh=0.5, use\_07\_metric=False):}
+\DoxyCodeLine{15     \textcolor{stringliteral}{"""Calculate average precisions based on evaluation code of PASCAL VOC.}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{    This function evaluates predicted bounding boxes obtained from a dataset}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{    which has :math:`N` images by using average precision for each class.}}
+\DoxyCodeLine{18 \textcolor{stringliteral}{    The code is based on the evaluation code used in PASCAL VOC Challenge.}}
+\DoxyCodeLine{19 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{20 \textcolor{stringliteral}{        pred\_bboxes (iterable of numpy.ndarray): An iterable of :math:`N`}}
+\DoxyCodeLine{21 \textcolor{stringliteral}{            sets of bounding boxes.}}
+\DoxyCodeLine{22 \textcolor{stringliteral}{            Its index corresponds to an index for the base dataset.}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{            Each element of :obj:`pred\_bboxes` is a set of coordinates}}
+\DoxyCodeLine{24 \textcolor{stringliteral}{            of bounding boxes. This is an array whose shape is :math:`(R, 4)`,}}
+\DoxyCodeLine{25 \textcolor{stringliteral}{            where :math:`R` corresponds}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{            to the number of bounding boxes, which may vary among boxes.}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{            The second axis corresponds to}}
+\DoxyCodeLine{28 \textcolor{stringliteral}{            :math:`y\_\{min\}, x\_\{min\}, y\_\{max\}, x\_\{max\}` of a bounding box.}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{        pred\_labels (iterable of numpy.ndarray): An iterable of labels.}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{            Similar to :obj:`pred\_bboxes`, its index corresponds to an}}
+\DoxyCodeLine{31 \textcolor{stringliteral}{            index for the base dataset. Its length is :math:`N`.}}
+\DoxyCodeLine{32 \textcolor{stringliteral}{        pred\_scores (iterable of numpy.ndarray): An iterable of confidence}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{            scores for predicted bounding boxes. Similar to :obj:`pred\_bboxes`,}}
+\DoxyCodeLine{34 \textcolor{stringliteral}{            its index corresponds to an index for the base dataset.}}
+\DoxyCodeLine{35 \textcolor{stringliteral}{            Its length is :math:`N`.}}
+\DoxyCodeLine{36 \textcolor{stringliteral}{        gt\_bboxes (iterable of numpy.ndarray): An iterable of ground truth}}
+\DoxyCodeLine{37 \textcolor{stringliteral}{            bounding boxes}}
+\DoxyCodeLine{38 \textcolor{stringliteral}{            whose length is :math:`N`. An element of :obj:`gt\_bboxes` is a}}
+\DoxyCodeLine{39 \textcolor{stringliteral}{            bounding box whose shape is :math:`(R, 4)`. Note that the number of}}
+\DoxyCodeLine{40 \textcolor{stringliteral}{            bounding boxes in each image does not need to be same as the number}}
+\DoxyCodeLine{41 \textcolor{stringliteral}{            of corresponding predicted boxes.}}
+\DoxyCodeLine{42 \textcolor{stringliteral}{        gt\_labels (iterable of numpy.ndarray): An iterable of ground truth}}
+\DoxyCodeLine{43 \textcolor{stringliteral}{            labels which are organized similarly to :obj:`gt\_bboxes`.}}
+\DoxyCodeLine{44 \textcolor{stringliteral}{        gt\_difficults (iterable of numpy.ndarray): An iterable of boolean}}
+\DoxyCodeLine{45 \textcolor{stringliteral}{            arrays which is organized similarly to :obj:`gt\_bboxes`.}}
+\DoxyCodeLine{46 \textcolor{stringliteral}{            This tells whether the}}
+\DoxyCodeLine{47 \textcolor{stringliteral}{            corresponding ground truth bounding box is difficult or not.}}
+\DoxyCodeLine{48 \textcolor{stringliteral}{            By default, this is :obj:`None`. In that case, this function}}
+\DoxyCodeLine{49 \textcolor{stringliteral}{            considers all bounding boxes to be not difficult.}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{        iou\_thresh (float): A prediction is correct if its Intersection over}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{            Union with the ground truth is above this value.}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{        use\_07\_metric (bool): Whether to use PASCAL VOC 2007 evaluation metric}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{            for calculating average precision. The default value is}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{            :obj:`False`.}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{        dict:}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{        The keys, value-\/types and the description of the values are listed}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{        below.}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{        * **ap** (*numpy.ndarray*): An array of average precisions. \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{stringliteral}{            The :math:`l`-\/th value corresponds to the average precision \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{stringliteral}{            for class :math:`l`. If class :math:`l` does not exist in \(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{stringliteral}{            either :obj:`pred\_labels` or :obj:`gt\_labels`, the corresponding \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{stringliteral}{            value is set to :obj:`numpy.nan`.}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{        * **map** (*float*): The average of Average Precisions over classes.}}
+\DoxyCodeLine{65 \textcolor{stringliteral}{    """}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     prec, rec = \mbox{\hyperlink{namespaceutils_1_1eval__tool_a4c3aa581f1fb0e3db8877b9c50b648f3}{calc\_detection\_voc\_prec\_rec}}(}
+\DoxyCodeLine{68         pred\_bboxes, pred\_labels, pred\_scores,}
+\DoxyCodeLine{69         gt\_bboxes, gt\_labels, gt\_difficults,}
+\DoxyCodeLine{70         iou\_thresh=iou\_thresh)}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     ap = \mbox{\hyperlink{namespaceutils_1_1eval__tool_abfdbc599564c3a388613f89a1b18f202}{calc\_detection\_voc\_ap}}(prec, rec, use\_07\_metric=use\_07\_metric)}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} \{\textcolor{stringliteral}{'ap'}: ap, \textcolor{stringliteral}{'map'}: np.nanmean(ap)\}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{namespaceutils_1_1eval__tool_ad492f468b79187fc9e5441c757151f28_icgraph}
+\end{center}
+\end{figure}

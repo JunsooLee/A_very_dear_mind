@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['n_369',['N',['../classmodel_1_1roi__module_1_1_ro_i.html#aba9da1b7bff20a8c46de0e98231c636b',1,'model::roi_module::RoI']]],
+  ['n_5fargs_370',['n_args',['../namespacemain.html#a27d7430e7c53eaa9c68f013c38627055',1,'main']]],
+  ['n_5fclass_371',['n_class',['../classmodel_1_1roi__module_1_1_v_g_g16_ro_i_head.html#a52b96276c1280c406e9f1532104e537d',1,'model.roi_module.VGG16RoIHead.n_class()'],['../classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#aae8e117f58e16b19b95a29ac915ee541',1,'model.faster_rcnn.FasterRCNN.n_class()']]],
+  ['n_5fclasses_372',['n_classes',['../namespacemain.html#a7a02a1c0d551bf92efc88ff48a338bc1',1,'main']]],
+  ['n_5fdet_373',['n_det',['../namespacemain.html#a3675add29a298f95ad20c52ba65f7ee3',1,'main']]],
+  ['n_5fimages_374',['n_images',['../namespacemain.html#ae90d8eb08dfbc95d182e9876904437e2',1,'main']]],
+  ['n_5fsample_375',['n_sample',['../classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html#a0dc4a8a2e3124a57178385a2e64111e6',1,'model.utils.roi_sample.ProposalTargetCreator.n_sample()'],['../classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html#a8303c6b154b67236d349409a6f2b1028',1,'model.utils.rpn_gt_loc_label.AnchorTargetCreator.n_sample()']]],
+  ['name_376',['name',['../namespacemodel_1_1utils_1_1nms_1_1build.html#a68b056f27b24bd6524bc1fea7716a584',1,'model::utils::nms::build']]],
+  ['nargs_377',['nargs',['../namespacemain.html#a2803ba3b09711e637c2dba101af9d0f9',1,'main']]],
+  ['nd_378',['nd',['../viewdet_8m.html#a1d8ecd161082ea597b225a4a25e780ba',1,'nd():&#160;viewdet.m'],['../_v_o_cevaldet_8m.html#ab341aff8f0e4773155f27b0f18a66290',1,'nd():&#160;VOCevaldet.m'],['../_v_o_cevallayout_8m.html#ab341aff8f0e4773155f27b0f18a66290',1,'nd():&#160;VOCevallayout.m'],['../namespacemain.html#a84f30876d6cb18acc815803f133c90f8',1,'main.nd()']]],
+  ['neg_5fiou_5fthresh_379',['neg_iou_thresh',['../classmodel_1_1utils_1_1rpn__gt__loc__label_1_1_anchor_target_creator.html#aae18f38f840bd34ed675278694b75be3',1,'model::utils::rpn_gt_loc_label::AnchorTargetCreator']]],
+  ['neg_5fiou_5fthresh_5fhi_380',['neg_iou_thresh_hi',['../classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html#ab736aa3432aac16d2b08126595bb2322',1,'model::utils::roi_sample::ProposalTargetCreator']]],
+  ['neg_5fiou_5fthresh_5flo_381',['neg_iou_thresh_lo',['../classmodel_1_1utils_1_1roi__sample_1_1_proposal_target_creator.html#a0758299dadfd21d6f45d5ed3d7b98396',1,'model::utils::roi_sample::ProposalTargetCreator']]],
+  ['nms_5fthresh_382',['nms_thresh',['../classmodel_1_1faster__rcnn_1_1_faster_r_c_n_n.html#aceece83d4d039d8cafd9f4206e450169',1,'model::faster_rcnn::FasterRCNN']]],
+  ['no_5fanimation_383',['no_animation',['../namespacemain.html#a06d2353099b5ebf7e8fcc6596d347e7b',1,'main']]],
+  ['no_5fplot_384',['no_plot',['../namespacemain.html#ae5d747e72c2c1870bb0ba55e59756e6e',1,'main']]],
+  ['non_5fmaximum_5fsuppression_385',['non_maximum_suppression',['../namespacemodel_1_1utils_1_1nms_1_1non__maximum__suppression.html#afdf319cf0550a8ae6b02cac11c9c86e9',1,'model::utils::nms::non_maximum_suppression']]],
+  ['non_5fmaximum_5fsuppression_2epy_386',['non_maximum_suppression.py',['../non__maximum__suppression_8py.html',1,'']]],
+  ['normal_5finit_387',['normal_init',['../namespacemodel_1_1roi__module.html#a057696dc8511e8d7420054be9ca3cee7',1,'model.roi_module.normal_init()'],['../namespacemodel_1_1rpn.html#ab5fbe15270d7d13fa12aa751e35f2223',1,'model.rpn.normal_init()']]],
+  ['noteof_388',['notEOF',['../_p_a_sreadrectxt_8m.html#ac5d52966a620316b22674a97c63a7499',1,'PASreadrectxt.m']]],
+  ['npos_389',['npos',['../viewdet_8m.html#ae0070ea45b2592ce3701ab9e486e58a0',1,'npos():&#160;viewdet.m'],['../_v_o_cevaldet_8m.html#ae0070ea45b2592ce3701ab9e486e58a0',1,'npos():&#160;VOCevaldet.m'],['../_v_o_cevallayout_8m.html#ae0070ea45b2592ce3701ab9e486e58a0',1,'npos():&#160;VOCevallayout.m']]],
+  ['num_5fclass_390',['num_class',['../classfocalloss_1_1_focal_loss.html#a81f649b6cb397906201b8f6e831bdc10',1,'focalloss::FocalLoss']]],
+  ['num_5fworkers_391',['num_workers',['../classutils_1_1config_1_1_config.html#a9d89ee8d02d3a1af6cead895200f20bf',1,'utils::config::Config']]]
+];

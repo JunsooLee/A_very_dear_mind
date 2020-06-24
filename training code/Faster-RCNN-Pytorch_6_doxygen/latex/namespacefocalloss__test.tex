@@ -1,0 +1,53 @@
+\hypertarget{namespacefocalloss__test}{}\doxysection{focalloss\+\_\+test 네임스페이스 참조}
+\label{namespacefocalloss__test}\index{focalloss\_test@{focalloss\_test}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefocalloss__test_abd450813b0ed876c8e3b4cae425f2547}{test\+\_\+focal}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespacefocalloss__test_abd450813b0ed876c8e3b4cae425f2547}\label{namespacefocalloss__test_abd450813b0ed876c8e3b4cae425f2547}} 
+\index{focalloss\_test@{focalloss\_test}!test\_focal@{test\_focal}}
+\index{test\_focal@{test\_focal}!focalloss\_test@{focalloss\_test}}
+\doxysubsubsection{\texorpdfstring{test\_focal()}{test\_focal()}}
+{\footnotesize\ttfamily def focalloss\+\_\+test.\+test\+\_\+focal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+focalloss\+\_\+test.\+py 파일의 12 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \textcolor{keyword}{def }\mbox{\hyperlink{namespacefocalloss__test_abd450813b0ed876c8e3b4cae425f2547}{test\_focal}}():}
+\DoxyCodeLine{13     num\_class = 5}
+\DoxyCodeLine{14     \textcolor{comment}{\# alpha = np.random.randn(num\_class)}}
+\DoxyCodeLine{15     \textcolor{comment}{\# input = torch.randn(10, num\_class).cuda()}}
+\DoxyCodeLine{16     \textcolor{comment}{\# target = torch.LongTensor(10).random\_(num\_class).cuda()}}
+\DoxyCodeLine{17     \textcolor{comment}{\# loss0 = FL(input, target)}}
+\DoxyCodeLine{18     \textcolor{comment}{\# print(loss0)}}
+\DoxyCodeLine{19     nodes = 100}
+\DoxyCodeLine{20     N = 100}
+\DoxyCodeLine{21     \textcolor{comment}{\# model1d = torch.nn.Linear(nodes, num\_class).cuda()}}
+\DoxyCodeLine{22     model2d = torch.nn.Conv2d(16, num\_class, 3, padding=1).cuda()}
+\DoxyCodeLine{23     FL = FocalLoss(num\_class=num\_class, alpha=0.25, gamma=2.0, balance\_index=2)}
+\DoxyCodeLine{24     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(10):}
+\DoxyCodeLine{25         \textcolor{comment}{\# input = torch.rand(N, nodes) * torch.randint(1, 100, (N, nodes)).float()}}
+\DoxyCodeLine{26         \textcolor{comment}{\# input = input.cuda()}}
+\DoxyCodeLine{27         \textcolor{comment}{\# target = torch.LongTensor(N).random\_(num\_class).cuda()}}
+\DoxyCodeLine{28         \textcolor{comment}{\# loss0 = FL(model1d(input), target)}}
+\DoxyCodeLine{29         \textcolor{comment}{\# print(loss0)}}
+\DoxyCodeLine{30         \textcolor{comment}{\# loss0.backward()}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         input = torch.rand(3, 16, 32, 32).cuda()}
+\DoxyCodeLine{33         target = torch.rand(3, 32, 32).random\_(num\_class).cuda()}
+\DoxyCodeLine{34         target = target.long().cuda()}
+\DoxyCodeLine{35         output = model2d(input)}
+\DoxyCodeLine{36         output = F.softmax(output, dim=1)}
+\DoxyCodeLine{37         loss = FL(output, target)}
+\DoxyCodeLine{38         print(loss.item())}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+
+\end{DoxyCode}

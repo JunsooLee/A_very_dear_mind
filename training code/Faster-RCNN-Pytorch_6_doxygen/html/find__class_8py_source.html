@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: scripts/extra/find_class.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('find__class_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">find_class.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="find__class_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacefind__class.html">    1</a></span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> glob</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># make sure that the cwd() in the beginning is the location of the python script (so that every path makes sense)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;os.chdir(os.path.dirname(os.path.abspath(__file__)))</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordflow">if</span> len(sys.argv) != 2:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  print(<span class="stringliteral">&quot;Error: wrong format.\nUsage: python find_class.py [class_name]&quot;</span>)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  sys.exit(0)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacefind__class.html#a218bf8da157732fe193c6b2fe938ecbf">   12</a></span>&#160;searching_class_name = sys.argv[1]</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacefind__class.html#aa1d92bdb948df656837905069e49deda">   14</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacefind__class.html#aa1d92bdb948df656837905069e49deda">find_class</a>(class_name):</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  file_list = glob.glob(<span class="stringliteral">&#39;*.txt&#39;</span>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  file_list.sort()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment"># iterate through the text files</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  file_found = <span class="keyword">False</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">for</span> txt_file <span class="keywordflow">in</span> file_list:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment"># open txt file lines to a list</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">with</span> open(txt_file) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      content = f.readlines()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment"># remove whitespace characters like `\n` at the end of each line</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    content = [x.strip() <span class="keywordflow">for</span> x <span class="keywordflow">in</span> content]</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment"># go through each line of eache file</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> line <span class="keywordflow">in</span> content:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      class_name = line.split()[0]</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordflow">if</span> class_name == searching_class_name:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        print(<span class="stringliteral">&quot; &quot;</span> + txt_file)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        file_found = <span class="keyword">True</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span> <span class="keywordflow">not</span> file_found:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    print(<span class="stringliteral">&quot; No file found with that class&quot;</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacefind__class.html#acc5d7e39b09eb9b42a546ac39bcf69b8">   35</a></span>&#160;parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;parent_path = os.path.abspath(os.path.join(parent_path, os.pardir))</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacefind__class.html#aa19831fcdd36c325ef54ad3dd4a4a2b0">   37</a></span>&#160;GT_PATH = os.path.join(parent_path, <span class="stringliteral">&#39;input&#39;</span>,<span class="stringliteral">&#39;ground-truth&#39;</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespacefind__class.html#ab6990c7701c1219ed4269a1401a09e2b">   38</a></span>&#160;DR_PATH = os.path.join(parent_path, <span class="stringliteral">&#39;input&#39;</span>,<span class="stringliteral">&#39;detection-results&#39;</span>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;print(<span class="stringliteral">&quot;ground-truth folder:&quot;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;os.chdir(GT_PATH)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="namespacefind__class.html">find_class</a>(searching_class_name)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;print(<span class="stringliteral">&quot;detection-results folder:&quot;</span>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;os.chdir(DR_PATH)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="namespacefind__class.html">find_class</a>(searching_class_name)</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacefind__class_html"><div class="ttname"><a href="namespacefind__class.html">find_class</a></div><div class="ttdef"><b>Definition:</b> <a href="find__class_8py_source.html#l00001">find_class.py:1</a></div></div>
+<div class="ttc" id="anamespacefind__class_html_aa1d92bdb948df656837905069e49deda"><div class="ttname"><a href="namespacefind__class.html#aa1d92bdb948df656837905069e49deda">find_class.find_class</a></div><div class="ttdeci">def find_class(class_name)</div><div class="ttdef"><b>Definition:</b> <a href="find__class_8py_source.html#l00014">find_class.py:14</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html">scripts</a></li><li class="navelem"><a class="el" href="dir_c4262912f6d7105e2ea50393663651f1.html">extra</a></li><li class="navelem"><a class="el" href="find__class_8py.html">find_class.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

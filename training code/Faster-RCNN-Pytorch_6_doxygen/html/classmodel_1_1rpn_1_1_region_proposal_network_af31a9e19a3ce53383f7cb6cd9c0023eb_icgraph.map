@@ -1,0 +1,4 @@
+<map id="model.rpn.RegionProposalNetwork.forward" name="model.rpn.RegionProposalNetwork.forward">
+<area shape="rect" id="node1" title="Forward Region Proposal Network." alt="" coords="328,5,503,47"/>
+<area shape="rect" id="node2" href="$classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51" title="Train step code" alt="" coords="5,13,280,39"/>
+</map>

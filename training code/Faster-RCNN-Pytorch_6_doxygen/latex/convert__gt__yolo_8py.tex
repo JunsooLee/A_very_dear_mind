@@ -1,0 +1,53 @@
+\hypertarget{convert__gt__yolo_8py}{}\doxysection{scripts/extra/convert\+\_\+gt\+\_\+yolo.py 파일 참조}
+\label{convert__gt__yolo_8py}\index{scripts/extra/convert\_gt\_yolo.py@{scripts/extra/convert\_gt\_yolo.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceconvert__gt__yolo}{convert\+\_\+gt\+\_\+yolo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceconvert__gt__yolo_a950bc08a96ff9eb8fd8ee93c674f8bbb}{convert\+\_\+gt\+\_\+yolo.\+convert\+\_\+yolo\+\_\+coordinates\+\_\+to\+\_\+voc}} (x\+\_\+c\+\_\+n, y\+\_\+c\+\_\+n, width\+\_\+n, height\+\_\+n, img\+\_\+width, img\+\_\+height)
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ae43be266cfb585cb0ee15ef694d69b3e}{convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+list}} = f.\+readlines()
+\begin{DoxyCompactList}\small\item\em remove whitespace characters like {\ttfamily \textbackslash{}n} at the end of each line \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a792eccb6bfaa73462b60c5e9151bcc3b}{convert\+\_\+gt\+\_\+yolo.\+parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\begin{DoxyCompactList}\small\item\em e.\+g. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a75ac3a286bfe4ee4acc950f16f0d692c}{convert\+\_\+gt\+\_\+yolo.\+G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(parent\+\_\+path, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a8b66871fd129ce3d47114c9a6254289a}{convert\+\_\+gt\+\_\+yolo.\+txt\+\_\+list}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em create the backup dir if it doesn\textquotesingle{}t exist already \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ac04d041295388bd3011910d4da020280}{convert\+\_\+gt\+\_\+yolo.\+image\+\_\+name}} = tmp\+\_\+file.\+split(\char`\"{}.txt\char`\"{},1)\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em get name before \char`\"{}.\+txt\char`\"{} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ab53e918532ec2fb1ab315f8010c65ce8}{convert\+\_\+gt\+\_\+yolo.\+img}} = cv2.\+imread(\textquotesingle{}../images/\textquotesingle{} + fname)
+\begin{DoxyCompactList}\small\item\em check if image exists \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ae397a4e239d7ee76b5d7a2ec25040a24}{convert\+\_\+gt\+\_\+yolo.\+img\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em get image width and height \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a245a06dda7a1ba1e43cbb80852f7859b}{convert\+\_\+gt\+\_\+yolo.\+img\+\_\+width}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a159dd124a3d1c65d4abe78f62fb873f3}{convert\+\_\+gt\+\_\+yolo.\+content}} = f.\+readlines()
+\begin{DoxyCompactList}\small\item\em image not found \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ab8bfe629fe948038666143475c7e0881}{convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em split a line by spaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a96cc51432358fb4f5168c48f1799fd03}{convert\+\_\+gt\+\_\+yolo.\+x\+\_\+c\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_aa2d72e9a2d247fe99be277344c4cea9d}{convert\+\_\+gt\+\_\+yolo.\+y\+\_\+c\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af72594e252f6ed23b2f3d0f36e0a260a}{convert\+\_\+gt\+\_\+yolo.\+width\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a44c58b139be30e37a4af917ba5c4b127}{convert\+\_\+gt\+\_\+yolo.\+height\+\_\+n}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af8b3a3bae5f757bd96474c36574a54dd}{convert\+\_\+gt\+\_\+yolo.\+obj\+\_\+name}} = obj\+\_\+list\mbox{[}int(obj\+\_\+id)\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a971ea29594953a15326ceadd1849bc11}{convert\+\_\+gt\+\_\+yolo.\+left}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_af88cbc6260ca7d9f3369368610cb184e}{convert\+\_\+gt\+\_\+yolo.\+top}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_a5bcae40f2c51c25fa392575e18835385}{convert\+\_\+gt\+\_\+yolo.\+right}}
+\item 
+\mbox{\hyperlink{namespaceconvert__gt__yolo_ac5f745bad17c4b35fe1ff620de0955da}{convert\+\_\+gt\+\_\+yolo.\+bottom}}
+\end{DoxyCompactItemize}

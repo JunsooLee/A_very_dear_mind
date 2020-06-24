@@ -1,0 +1,156 @@
+\hypertarget{namespaceintersect-gt-and-dr}{}\doxysection{intersect-\/gt-\/and-\/dr 네임스페이스 참조}
+\label{namespaceintersect-gt-and-dr}\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}{backup}} (src\+\_\+folder, backup\+\_\+files, \mbox{\hyperlink{namespaceintersect-gt-and-dr_aba15153afa576f702f568a21d15eabda}{backup\+\_\+folder}})
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{parent\+\_\+path}} = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))
+\begin{DoxyCompactList}\small\item\em This script ensures same number of files in ground-\/truth and detection-\/results folder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_ac8e20ee582cdfd29bfc69ce671df2b8a}{G\+T\+\_\+\+P\+A\+TH}} = os.\+path.\+join(\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_aa86e8801258814526fde901fa46e1c43}{D\+R\+\_\+\+P\+A\+TH}} = os.\+path.\+join(\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}detection-\/\mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}}\textquotesingle{})
+\item 
+string \mbox{\hyperlink{namespaceintersect-gt-and-dr_aba15153afa576f702f568a21d15eabda}{backup\+\_\+folder}} = \textquotesingle{}backup\+\_\+no\+\_\+matches\+\_\+found\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}} = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a8e6ddbd703218b7d0f8c30b86f1ae36f}{gt\+\_\+backup}} = \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}} -\/ \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a48bb2be821f7adda75b6fe738fbc16c2}{dr\+\_\+backup}} = \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}} -\/ \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}}
+\item 
+\mbox{\hyperlink{namespaceintersect-gt-and-dr_a332a57be923377207ef86659ab59538a}{intersection}} = \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}} \& \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}\label{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!backup@{backup}}
+\index{backup@{backup}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{backup()}{backup()}}
+{\footnotesize\ttfamily def intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+backup (\begin{DoxyParamCaption}\item[{}]{src\+\_\+folder,  }\item[{}]{backup\+\_\+files,  }\item[{}]{backup\+\_\+folder }\end{DoxyParamCaption})}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 43 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}{backup}}(src\_folder, backup\_files, backup\_folder):}
+\DoxyCodeLine{44     \textcolor{comment}{\# non-\/intersection files (txt format) will be moved to a backup folder}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} backup\_files:}
+\DoxyCodeLine{46         print(\textcolor{stringliteral}{'No backup required for'}, src\_folder)}
+\DoxyCodeLine{47         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{48     os.chdir(src\_folder)}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} os.path.exists(backup\_folder):}
+\DoxyCodeLine{51         os.makedirs(backup\_folder)}
+\DoxyCodeLine{52     \textcolor{keywordflow}{for} file \textcolor{keywordflow}{in} backup\_files:}
+\DoxyCodeLine{53         os.rename(file, backup\_folder + \textcolor{stringliteral}{'/'} + file)}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55 \mbox{\hyperlink{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}{backup}}(GT\_PATH, gt\_backup, backup\_folder)}
+\DoxyCodeLine{56 \mbox{\hyperlink{namespaceintersect-gt-and-dr_afd6402a2ac929013b942b56166bb2d78}{backup}}(DR\_PATH, dr\_backup, backup\_folder)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_aba15153afa576f702f568a21d15eabda}\label{namespaceintersect-gt-and-dr_aba15153afa576f702f568a21d15eabda}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!backup\_folder@{backup\_folder}}
+\index{backup\_folder@{backup\_folder}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{backup\_folder}{backup\_folder}}
+{\footnotesize\ttfamily string intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+backup\+\_\+folder = \textquotesingle{}backup\+\_\+no\+\_\+matches\+\_\+found\textquotesingle{}}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 21 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_a48bb2be821f7adda75b6fe738fbc16c2}\label{namespaceintersect-gt-and-dr_a48bb2be821f7adda75b6fe738fbc16c2}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!dr\_backup@{dr\_backup}}
+\index{dr\_backup@{dr\_backup}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{dr\_backup}{dr\_backup}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+dr\+\_\+backup = \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}} -\/ \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}}}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 41 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}\label{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!dr\_files@{dr\_files}}
+\index{dr\_files@{dr\_files}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{dr\_files}{dr\_files}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+dr\+\_\+files = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 29 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_aa86e8801258814526fde901fa46e1c43}\label{namespaceintersect-gt-and-dr_aa86e8801258814526fde901fa46e1c43}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!DR\_PATH@{DR\_PATH}}
+\index{DR\_PATH@{DR\_PATH}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{DR\_PATH}{DR\_PATH}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+D\+R\+\_\+\+P\+A\+TH = os.\+path.\+join(\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}detection-\/\mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}}\textquotesingle{})}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 19 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_a8e6ddbd703218b7d0f8c30b86f1ae36f}\label{namespaceintersect-gt-and-dr_a8e6ddbd703218b7d0f8c30b86f1ae36f}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!gt\_backup@{gt\_backup}}
+\index{gt\_backup@{gt\_backup}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{gt\_backup}{gt\_backup}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+gt\+\_\+backup = \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}} -\/ \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}}}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}\label{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!gt\_files@{gt\_files}}
+\index{gt\_files@{gt\_files}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{gt\_files}{gt\_files}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+gt\+\_\+files = glob.\+glob(\textquotesingle{}$\ast$.txt\textquotesingle{})}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 24 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_ac8e20ee582cdfd29bfc69ce671df2b8a}\label{namespaceintersect-gt-and-dr_ac8e20ee582cdfd29bfc69ce671df2b8a}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!GT\_PATH@{GT\_PATH}}
+\index{GT\_PATH@{GT\_PATH}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{GT\_PATH}{GT\_PATH}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+G\+T\+\_\+\+P\+A\+TH = os.\+path.\+join(\mbox{\hyperlink{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}{parent\+\_\+path}}, \textquotesingle{}input\textquotesingle{},\textquotesingle{}ground-\/truth\textquotesingle{})}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 18 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_a332a57be923377207ef86659ab59538a}\label{namespaceintersect-gt-and-dr_a332a57be923377207ef86659ab59538a}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!intersection@{intersection}}
+\index{intersection@{intersection}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{intersection}{intersection}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+intersection = \mbox{\hyperlink{namespaceintersect-gt-and-dr_ab572906c66940a68fa7269f64fcf6f02}{gt\+\_\+files}} \& \mbox{\hyperlink{namespaceintersect-gt-and-dr_a4a6ea21f3e9e0a1b0d960568f7dac10f}{dr\+\_\+files}}}
+
+
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}\label{namespaceintersect-gt-and-dr_a5d4c058a763d0ebe13cce5e18651d62f}} 
+\index{intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}!parent\_path@{parent\_path}}
+\index{parent\_path@{parent\_path}!intersect-\/gt-\/and-\/dr@{intersect-\/gt-\/and-\/dr}}
+\doxysubsubsection{\texorpdfstring{parent\_path}{parent\_path}}
+{\footnotesize\ttfamily intersect-\/\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}-\/and-\/dr.\+parent\+\_\+path = os.\+path.\+abspath(os.\+path.\+join(os.\+getcwd(), os.\+pardir))}
+
+
+
+This script ensures same number of files in ground-\/truth and detection-\/results folder. 
+
+When you encounter file not found error, it\textquotesingle{}s usually because you have mismatched numbers of ground-\/truth and detection-\/results files. You can use this script to move ground-\/truth and detection-\/results files that are not in the intersection into a backup folder (backup\+\_\+no\+\_\+matches\+\_\+found). This will retain only files that have the same name in both folders. 
+
+intersect-\/gt-\/and-\/dr.\+py 파일의 16 번째 라인에서 정의되었습니다.
+

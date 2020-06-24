@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: utils/py_nms.py 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   &#160;<span id="projectnumber">v.0.1.0</span>
+   </div>
+   <div id="projectbrief">win64 Project Base</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('py__nms_8py_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">py_nms.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="py__nms_8py.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceutils_1_1py__nms.html">    1</a></span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceutils_1_1py__nms.html#aa2049c381281c09368157cfc1366c378">    9</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceutils_1_1py__nms.html#aa2049c381281c09368157cfc1366c378">py_cpu_nms</a>(rois, thresh):</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">    Pure Python NMS baseline.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">    Already Sorted</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">    return:</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">    keep: roi keep indice</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    y1 = rois[:, 0]</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    x1 = rois[:, 1]</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    y2 = rois[:, 2]</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    x2 = rois[:, 3]</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    areas = (x2 - x1 + 1) * (y2 - y1 + 1)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    N = len(rois)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    order = np.array(range(N))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    keep = []</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">while</span> order.size &gt; 0:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        i = order[0]</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment"># 겹치는 anchor 중 첫번재 anchor만 저장</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        keep.append(i)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment"># x1 기준으로 x1좌표가 더 큰 좌표만 계산한다.(a,b의 계산이 b,a에서 다시 계산되는 것 방지)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        xx1 = np.maximum(x1[i], x1[order[1:]])</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        yy1 = np.maximum(y1[i], y1[order[1:]])</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        xx2 = np.minimum(x2[i], x2[order[1:]])</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        yy2 = np.minimum(y2[i], y2[order[1:]])</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment"># x1,x2(y1, y2)가 서로 역전되지 않는 경우를 생각한다.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        w = np.maximum(0.0, xx2 - xx1 + 1)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        h = np.maximum(0.0, yy2 - yy1 + 1)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        inter = w * h</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment"># ovr: anchor끼리의 IoU</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ovr = inter / (areas[i] + areas[order[1:]] - inter)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        inds = np.where(ovr &lt;= thresh)[0]</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        order = order[inds + 1]</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> keep</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespaceutils_1_1py__nms_html_aa2049c381281c09368157cfc1366c378"><div class="ttname"><a href="namespaceutils_1_1py__nms.html#aa2049c381281c09368157cfc1366c378">utils.py_nms.py_cpu_nms</a></div><div class="ttdeci">def py_cpu_nms(rois, thresh)</div><div class="ttdoc">Non-Maximum Suppression(NMS): ground truth box와 IoU가 0.7이상 겹치는 anchor 값이 많이 나오기 때문에 하나만 남기고 나머지는 지운다.</div><div class="ttdef"><b>Definition:</b> <a href="py__nms_8py_source.html#l00009">py_nms.py:9</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_cbdb8362360e11eafe2fa3bc74cf0ffd.html">utils</a></li><li class="navelem"><a class="el" href="py__nms_8py.html">py_nms.py</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
+</body>
+</html>

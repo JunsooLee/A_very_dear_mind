@@ -1,0 +1,4 @@
+<map id="trainer.trainer.FasterRCNNTrainer.forward" name="trainer.trainer.FasterRCNNTrainer.forward">
+<area shape="rect" id="node1" title="Train forward code" alt="" coords="328,5,587,32"/>
+<area shape="rect" id="node2" href="$classtrainer_1_1trainer_1_1_faster_r_c_n_n_trainer.html#ab0bc299051a745ffe6ef5c4660e05f51" title="Train step code" alt="" coords="5,5,280,32"/>
+</map>

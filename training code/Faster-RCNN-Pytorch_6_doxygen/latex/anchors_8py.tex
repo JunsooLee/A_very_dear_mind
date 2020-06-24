@@ -1,0 +1,16 @@
+\hypertarget{anchors_8py}{}\doxysection{utils/anchors.py 파일 참조}
+\label{anchors_8py}\index{utils/anchors.py@{utils/anchors.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceutils_1_1anchors}{utils.\+anchors}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_ab9be7f8af5ee0d970aea073cfc97802a}{utils.\+anchors.\+generate\+\_\+anchor\+\_\+base}} (side\+\_\+length=16, ratios=\mbox{[}0.\+5, 1, 2\mbox{]}, scales=\mbox{[}0.\+5, 1, 2\mbox{]}, strides=16)
+\begin{DoxyCompactList}\small\item\em (input image size / 16) $\ast$ (input image size / 16) $\ast$ 9 개의 기본 anchor 생성 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_acdf683862d82c02c7293f3afeb42c269}{utils.\+anchors.\+get\+\_\+anchors}} (anchor\+\_\+base, feat\+\_\+stride, \mbox{\hyperlink{_v_o_creadrecxml_8m_a13fcb4cf818f74019742a34499acf82a}{height}}, \mbox{\hyperlink{_v_o_creadrecxml_8m_a7d7dbd80d4eae19a3f5d5c48b3c1074b}{width}})
+\begin{DoxyCompactList}\small\item\em F.\+M 한 픽셀에 대응하는 3개의 크기 $\ast$ 3개의 비율을 가지는 9개의 기본 anchor 생성 \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutils_1_1anchors_a7b74cf0d5e1e9eabc0ac7329586981ee}{utils.\+anchors.\+get\+\_\+rois\+\_\+from\+\_\+loc\+\_\+anchors}} (anchors, rpn\+\_\+locs)
+\begin{DoxyCompactList}\small\item\em R\+PN 네트워크를 통해 나온 anchor 좌표(상대좌표)값을 input image에 매칭 \end{DoxyCompactList}\end{DoxyCompactItemize}

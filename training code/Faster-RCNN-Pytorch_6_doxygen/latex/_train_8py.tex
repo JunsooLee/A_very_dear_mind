@@ -1,0 +1,55 @@
+\hypertarget{_train_8py}{}\doxysection{Train.\+py 파일 참조}
+\label{_train_8py}\index{Train.py@{Train.py}}
+\doxysubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_train}{Train}}
+\end{DoxyCompactItemize}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_train_a073c054b09d56829c4927f2c5fe5d47a}{Train.\+eval}} (dataloader, faster\+\_\+rcnn, test\+\_\+num=1000)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+M\+A\+P\char`\"{}를 구하기 위한 함수 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_train_a7a6eb595c3a045d47da0a7d07ab81f4f}{Train.\+dataset}} = Dataset(opt)
+\begin{DoxyCompactList}\small\item\em Main \mbox{\hyperlink{namespace_train}{Train}} 함수 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_train_ad5dd2bbaf3d73ba5855c2fd8c8f8a932}{Train.\+dataloader}}
+\item 
+\mbox{\hyperlink{namespace_train_af7f4906b37df5d331aa2d484bd3d9d64}{Train.\+testset}} = Test\+Dataset(opt)
+\item 
+\mbox{\hyperlink{namespace_train_ac74afadc0876c3e36b91217667a26705}{Train.\+test\+\_\+dataloader}}
+\item 
+\mbox{\hyperlink{namespace_train_a7ffe10a5665102960b6d172e059dd72b}{Train.\+faster\+\_\+rcnn}} = Faster\+R\+C\+NN()
+\item 
+\mbox{\hyperlink{namespace_train_a26489931632bdf07047257bfdecec8bb}{Train.\+trainer}} = Faster\+R\+C\+N\+N\+Trainer(faster\+\_\+rcnn).cuda()
+\item 
+\mbox{\hyperlink{namespace_train_acfde390cc257e047061f213ac4f1ba38}{Train.\+lr\+\_\+}} = opt.\+lr
+\item 
+int \mbox{\hyperlink{namespace_train_a75d6c70fc72ec8eb7ff195a34a9b3925}{Train.\+best\+\_\+map}} = 0
+\item 
+list \mbox{\hyperlink{namespace_train_a1dbaf679257ac9a494ad34dfa55bf857}{Train.\+loss\+\_\+list\+\_\+roi\+\_\+cls}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a8ed3b645bbfbfbca1d34d7b9a99e181c}{Train.\+loss\+\_\+list\+\_\+roi\+\_\+loc}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a7742547b172c0b0d7d920b21cd076dd6}{Train.\+loss\+\_\+list\+\_\+rpn\+\_\+cls}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_train_a827cd592db34974bfaae07051f57a6e7}{Train.\+loss\+\_\+list\+\_\+rpn\+\_\+loc}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_train_a3a18f44e41a35886a41f1e16b04083d3}{Train.\+scale}} = at.\+scalar(scale)
+\item 
+\mbox{\hyperlink{namespace_train_a70e5e800d47c89ec0745213cc0854e27}{Train.\+img}}
+\item 
+\mbox{\hyperlink{namespace_train_a844fe8639a0502380df415acfeb456f6}{Train.\+bbox}}
+\item 
+\mbox{\hyperlink{namespace_train_a3893fdf2d4070c6a0128c09f4305a8f0}{Train.\+label}}
+\item 
+\mbox{\hyperlink{namespace_train_a09f7b01cea52bdb49d4ed4117f8648f4}{Train.\+loss\+\_\+list}} = trainer.\+train\+\_\+step(img, \mbox{\hyperlink{_v_o_creadrecxml_8m_a571d218ecdb2128e7493ad1eb2f5f831}{bbox}}, \mbox{\hyperlink{_v_o_creadrecxml_8m_a595dd0a82388b0f915674513f072ccda}{label}}, scale)
+\item 
+\mbox{\hyperlink{namespace_train_a40ae9e810abf7a203f4f315c94ce1faf}{Train.\+save\+\_\+optimizer}}
+\item 
+\mbox{\hyperlink{namespace_train_a45a17572c46cae0212432ab30c9d55c3}{Train.\+True}}
+\item 
+def \mbox{\hyperlink{namespace_train_aa77fc258a8bb1ca01927e7ac13d0bd9f}{Train.\+eval\+\_\+result}} = eval(test\+\_\+dataloader, faster\+\_\+rcnn, test\+\_\+num=opt.\+test\+\_\+num)
+\end{DoxyCompactItemize}

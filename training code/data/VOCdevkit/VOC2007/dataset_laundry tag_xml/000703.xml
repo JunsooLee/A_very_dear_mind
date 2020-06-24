@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_crawling_img</folder>
+	<filename>data802.jpg</filename>
+	<path>C:\Users\Leejunsoo\Desktop\A_very_dear_mind-master\A_very_dear_mind-master\data_crawling_img\data802.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>866</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>do_not_dry_clean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>177</xmin>
+			<ymin>1037</ymin>
+			<xmax>237</xmax>
+			<ymax>1108</ymax>
+		</bndbox>
+	</object>
+</annotation>

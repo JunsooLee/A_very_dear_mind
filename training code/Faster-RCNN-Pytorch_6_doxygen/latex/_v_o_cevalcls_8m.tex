@@ -1,0 +1,276 @@
+\hypertarget{_v_o_cevalcls_8m}{}\doxysection{data/\+V\+O\+Cdevkit/\+V\+O\+Ccode/\+V\+O\+Cevalcls.m 파일 참조}
+\label{_v_o_cevalcls_8m}\index{data/VOCdevkit/VOCcode/VOCevalcls.m@{data/VOCdevkit/VOCcode/VOCevalcls.m}}
+\doxysubsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevalcls_8m_a206ab34e34aaa68165deb248a94481e0}{isempty}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}) \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\textquotesingle{}unrecognized \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \char`\"{}\%s\char`\"{}\textquotesingle{}
+\item 
+elseif \mbox{\hyperlink{_v_o_cevalcls_8m_abcb6521c50b2af7b9c97a9719d06a686}{length}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}})$>$1 \mbox{\hyperlink{_v_o_cwritexml_8m_a6ded8204cc9ab5b812a3022fae39d491}{error}}(\textquotesingle{}multiple \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \char`\"{}\%s\char`\"{}\textquotesingle{}
+\item 
+else \mbox{\hyperlink{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}{out}} (\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevalcls_8m_ab37b91ce71ef992db31fcd57378bc6f7}{isempty}} (\mbox{\hyperlink{_v_o_creadrecxml_8m_ad323b24805fec137d45ad83ea1fde585}{p}}) \mbox{\hyperlink{_v_o_creadrecxml_8m_ad323b24805fec137d45ad83ea1fde585}{p}}=0
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} draw plot precision \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} \mbox{\hyperlink{_v_o_cevalcls_8m_ae1e6f40e64c8742694c6d37a80a6bd46}{plot}} (\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, \mbox{\hyperlink{_v_o_cevallayout_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}},\textquotesingle{}-\/\textquotesingle{})
+\item 
+xlabel \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} ylabel precision \mbox{\hyperlink{_v_o_cevalcls_8m_a503fb2d5d39f73b2afb3701efc29ab8c}{title}} (sprintf(\textquotesingle{}class\+:\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}, subset\+:\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}, AP=\%.\+3\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{}, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, V\+O\+Copts.\+testset, \mbox{\hyperlink{_v_o_cevallayout_8m_a60f16abacb8ae31810bd0f26b72d3439}{ap}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a66163b5b91ab9a968ad00a46a43b98ef}{function}} \mbox{[}\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, \mbox{\hyperlink{_v_o_cevallayout_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a60f16abacb8ae31810bd0f26b72d3439}{ap}}\mbox{]}
+\item 
+\mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \mbox{\hyperlink{_v_o_cevalcls_8m_a3c45c6e8cc9bddbfc079eb42fe2a3a32}{results}} \mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}\mbox{]} =textread(sprintf(V\+O\+Copts.\+clsrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})
+\item 
+map \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} to ground truth images \mbox{\hyperlink{_v_o_cevalcls_8m_ad279717d275558689c8152e5d8d3f664}{out}} =ones(size(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}))$\ast$-\/inf
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a8fb092330ecda60587643305d0d9738a}{tic}}
+\item 
+for \mbox{\hyperlink{_v_o_cevalcls_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}{drawnow}}
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} find ground truth \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} \mbox{\hyperlink{_v_o_cevalcls_8m_a7e339b31cc07cde4941a755aabc9ae52}{j}} =strmatch(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\},gtids,\textquotesingle{}exact\textquotesingle{})
+\item 
+\mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} \mbox{\hyperlink{_v_o_cevalcls_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}} \{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})
+\item 
+\mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} compute precision \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} \mbox{[}so, si\mbox{]} =sort(-\/\mbox{\hyperlink{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}{out}})
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a8a1eb1db6dc99f82114ae4594b3593ea}{tp}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(si)$>$0
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a44cf1cc57ec10499a66aba1ebf63d12b}{fp}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(si)$<$0
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a7c8cb9c29630901b8b5da4cdd7401d36}{rec}} =\mbox{\hyperlink{_v_o_cevallayout_8m_a180cbd42ee83563803f290fb406c6044}{tp}}/sum(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}$>$0)
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}} =tp./(\mbox{\hyperlink{_v_o_cevallayout_8m_a91973541d34e8fb9d310671758b4cb59}{fp}}+\mbox{\hyperlink{_v_o_cevallayout_8m_a180cbd42ee83563803f290fb406c6044}{tp}})
+\item 
+compute average precision \mbox{\hyperlink{_v_o_cevalcls_8m_a60f16abacb8ae31810bd0f26b72d3439}{ap}} =0
+\item 
+for \mbox{\hyperlink{_v_o_cevalcls_8m_aeeb7263bc62091985bdabfb0015cbc29}{t}}
+\item 
+\mbox{\hyperlink{_v_o_cevalcls_8m_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{함수 문서화}
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a206ab34e34aaa68165deb248a94481e0}\label{_v_o_cevalcls_8m_a206ab34e34aaa68165deb248a94481e0}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!isempty@{isempty}}
+\index{isempty@{isempty}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{isempty()}{isempty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ab37b91ce71ef992db31fcd57378bc6f7}\label{_v_o_cevalcls_8m_ab37b91ce71ef992db31fcd57378bc6f7}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!isempty@{isempty}}
+\index{isempty@{isempty}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{isempty()}{isempty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_creadrecxml_8m_ad323b24805fec137d45ad83ea1fde585}{p}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_abcb6521c50b2af7b9c97a9719d06a686}\label{_v_o_cevalcls_8m_abcb6521c50b2af7b9c97a9719d06a686}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!length@{length}}
+\index{length@{length}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily elseif length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}\label{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!out@{out}}
+\index{out@{out}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{out()}{out()}}
+{\footnotesize\ttfamily else out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_cwritexml_8m_a8f47e0001258b78994326e2d07d7c51d}{j}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ae1e6f40e64c8742694c6d37a80a6bd46}\label{_v_o_cevalcls_8m_ae1e6f40e64c8742694c6d37a80a6bd46}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!plot@{plot}}
+\index{plot@{plot}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_v_o_cevallayout_8m_ac9e620f26c1ecbbd423b3deefc8017b9}{if}} draw plot precision \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}}]{,  }\item[{\mbox{\hyperlink{_v_o_cevallayout_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}}}]{,  }\item[{\textquotesingle{}-\/\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a503fb2d5d39f73b2afb3701efc29ab8c}\label{_v_o_cevalcls_8m_a503fb2d5d39f73b2afb3701efc29ab8c}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!title@{title}}
+\index{title@{title}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{title()}{title()}}
+{\footnotesize\ttfamily xlabel \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} ylabel precision title (\begin{DoxyParamCaption}\item[{sprintf( \textquotesingle{}class\+:\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}, subset\+:\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}}, AP=\%.\+3\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{}, \mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}, V\+O\+Copts.\+testset, \mbox{\hyperlink{_v_o_cevallayout_8m_a60f16abacb8ae31810bd0f26b72d3439}{ap}})}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{변수 문서화}
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a60f16abacb8ae31810bd0f26b72d3439}\label{_v_o_cevalcls_8m_a60f16abacb8ae31810bd0f26b72d3439}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!ap@{ap}}
+\index{ap@{ap}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{ap}{ap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} ap =0}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}\label{_v_o_cevalcls_8m_aadd84b46ee6d2e3ae04d2920f4e78bfd}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!drawnow@{drawnow}}
+\index{drawnow@{drawnow}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{drawnow}{drawnow}}
+{\footnotesize\ttfamily drawnow}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 16 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a44cf1cc57ec10499a66aba1ebf63d12b}\label{_v_o_cevalcls_8m_a44cf1cc57ec10499a66aba1ebf63d12b}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!fp@{fp}}
+\index{fp@{fp}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{fp}{fp}}
+{\footnotesize\ttfamily no overlapping \mbox{\hyperlink{_p_a_semptyobject_8m_a73866c1bbed3d157dc7c8a2655bbf8bd}{object}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} compute precision \mbox{\hyperlink{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}{recall}} fp =\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(si)$<$0}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 35 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a66163b5b91ab9a968ad00a46a43b98ef}\label{_v_o_cevalcls_8m_a66163b5b91ab9a968ad00a46a43b98ef}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!function@{function}}
+\index{function@{function}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{function}{function}}
+{\footnotesize\ttfamily function\mbox{[}\mbox{\hyperlink{_v_o_creadxml_8m_a0f9ef333637ae8cf7020b986a0b421bf}{rec}}, \mbox{\hyperlink{_v_o_cevallayout_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a60f16abacb8ae31810bd0f26b72d3439}{ap}}\mbox{]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= VOCevalcls(VOCopts,\textcolor{keywordtype}{id},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},draw)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\% \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} \mbox{\hyperlink{example__classifier_8m_aa3ed006093572abc45357dc43f869d81}{test}} \textcolor{keyword}{set}}
+\DoxyCodeLine{[gtids,gt]=textread(sprintf(VOCopts.clsimgsetpath,\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},VOCopts.testset),\textcolor{stringliteral}{'\%s \%d'})}
+
+\end{DoxyCode}
+
+
+V\+O\+Cevalcls.\+m 파일의 1 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a52bdd18b63ba2ec1780aecd91679ee4a}\label{_v_o_cevalcls_8m_a52bdd18b63ba2ec1780aecd91679ee4a}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!grid@{grid}}
+\index{grid@{grid}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily grid}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 56 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a6f6ccfcf58b31cb6412107d9d5281426}\label{_v_o_cevalcls_8m_a6f6ccfcf58b31cb6412107d9d5281426}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!i@{i}}
+\index{i@{i}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily for i}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=1:\mbox{\hyperlink{_v_o_cevalcls_8m_abcb6521c50b2af7b9c97a9719d06a686}{length}}(\mbox{\hyperlink{_v_o_cevalcls_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}})}
+\DoxyCodeLine{    \% display progress}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} toc>1}
+\DoxyCodeLine{        \mbox{\hyperlink{example__classifier_8m_a590d7618b070763052e6233d7c8ba6f9}{fprintf}}(\textcolor{stringliteral}{'\%s: pr: \%d/\%d\(\backslash\)n'},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}},\mbox{\hyperlink{_v_o_cevalcls_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}},\mbox{\hyperlink{_v_o_cevalcls_8m_abcb6521c50b2af7b9c97a9719d06a686}{length}}(\mbox{\hyperlink{_v_o_cevalcls_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}))}
+
+\end{DoxyCode}
+
+
+V\+O\+Cevalcls.\+m 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}\label{_v_o_cevalcls_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!ids@{ids}}
+\index{ids@{ids}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{ids}{ids}}
+{\footnotesize\ttfamily elseif ids \{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\})}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 23 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a7e339b31cc07cde4941a755aabc9ae52}\label{_v_o_cevalcls_8m_a7e339b31cc07cde4941a755aabc9ae52}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!j@{j}}
+\index{j@{j}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} find ground truth \mbox{\hyperlink{viewdet_8m_aed3e051aea1aa75805be67a5c29d1d55}{image}} j =strmatch(\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}\{\mbox{\hyperlink{_v_o_cwritexml_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}\},gtids,\textquotesingle{}exact\textquotesingle{})}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 21 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ad279717d275558689c8152e5d8d3f664}\label{_v_o_cevalcls_8m_ad279717d275558689c8152e5d8d3f664}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!out@{out}}
+\index{out@{out}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily map \mbox{\hyperlink{_v_o_cevaldet_8m_abbc14cd19430997d1d1a8f2f3a2aa1a4}{results}} to ground truth images out =ones(size(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}))$\ast$-\/inf}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 10 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_ad89f583bb934a00c2f2d4358c7aebb72}\label{_v_o_cevalcls_8m_ad89f583bb934a00c2f2d4358c7aebb72}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!prec@{prec}}
+\index{prec@{prec}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{prec}{prec}}
+{\footnotesize\ttfamily prec =tp./(\mbox{\hyperlink{_v_o_cevallayout_8m_a91973541d34e8fb9d310671758b4cb59}{fp}}+\mbox{\hyperlink{_v_o_cevallayout_8m_a180cbd42ee83563803f290fb406c6044}{tp}})}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a7c8cb9c29630901b8b5da4cdd7401d36}\label{_v_o_cevalcls_8m_a7c8cb9c29630901b8b5da4cdd7401d36}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!rec@{rec}}
+\index{rec@{rec}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{rec}{rec}}
+{\footnotesize\ttfamily rec =\mbox{\hyperlink{_v_o_cevallayout_8m_a180cbd42ee83563803f290fb406c6044}{tp}}/sum(\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}$>$0)}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 39 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}\label{_v_o_cevalcls_8m_a7d78b8de1e16bcbaff847b985c4b7cf9}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!recall@{recall}}
+\index{recall@{recall}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{recall}{recall}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} \mbox{\hyperlink{_p_a_sreadrectxt_8m_afb358f48b1646c750fb9da6c6585be2b}{end}} compute precision recall\mbox{[}so, si\mbox{]} =sort(-\/\mbox{\hyperlink{_v_o_cevalcls_8m_ad0aff65122095c8b2cfb9f97e1e6bcff}{out}})}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 33 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a3c45c6e8cc9bddbfc079eb42fe2a3a32}\label{_v_o_cevalcls_8m_a3c45c6e8cc9bddbfc079eb42fe2a3a32}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!results@{results}}
+\index{results@{results}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily \mbox{\hyperlink{example__classifier_8m_a998f67887464aef7f044115722929ded}{load}} results\mbox{[}\mbox{\hyperlink{_v_o_cevallayout_8m_ac098c7b706e0f36aef1053e4eb6e0ae2}{ids}}, \mbox{\hyperlink{_v_o_cevallayout_8m_a6330b680cc4c09a584ab93b0a37e73ca}{confidence}}\mbox{]} =textread(sprintf(V\+O\+Copts.\+clsrespath,\mbox{\hyperlink{_v_o_clabelcolormap_8m_acf2488b95c97e0378c9bf49de3b50f28}{id}},\mbox{\hyperlink{example__layout_8m_ae64aba052857c2ffeb0e52e4d769fd5c}{cls}}),\textquotesingle{}\%\mbox{\hyperlink{_v_o_cwritexml_8m_aaa7c61c7163e7fc36352afb33ce6c3dd}{s}} \%\mbox{\hyperlink{_v_o_cwritexml_8m_a0b421d987000ed7a8e263776e85c5cc9}{f}}\textquotesingle{})}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 7 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_aeeb7263bc62091985bdabfb0015cbc29}\label{_v_o_cevalcls_8m_aeeb7263bc62091985bdabfb0015cbc29}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!t@{t}}
+\index{t@{t}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily for t}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=0:0.1:1}
+\DoxyCodeLine{    \mbox{\hyperlink{_v_o_creadrecxml_8m_ad323b24805fec137d45ad83ea1fde585}{p}}=\mbox{\hyperlink{viewdet_8m_a08a1acbca52e758a30f50d0bbe37313b}{max}}(\mbox{\hyperlink{_v_o_cevalcls_8m_ad89f583bb934a00c2f2d4358c7aebb72}{prec}}(\mbox{\hyperlink{_v_o_cevalcls_8m_a7c8cb9c29630901b8b5da4cdd7401d36}{rec}}>=\mbox{\hyperlink{_v_o_cevalcls_8m_aeeb7263bc62091985bdabfb0015cbc29}{t}}))}
+
+\end{DoxyCode}
+
+
+V\+O\+Cevalcls.\+m 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a8fb092330ecda60587643305d0d9738a}\label{_v_o_cevalcls_8m_a8fb092330ecda60587643305d0d9738a}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!tic@{tic}}
+\index{tic@{tic}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{tic}{tic}}
+{\footnotesize\ttfamily tic}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 11 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_v_o_cevalcls_8m_a8a1eb1db6dc99f82114ae4594b3593ea}\label{_v_o_cevalcls_8m_a8a1eb1db6dc99f82114ae4594b3593ea}} 
+\index{VOCevalcls.m@{VOCevalcls.m}!tp@{tp}}
+\index{tp@{tp}!VOCevalcls.m@{VOCevalcls.m}}
+\doxysubsubsection{\texorpdfstring{tp}{tp}}
+{\footnotesize\ttfamily tp =\mbox{\hyperlink{_v_o_cevallayout_8m_a18eb96d3aa5adccb53cee7f908408064}{gt}}(si)$>$0}
+
+
+
+V\+O\+Cevalcls.\+m 파일의 34 번째 라인에서 정의되었습니다.
+
