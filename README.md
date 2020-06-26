@@ -1,6 +1,8 @@
 # A very dear mind
-**Gachon Univ. Software department Graduation project   
-양한진, 이준수, 황병훈**
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+- Gachon Univ. Software department Graduation project   
+- 양한진, 이준수, 황병훈**
 
 ### --> General Outline for projects   
 <img src="https://github.com/JunsooLee/A_very_dear_mind/blob/master/WIKI/outline.png" width="50%"></img>
