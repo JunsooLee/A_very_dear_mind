@@ -69,8 +69,9 @@ public class CameraPreview extends AppCompatActivity{
 
                     Intent intent = new Intent(getApplicationContext(), ConnectActivity.class);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 30, stream);
                     byte[] byteArray = stream.toByteArray();
+                    Log.d("log1", Integer.toString(byteArray.length));
                     intent.putExtra("image", byteArray);
 
                     startActivity(intent);
@@ -99,6 +100,14 @@ public class CameraPreview extends AppCompatActivity{
             setCameraOrientation();
             try {
                 camera.setPreviewDisplay(mHolder);
+                int m_resWidth;
+                int m_resHeight;
+                m_resWidth = camera.getParameters().getPictureSize().width;
+                Camera.Parameters parameters = camera.getParameters();
+                m_resWidth = 4032;
+                m_resHeight = 3024;
+                parameters.setPictureSize(m_resWidth, m_resHeight);
+                camera.setParameters(parameters);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -37,9 +37,6 @@ public class ConnectActivity extends AppCompatActivity {
     private DataInputStream dis;
     ByteArrayOutputStream baos;
 
-    private TextView tv;
-    private ImageView imageView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +44,8 @@ public class ConnectActivity extends AppCompatActivity {
 
         byte[] byteArray = getIntent().getByteArrayExtra("image");
         image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-        Log.d("log1", Integer.toString(image.getHeight()));
-        tv = (TextView)findViewById(R.id.textView);
+        Log.d("log1", Integer.toString(byteArray.length));
 
-        imageView = (ImageView) findViewById(R.id.image1) ;
-        imageView.setImageBitmap(image) ;
         request();
     }
 
@@ -81,26 +75,28 @@ public class ConnectActivity extends AppCompatActivity {
                 try {
                     dos = new DataOutputStream(socket.getOutputStream());
                     dis = new DataInputStream(socket.getInputStream());
+
                     dos.write(byteArray);
+                    Log.d("log1", "Trying Fucking");
+                    dos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.d("Buffer", "Incorrect Buffer");
                 }
 
-                /*while(true) {
+                while(true) {
                     try {
                         String line = "";
                         line = dis.readUTF();
                         Log.d("log1",line);
-                        tv.append(line);
 
                         socket.close();
                         break;
                     } catch (IOException e) {
                         e.printStackTrace();
-                        Log.d("InLine", "Reading from server is error.");
+                        Log.d("log1", "Reading from server is error.");
                     }
-                }*/
+                }
             }
         }).start();
     }
