@@ -2,42 +2,39 @@
 Gachon univ. Software department Graduation project   
 양한진, 이준수, 황병훈
 
-### Motivation
-1. People should recognize laundry method for favorite clothes.
-2. But the laundry method varies according to type of clothes and it is hard to interpret care tag.
-3. So People have experienced unwanted results like shrunken, being discolored or being damaged clothes by wrong laundry method.
-4. People who have favorite clothes want to know laundry method easily
+### General Outline for projects   
+<img src="https://github.com/JunsooLee/A_very_dear_mind/blob/master/WIKI/outline.png" width="50%"></img>
+### Developing Environments
+**Python**
+```
+Python = 3.6
+OpenCV-python = 4.1.1.26
+pillow = 6.2.1
+torch = 1.2.0
+torchVison = 0.4.0
+vispy = 0.6.3
+scipy = 1.1.0
+```
+**Android**
+```
+minSdkVersion: 23
+targetSdkVersion: 29
+JAVA jdk: 1.8.0_241
+```
 
-### Purpose
-* **Provide service that people can know laundry method easily**
+### Installation   
+Clone our git, training code for Python and the rest for Android Studio.   
+In cmd, 
+```
+git clone https://github.com/JunsooLee/A_very_dear_mind.git
+```
+or use github desktop,
+```
+File-Clone repository-URL  https://github.com/JunsooLee/A_very_dear_mind.git
+```
 
-### System overview
-**In Sequence**<br/>
-<img src="./WIKI/proposal4.png" width="400"></img>
-<br/>**Structure**<br/>
-<img src="./WIKI/proposal6.png" width="400"></img> 
+### Run Project   
 
-### Description
-This program recognize care symbols in tag by image processing and Yolo v2.<br/>
-Users can know laundry method of user's clothes easily by just taking a picture of care tag<br/>
-<br/>
-The following information can be displayed.
-<br/>
 
-* Recognized symbols
-* Standard of symbols
-* Informaion about symbol
 
-<img src="./WIKI/proposal5.png" width="50%"></img>
-<br/><br/>
-
-### Using Technology
-1. Image processing<br/>
-<img src="./WIKI/proposal7.png" width="50%"></img><br/>
-* System processes image to recognize care tag which is bad quality or wrinkled
-2. Image Detecting<br/>
-<img src="./WIKI/proposal3.png" width="50%"></img><br/>
-* System recognizes symbols in processed image of care tag
-3. Show instructions<br/>
-* System show instructions of recognizes symbols with comparing data in database<br/>
 
