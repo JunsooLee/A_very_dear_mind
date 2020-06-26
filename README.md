@@ -34,7 +34,6 @@ File-Clone repository-URL  https://github.com/JunsooLee/A_very_dear_mind.git
 ```
 
 ### Run Project   
-
-
+https://youtu.be/jLvpi1dP_Mk
 
 
