@@ -1,5 +1,5 @@
 # A very dear mind
-Gachon univ. Software department Graduation project   
+Gachon Univ. Software department Graduation project   
 양한진, 이준수, 황병훈
 
 ### General Outline for projects   
