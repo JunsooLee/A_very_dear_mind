@@ -46,14 +46,14 @@
 
 ## :computer:Testing
 
-**1. Test**:
-    - In `$ROOT/training code/`
+1. Test:
+    - In "$ROOT/training code/"
     
     ```
     $ python demo.py --path ./test_image/test1.jpg
     ```
     
-**2. Result image**:
+2. Result image:
 
     - You can check the result image.
   
