@@ -47,7 +47,7 @@
 ## :computer:Testing
 
 1. Test:
-    - In "$ROOT/training code/"
+    - In `$ROOT/training code/`.
     
     ```
     $ python demo.py --path ./test_image/test1.jpg
