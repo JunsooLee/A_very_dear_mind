@@ -34,7 +34,7 @@
   $ git clone https://github.com/JunsooLee/A_very_dear_mind.git
   $ conda create -n AVDM python=3.6
   $ conda activate AVDM
-  $ pip install -r requirements.txt
+  $ pip install -r $ROOT/training code/requirements.txt
   ```
 
 ## 💾 Download pretrain models
