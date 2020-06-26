@@ -4,6 +4,8 @@
 - **Gachon Univ. Software department Graduation project**   
 - **양한진, 이준수, 황병훈**
 
+<img src = "https://user-images.githubusercontent.com/52238766/85866361-3cef9100-b802-11ea-9e1a-c80f5a43c97c.PNG">
+
 ### General Outline for projects   
 <img src="https://github.com/JunsooLee/A_very_dear_mind/blob/master/WIKI/outline.png" width="50%"></img>
 ### Developing Environments
