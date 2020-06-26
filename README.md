@@ -44,7 +44,7 @@
   - Download the pretrained model and put it to `$ROOT/training code/checkpoints/fasterrcnn_11080821_94%.pth`.
 
 
-## Testing
+## :computer:Testing
 
 1. Test:
   - In `$ROOT/training code/`
@@ -54,7 +54,8 @@
     
 2. Result image
   - You can check the result image.
-  <img src = "https://user-images.githubusercontent.com/52238766/85869073-26e3cf80-b806-11ea-9288-830b32acee8a.PNG"></img>
+  
+<img src = "https://user-images.githubusercontent.com/52238766/85869073-26e3cf80-b806-11ea-9288-830b32acee8a.PNG"></img>
 
 ## YouTube Link
   - Only Korean Language Support 
