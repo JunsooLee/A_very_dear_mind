@@ -46,13 +46,13 @@
 
 ## :computer:Testing
 
-1. Test:
+**1. Test:**
     - In `$ROOT/training code/`
     ```
     $ python demo.py --path ./test_image/test1.jpg
     ```
     
-2. Result image
+**2. Result image**
     - You can check the result image.
   
 <img src = "https://user-images.githubusercontent.com/52238766/85869073-26e3cf80-b806-11ea-9288-830b32acee8a.PNG"></img>
