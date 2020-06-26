@@ -16,7 +16,7 @@ parser.add_argument("--path", type= str, help="Enter data path")
 args = parser.parse_args()
 
 if __name__ =="__main__":
-    print(args.path)
+
     VOC_BBOX_LABEL_NAMES = (
         'do_not_wash',
         'do_not_bleach',
