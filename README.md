@@ -14,22 +14,26 @@
 
 
 
-## :Developing Environments
-**Python**
+## :point_right: Requirements
+
+1. Set up the python environment:
+
+- Python = 3.6
+- torch = 1.2.0
+- torchVison = 0.4.0
+- OpenCV-python = 4.1.1.26
+- pillow = 6.2.1
+- vispy = 0.6.3
+- scipy = 1.1.0
+- minSdkVersion: 23
+- targetSdkVersion: 29
+- JAVA jdk: 1.8.0_241
+
 ```
-Python = 3.6
-OpenCV-python = 4.1.1.26
-pillow = 6.2.1
-torch = 1.2.0
-torchVison = 0.4.0
-vispy = 0.6.3
-scipy = 1.1.0
-```
-**Android**
-```
-minSdkVersion: 23
-targetSdkVersion: 29
-JAVA jdk: 1.8.0_241
+$ conda create -n pvnet python=3.7
+$ conda activate pvnet
+$ pip install -r requirements.txt
+
 ```
 
 ### Installation   
