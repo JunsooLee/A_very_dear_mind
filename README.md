@@ -1,6 +1,6 @@
 # A very dear mind
-Gachon Univ. Software department Graduation project   
-양한진, 이준수, 황병훈
+**Gachon Univ. Software department Graduation project   
+양한진, 이준수, 황병훈**
 
 ### General Outline for projects   
 <img src="https://github.com/JunsooLee/A_very_dear_mind/blob/master/WIKI/outline.png" width="50%"></img>
