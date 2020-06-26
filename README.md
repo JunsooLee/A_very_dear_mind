@@ -4,7 +4,8 @@
 - **Gachon Univ. Software department Graduation project**   
 - **양한진, 이준수, 황병훈**
 
-<img src = "https://user-images.githubusercontent.com/52238766/85866361-3cef9100-b802-11ea-9e1a-c80f5a43c97c.PNG">
+<img src = "https://user-images.githubusercontent.com/52238766/85866361-3cef9100-b802-11ea-9e1a-c80f5a43c97c.PNG"></img>
+
 
 ## 📄 General Outline for projects   
 
@@ -16,7 +17,7 @@
 
 ## :point_right: Requirements
 
-1. Set up the python environment:
+**1. Set up the python environment:**
 
   - Python = 3.6
   - torch = 1.2.0
@@ -30,27 +31,34 @@
   - JAVA jdk: 1.8.0_241
 
   ```
-  $ conda create -n pvnet python=3.7
-  $ conda activate pvnet
+  $ git clone https://github.com/JunsooLee/A_very_dear_mind.git
+  $ conda create -n AVDM python=3.6
+  $ conda activate AVDM
   $ pip install -r requirements.txt
-
   ```
 
+## 💾 Download pretrain models
 
-2. We provide the pretrained models, which can be found at [here](https://drive.google.com/file/d/1qzQ0Uaw_r2T1iTZK2f7Icz7WhC9lObWl/view?usp=sharing).
+**1. We provide the pretrained models, which can be found at [here](https://drive.google.com/file/d/1qzQ0Uaw_r2T1iTZK2f7Icz7WhC9lObWl/view?usp=sharing).**
+  - Make "checkpoints" folder in `$ROOT/training code/`.
+  - Download the pretrained model and put it to `$ROOT/training code/checkpoints/fasterrcnn_11080821_94%.pth`.
 
-### Installation   
-Clone our git, training code for Python and the rest for Android Studio.   
-In cmd, 
-```
-git clone https://github.com/JunsooLee/A_very_dear_mind.git
-```
-or use github desktop,
-```
-File-Clone repository-URL  https://github.com/JunsooLee/A_very_dear_mind.git
-```
 
-### Run Project   
-https://youtu.be/jLvpi1dP_Mk
+## Testing
+
+1. Test:
+  - In `$ROOT/training code/`
+    ```
+    $ python demo.py --path ./test_image/test1.jpg
+    ```
+    
+2. Result image
+  - You can check the result image.
+  <img src = "https://user-images.githubusercontent.com/52238766/85869073-26e3cf80-b806-11ea-9288-830b32acee8a.PNG"></img>
+
+## YouTube Link
+  - Only Korean Language Support 
+  - We're planning to add English subtitles in the future.
+  - https://youtu.be/jLvpi1dP_Mk
 
 
