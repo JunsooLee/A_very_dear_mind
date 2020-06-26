@@ -18,23 +18,26 @@
 
 1. Set up the python environment:
 
-- Python = 3.6
-- torch = 1.2.0
-- torchVison = 0.4.0
-- OpenCV-python = 4.1.1.26
-- pillow = 6.2.1
-- vispy = 0.6.3
-- scipy = 1.1.0
-- minSdkVersion: 23
-- targetSdkVersion: 29
-- JAVA jdk: 1.8.0_241
+  - Python = 3.6
+  - torch = 1.2.0
+  - torchVison = 0.4.0
+  - OpenCV-python = 4.1.1.26
+  - pillow = 6.2.1
+  - vispy = 0.6.3
+  - scipy = 1.1.0
+  - minSdkVersion: 23
+  - targetSdkVersion: 29
+  - JAVA jdk: 1.8.0_241
 
-```
-$ conda create -n pvnet python=3.7
-$ conda activate pvnet
-$ pip install -r requirements.txt
+  ```
+  $ conda create -n pvnet python=3.7
+  $ conda activate pvnet
+  $ pip install -r requirements.txt
 
-```
+  ```
+
+
+2. We provide the pretrained models, which can be found at [here](https://drive.google.com/file/d/1qzQ0Uaw_r2T1iTZK2f7Icz7WhC9lObWl/view?usp=sharing).
 
 ### Installation   
 Clone our git, training code for Python and the rest for Android Studio.   
