@@ -1,5 +1,5 @@
-# 애지중지(愛䙙重䙙)
-가천대학교 소프트웨어학과 졸업작품 2분반<br/>
+# A very dear mind
+Gachon univ. Software department Graduation project   
 양한진, 이준수, 황병훈
 
 ### Motivation
