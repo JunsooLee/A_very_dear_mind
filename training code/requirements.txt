@@ -33,7 +33,7 @@ opencv-python==4.1.1.26
 pandas==0.25.3
 parso==0.5.1
 pickleshare==0.7.5
-Pillow==6.2.1
+Pillow==8.3.2
 plyfile==0.7.1
 prompt-toolkit==3.0.0
 protobuf==3.10.0
