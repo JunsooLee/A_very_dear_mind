@@ -16,7 +16,7 @@ freetype-py==2.1.0.post1
 future==0.18.2
 idna==2.9
 imageio==2.6.1
-ipython==7.10.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.15.1
 jsonpatch==1.26
