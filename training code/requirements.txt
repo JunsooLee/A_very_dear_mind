@@ -36,7 +36,7 @@ pickleshare==0.7.5
 Pillow==6.2.1
 plyfile==0.7.1
 prompt-toolkit==3.0.0
-protobuf==3.10.0
+protobuf==3.18.3
 pycparser==2.19
 pyglet==1.4.10
 Pygments==2.5.1
